@@ -5,29 +5,35 @@ body {
   color: #0A1A2F;
 }
 
+/* PAGE WIDTH */
 .container {
   width: 90%;
   max-width: 1100px;
   margin: auto;
 }
 
+/* HEADER */
 header {
   border-bottom: 1px solid #E0E0E0;
   background: #FFFFFF;
 }
 
+/* FLEX HEADER */
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
+/* LOGO */
 .logo img {
   height: 60px;
   width: auto;
+  display: block;
 }
 
+/* NAVIGATION */
 nav {
   display: flex;
   align-items: center;
@@ -40,8 +46,9 @@ nav a {
   font-size: 14px;
 }
 
+/* HERO */
 .hero {
-  padding: 80px 0;
+  padding: 80px 0 40px 0;
 }
 
 .hero h1 {
@@ -53,8 +60,9 @@ nav a {
   color: #3E4A57;
 }
 
+/* SERVICES GRID */
 .services {
-  padding: 60px 0;
+  padding: 40px 0 60px 0;
 }
 
 .grid {
