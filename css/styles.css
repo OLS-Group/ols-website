@@ -1,19 +1,31 @@
+/* ===============================
+   BASE
+================================= */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   background-color: #FFFFFF;
   color: #0A1A2F;
-  line-height: 1.6;
+  line-height: 1.7;
+  letter-spacing: 0.2px;
 }
 
-/* === CONTAINER === */
+html {
+  scroll-behavior: smooth;
+}
+
+/* ===============================
+   LAYOUT
+================================= */
 .container {
   width: 88%;
   max-width: 1100px;
   margin: auto;
 }
 
-/* === HEADER === */
+/* ===============================
+   HEADER / NAV
+================================= */
 header {
   border-bottom: 1px solid #E5E7EB;
   background: #FFFFFF;
@@ -23,7 +35,7 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 18px 0;
+  padding: 20px 0;
 }
 
 .logo img {
@@ -31,7 +43,6 @@ header {
   width: auto;
 }
 
-/* === NAV === */
 nav {
   display: flex;
   align-items: center;
@@ -39,18 +50,37 @@ nav {
 
 nav a {
   margin-left: 28px;
-  text-decoration: none;
   font-size: 14px;
   font-weight: 500;
   color: #0A1A2F;
+  text-decoration: none;
+  position: relative;
   transition: opacity 0.2s ease;
 }
 
-nav a:hover {
-  opacity: 0.5;
+/* Hover underline animation */
+nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;
+  width: 0;
+  height: 1px;
+  background: #0A1A2F;
+  transition: width 0.3s ease;
 }
 
-/* === HERO === */
+nav a:hover {
+  opacity: 0.6;
+}
+
+nav a:hover::after {
+  width: 100%;
+}
+
+/* ===============================
+   HERO
+================================= */
 .hero {
   padding: 120px 0 70px 0;
 }
@@ -58,8 +88,9 @@ nav a:hover {
 .hero h1 {
   font-size: 44px;
   font-weight: 600;
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   letter-spacing: -0.5px;
+  max-width: 800px;
 }
 
 .hero p {
@@ -67,87 +98,54 @@ nav a:hover {
   color: #3E4A57;
 }
 
-/* === CONTENT SECTIONS === */
+/* ===============================
+   CONTENT SECTIONS
+================================= */
 .services {
-  padding: 60px 0 110px 0;
+  padding: 80px 0;
 }
 
-/* === GRID === */
+/* alternating section background */
+.services:nth-of-type(even) {
+  background-color: #F9FAFB;
+}
+
+/* ===============================
+   GRID
+================================= */
 .grid {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 50px;
 }
 
-/* === HEADINGS === */
+/* ===============================
+   TYPOGRAPHY
+================================= */
 h3 {
-  font-size: 16px;
-  margin-bottom: 10px;
-  font-weight: 600;
-}
-
-/* === TEXT === */
-p {
-  font-size: 14px;
-  color: #3E4A57;
-}
-
-/* === FOOTER === */
-footer {
-  border-top: 1px solid #E5E7EB;
-  padding: 25px 0;
-  margin-top: 80px;
-  font-size: 14px;
-}
-
-/* === RESPONSIVE (makes it look good on phones) === */
-@media (max-width: 768px) {
-  .grid {
-    grid-template-columns: 1fr;
-  }
-
-  nav {
-    display: none; /* keeps things clean on mobile */
-  }
-}
-``
-.divider {
-  border-top: 1px solid #E5E7EB;
-  margin: 70px 0;
-}
-``
-/* ===== SECTION VISUAL RHYTHM ===== */
-.services:nth-of-type(even) {
-  background-color: #F9FAFB;
-  padding: 80px 0;
-}
-
-.services:nth-of-type(odd) {
-  padding: 80px 0;
-}
-
-/* ===== EMPHASIZE STEP HEADINGS ===== */
-.services h3 {
   font-size: 20px;
   margin-bottom: 10px;
+  font-weight: 600;
   letter-spacing: 0.3px;
 }
 
-/* ===== HOLD CONTENT WIDTH BETTER ===== */
-.services p {
+p {
+  font-size: 14px;
+  color: #3E4A57;
   max-width: 650px;
 }
 
-/* ===== HERO BOOST ===== */
-.hero h1 {
-  max-width: 800px;
-}
-
-/* ===== FLOW IMPROVEMENT ===== */
+/* ===============================
+   DIVIDER
+================================= */
 .divider {
   border-top: 1px solid #E5E7EB;
   margin: 70px 0;
 }
+
+/* ===============================
+   LINKS
+================================= */
 a {
   color: #0A1A2F;
   text-decoration: none;
@@ -156,4 +154,68 @@ a {
 a:hover {
   opacity: 0.6;
 }
-``
+
+/* ===============================
+   FORM (EMBED)
+================================= */
+iframe {
+  border: none;
+  border-radius: 4px;
+  max-width: 100%;
+  width: 100%;
+  height: 600px;
+}
+
+/* ===============================
+   FOOTER
+================================= */
+footer {
+  border-top: 1px solid #E5E7EB;
+  padding: 25px 0;
+  margin-top: 80px;
+  font-size: 14px;
+}
+
+/* ===============================
+   ANIMATION (SUBTLE FADE)
+================================= */
+section {
+  opacity: 0;
+  transform: translateY(20px);
+  animation: fadeUp 0.8s ease forwards;
+}
+
+section:nth-child(2) { animation-delay: 0.1s; }
+section:nth-child(3) { animation-delay: 0.15s; }
+section:nth-child(4) { animation-delay: 0.2s; }
+section:nth-child(5) { animation-delay: 0.25s; }
+section:nth-child(6) { animation-delay: 0.3s; }
+section:nth-child(7) { animation-delay: 0.35s; }
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ===============================
+   RESPONSIVE
+================================= */
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  nav {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 32px;
+  }
+}
