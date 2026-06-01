@@ -148,4 +148,12 @@ footer {
   border-top: 1px solid #E5E7EB;
   margin: 70px 0;
 }
+a {
+  color: #0A1A2F;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.6;
+}
 ``
