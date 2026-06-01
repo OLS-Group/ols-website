@@ -1,17 +1,34 @@
 /* ===============================
-   BASE + BACKGROUND
+   BASE
 ================================= */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
   color: #0A1A2F;
   line-height: 1.7;
+}
 
-  /* ✅ CRITICAL (correct path) */
-  background-image: url('../hero.png');
-  background-attachment: fixed;
+/* ===============================
+   ✅ PARALLAX BACKGROUND (KEY)
+================================= */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background-image: url('../hero.png'); /* ✅ IMPORTANT PATH */
   background-size: cover;
   background-position: center;
+
+  /* ✅ slow zoom motion */
+  transform: scale(1);
+  animation: slowZoom 60s ease-in-out infinite alternate;
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.07); }
 }
 
 /* ===============================
@@ -24,13 +41,13 @@ body {
 }
 
 /* ===============================
-   HEADER (STICKY)
+   HEADER
 ================================= */
 header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #ffffff;
+  background: #FFFFFF;
   border-bottom: 1px solid #E5E7EB;
 }
 
@@ -41,19 +58,18 @@ header {
   padding: 12px 0;
 }
 
-/* ✅ LOGO SIZE */
 .logo img {
   height: 110px;
 }
 
 /* ===============================
-   NAVIGATION
+   NAV
 ================================= */
 nav a {
   margin-left: 28px;
   font-size: 14px;
-  color: #0A1A2F;
   text-decoration: none;
+  color: #0A1A2F;
   position: relative;
 }
 
@@ -65,7 +81,7 @@ nav a::after {
   width: 0;
   height: 1px;
   background: #0A1A2F;
-  transition: width 0.3s;
+  transition: 0.3s;
 }
 
 nav a:hover::after {
@@ -76,8 +92,13 @@ nav a:hover::after {
    HERO
 ================================= */
 .hero {
-  padding: 140px 0 100px 0;
+  padding: 140px 0 100px;
   background: #ffffff;
+}
+
+.hero h1 {
+  font-size: 44px;
+  max-width: 800px;
 }
 
 /* ===============================
@@ -88,18 +109,16 @@ nav a:hover::after {
   background: #ffffff;
 }
 
-/* ALT COLOR */
 .services.alt {
   background: #F5F7FA;
 }
 
 /* ===============================
-   ✅ PREMIUM WINDOW (KEY PART)
+   ✅ PREMIUM WINDOW (FADE REVEAL)
 ================================= */
 .window {
-  height: 450px; /* adjust size */
+  height: 450px;
 
-  /* ✅ premium fade (instead of hard cut) */
   background: linear-gradient(
     to bottom,
     rgba(255,255,255,1) 0%,
@@ -119,7 +138,7 @@ nav a:hover::after {
 }
 
 /* ===============================
-   TYPE
+   TEXT
 ================================= */
 h3 {
   font-size: 20px;
@@ -137,14 +156,13 @@ p {
 footer {
   background: #ffffff;
   padding: 30px 0;
-  margin-top: 80px;
 }
 
 .footer-grid {
   display: flex;
   justify-content: space-between;
-  gap: 40px;
   flex-wrap: wrap;
+  gap: 40px;
 }
 
 .footer-logo img {
@@ -172,7 +190,7 @@ footer {
 }
 
 /* ===============================
-   RESPONSIVE
+   MOBILE
 ================================= */
 @media (max-width: 768px) {
   .grid {
@@ -185,5 +203,9 @@ footer {
 
   .logo img {
     height: 80px;
+  }
+
+  .hero h1 {
+    font-size: 32px;
   }
 }
