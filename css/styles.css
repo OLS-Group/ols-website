@@ -12,7 +12,8 @@ body {
 }
 
 header {
-  border-bottom: 1px solid #ddd;
+  border-bottom: 1px solid #E0E0E0;
+  background: #FFFFFF;
 }
 
 .nav {
@@ -22,25 +23,34 @@ header {
   padding: 20px 0;
 }
 
-.logo {
-  font-weight: bold;
-  font-size: 20px;
+.logo img {
+  height: 60px;
+  width: auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
 }
 
 nav a {
-  margin-left: 20px;
+  margin-left: 25px;
   text-decoration: none;
   color: #0A1A2F;
+  font-size: 14px;
 }
 
 .hero {
-  padding: 100px 0;
-  text-align: left;
+  padding: 80px 0;
 }
 
 .hero h1 {
   font-size: 36px;
   margin-bottom: 10px;
+}
+
+.hero p {
+  color: #3E4A57;
 }
 
 .services {
@@ -55,29 +65,6 @@ nav a {
 
 footer {
   margin-top: 80px;
-  border-top: 1px solid #ddd;
+  border-top: 1px solid #E0E0E0;
   padding: 20px 0;
-}
-/* ===== HEADER FIX ===== */
-.nav {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-}
-
-.logo img {
-  height: 70px;
-  width: auto;
-}
-
-nav {
-  display: flex;
-  align-items: center;
-}
-
-nav a {
-  margin-left: 25px;
-  text-decoration: none;
-  color: #0A1A2F;
-  font-size: 14px;
 }
