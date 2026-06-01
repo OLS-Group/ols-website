@@ -219,3 +219,25 @@ section:nth-child(7) { animation-delay: 0.35s; }
     font-size: 32px;
   }
 }
+/* ===== HERO BACKGROUND IMAGE ===== */
+.hero {
+  padding: 120px 0 70px 0;
+  background-image: url('hero.jpg');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  position: relative;
+}
+
+/* dark overlay for readability */
+.hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+.hero .container {
+  position: relative;
+}
+``
