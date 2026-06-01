@@ -116,3 +116,36 @@ footer {
   margin: 70px 0;
 }
 ``
+/* ===== SECTION VISUAL RHYTHM ===== */
+.services:nth-of-type(even) {
+  background-color: #F9FAFB;
+  padding: 80px 0;
+}
+
+.services:nth-of-type(odd) {
+  padding: 80px 0;
+}
+
+/* ===== EMPHASIZE STEP HEADINGS ===== */
+.services h3 {
+  font-size: 20px;
+  margin-bottom: 10px;
+  letter-spacing: 0.3px;
+}
+
+/* ===== HOLD CONTENT WIDTH BETTER ===== */
+.services p {
+  max-width: 650px;
+}
+
+/* ===== HERO BOOST ===== */
+.hero h1 {
+  max-width: 800px;
+}
+
+/* ===== FLOW IMPROVEMENT ===== */
+.divider {
+  border-top: 1px solid #E5E7EB;
+  margin: 70px 0;
+}
+``
