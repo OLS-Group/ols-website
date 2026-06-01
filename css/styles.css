@@ -8,20 +8,20 @@ body {
   line-height: 1.7;
   letter-spacing: 0.2px;
 
-  /* ✅ Fixed background image effect */
+  /* ✅ Fixed background image */
   background-image: url('hero.png');
   background-attachment: fixed;
   background-size: cover;
   background-position: center;
 }
 
-/* ===============================
-   GLOBAL
-================================= */
 html {
   scroll-behavior: smooth;
 }
 
+/* ===============================
+   LAYOUT
+================================= */
 .container {
   width: 88%;
   max-width: 1100px;
@@ -35,7 +35,7 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #FFFFFF;
+  background: #ffffff;
   border-bottom: 1px solid #E5E7EB;
 }
 
@@ -43,23 +43,17 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 15px 0;
+  padding: 12px 0;
 }
 
-/* ✅ Larger logo (2x size) */
+/* ✅ BIGGER LOGO */
 .logo img {
   height: 110px;
-  width: auto;
 }
 
 /* ===============================
-   NAVIGATION
+   NAV
 ================================= */
-nav {
-  display: flex;
-  align-items: center;
-}
-
 nav a {
   margin-left: 28px;
   font-size: 14px;
@@ -69,7 +63,6 @@ nav a {
   position: relative;
 }
 
-/* Hover underline effect */
 nav a::after {
   content: "";
   position: absolute;
@@ -90,7 +83,7 @@ nav a:hover::after {
 ================================= */
 .hero {
   padding: 140px 0 100px 0;
-  background: rgba(255, 255, 255, 0.90);
+  background: #ffffff;
 }
 
 .hero h1 {
@@ -105,15 +98,23 @@ nav a:hover::after {
 }
 
 /* ===============================
-   SECTIONS (LAYERED EFFECT)
+   SECTIONS
 ================================= */
 .services {
-  padding: 90px 0;
-  background: rgba(255, 255, 255, 0.95);
+  padding: 100px 0;
+  background: #ffffff;
 }
 
-.services:nth-of-type(even) {
-  background: rgba(245, 247, 250, 0.95);
+.services.alt {
+  background: #F5F7FA;
+}
+
+/* ===============================
+   WINDOW (IMAGE REVEAL)
+================================= */
+.window {
+  padding: 180px 0;
+  background: transparent;
 }
 
 /* ===============================
@@ -131,8 +132,6 @@ nav a:hover::after {
 h3 {
   font-size: 20px;
   margin-bottom: 10px;
-  font-weight: 600;
-  letter-spacing: 0.3px;
 }
 
 p {
@@ -142,87 +141,33 @@ p {
 }
 
 /* ===============================
-   IMAGES
-================================= */
-img {
-  width: 100%;
-  height: auto;
-  display: block;
-  border-radius: 2px;
-  filter: grayscale(10%) contrast(95%);
-}
-
-/* ===============================
-   DIVIDER
-================================= */
-.divider {
-  border-top: 1px solid #E5E7EB;
-  margin: 70px 0;
-}
-
-/* ===============================
-   LINKS
-================================= */
-a {
-  color: #0A1A2F;
-  text-decoration: none;
-}
-
-a:hover {
-  opacity: 0.6;
-}
-
-/* ===============================
-   FORM
-================================= */
-iframe {
-  border: none;
-  border-radius: 4px;
-  max-width: 100%;
-  width: 100%;
-  height: 600px;
-}
-
-/* ===============================
    FOOTER
 ================================= */
 footer {
-  border-top: 1px solid #E5E7EB;
+  background: #ffffff;
   padding: 30px 0;
   margin-top: 80px;
-  background: rgba(255, 255, 255, 0.97);
 }
 
-footer p {
-  margin: 0;
-  font-size: 14px;
-  line-height: 1.6;
-}
-
-/* ✅ Footer layout */
 .footer-grid {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
   gap: 40px;
+  flex-wrap: wrap;
 }
 
-/* ✅ Footer logo */
 .footer-logo img {
   height: 60px;
-  width: auto;
 }
 
-/* Divider line */
 .footer-divider {
   border-top: 1px solid #E5E7EB;
   margin: 30px 0;
 }
 
 /* ===============================
-   UTILITY CLASSES
+   UTILITIES
 ================================= */
-.mt-12 { margin-top: 12px; }
 .mt-15 { margin-top: 15px; }
 .mt-20 { margin-top: 20px; }
 .mt-25 { margin-top: 25px; }
@@ -233,31 +178,6 @@ footer p {
 
 .content-narrow {
   max-width: 760px;
-}
-
-/* ===============================
-   ANIMATION (SUBTLE)
-================================= */
-section {
-  opacity: 0;
-  transform: translateY(20px);
-  animation: fadeUp 0.8s ease forwards;
-}
-
-section:nth-of-type(1) { animation-delay: 0.05s; }
-section:nth-of-type(2) { animation-delay: 0.1s; }
-section:nth-of-type(3) { animation-delay: 0.15s; }
-section:nth-of-type(4) { animation-delay: 0.2s; }
-
-@keyframes fadeUp {
-  from {
-    opacity: 0;
-    transform: translateY(20px);
-  }
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
 }
 
 /* ===============================
