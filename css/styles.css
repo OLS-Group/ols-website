@@ -1,22 +1,27 @@
 /* ===============================
-   BASE
+   BASE + BACKGROUND
 ================================= */
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
-  background-color: #FFFFFF;
   color: #0A1A2F;
   line-height: 1.7;
   letter-spacing: 0.2px;
+
+  /* ✅ Fixed background image effect */
+  background-image: url('hero.png');
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
 }
 
+/* ===============================
+   GLOBAL
+================================= */
 html {
   scroll-behavior: smooth;
 }
 
-/* ===============================
-   LAYOUT
-================================= */
 .container {
   width: 88%;
   max-width: 1100px;
@@ -24,25 +29,32 @@ html {
 }
 
 /* ===============================
-   HEADER / NAV
+   HEADER (STICKY)
 ================================= */
 header {
-  border-bottom: 1px solid #E5E7EB;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
   background: #FFFFFF;
+  border-bottom: 1px solid #E5E7EB;
 }
 
 .nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 20px 0;
+  padding: 15px 0;
 }
 
+/* ✅ Larger logo (2x size) */
 .logo img {
-  height: 55px;
+  height: 110px;
   width: auto;
 }
 
+/* ===============================
+   NAVIGATION
+================================= */
 nav {
   display: flex;
   align-items: center;
@@ -55,23 +67,18 @@ nav a {
   color: #0A1A2F;
   text-decoration: none;
   position: relative;
-  transition: opacity 0.2s ease;
 }
 
-/* Hover underline animation */
+/* Hover underline effect */
 nav a::after {
   content: "";
   position: absolute;
-  left: 0;
   bottom: -4px;
+  left: 0;
   width: 0;
   height: 1px;
   background: #0A1A2F;
   transition: width 0.3s ease;
-}
-
-nav a:hover {
-  opacity: 0.6;
 }
 
 nav a:hover::after {
@@ -79,35 +86,17 @@ nav a:hover::after {
 }
 
 /* ===============================
-   HERO (WITH IMAGE)
+   HERO
 ================================= */
 .hero {
-  padding: 120px 0 70px 0;
-  background-image: url('hero.png'); /* ✅ fixed */
-  background-size: cover;
-  background-position: center;
-  background-repeat: no-repeat;
-  position: relative;
-}
-
-/* light overlay for readability */
-.hero::before {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: rgba(255, 255, 255, 0.88);
-}
-
-.hero .container {
-  position: relative;
+  padding: 140px 0 100px 0;
+  background: rgba(255, 255, 255, 0.90);
 }
 
 .hero h1 {
   font-size: 44px;
-  font-weight: 600;
-  margin-bottom: 14px;
-  letter-spacing: -0.5px;
   max-width: 800px;
+  margin-bottom: 14px;
 }
 
 .hero p {
@@ -116,15 +105,15 @@ nav a:hover::after {
 }
 
 /* ===============================
-   CONTENT SECTIONS
+   SECTIONS (LAYERED EFFECT)
 ================================= */
 .services {
-  padding: 80px 0;
+  padding: 90px 0;
+  background: rgba(255, 255, 255, 0.95);
 }
 
-/* alternating background */
 .services:nth-of-type(even) {
-  background-color: #F9FAFB;
+  background: rgba(245, 247, 250, 0.95);
 }
 
 /* ===============================
@@ -201,12 +190,49 @@ footer {
   border-top: 1px solid #E5E7EB;
   padding: 30px 0;
   margin-top: 80px;
+  background: rgba(255, 255, 255, 0.97);
 }
 
 footer p {
   margin: 0;
   font-size: 14px;
   line-height: 1.6;
+}
+
+/* ✅ Footer layout */
+.footer-grid {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 40px;
+}
+
+/* ✅ Footer logo */
+.footer-logo img {
+  height: 60px;
+  width: auto;
+}
+
+/* Divider line */
+.footer-divider {
+  border-top: 1px solid #E5E7EB;
+  margin: 30px 0;
+}
+
+/* ===============================
+   UTILITY CLASSES
+================================= */
+.mt-12 { margin-top: 12px; }
+.mt-15 { margin-top: 15px; }
+.mt-20 { margin-top: 20px; }
+.mt-25 { margin-top: 25px; }
+.mt-30 { margin-top: 30px; }
+
+.bold { font-weight: 600; }
+.small { font-size: 13px; }
+
+.content-narrow {
+  max-width: 760px;
 }
 
 /* ===============================
@@ -218,7 +244,6 @@ section {
   animation: fadeUp 0.8s ease forwards;
 }
 
-/* stagger effect */
 section:nth-of-type(1) { animation-delay: 0.05s; }
 section:nth-of-type(2) { animation-delay: 0.1s; }
 section:nth-of-type(3) { animation-delay: 0.15s; }
@@ -245,6 +270,10 @@ section:nth-of-type(4) { animation-delay: 0.2s; }
 
   nav {
     display: none;
+  }
+
+  .logo img {
+    height: 80px;
   }
 
   .hero h1 {
