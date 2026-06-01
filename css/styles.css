@@ -111,3 +111,8 @@ footer {
   }
 }
 ``
+.divider {
+  border-top: 1px solid #E5E7EB;
+  margin: 70px 0;
+}
+``
