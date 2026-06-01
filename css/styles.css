@@ -9,23 +9,33 @@ body {
 }
 
 /* ===============================
-   ✅ PARALLAX BACKGROUND (KEY)
+   ✅ BACKGROUND + CONTRAST OVERLAY (KEY)
 ================================= */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1;
+  z-index: -2;
 
-  background-image: url('../hero.png'); /* ✅ IMPORTANT PATH */
+  background-image: url('/hero.png'); /* ✅ IMPORTANT */
   background-size: cover;
   background-position: center;
 
-  /* ✅ slow zoom motion */
   transform: scale(1);
   animation: slowZoom 60s ease-in-out infinite alternate;
 }
 
+/* ✅ Dark overlay to improve contrast */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+
+  background: rgba(10, 26, 47, 0.25); /* ✅ adjust darkness here */
+}
+
+/* zoom animation */
 @keyframes slowZoom {
   from { transform: scale(1); }
   to { transform: scale(1.07); }
@@ -47,7 +57,8 @@ header {
   position: sticky;
   top: 0;
   z-index: 1000;
-  background: #FFFFFF;
+  background: rgba(255,255,255,0.95);
+  backdrop-filter: blur(6px);
   border-bottom: 1px solid #E5E7EB;
 }
 
@@ -67,7 +78,6 @@ header {
 ================================= */
 nav a {
   margin-left: 28px;
-  font-size: 14px;
   text-decoration: none;
   color: #0A1A2F;
   position: relative;
@@ -89,42 +99,42 @@ nav a:hover::after {
 }
 
 /* ===============================
-   HERO
+   HERO (MORE TRANSPARENT)
 ================================= */
 .hero {
   padding: 140px 0 100px;
-  background: #ffffff;
-}
 
-.hero h1 {
-  font-size: 44px;
-  max-width: 800px;
+  background: rgba(255,255,255,0.60);
+  backdrop-filter: blur(6px);
 }
 
 /* ===============================
-   SECTIONS
+   SECTIONS (GLASS EFFECT)
 ================================= */
 .services {
-  padding: 110px 0;
-  background: #ffffff;
+  padding: 120px 0;
+
+  background: rgba(255,255,255,0.70);
+  backdrop-filter: blur(6px);
 }
 
+/* alternate tone */
 .services.alt {
-  background: #F5F7FA;
+  background: rgba(245,247,250,0.65);
 }
 
 /* ===============================
-   ✅ PREMIUM WINDOW (FADE REVEAL)
+   ✅ PREMIUM WINDOW (BIG REVEAL)
 ================================= */
 .window {
-  height: 450px;
+  height: 520px;
 
   background: linear-gradient(
     to bottom,
-    rgba(255,255,255,1) 0%,
-    rgba(255,255,255,0) 25%,
-    rgba(255,255,255,0) 75%,
-    rgba(255,255,255,1) 100%
+    rgba(255,255,255,0.90) 0%,
+    rgba(255,255,255,0) 20%,
+    rgba(255,255,255,0) 80%,
+    rgba(255,255,255,0.90) 100%
   );
 }
 
@@ -154,7 +164,8 @@ p {
    FOOTER
 ================================= */
 footer {
-  background: #ffffff;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(6px);
   padding: 30px 0;
 }
 
@@ -175,7 +186,7 @@ footer {
 }
 
 /* ===============================
-   UTIL
+   UTILITIES
 ================================= */
 .mt-15 { margin-top: 15px; }
 .mt-20 { margin-top: 20px; }
@@ -203,9 +214,5 @@ footer {
 
   .logo img {
     height: 80px;
-  }
-
-  .hero h1 {
-    font-size: 32px;
   }
 }
