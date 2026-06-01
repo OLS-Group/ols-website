@@ -58,3 +58,26 @@ footer {
   border-top: 1px solid #ddd;
   padding: 20px 0;
 }
+/* ===== HEADER FIX ===== */
+.nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 70px;
+  width: auto;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+}
+
+nav a {
+  margin-left: 25px;
+  text-decoration: none;
+  color: #0A1A2F;
+  font-size: 14px;
+}
