@@ -8,11 +8,10 @@
 
 <link rel="icon" href="favicon.png">
 
-<!-- ✅ FIXED CSS LINK -->
 <link rel="stylesheet" href="css/styles.css">
 
-<!-- ✅ CLARITY TRACKING -->
-<script type="text/javascript">
+<!-- CLARITY -->
+<script>
 (function(c,l,a,r,i,t,y){
   c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};
   t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;
@@ -21,58 +20,61 @@
 </script>
 
 <style>
-/* ✅ CLEAN FORM CONTAINER */
-.form-wrapper {
-  margin-top: 40px;
-  background: #ffffff;
-  border-radius: 6px;
-  overflow: hidden;
-  box-shadow: 0 2px 16px rgba(0,0,0,0.08);
+
+/* ✅ PANEL SYSTEM (MATCHES OTHER PAGES) */
+.panel {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
 }
 
-.form-wrapper iframe {
-  width: 100%;
-  height: 950px;
-  border: none;
+.panel-inner {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+/* ✅ ALT BACKGROUND */
+.panel.alt {
+  background: #f5f6f6;
 }
 
 /* ✅ CTA BUTTON */
 .cta-btn {
   display: inline-block;
-  margin-top: 25px;
+  margin-top: 30px;
   padding: 14px 28px;
   background: #2f3e34;
-  color: #ffffff;
+  color: #fff;
   text-decoration: none;
   font-weight: bold;
   border-radius: 4px;
 }
 
-/* ✅ SECTIONS */
-.section {
-  max-width: 800px;
-  margin: 70px auto;
-  padding: 0 20px;
+/* ✅ FORM CONTAINER */
+.form-panel {
+  background: #ffffff;
+  padding: 40px;
+  border-radius: 6px;
+  box-shadow: 0 4px 24px rgba(0,0,0,0.08);
 }
 
-.cta-box {
-  margin-top: 25px;
-  padding: 20px;
-  background: #f4f6f5;
-  border-left: 4px solid #2f3e34;
+/* ✅ FIXED FORM HEIGHT */
+.form-wrapper iframe {
+  width: 100%;
+  height: 1400px;
+  border: none;
 }
+
 </style>
 
 </head>
 
 <body>
 
-<!-- ✅ NAV -->
 <header class="container nav">
   <div class="logo">
-    <img src="LOGO.png" alt="OLS">
+    <img src="LOGO.png">
   </div>
-
   <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
@@ -83,127 +85,133 @@
 </header>
 
 <!-- ✅ HERO -->
-<section class="section">
+<section class="panel">
+  <div class="panel-inner">
 
-<h1>Operational Engagement Intake</h1>
+    <h1>Operational Engagement Intake</h1>
 
-<p>
-Structured entry point for leadership teams operating in complex or high-pressure environments.
-</p>
+    <p>
+    Structured entry point for leadership teams operating in complex 
+    or high-pressure environments.
+    </p>
 
-<p>
-Engagements are selectively initiated based on operational complexity, urgency,
-and alignment with execution capacity.
-</p>
+    <p>
+    Engagements are selectively initiated based on operational complexity, 
+    urgency, and alignment with execution capacity.
+    </p>
 
-<a href="#form" class="cta-btn">
-Initiate Engagement Inquiry
-</a>
+    <a href="#form" class="cta-btn">
+      Begin Structured Engagement Review
+    </a>
 
+  </div>
 </section>
 
 <!-- ✅ QUALIFICATION -->
-<section class="section">
+<section class="panel alt">
+  <div class="panel-inner">
 
-<h2>Appropriate for Engagement</h2>
+    <h2>Appropriate for Engagement</h2>
 
-<p>
-This intake is designed for organizations experiencing performance constraints,
-structural instability, or execution breakdowns at a team, departmental, or system-wide level.
-</p>
+    <p>
+    This intake is designed for organizations experiencing performance constraints,
+    structural instability, or execution breakdowns at a team, departmental,
+    or system-wide level.
+    </p>
 
-<p>
-Engagements are most effective where leadership alignment, operational discipline,
-and controlled execution are required to stabilize and improve performance outcomes.
-</p>
+    <p>
+    Engagements are most effective where leadership alignment, operational discipline,
+    and controlled execution are required.
+    </p>
 
-<div class="cta-box">
-<strong>Not intended for:</strong><br>
-General inquiries, exploratory conversations, or early-stage advisory without active operational pressure.
-</div>
+    <div style="margin-top:25px; padding:20px; border-left:4px solid #2f3e34; background:#fff;">
+      <strong>Not intended for:</strong><br>
+      General inquiries or exploratory conversations without active operational pressure.
+    </div>
 
+  </div>
 </section>
 
 <!-- ✅ PROCESS -->
-<section class="section">
+<section class="panel">
+  <div class="panel-inner">
 
-<h2>Engagement Process</h2>
+    <h2>Engagement Process</h2>
 
-<p>
-All submissions are reviewed directly with focus on identifying system-level constraints,
-urgency, and scope of impact.
-</p>
+    <p>
+    All submissions are reviewed to identify system-level constraints,
+    urgency, and scope of impact.
+    </p>
 
-<p>
-Qualified inquiries proceed to structured discussion to define engagement boundaries,
-execution model, and expected outcomes.
-</p>
+    <p>
+    Qualified inquiries proceed to structured discussion
+    to define engagement boundaries and execution model.
+    </p>
 
+  </div>
 </section>
 
-<!-- ✅ FORM -->
-<section class="section" id="form">
+<!-- ✅ FORM PANEL (FULL SCREEN STYLE) -->
+<section class="panel alt" id="form">
+  <div class="panel-inner form-panel">
 
-<h2>Submit Engagement Inquiry</h2>
+    <h2>Submit Engagement Inquiry</h2>
 
-<p>
-Provide a structured overview of your current operational environment.
-Submissions should be clear, specific, and focused on performance limitations or execution challenges.
-</p>
+    <p>
+    Provide a structured overview of your current operational environment.
+    Submissions should be specific and focused on execution challenges.
+    </p>
 
-<p>
-All inquiries are handled confidentially.
-</p>
+    <p>All inquiries are handled confidentially.</p>
 
-<script>
-clarity('event','form_view');
-</script>
+    <script>
+      clarity('event','form_view');
+    </script>
 
-<!-- ✅ FORM EMBED FIXED -->
-<div class="form-wrapper">
-<iframe src="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=ESgOUDIJwEW0pFxZvacDK1M-iYAP47FBgsI3ydpo471UMktSTEhUUkQzOUxIUFBLS1FKN1ZVT0taUy4u&embed=true"></iframe>
-</div>
+    <div class="form-wrapper">
+      <iframe src="https://forms.microsoft.com/Pages/ResponsePage.aspx?id=ESgOUDIJwEW0pFxZvacDK1M-iYAP47FBgsI3ydpo471UMktSTEhUUkQzOUxIUFBLS1FKN1ZVT0taUy4u&embed=true"></iframe>
+    </div>
 
+  </div>
 </section>
 
 <!-- ✅ DIRECT CONTACT -->
-<section class="section">
+<section class="panel">
+  <div class="panel-inner">
 
-<h2>Direct Contact</h2>
+    <h2>Direct Contact</h2>
 
-<p>
-For time-sensitive or critical operational situations,
-direct contact can be initiated in addition to form submission.
-</p>
+    <p>
+    For time-sensitive or critical situations, direct contact may be initiated.
+    </p>
 
-<p>
-<a href="mailto:Information@OLS-Group.com">
-Information@OLS-Group.com
-</a>
-</p>
+    <p>
+      <a href="mailto:Information@OLS-Group.com">
+        Information@OLS-Group.com
+      </a>
+    </p>
 
+  </div>
 </section>
 
-<!-- ✅ FOOTER -->
-<footer class="section" style="text-align:center;">
+<footer class="panel alt" style="text-align:center;">
+  <div class="panel-inner">
 
-<p>
-Structured leadership, controlled execution, and measurable operational outcomes.
-</p>
+    <p>
+    Structured leadership, controlled execution, and measurable outcomes.
+    </p>
 
-<p>
-Florida, USA · Manticao, Philippines
-</p>
+    <p>Florida, USA · Manticao, Philippines</p>
 
-<p>
-Contact: 
-<a href="mailto:Information@OLS-Group.com">
-Information@OLS-Group.com
-</a>
-</p>
+    <p>
+    <a href="mailto:Information@OLS-Group.com">
+      Information@OLS-Group.com
+    </a>
+    </p>
 
-<p>© 2026 Operational Leadership Systems</p>
+    <p>© 2026 Operational Leadership Systems</p>
 
+  </div>
 </footer>
 
 </body>
