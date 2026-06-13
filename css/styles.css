@@ -31,11 +31,9 @@ body::after {
   inset: 0;
   z-index: -1;
 
-  /* ✅ balanced contrast */
   background: rgba(10, 26, 47, 0.28);
 }
 
-/* ✅ smoother zoom */
 @keyframes slowZoom {
   from { transform: scale(1); }
   to { transform: scale(1.06); }
@@ -51,12 +49,14 @@ body::after {
 }
 
 /* ===============================
-   HEADER
+   ✅ HEADER (FIXED ALIGNMENT)
 ================================= */
 header {
-  position: sticky;
+  position: fixed;              /* ✅ FIX */
   top: 0;
+  width: 100%;
   z-index: 1000;
+
   background: rgba(255,255,255,0.92);
   backdrop-filter: blur(8px);
   border-bottom: 1px solid #E5E7EB;
@@ -64,13 +64,13 @@ header {
 
 .nav {
   display: flex;
-  justify-content: space-between;
+  justify-content: space-between; /* ✅ FIX */
   align-items: center;
   padding: 14px 0;
 }
 
 .logo img {
-  height: 110px;
+  height: 90px;  /* ✅ normalized */
 }
 
 /* ===============================
@@ -100,10 +100,10 @@ nav a:hover::after {
 }
 
 /* ===============================
-   HERO
+   ✅ HERO (HEADER OFFSET FIX)
 ================================= */
 .hero {
-  padding: 160px 0 120px;
+  padding: 180px 0 120px; /* ✅ FIXED for fixed header */
 
   background: rgba(255,255,255,0.55);
   backdrop-filter: blur(8px);
@@ -120,6 +120,24 @@ nav a:hover::after {
 }
 
 /* ===============================
+   ✅ BUTTON (ADD THIS)
+================================= */
+.btn {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 28px;
+  background: #2f3e34;
+  color: #ffffff;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+/* ===============================
    SECTIONS (GLASS PANELS)
 ================================= */
 .services {
@@ -128,7 +146,6 @@ nav a:hover::after {
   background: rgba(255,255,255,0.68);
   backdrop-filter: blur(8px);
 
-  /* ✅ layered effect */
   border-top: 1px solid rgba(255,255,255,0.25);
   border-bottom: 1px solid rgba(255,255,255,0.25);
 }
@@ -138,7 +155,7 @@ nav a:hover::after {
 }
 
 /* ===============================
-   ✅ CINEMATIC WINDOW
+   WINDOW STRIP
 ================================= */
 .window {
   height: 560px;
@@ -177,12 +194,33 @@ p {
 }
 
 /* ===============================
+   ✅ FORM SECTION FIX (CRITICAL)
+================================= */
+.form-section {
+  padding: 100px 0;
+  background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(8px);
+}
+
+.form-container {
+  max-width: 760px;
+  margin: 0 auto;
+}
+
+.form-wrapper iframe {
+  width: 100%;
+  height: 1600px; /* ✅ FIXES CUT-OFF */
+  border: none;
+}
+
+/* ===============================
    FOOTER
 ================================= */
 footer {
   background: rgba(255,255,255,0.80);
   backdrop-filter: blur(8px);
   padding: 40px 0;
+  margin-top: 60px; /* ✅ spacing fix */
 }
 
 .footer-grid {
@@ -229,10 +267,14 @@ footer {
   }
 
   .logo img {
-    height: 80px;
+    height: 70px;
   }
 
   .hero h1 {
     font-size: 32px;
+  }
+
+  .form-wrapper iframe {
+    height: 1900px;
   }
 }
