@@ -4,11 +4,10 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Engagement Inquiry - OLS Group</title>
+<title>Engagement - OLS Group</title>
 
 <link rel="icon" href="favicon.png">
-
-<link rel="stylesheet" href="css/styles.css">
+css/styles.css
 
 <script>
 (function(c,l,a,r,i,t,y){
@@ -20,60 +19,21 @@
 
 <style>
 
-/* ✅ MATCH ABOUT PAGE PANEL FEEL */
-.section {
-  min-height: 100vh;
-  display: flex;
-  align-items: center;
-}
+/* ✅ ONLY FIX WHAT IS BROKEN */
 
-.section-inner {
-  max-width: 780px;
-  margin: 0 auto;
-}
-
-.section.alt {
-  background: #f5f6f6;
-}
-
-/* ✅ PROPER VERTICAL BALANCE (THIS FIXES THE FEEL) */
-.section-inner h1,
-.section-inner h2 {
-  margin-bottom: 20px;
-}
-
-.section-inner p {
-  margin-bottom: 15px;
-  line-height: 1.6;
-}
-
-/* ✅ CTA */
-.cta-btn {
-  display: inline-block;
-  margin-top: 30px;
-  padding: 14px 28px;
-  background: #2f3e34;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  border-radius: 4px;
-}
-
-/* ✅ FORM SECTION (BREAK THE PANEL INTENTIONALLY) */
 .form-section {
-  padding: 100px 20px;
+  padding: 80px 20px;
   background: #ffffff;
 }
 
 .form-container {
-  max-width: 780px;
+  max-width: 700px;
   margin: 0 auto;
 }
 
-/* ✅ FORM FIX */
 .form-wrapper iframe {
   width: 100%;
-  height: 1500px;
+  height: 1600px; /* ✅ THIS FIXES CUT-OFF */
   border: none;
 }
 
@@ -97,19 +57,20 @@
   </nav>
 </header>
 
-<!-- ✅ HERO (MATCHES ABOUT FEEL) -->
-<section class="section">
-  <div class="section-inner">
+<!-- ✅ MATCH YOUR ABOUT PAGE EXACT STRUCTURE -->
+
+<section class="hero">
+  <div class="container">
 
     <h1>Operational Engagement Intake</h1>
 
     <p>
-    Structured entry point for leadership teams operating in complex or high-pressure environments.
+      Structured entry point for leadership teams operating in complex or high-pressure environments.
     </p>
 
     <p>
-    Engagements are selectively initiated based on operational complexity,
-    urgency, and alignment with execution capacity.
+      Engagements are selectively initiated based on operational complexity, urgency,
+      and alignment with execution capacity.
     </p>
 
     #form
@@ -119,23 +80,22 @@
   </div>
 </section>
 
-<!-- ✅ QUALIFICATION -->
 <section class="section alt">
-  <div class="section-inner">
+  <div class="container">
 
     <h2>Appropriate for Engagement</h2>
 
     <p>
-    This intake is designed for organizations experiencing performance constraints,
-    structural instability, or execution breakdowns.
+      This intake is designed for organizations experiencing performance constraints,
+      structural instability, or execution breakdowns.
     </p>
 
     <p>
-    Engagements are most effective where leadership alignment,
-    operational discipline, and controlled execution are required.
+      Engagements are most effective where leadership alignment,
+      operational discipline, and controlled execution are required.
     </p>
 
-    <div style="margin-top:25px; padding:20px; background:#ffffff; border-left:4px solid #2f3e34;">
+    <div style="margin-top:20px; padding:20px; border-left:4px solid #2f3e34;">
       <strong>Not intended for:</strong><br>
       General inquiries or exploratory conversations without active operational pressure.
     </div>
@@ -143,35 +103,34 @@
   </div>
 </section>
 
-<!-- ✅ PROCESS -->
 <section class="section">
-  <div class="section-inner">
+  <div class="container">
 
     <h2>Engagement Process</h2>
 
     <p>
-    All submissions are reviewed to identify system-level constraints,
-    urgency, and scope of impact.
+      All submissions are reviewed to identify system-level constraints,
+      urgency, and scope of impact.
     </p>
 
     <p>
-    Qualified inquiries proceed to structured discussion to define
-    engagement boundaries and execution model.
+      Qualified inquiries proceed to structured discussion to define engagement boundaries.
     </p>
 
-    #form>Proceed to Intake</a>
+    #form>
+    </a>
 
   </div>
 </section>
 
-<!-- ✅ FORM BREAK (THIS FIXES EVERYTHING) -->
+<!-- ✅ ONLY NON-PANEL SECTION (THIS WAS THE PROBLEM) -->
 <section id="form" class="form-section">
   <div class="form-container">
 
     <h2>Submit Engagement Inquiry</h2>
 
     <p>
-    Provide a structured overview of your current operational environment.
+      Provide a structured overview of your current operational environment.
     </p>
 
     <script>
@@ -185,14 +144,13 @@
   </div>
 </section>
 
-<!-- ✅ FINAL PANEL (CLOSURE LIKE ABOUT PAGE) -->
 <section class="section alt">
-  <div class="section-inner">
+  <div class="container">
 
     <h2>Direct Contact</h2>
 
     <p>
-    For time-sensitive or critical operational situations, direct contact may be initiated.
+      For time-sensitive or critical operational situations, direct contact may be initiated.
     </p>
 
     <p>
@@ -204,10 +162,12 @@
   </div>
 </section>
 
-<footer class="section">
-  <div class="section-inner">
+<footer>
+  <div class="container">
 
-    <p>Structured leadership, controlled execution, and measurable outcomes.</p>
+    <p>
+      Structured leadership, controlled execution, and measurable outcomes.
+    </p>
 
     <p>Florida, USA · Manticao, Philippines</p>
 
