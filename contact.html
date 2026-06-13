@@ -20,37 +20,31 @@
 
 <style>
 
-/* ✅ PANEL SYSTEM (MATCH ABOUT PAGE EXACTLY) */
-.panel {
-  height: 100vh;
+/* ✅ MATCH ABOUT PAGE PANEL FEEL */
+.section {
+  min-height: 100vh;
   display: flex;
   align-items: center;
 }
 
-.panel-inner {
-  max-width: 800px;
+.section-inner {
+  max-width: 780px;
   margin: 0 auto;
 }
 
-.panel.alt {
+.section.alt {
   background: #f5f6f6;
 }
 
-/* ✅ INTENT BREAK (FORM SECTION) */
-.form-section {
-  padding: 100px 20px;
-  background: #ffffff;
+/* ✅ PROPER VERTICAL BALANCE (THIS FIXES THE FEEL) */
+.section-inner h1,
+.section-inner h2 {
+  margin-bottom: 20px;
 }
 
-.form-container {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
-.form-wrapper iframe {
-  width: 100%;
-  height: 1400px;
-  border: none;
+.section-inner p {
+  margin-bottom: 15px;
+  line-height: 1.6;
 }
 
 /* ✅ CTA */
@@ -65,6 +59,24 @@
   border-radius: 4px;
 }
 
+/* ✅ FORM SECTION (BREAK THE PANEL INTENTIONALLY) */
+.form-section {
+  padding: 100px 20px;
+  background: #ffffff;
+}
+
+.form-container {
+  max-width: 780px;
+  margin: 0 auto;
+}
+
+/* ✅ FORM FIX */
+.form-wrapper iframe {
+  width: 100%;
+  height: 1500px;
+  border: none;
+}
+
 </style>
 
 </head>
@@ -75,6 +87,7 @@
   <div class="logo">
     <img src="LOGO.png">
   </div>
+
   <nav>
     <a href="index.html">Home</a>
     <a href="services.html">Services</a>
@@ -84,9 +97,9 @@
   </nav>
 </header>
 
-<!-- ✅ HERO PANEL -->
-<section class="panel">
-  <div class="panel-inner">
+<!-- ✅ HERO (MATCHES ABOUT FEEL) -->
+<section class="section">
+  <div class="section-inner">
 
     <h1>Operational Engagement Intake</h1>
 
@@ -95,18 +108,20 @@
     </p>
 
     <p>
-    Engagements are selectively initiated based on operational complexity, urgency,
-    and alignment with execution capacity.
+    Engagements are selectively initiated based on operational complexity,
+    urgency, and alignment with execution capacity.
     </p>
 
-    #form>Begin Structured Engagement Review</a>
+    #form
+      Begin Structured Engagement Review
+    </a>
 
   </div>
 </section>
 
-<!-- ✅ QUALIFICATION PANEL -->
-<section class="panel alt">
-  <div class="panel-inner">
+<!-- ✅ QUALIFICATION -->
+<section class="section alt">
+  <div class="section-inner">
 
     <h2>Appropriate for Engagement</h2>
 
@@ -120,7 +135,7 @@
     operational discipline, and controlled execution are required.
     </p>
 
-    <div style="margin-top:25px; padding:20px; border-left:4px solid #2f3e34; background:#fff;">
+    <div style="margin-top:25px; padding:20px; background:#ffffff; border-left:4px solid #2f3e34;">
       <strong>Not intended for:</strong><br>
       General inquiries or exploratory conversations without active operational pressure.
     </div>
@@ -128,9 +143,9 @@
   </div>
 </section>
 
-<!-- ✅ PROCESS PANEL -->
-<section class="panel">
-  <div class="panel-inner">
+<!-- ✅ PROCESS -->
+<section class="section">
+  <div class="section-inner">
 
     <h2>Engagement Process</h2>
 
@@ -149,7 +164,7 @@
   </div>
 </section>
 
-<!-- ✅ FORM SECTION (SCROLL BREAK — LIKE A CONTROLLED PORTAL) -->
+<!-- ✅ FORM BREAK (THIS FIXES EVERYTHING) -->
 <section id="form" class="form-section">
   <div class="form-container">
 
@@ -157,10 +172,7 @@
 
     <p>
     Provide a structured overview of your current operational environment.
-    Submissions should be specific and focused on execution challenges.
     </p>
-
-    <p>All inquiries are handled confidentially.</p>
 
     <script>
       clarity('event','form_view');
@@ -173,15 +185,14 @@
   </div>
 </section>
 
-<!-- ✅ FINAL PANEL -->
-<section class="panel alt">
-  <div class="panel-inner">
+<!-- ✅ FINAL PANEL (CLOSURE LIKE ABOUT PAGE) -->
+<section class="section alt">
+  <div class="section-inner">
 
     <h2>Direct Contact</h2>
 
     <p>
-    For time-sensitive or critical operational situations,
-    direct contact may be initiated.
+    For time-sensitive or critical operational situations, direct contact may be initiated.
     </p>
 
     <p>
@@ -193,19 +204,17 @@
   </div>
 </section>
 
-<footer class="panel">
-  <div class="panel-inner">
+<footer class="section">
+  <div class="section-inner">
 
-    <p>
-    Structured leadership, controlled execution, and measurable outcomes.
-    </p>
+    <p>Structured leadership, controlled execution, and measurable outcomes.</p>
 
     <p>Florida, USA · Manticao, Philippines</p>
 
     <p>
-    <a href="mailto:Information@OLS-Group.com">
-      Information@OLS-Group.com
-    </a>
+      <a href="mailto:Information@OLS-Group.com">
+        Information@OLS-Group.com
+      </a>
     </p>
 
     <p>© 2026 Operational Leadership Systems</p>
