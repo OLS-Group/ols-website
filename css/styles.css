@@ -1,3 +1,6 @@
+/* ===============================
+   RESET
+================================= */
 * {
   margin: 0;
   padding: 0;
@@ -10,15 +13,21 @@ body {
   line-height: 1.7;
 }
 
-/* BACKGROUND */
+/* ===============================
+   BACKGROUND
+================================= */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
+
   background-image: url('/hero.png');
   background-size: cover;
   background-position: center;
+
+  transform: scale(1);
+  animation: slowZoom 60s ease-in-out infinite alternate;
 }
 
 body::after {
@@ -29,91 +38,180 @@ body::after {
   background: rgba(10,26,47,0.35);
 }
 
-/* HEADER */
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.06); }
+}
+
+/* ===============================
+   CONTAINER
+================================= */
+.container {
+  width: 88%;
+  max-width: 1100px;
+  margin: auto;
+}
+
+/* ===============================
+   HEADER
+================================= */
 header {
   position: fixed;
-  width: 100%;
   top: 0;
+  width: 100%;
   z-index: 1000;
 
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
+  border-bottom: 1px solid #E5E7EB;
 }
 
-.nav {
+.nav-inner {
+  max-width: 1200px;
+  margin: auto;
+  padding: 10px 30px;
+
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  max-width: 1100px;
-  margin: auto;
-  padding: 10px 20px;
 }
 
 .logo img {
   height: 65px;
 }
 
+/* ===============================
+   NAV
+================================= */
+nav {
+  display: flex;
+  gap: 28px;
+}
+
 nav a {
-  margin-left: 20px;
   text-decoration: none;
   color: #0A1A2F;
+  font-size: 14px;
 }
 
-/* HERO */
+/* ✅ ACTIVE PAGE UNDERLINE */
+nav a.active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ===============================
+   HERO (GLASS PANEL)
+================================= */
 .hero {
   padding: 150px 0 120px;
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(10px);
-}
 
-.container {
-  width: 90%;
-  max-width: 1100px;
-  margin: auto;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+
+  border-top: 1px solid rgba(255,255,255,0.4);
+  border-bottom: 1px solid rgba(255,255,255,0.4);
 }
 
 .hero h1 {
-  font-size: 42px;
+  font-size: 44px;
+  margin-bottom: 15px;
 }
 
-/* SECTIONS */
-.section {
-  padding: 120px 0;
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(10px);
+.hero p {
+  max-width: 650px;
+  margin-bottom: 10px;
 }
 
-.section.alt {
-  background: rgba(245,247,250,0.7);
-}
-
-/* BUTTON */
+/* ===============================
+   BUTTON
+================================= */
 .btn {
   display: inline-block;
   margin-top: 20px;
-  padding: 14px 26px;
+  padding: 14px 28px;
   background: #2f3e34;
-  color: white;
+  color: #fff;
   text-decoration: none;
   border-radius: 4px;
+  font-weight: bold;
 }
 
-/* FORM */
+/* ===============================
+   SECTIONS
+================================= */
+.section {
+  padding: 120px 0;
+
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(12px);
+
+  border-top: 1px solid rgba(255,255,255,0.3);
+  border-bottom: 1px solid rgba(255,255,255,0.3);
+}
+
+.section.alt {
+  background: rgba(245,247,250,0.70);
+}
+
+.section h2 {
+  margin-bottom: 20px;
+}
+
+.section p {
+  max-width: 650px;
+  margin-bottom: 12px;
+}
+
+/* ===============================
+   CALLOUT
+================================= */
+.callout {
+  margin-top: 20px;
+  padding: 20px;
+  background: #ffffff;
+  border-left: 4px solid #2f3e34;
+}
+
+/* ===============================
+   FORM SECTION
+================================= */
 .form-section {
   padding: 100px 0;
+
   background: rgba(255,255,255,0.85);
+  backdrop-filter: blur(12px);
 }
 
 .form-wrapper iframe {
   width: 100%;
-  height: 1600px;
+  height: 1650px;
   border: none;
 }
 
-/* FOOTER */
+/* ===============================
+   FOOTER
+================================= */
 footer {
-  padding: 40px 0;
-  background: rgba(255,255,255,0.85);
+  padding: 50px 0;
   text-align: center;
+
+  background: rgba(255,255,255,0.85);
+}
+
+/* ===============================
+   MOBILE
+================================= */
+@media (max-width:768px) {
+  nav {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .form-wrapper iframe {
+    height: 1900px;
+  }
 }
