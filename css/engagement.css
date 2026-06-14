@@ -24,7 +24,7 @@ body {
 }
 
 /* ===============================
-   HEADER (CLEAN)
+   HEADER
 ================================= */
 header {
   position: fixed;
@@ -49,6 +49,7 @@ header {
   height: 60px;
 }
 
+/* NAV */
 nav {
   display: flex;
   gap: 25px;
@@ -65,11 +66,10 @@ nav a.active {
 }
 
 /* ===============================
-   HERO (FOCUS AREA)
+   HERO
 ================================= */
 .hero {
   padding: 140px 0 60px;
-  text-align: left;
 }
 
 .hero h1 {
@@ -82,7 +82,7 @@ nav a.active {
 }
 
 /* ===============================
-   CTA BUTTON
+   BUTTON
 ================================= */
 .btn {
   display: inline-block;
@@ -93,13 +93,29 @@ nav a.active {
   text-decoration: none;
   border-radius: 4px;
   font-weight: bold;
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  background: #3c5145;
 }
 
 /* ===============================
-   QUALIFICATION BLOCK
+   BLOCKS (STRUCTURE)
 ================================= */
 .block {
   margin-top: 60px;
+}
+
+.block + .block {
+  border-top: 1px solid #E5E7EB;
+  padding-top: 40px;
+}
+
+.block:nth-of-type(even) {
+  background: #ffffff;
+  padding: 25px;
+  border-radius: 6px;
 }
 
 .block h2 {
@@ -126,11 +142,13 @@ nav a.active {
 ================================= */
 .form-section {
   margin-top: 60px;
+  padding-top: 30px;
+  border-top: 2px solid #d1d5db;
 }
 
 .form-wrapper iframe {
   width: 100%;
-  height: 1600px;
+  height: 1650px;
   border: none;
 }
 
