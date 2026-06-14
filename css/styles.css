@@ -11,16 +11,15 @@ html, body {
   height: 100%;
 }
 
+/* ===============================
+   BODY + BACKGROUND
+================================= */
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: #0A1A2F;
-  line-height: 1.6;
-}
+  line-height: 1.65;
 
-/* ===============================
-   GLOBAL BACKGROUND (FORCED FIX)
-================================= */
-body {
+  /* ✅ Fixed global background */
   background: url('/hero.png') center / cover no-repeat fixed;
 }
 
@@ -39,7 +38,7 @@ body::after {
 .container {
   width: 88%;
   max-width: 1100px;
-  margin: auto;
+  margin: 0 auto;
 }
 
 /* ===============================
@@ -58,8 +57,8 @@ header {
 
 .nav-inner {
   max-width: 1200px;
-  margin: auto;
-  padding: 12px 30px;
+  margin: 0 auto;
+  padding: 14px 30px;
 
   display: flex;
   justify-content: space-between;
@@ -70,6 +69,7 @@ header {
   height: 60px;
 }
 
+/* NAV */
 nav {
   display: flex;
   gap: 28px;
@@ -79,69 +79,96 @@ nav a {
   text-decoration: none;
   color: #0A1A2F;
   font-size: 14px;
+  transition: 0.2s ease;
+}
+
+nav a:hover {
+  opacity: 0.7;
 }
 
 nav a.active {
   text-decoration: underline;
+  text-underline-offset: 4px;
 }
 
 /* ===============================
-   HERO + SECTIONS (CRITICAL FIX)
+   HERO + SECTIONS
 ================================= */
 .hero,
 .section {
   position: relative;
   z-index: 2;
 
-  padding: 120px 0;
+  padding: 140px 0;
 
-  /* ✅ TRUE TRANSPARENCY — NO OVERRIDE */
-  background-color: rgba(255,255,255,0.7) !important;
+  /* ✅ Glass panel */
+  background-color: rgba(255,255,255,0.70);
   backdrop-filter: blur(12px);
 }
 
-/* HERO SIZE */
+/* HERO ADJUSTMENT */
 .hero {
-  padding-top: 150px;
-  padding-bottom: 120px;
+  padding-top: 180px;
+  padding-bottom: 140px;
 }
 
+/* TYPOGRAPHY */
 .hero h1 {
   font-size: 44px;
-  margin-bottom: 15px;
+  line-height: 1.2;
+  margin-bottom: 20px;
 }
 
-.hero p {
-  margin-bottom: 12px;
+.section h2 {
+  font-size: 28px;
+  margin-bottom: 22px;
 }
 
+.section p {
+  font-size: 16px;
+  line-height: 1.7;
+  margin-bottom: 16px;
+  max-width: 650px;
+}
+
+/* ALTERNATE SECTIONS */
 .section.alt {
-  background-color: rgba(245,247,250,0.65) !important;
+  background-color: rgba(245,247,250,0.65);
 }
 
 /* ===============================
-   BUTTON
+   BUTTONS
 ================================= */
 .btn {
   display: inline-block;
-  margin-top: 20px;
+  margin-top: 25px;
   padding: 14px 28px;
+
   background: #2f3e34;
-  color: #fff;
+  color: #ffffff;
+
   text-decoration: none;
   border-radius: 4px;
+
+  font-weight: bold;
+  transition: 0.25s ease;
+}
+
+.btn:hover {
+  background: #3c5145;
+  transform: translateY(-1px);
 }
 
 /* ===============================
-   WINDOW (EXPOSE BACKGROUND)
+   WINDOWS (CRITICAL)
 ================================= */
 .window {
-  height: 300px;
+  height: 320px;
   position: relative;
   z-index: 1;
 }
 
-/* fade edges */
+/* FADE INTO PANELS */
 .window::before,
 .window::after {
   content: "";
@@ -166,12 +193,34 @@ nav a.active {
    FOOTER
 ================================= */
 footer {
-  padding: 60px 0;
+  padding: 80px 0;
   text-align: center;
 
-  background: rgba(255,255,255,0.7);
+  background: rgba(255,255,255,0.70);
   backdrop-filter: blur(10px);
 
   position: relative;
   z-index: 2;
+}
+
+footer p {
+  margin-bottom: 12px;
+}
+
+/* ===============================
+   MOBILE
+================================= */
+@media (max-width: 768px) {
+
+  nav {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
 }
