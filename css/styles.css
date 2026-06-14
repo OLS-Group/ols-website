@@ -7,6 +7,10 @@
   box-sizing: border-box;
 }
 
+html, body {
+  height: 100%;
+}
+
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: #0A1A2F;
@@ -14,25 +18,18 @@ body {
 }
 
 /* ===============================
-   GLOBAL BACKGROUND (CRITICAL FIX)
+   GLOBAL BACKGROUND (FORCED FIX)
 ================================= */
-body::before {
-  content: "";
-  position: fixed;
-  inset: 0;
-  z-index: -2;
-
-  background-image: url('/hero.png');
-  background-size: cover;
-  background-position: center;
+body {
+  background: url('/hero.png') center / cover no-repeat fixed;
 }
 
+/* DARK OVERLAY */
 body::after {
   content: "";
   position: fixed;
   inset: 0;
-  z-index: -1;
-
+  z-index: 0;
   background: rgba(10,26,47,0.25);
 }
 
@@ -89,16 +86,24 @@ nav a.active {
 }
 
 /* ===============================
-   HERO (GLASS PANEL)
+   HERO + SECTIONS (CRITICAL FIX)
 ================================= */
-.hero {
-  padding: 150px 0 120px;
-
-  background: rgba(255,255,255,0.72); /* ✅ transparency restored */
-  backdrop-filter: blur(12px);
-
+.hero,
+.section {
   position: relative;
-  z-index: 5;
+  z-index: 2;
+
+  padding: 120px 0;
+
+  /* ✅ TRUE TRANSPARENCY — NO OVERRIDE */
+  background-color: rgba(255,255,255,0.7) !important;
+  backdrop-filter: blur(12px);
+}
+
+/* HERO SIZE */
+.hero {
+  padding-top: 150px;
+  padding-bottom: 120px;
 }
 
 .hero h1 {
@@ -108,6 +113,10 @@ nav a.active {
 
 .hero p {
   margin-bottom: 12px;
+}
+
+.section.alt {
+  background-color: rgba(245,247,250,0.65) !important;
 }
 
 /* ===============================
@@ -124,48 +133,33 @@ nav a.active {
 }
 
 /* ===============================
-   SECTIONS (FIXED TRANSPARENCY)
-================================= */
-.section {
-  padding: 120px 0;
-
-  background: rgba(255,255,255,0.72); /* ✅ FIXED */
-  backdrop-filter: blur(12px);
-
-  position: relative;
-  z-index: 5;
-}
-
-.section.alt {
-  background: rgba(245,247,250,0.70);
-}
-
-/* ===============================
-   WINDOW (BACKGROUND BREAK)
+   WINDOW (EXPOSE BACKGROUND)
 ================================= */
 .window {
-  height: 320px;
-
-  background-image: url('/hero.png');
-  background-size: cover;
-  background-position: center;
-
+  height: 300px;
   position: relative;
-  z-index: 2;
+  z-index: 1;
 }
 
+/* fade edges */
+.window::before,
 .window::after {
   content: "";
   position: absolute;
-  inset: 0;
+  left: 0;
+  width: 100%;
+  height: 80px;
+  z-index: 3;
+}
 
-  background: linear-gradient(
-    to bottom,
-    rgba(255,255,255,0.9) 0%,
-    rgba(255,255,255,0) 30%,
-    rgba(255,255,255,0) 70%,
-    rgba(255,255,255,0.9) 100%
-  );
+.window::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.9), transparent);
+}
+
+.window::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
 }
 
 /* ===============================
@@ -173,8 +167,11 @@ nav a.active {
 ================================= */
 footer {
   padding: 60px 0;
-
-  background: rgba(255,255,255,0.75);
-  backdrop-filter: blur(10px);
   text-align: center;
+
+  background: rgba(255,255,255,0.7);
+  backdrop-filter: blur(10px);
+
+  position: relative;
+  z-index: 2;
 }
