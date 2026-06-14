@@ -1,6 +1,3 @@
-/* ===============================
-   RESET
-================================= */
 * {
   margin: 0;
   padding: 0;
@@ -13,21 +10,15 @@ body {
   line-height: 1.7;
 }
 
-/* ===============================
-   BACKGROUND + OVERLAY
-================================= */
+/* BACKGROUND */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
   z-index: -2;
-
   background-image: url('/hero.png');
   background-size: cover;
   background-position: center;
-
-  transform: scale(1);
-  animation: slowZoom 60s ease-in-out infinite alternate;
 }
 
 body::after {
@@ -35,173 +26,94 @@ body::after {
   position: fixed;
   inset: 0;
   z-index: -1;
-  background: rgba(10, 26, 47, 0.35); /* ✅ slightly stronger contrast */
+  background: rgba(10,26,47,0.35);
 }
 
-@keyframes slowZoom {
-  from { transform: scale(1); }
-  to { transform: scale(1.06); }
-}
-
-/* ===============================
-   CONTAINER
-================================= */
-.container {
-  width: 88%;
-  max-width: 1100px;
-  margin: 0 auto;
-}
-
-/* ===============================
-   HEADER
-================================= */
+/* HEADER */
 header {
   position: fixed;
-  top: 0;
   width: 100%;
+  top: 0;
   z-index: 1000;
 
   background: rgba(255,255,255,0.95);
   backdrop-filter: blur(10px);
-  border-bottom: 1px solid #E5E7EB;
 }
 
-.nav-inner {
+.nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
 
-  max-width: 1200px;
-  margin: 0 auto;
-  padding: 10px 30px;
+  max-width: 1100px;
+  margin: auto;
+  padding: 10px 20px;
 }
 
 .logo img {
   height: 65px;
 }
 
-/* NAV */
 nav a {
-  margin-left: 25px;
+  margin-left: 20px;
   text-decoration: none;
   color: #0A1A2F;
-  font-size: 14px;
 }
 
-nav a:hover {
-  opacity: 0.7;
-}
-
-/* ===============================
-   HERO (GLASS PANEL)
-================================= */
+/* HERO */
 .hero {
   padding: 150px 0 120px;
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(10px);
+}
 
-  background: rgba(255,255,255,0.75); /* ✅ STRONGER readability */
-  backdrop-filter: blur(12px);
-
-  border-top: 1px solid rgba(255,255,255,0.4);
-  border-bottom: 1px solid rgba(255,255,255,0.4);
+.container {
+  width: 90%;
+  max-width: 1100px;
+  margin: auto;
 }
 
 .hero h1 {
-  font-size: 44px;
+  font-size: 42px;
 }
 
-.hero p {
-  margin-top: 15px;
-  max-width: 650px;
-}
-
-/* ===============================
-   BUTTON
-================================= */
-.btn {
-  display: inline-block;
-  margin-top: 25px;
-  padding: 14px 28px;
-  background: #2f3e34;
-  color: #ffffff;
-  text-decoration: none;
-  border-radius: 4px;
-  font-weight: bold;
-}
-
-/* ===============================
-   SECTIONS (GLASS PANELS)
-================================= */
+/* SECTIONS */
 .section {
   padding: 120px 0;
-
-  background: rgba(255,255,255,0.75); /* ✅ strong contrast */
-  backdrop-filter: blur(12px);
-
-  border-top: 1px solid rgba(255,255,255,0.35);
-  border-bottom: 1px solid rgba(255,255,255,0.35);
+  background: rgba(255,255,255,0.75);
+  backdrop-filter: blur(10px);
 }
 
 .section.alt {
-  background: rgba(245,247,250,0.70);
+  background: rgba(245,247,250,0.7);
 }
 
-/* ===============================
-   CALLOUT BOX
-================================= */
-.callout {
+/* BUTTON */
+.btn {
+  display: inline-block;
   margin-top: 20px;
-  padding: 20px;
-  background: white;
-  border-left: 4px solid #2f3e34;
+  padding: 14px 26px;
+  background: #2f3e34;
+  color: white;
+  text-decoration: none;
+  border-radius: 4px;
 }
 
-/* ===============================
-   FORM SECTION
-================================= */
+/* FORM */
 .form-section {
   padding: 100px 0;
-
-  background: rgba(255,255,255,0.85); /* ✅ strongest for readability */
-  backdrop-filter: blur(12px);
-}
-
-.form-container {
-  max-width: 700px;
-  margin: 0 auto;
+  background: rgba(255,255,255,0.85);
 }
 
 .form-wrapper iframe {
   width: 100%;
-  height: 1650px;
+  height: 1600px;
   border: none;
 }
 
-/* ===============================
-   FOOTER
-================================= */
+/* FOOTER */
 footer {
-  padding: 50px 0;
-
+  padding: 40px 0;
   background: rgba(255,255,255,0.85);
-  backdrop-filter: blur(10px);
-
   text-align: center;
-  margin-top: 40px;
-}
-
-/* ===============================
-   MOBILE
-================================= */
-@media (max-width:768px) {
-  nav {
-    display: none;
-  }
-
-  .hero h1 {
-    font-size: 30px;
-  }
-
-  .form-wrapper iframe {
-    height: 1900px;
-  }
 }
