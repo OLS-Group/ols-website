@@ -17,9 +17,8 @@ html, body {
 body {
   font-family: Arial, Helvetica, sans-serif;
   color: #0A1A2F;
-  line-height: 1.65;
+  line-height: 1.7;
 
-  /* ✅ Fixed global background */
   background: url('/hero.png') center / cover no-repeat fixed;
 }
 
@@ -79,11 +78,11 @@ nav a {
   text-decoration: none;
   color: #0A1A2F;
   font-size: 14px;
-  transition: 0.2s ease;
+  transition: 0.25s ease;
 }
 
 nav a:hover {
-  opacity: 0.7;
+  opacity: 0.65;
 }
 
 nav a.active {
@@ -101,9 +100,11 @@ nav a.active {
 
   padding: 140px 0;
 
-  /* ✅ Glass panel */
-  background-color: rgba(255,255,255,0.70);
+  background-color: rgba(255,255,255,0.65);
   backdrop-filter: blur(12px);
+
+  /* ✅ subtle depth */
+  box-shadow: 0 10px 40px rgba(0,0,0,0.06);
 }
 
 /* HERO ADJUSTMENT */
@@ -116,7 +117,7 @@ nav a.active {
 .hero h1 {
   font-size: 44px;
   line-height: 1.2;
-  margin-bottom: 20px;
+  margin-bottom: 22px;
 }
 
 .section h2 {
@@ -126,14 +127,14 @@ nav a.active {
 
 .section p {
   font-size: 16px;
-  line-height: 1.7;
-  margin-bottom: 16px;
+  line-height: 1.75;
+  margin-bottom: 18px;
   max-width: 650px;
 }
 
 /* ALTERNATE SECTIONS */
 .section.alt {
-  background-color: rgba(245,247,250,0.65);
+  background-color: rgba(245,247,250,0.55);
 }
 
 /* ===============================
@@ -141,7 +142,7 @@ nav a.active {
 ================================= */
 .btn {
   display: inline-block;
-  margin-top: 25px;
+  margin-top: 28px;
   padding: 14px 28px;
 
   background: #2f3e34;
@@ -151,49 +152,50 @@ nav a.active {
   border-radius: 4px;
 
   font-weight: bold;
-  transition: 0.25s ease;
+  letter-spacing: 0.2px;
+  transition: all 0.25s ease;
 }
 
 .btn:hover {
   background: #3c5145;
-  transform: translateY(-1px);
+  transform: translateY(-2px);
 }
 
 /* ===============================
-   WINDOWS (CRITICAL)
+   WINDOWS
 ================================= */
 .window {
-  height: 320px;
+  height: 300px;
   position: relative;
   z-index: 1;
 }
 
-/* FADE INTO PANELS */
+/* smoother fades */
 .window::before,
 .window::after {
   content: "";
   position: absolute;
   left: 0;
   width: 100%;
-  height: 80px;
+  height: 90px;
   z-index: 3;
 }
 
 .window::before {
   top: 0;
-  background: linear-gradient(to bottom, rgba(255,255,255,0.9), transparent);
+  background: linear-gradient(to bottom, rgba(255,255,255,0.95), transparent);
 }
 
 .window::after {
   bottom: 0;
-  background: linear-gradient(to top, rgba(255,255,255,0.9), transparent);
+  background: linear-gradient(to top, rgba(255,255,255,0.95), transparent);
 }
 
 /* ===============================
    FOOTER
 ================================= */
 footer {
-  padding: 80px 0;
+  padding: 90px 0;
   text-align: center;
 
   background: rgba(255,255,255,0.70);
@@ -204,7 +206,7 @@ footer {
 }
 
 footer p {
-  margin-bottom: 12px;
+  margin-bottom: 14px;
 }
 
 /* ===============================
@@ -222,5 +224,9 @@ footer p {
 
   .section h2 {
     font-size: 24px;
+  }
+
+  .window {
+    height: 200px;
   }
 }
