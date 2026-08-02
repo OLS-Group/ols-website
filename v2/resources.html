@@ -1,1 +1,408 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Resource Center | OLS Group</title>
+  <meta name="description" content="Explore OLS Group articles on visibility, trust, accountability, leadership, execution, and operational systems.">
+  css/styles.css
+  <style>
+    :root {
+      --ols-navy: #0b1f34;
+      --ols-blue: #1f6feb;
+      --ols-light: #f5f8fb;
+      --ols-text: #172033;
+      --ols-muted: #5d6b7a;
+      --ols-border: #d8e1ea;
+      --ols-card: #ffffff;
+    }
 
+    body {
+      margin: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      color: var(--ols-text);
+      background: #ffffff;
+      line-height: 1.65;
+    }
+
+    a {
+      color: inherit;
+    }
+
+    .site-header {
+      background: #071a2d;
+      color: #ffffff;
+      border-bottom: 1px solid rgba(255,255,255,.12);
+    }
+
+    .nav-shell {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 20px 0;
+      gap: 24px;
+    }
+
+    .brand {
+      font-weight: 800;
+      letter-spacing: .04em;
+      text-decoration: none;
+      font-size: 1.05rem;
+    }
+
+    .nav-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 18px;
+      font-size: .94rem;
+    }
+
+    .nav-links a {
+      color: #dbeafe;
+      text-decoration: none;
+    }
+
+    .nav-links a:hover {
+      color: #ffffff;
+    }
+
+    .hero {
+      background: linear-gradient(135deg, #071a2d, #123d63);
+      color: #ffffff;
+      padding: 84px 0 72px;
+    }
+
+    .shell {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .16em;
+      color: #9fc7f5;
+      font-size: .78rem;
+      font-weight: 800;
+      margin-bottom: 16px;
+    }
+
+    h1 {
+      font-size: clamp(2.5rem, 6vw, 5rem);
+      line-height: 1.02;
+      margin: 0 0 22px;
+      max-width: 920px;
+    }
+
+    .hero-subtitle {
+      font-size: clamp(1.1rem, 2vw, 1.45rem);
+      max-width: 820px;
+      color: #dbeafe;
+      margin: 0;
+    }
+
+    .section {
+      padding: 64px 0;
+    }
+
+    .intro-grid {
+      display: grid;
+      grid-template-columns: minmax(0, 1.2fr) minmax(280px, .8fr);
+      gap: 34px;
+      align-items: start;
+    }
+
+    .intro-card {
+      background: var(--ols-light);
+      border-left: 5px solid var(--ols-blue);
+      padding: 24px;
+      border-radius: 12px;
+    }
+
+    .intro-card h2,
+    .article-section h2,
+    .cta-panel h2 {
+      margin-top: 0;
+      color: var(--ols-navy);
+      line-height: 1.18;
+    }
+
+    .intro-card p {
+      margin-bottom: 0;
+    }
+
+    .note-box {
+      border: 1px solid var(--ols-border);
+      border-radius: 12px;
+      padding: 24px;
+      background: #ffffff;
+    }
+
+    .note-box h3 {
+      margin-top: 0;
+      color: var(--ols-navy);
+    }
+
+    .article-section {
+      background: #f8fbff;
+      border-top: 1px solid var(--ols-border);
+      border-bottom: 1px solid var(--ols-border);
+    }
+
+    .article-grid {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 22px;
+      margin-top: 28px;
+    }
+
+    .resource-card {
+      background: var(--ols-card);
+      border: 1px solid var(--ols-border);
+      border-radius: 16px;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      min-height: 310px;
+      box-shadow: 0 10px 24px rgba(11, 31, 52, .06);
+    }
+
+    .resource-kicker {
+      text-transform: uppercase;
+      letter-spacing: .14em;
+      color: var(--ols-blue);
+      font-size: .76rem;
+      font-weight: 800;
+      margin: 0 0 12px;
+    }
+
+    .resource-card h3 {
+      color: var(--ols-navy);
+      font-size: 1.35rem;
+      line-height: 1.16;
+      margin: 0 0 14px;
+    }
+
+    .resource-card p {
+      color: #334155;
+      margin: 0 0 14px;
+    }
+
+    .resource-card .status {
+      color: var(--ols-muted);
+      font-size: .9rem;
+      margin-top: auto;
+      padding-top: 14px;
+    }
+
+    .read-link {
+      display: inline-block;
+      margin-top: 16px;
+      padding: 11px 16px;
+      background: var(--ols-navy);
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 999px;
+      font-weight: 800;
+      width: fit-content;
+    }
+
+    .read-link:hover {
+      background: #123d63;
+    }
+
+    .coming-soon {
+      opacity: .74;
+    }
+
+    .coming-soon .read-link {
+      background: #d8e1ea;
+      color: #334155;
+      pointer-events: none;
+    }
+
+    .cta-panel {
+      background: var(--ols-navy);
+      color: #ffffff;
+      border-radius: 18px;
+      padding: 34px;
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) auto;
+      gap: 28px;
+      align-items: center;
+    }
+
+    .cta-panel h2 {
+      color: #ffffff;
+      margin-bottom: 10px;
+    }
+
+    .cta-panel p {
+      color: #dbeafe;
+      margin: 0;
+      max-width: 760px;
+    }
+
+    .cta-button {
+      display: inline-block;
+      background: #ffffff;
+      color: var(--ols-navy);
+      padding: 13px 18px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .site-footer {
+      background: #071a2d;
+      color: #b8c7d8;
+      padding: 30px 0;
+      font-size: .92rem;
+    }
+
+    @media (max-width: 980px) {
+      .article-grid {
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+      }
+
+      .intro-grid,
+      .cta-panel {
+        grid-template-columns: 1fr;
+      }
+    }
+
+    @media (max-width: 640px) {
+      .nav-shell {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .nav-links {
+        gap: 12px;
+      }
+
+      .article-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .section {
+        padding: 46px 0;
+      }
+
+      .resource-card {
+        min-height: auto;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <header class="site-header">
+    <div class="nav-shell">
+      index.htmlOLS Group</a>
+      <nav class="nav-links" aria-label="Primary navigation">
+        index.htmlHome</a>
+        framework.htmlHow We Think</a>
+        assessment.htmlIdentify the Problem</a>
+        services.htmlHow We Help</a>
+        about.htmlWhy OLS</a>
+        discovery.htmlStart the Conversation</a>
+        resources.htmlResource Center</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="shell">
+        <div class="eyebrow">OLS Resource Center</div>
+        <h1>Articles for leaders trying to see what is really happening.</h1>
+        <p class="hero-subtitle">
+          The Resource Center is where OLS publishes its canon articles, operating ideas, and practical leadership thinking. Start here if something inside the organization has become harder to explain.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell intro-grid">
+        <div class="intro-card">
+          <h2>Start with the OLS Canon</h2>
+          <p>
+            These articles introduce the core OLS ideas behind visibility, trust, accountability, execution, and operational leadership. Read them in sequence or begin with the issue that sounds closest to what your organization is experiencing.
+          </p>
+        </div>
+
+        <aside class="note-box">
+          <h3>Recommended first article</h3>
+          <p>
+            If you are new to OLS, begin with <strong>Visibility Precedes Control</strong>. It explains why leaders must see operational reality clearly before they can control what they are trying to scale.
+          </p>
+        </aside>
+      </div>
+    </section>
+
+    <section class="section article-section">
+      <div class="shell">
+        <div class="eyebrow">Foundational Doctrine Series</div>
+        <h2>OLS Canon Articles</h2>
+
+        <div class="article-grid">
+          <article class="resource-card">
+            <p class="resource-kicker">OLS Canon 001</p>
+            <h3>Visibility Precedes Control</h3>
+            <p>The danger of scaling what leadership can no longer clearly see.</p>
+            <p>Growth creates leadership friction when visibility weakens, local adaptations stay local, and the operating system begins to fragment behind acceptable results.</p>
+            articles/visibility-precedes-control.htmlRead Article</a>
+          </article>
+
+          <article class="resource-card coming-soon">
+            <p class="resource-kicker">OLS Canon 002</p>
+            <h3>Trust Is Organizational Infrastructure</h3>
+            <p>Truth has to move before leaders can act.</p>
+            <p>This article will be published as part of the OLS Canon launch sequence.</p>
+            <span class="status">Pending website publication</span>
+          </article>
+
+          <article class="resource-card coming-soon">
+            <p class="resource-kicker">OLS Canon 003</p>
+            <h3>Leadership Equals Accountability</h3>
+            <p>Accountability begins with the conditions leaders create.</p>
+            <p>This article will be published as part of the OLS Canon launch sequence.</p>
+            <span class="status">Pending website publication</span>
+          </article>
+
+          <article class="resource-card coming-soon">
+            <p class="resource-kicker">OLS Canon 004</p>
+            <h3>Why Organizations Don’t Have a Strategy Problem</h3>
+            <p>They have an execution problem.</p>
+            <p>This article will be published as part of the OLS Canon launch sequence.</p>
+            <span class="status">Pending website publication</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="shell">
+        <div class="cta-panel">
+          <div>
+            <h2>When the issue feels real, start the conversation.</h2>
+            <p>
+              If these articles describe something taking shape inside your organization, the next useful step may be a Discovery Conversation.
+            </p>
+          </div>
+          discovery.htmlStart the Conversation</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="shell">
+      © OLS Group. All Rights Reserved.
+    </div>
+  </footer>
+</body>
+</html>
