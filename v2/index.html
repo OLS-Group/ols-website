@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>OLS Group | Operational Leadership Systems</title>
     <meta name="description" content="Organizations rarely fail because people stop caring. The organization may not be failing. That is what makes the warning harder to recognize.">
-    assets/favicon.png
+    assets/OLS-WEB-V2-FAV-A001.png
 
     <style>
         :root {
@@ -14,13 +14,14 @@
             --ols-blue: #1f4f7a;
             --ols-slate: #334155;
             --ols-muted: #64748b;
-            --ols-light: #f5f7fa;
-            --ols-panel: rgba(255, 255, 255, 0.92);
+            --ols-light: #f4f7fa;
+            --ols-glass: rgba(255, 255, 255, 0.76);
+            --ols-glass-alt: rgba(239, 245, 250, 0.72);
             --ols-border: rgba(15, 23, 42, 0.12);
             --ols-green: #2f3e34;
             --ols-green-hover: #3c5145;
-            --max-width: 1080px;
-            --reading-width: 820px;
+            --max-width: 1180px;
+            --reading-width: 900px;
         }
 
         * {
@@ -40,7 +41,7 @@
             line-height: 1.75;
             background:
                 linear-gradient(rgba(7, 26, 45, 0.58), rgba(7, 26, 45, 0.58)),
-                url("assets/hero.png") center center / cover fixed no-repeat;
+                url("assets/OLS-WEB-V2-HOM-A001.jpg") center center / cover fixed no-repeat;
         }
 
         img {
@@ -54,7 +55,7 @@
         }
 
         .container {
-            width: min(var(--max-width), calc(100% - 40px));
+            width: min(var(--max-width), calc(100% - 44px));
             margin: 0 auto;
         }
 
@@ -66,19 +67,19 @@
             position: sticky;
             top: 0;
             z-index: 1000;
-            background: rgba(255, 255, 255, 0.96);
+            background: rgba(255, 255, 255, 0.94);
             border-bottom: 1px solid var(--ols-border);
-            backdrop-filter: blur(12px);
+            backdrop-filter: blur(14px);
         }
 
         .nav-inner {
-            width: min(1220px, calc(100% - 40px));
+            width: min(1280px, calc(100% - 44px));
             margin: 0 auto;
-            padding: 14px 0;
+            padding: 12px 0;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            gap: 28px;
+            gap: 30px;
         }
 
         .logo {
@@ -89,7 +90,7 @@
         }
 
         .logo img {
-            height: 58px;
+            height: 54px;
             width: auto;
         }
 
@@ -99,15 +100,15 @@
             justify-content: flex-end;
             flex-wrap: wrap;
             gap: 18px;
-            font-size: 14px;
+            font-size: 13px;
             line-height: 1.2;
         }
 
         nav a {
             text-decoration: none;
             color: var(--ols-deep);
-            font-weight: 700;
-            opacity: 0.88;
+            font-weight: 800;
+            opacity: 0.9;
             transition: opacity 0.2s ease, color 0.2s ease;
         }
 
@@ -118,21 +119,22 @@
         }
 
         main {
-            background: rgba(245, 247, 250, 0.72);
+            background: rgba(245, 247, 250, 0.24);
         }
 
         .hero {
-            min-height: calc(100vh - 86px);
+            min-height: calc(100vh - 80px);
             display: flex;
             align-items: center;
-            padding: 110px 0 90px;
+            padding: 112px 0 94px;
             color: #ffffff;
             background:
-                linear-gradient(90deg, rgba(7, 26, 45, 0.92), rgba(7, 26, 45, 0.76), rgba(7, 26, 45, 0.52));
+                linear-gradient(90deg, rgba(7, 26, 45, 0.92), rgba(7, 26, 45, 0.76), rgba(7, 26, 45, 0.46)),
+                url("assets/OLS-WEB-V2-HOM-A001.jpg") center center / cover no-repeat;
         }
 
         .hero .reading {
-            max-width: 900px;
+            max-width: 930px;
         }
 
         .eyebrow {
@@ -146,18 +148,18 @@
         }
 
         h1 {
-            max-width: 920px;
+            max-width: 960px;
             margin-bottom: 28px;
-            font-size: clamp(40px, 6vw, 74px);
+            font-size: clamp(42px, 6vw, 78px);
             line-height: 1.05;
-            letter-spacing: -0.04em;
+            letter-spacing: -0.045em;
         }
 
         h2 {
             margin-bottom: 24px;
-            font-size: clamp(30px, 4vw, 46px);
-            line-height: 1.16;
-            letter-spacing: -0.03em;
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.14;
+            letter-spacing: -0.035em;
             color: var(--ols-deep);
         }
 
@@ -168,50 +170,139 @@
         }
 
         .hero p {
-            max-width: 850px;
-            color: rgba(255, 255, 255, 0.90);
+            max-width: 890px;
+            color: rgba(255, 255, 255, 0.91);
             font-size: 19px;
         }
 
         .hero p:first-of-type {
             color: #ffffff;
             font-size: 22px;
-            font-weight: 700;
+            font-weight: 800;
+        }
+
+        .visual-window {
+            min-height: 380px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+            border-bottom: 1px solid rgba(10, 26, 47, 0.18);
+        }
+
+        .visual-window::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(7, 26, 45, 0.84), rgba(7, 26, 45, 0.56), rgba(7, 26, 45, 0.28));
+            z-index: 1;
+        }
+
+        .visual-window::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.10), transparent 34%);
+            z-index: 2;
+        }
+
+        .window-inner {
+            position: relative;
+            z-index: 3;
+            width: min(var(--max-width), calc(100% - 44px));
+            margin: 0 auto;
+        }
+
+        .window-line {
+            max-width: 760px;
+            color: rgba(255, 255, 255, 0.93);
+            font-size: clamp(24px, 3vw, 38px);
+            line-height: 1.28;
+            letter-spacing: -0.03em;
+            font-weight: 800;
+        }
+
+        .window-b {
+            background-image: url("assets/OLS-WEB-V2-HOM-B001.jpg");
+        }
+
+        .window-c {
+            background-image: url("assets/OLS-WEB-V2-HOM-C001.jpg");
+        }
+
+        .window-d {
+            background-image: url("assets/OLS-WEB-V2-HOM-D001.jpg");
+        }
+
+        .window-e {
+            background-image: url("assets/OLS-WEB-V2-HOM-E001.jpg");
+        }
+
+        .window-f {
+            background-image: url("assets/OLS-WEB-V2-HOM-F001.jpg");
+        }
+
+        .window-g {
+            background-image: url("assets/OLS-WEB-V2-HOM-G001.jpg");
+        }
+
+        .window-h {
+            background-image: url("assets/OLS-WEB-V2-HOM-H001.jpg");
         }
 
         .chapter {
             position: relative;
-            padding: 110px 0;
-            background: var(--ols-panel);
+            padding: 112px 0;
+            background: var(--ols-glass);
             border-top: 1px solid var(--ols-border);
+            backdrop-filter: blur(10px);
         }
 
         .chapter.alt {
-            background: rgba(245, 247, 250, 0.96);
+            background: var(--ols-glass-alt);
         }
 
         .chapter-inner {
             display: grid;
-            grid-template-columns: minmax(160px, 240px) minmax(0, 820px);
-            gap: 56px;
+            grid-template-columns: minmax(160px, 250px) minmax(0, 900px);
+            gap: 62px;
             align-items: start;
         }
 
         .chapter-marker {
             position: sticky;
-            top: 112px;
-            padding-top: 4px;
-            color: var(--ols-muted);
-            font-size: 13px;
-            font-weight: 800;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
+            top: 108px;
+            padding-top: 6px;
         }
 
-        .chapter-marker::after {
+        .chapter-marker a {
+            display: inline-block;
+            max-width: 210px;
+            color: var(--ols-muted);
+            text-decoration: none;
+            font-size: 13px;
+            line-height: 1.35;
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .chapter-marker a:hover,
+        .chapter-marker a:focus {
+            color: var(--ols-green);
+            transform: translateX(3px);
+        }
+
+        .chapter-marker a::after {
             content: "";
             display: block;
-            width: 54px;
+            width: 58px;
             height: 3px;
             margin-top: 18px;
             background: var(--ols-green);
@@ -231,10 +322,10 @@
             align-items: center;
             justify-content: center;
             margin-top: 34px;
-            padding: 14px 24px;
+            padding: 15px 26px;
             border-radius: 999px;
             font-size: 15px;
-            font-weight: 800;
+            font-weight: 900;
             text-decoration: none;
             transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
         }
@@ -254,7 +345,7 @@
 
         .btn-secondary {
             color: var(--ols-green);
-            background: transparent;
+            background: rgba(255, 255, 255, 0.28);
             border: 2px solid var(--ols-green);
         }
 
@@ -265,37 +356,19 @@
             transform: translateY(-2px);
         }
 
-        .transition-panel {
-            padding: 82px 0;
-            color: #ffffff;
-            background:
-                linear-gradient(rgba(7, 26, 45, 0.76), rgba(7, 26, 45, 0.76)),
-                url("assets/structure.png") center center / cover no-repeat;
-        }
-
-        .transition-panel p {
-            max-width: 840px;
-            margin-bottom: 0;
-            color: rgba(255, 255, 255, 0.92);
-            font-size: clamp(22px, 3vw, 34px);
-            line-height: 1.35;
-            letter-spacing: -0.02em;
-            font-weight: 700;
-        }
-
         footer {
-            padding: 76px 0 42px;
+            padding: 78px 0 44px;
             color: rgba(255, 255, 255, 0.86);
             background: var(--ols-navy);
         }
 
         footer h2 {
             color: #ffffff;
-            font-size: clamp(28px, 3vw, 40px);
+            font-size: clamp(30px, 3vw, 42px);
         }
 
         footer p {
-            max-width: 840px;
+            max-width: 860px;
             color: rgba(255, 255, 255, 0.76);
             font-size: 16px;
         }
@@ -335,7 +408,7 @@
             font-size: 14px;
         }
 
-        @media (max-width: 920px) {
+        @media (max-width: 980px) {
             .nav-inner {
                 align-items: flex-start;
                 flex-direction: column;
@@ -349,31 +422,40 @@
 
             .hero {
                 min-height: auto;
-                padding: 82px 0 76px;
+                padding: 84px 0 76px;
             }
 
             .chapter {
-                padding: 82px 0;
+                padding: 86px 0;
             }
 
             .chapter-inner {
                 grid-template-columns: 1fr;
-                gap: 24px;
+                gap: 28px;
             }
 
             .chapter-marker {
                 position: static;
             }
+
+            .chapter-marker a {
+                max-width: none;
+            }
+
+            .visual-window {
+                min-height: 300px;
+            }
         }
 
-        @media (max-width: 620px) {
+        @media (max-width: 640px) {
             .container,
-            .nav-inner {
-                width: min(100% - 28px, var(--max-width));
+            .nav-inner,
+            .window-inner {
+                width: min(100% - 30px, var(--max-width));
             }
 
             .logo img {
-                height: 48px;
+                height: 46px;
             }
 
             nav {
@@ -398,8 +480,12 @@
                 font-size: 19px;
             }
 
-            .transition-panel {
-                padding: 58px 0;
+            .visual-window {
+                min-height: 245px;
+            }
+
+            .window-line {
+                font-size: 23px;
             }
 
             .btn,
@@ -421,7 +507,7 @@
 <header>
     <div class="nav-inner">
         <a href="index.html" class="logo" aria-label="OLS Group Home">
-            assets/LOGO.png
+            assets/OLS-WEB-V2-LOGO-A001.png
         </a>
 
         <nav aria-label="Primary navigation">
@@ -460,15 +546,17 @@
         </div>
     </section>
 
-    <section class="transition-panel">
-        <div class="container">
-            <p>The homepage is not a pitch. It is the first page of the story.</p>
+    <section class="visual-window window-b">
+        <div class="window-inner">
+            <div class="window-line">The first signal is rarely failure. More often, it is recognition.</div>
         </div>
     </section>
 
     <section class="chapter">
         <div class="container chapter-inner">
-            <div class="chapter-marker">Chapter doorway</div>
+            <div class="chapter-marker">
+                <a href="what-we-believe.html">What We Believe</a>
+            </div>
 
             <div class="chapter-copy">
                 <h2>What We Believe</h2>
@@ -482,9 +570,17 @@
         </div>
     </section>
 
+    <section class="visual-window window-c">
+        <div class="window-inner">
+            <div class="window-line">The visible problem matters. It is not always the real problem.</div>
+        </div>
+    </section>
+
     <section class="chapter alt">
         <div class="container chapter-inner">
-            <div class="chapter-marker">Chapter doorway</div>
+            <div class="chapter-marker">
+                <a href="framework.html">How We Think</a>
+            </div>
 
             <div class="chapter-copy">
                 <h2>How We Think</h2>
@@ -498,9 +594,17 @@
         </div>
     </section>
 
+    <section class="visual-window window-d">
+        <div class="window-inner">
+            <div class="window-line">Success can create distance from the reality leadership depends on seeing.</div>
+        </div>
+    </section>
+
     <section class="chapter">
         <div class="container chapter-inner">
-            <div class="chapter-marker">Chapter doorway</div>
+            <div class="chapter-marker">
+                <a href="assessment.html">Identify the Problem</a>
+            </div>
 
             <div class="chapter-copy">
                 <h2>Identify the Problem</h2>
@@ -514,9 +618,17 @@
         </div>
     </section>
 
+    <section class="visual-window window-e">
+        <div class="window-inner">
+            <div class="window-line">Organizations do not always break. Sometimes they adapt around the friction.</div>
+        </div>
+    </section>
+
     <section class="chapter alt">
         <div class="container chapter-inner">
-            <div class="chapter-marker">Chapter doorway</div>
+            <div class="chapter-marker">
+                <a href="services.html">How We Help</a>
+            </div>
 
             <div class="chapter-copy">
                 <h2>How We Help</h2>
@@ -530,9 +642,17 @@
         </div>
     </section>
 
+    <section class="visual-window window-f">
+        <div class="window-inner">
+            <div class="window-line">Understanding comes before action when the wrong fix can deepen the strain.</div>
+        </div>
+    </section>
+
     <section class="chapter">
         <div class="container chapter-inner">
-            <div class="chapter-marker">Chapter doorway</div>
+            <div class="chapter-marker">
+                <a href="about.html">Why OLS</a>
+            </div>
 
             <div class="chapter-copy">
                 <h2>Why OLS</h2>
@@ -546,9 +666,17 @@
         </div>
     </section>
 
+    <section class="visual-window window-g">
+        <div class="window-inner">
+            <div class="window-line">Leadership exists to create the conditions where reality can move and the mission can hold.</div>
+        </div>
+    </section>
+
     <section class="chapter alt">
         <div class="container chapter-inner">
-            <div class="chapter-marker">Chapter doorway</div>
+            <div class="chapter-marker">
+                <a href="discovery.html">Start the Conversation</a>
+            </div>
 
             <div class="chapter-copy">
                 <h2>Start the Conversation</h2>
@@ -562,9 +690,17 @@
         </div>
     </section>
 
+    <section class="visual-window window-h">
+        <div class="window-inner">
+            <div class="window-line">Some leaders are ready to talk. Others need language before the pattern has a name.</div>
+        </div>
+    </section>
+
     <section class="chapter">
         <div class="container chapter-inner">
-            <div class="chapter-marker">Chapter doorway</div>
+            <div class="chapter-marker">
+                <a href="resources.html">Resource Center</a>
+            </div>
 
             <div class="chapter-copy">
                 <h2>Resource Center</h2>
@@ -604,6 +740,9 @@
         </div>
     </div>
 </footer>
+
+</body>
+</html>
 
 </body>
 </html>
