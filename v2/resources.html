@@ -1,419 +1,1014 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resource Center | OLS Group</title>
+    <meta name="description" content="The OLS Resource Center is the public access point to OLS canon articles, articles, case studies, media, and practical operating resources built around visibility, trust, ownership, accountability, execution, and adaptability.">
+    <link rel="icon" type="image/png" href="assets/OLS-WEB-V2-FAV-A001.png">
 
-  <title>Resource Center | OLS Group</title>
+    <style>
+        :root {
+            --ols-navy: #071a2d;
+            --ols-deep: #0a1a2f;
+            --ols-blue: #1f4f7a;
+            --ols-slate: #334155;
+            --ols-muted: #64748b;
+            --ols-light: #f4f7fa;
+            --ols-glass: rgba(255, 255, 255, 0.78);
+            --ols-glass-strong: rgba(255, 255, 255, 0.88);
+            --ols-glass-alt: rgba(239, 245, 250, 0.76);
+            --ols-border: rgba(15, 23, 42, 0.12);
+            --ols-green: #2f3e34;
+            --ols-green-hover: #3c5145;
+            --ols-gold: #c8a45d;
+            --max-width: 1180px;
+            --reading-width: 900px;
+        }
 
-  <meta name="description" content="Explore OLS Group articles on visibility, trust, accountability, leadership, execution, and operational systems.">
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
 
-  css/styles.css
+        html {
+            scroll-behavior: smooth;
+        }
 
-  <style>
-    :root {
-      --ols-navy: #0b1f34;
-      --ols-blue: #1f6feb;
-      --ols-light: #f5f8fb;
-      --ols-text: #172033;
-      --ols-muted: #5d6b7a;
-      --ols-border: #d8e1ea;
-      --ols-card: #ffffff;
-    }
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--ols-deep);
+            line-height: 1.75;
+            background:
+                linear-gradient(rgba(7, 26, 45, 0.68), rgba(7, 26, 45, 0.68)),
+                url("assets/OLS-WEB-V2-RSC-HERO-A001.jpg") center center / cover fixed no-repeat;
+            user-select: none;
+            -webkit-user-select: none;
+            -ms-user-select: none;
+        }
 
-    .site-header {
-      background: #071a2d;
-      color: #ffffff;
-      border-bottom: 1px solid rgba(255,255,255,.12);
-    }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+            -webkit-user-drag: none;
+            user-drag: none;
+            pointer-events: none;
+        }
 
-    .nav-shell {
-      width: min(1180px, calc(100% - 40px));
-      margin: 0 auto;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 20px 0;
-      gap: 24px;
-    }
+        a {
+            color: inherit;
+        }
 
-    .brand {
-      font-weight: 800;
-      letter-spacing: .04em;
-      text-decoration: none;
-      font-size: 1.05rem;
-      color: white;
-    }
+        .container {
+            width: min(var(--max-width), calc(100% - 44px));
+            margin: 0 auto;
+        }
 
-    .nav-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 18px;
-      font-size: .94rem;
-    }
+        .reading {
+            max-width: var(--reading-width);
+        }
 
-    .nav-links a {
-      color: #dbeafe;
-      text-decoration: none;
-    }
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.94);
+            border-bottom: 1px solid var(--ols-border);
+            backdrop-filter: blur(14px);
+        }
 
-    .hero {
-      background: linear-gradient(135deg,#071a2d,#123d63);
-      color:#fff;
-      padding:84px 0 72px;
-    }
+        .nav-inner {
+            width: min(1280px, calc(100% - 44px));
+            margin: 0 auto;
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
 
-    .shell {
-      width:min(1180px,calc(100% - 40px));
-      margin:0 auto;
-    }
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            flex: 0 0 auto;
+        }
 
-    .eyebrow {
-      text-transform:uppercase;
-      letter-spacing:.16em;
-      color:#9fc7f5;
-      font-size:.78rem;
-      font-weight:800;
-      margin-bottom:16px;
-    }
+        .logo img {
+            height: 72px;
+            width: auto;
+        }
 
-    .hero-subtitle {
-      max-width:820px;
-      color:#dbeafe;
-    }
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 18px;
+            font-size: 13px;
+            line-height: 1.2;
+        }
 
-    .section {
-      padding:64px 0;
-    }
+        nav a {
+            text-decoration: none;
+            color: var(--ols-deep);
+            font-weight: 800;
+            opacity: 0.9;
+            transition: opacity 0.2s ease, color 0.2s ease;
+        }
 
-    .intro-grid {
-      display:grid;
-      grid-template-columns:minmax(0,1.2fr) minmax(280px,.8fr);
-      gap:34px;
-    }
+        nav a:hover,
+        nav a:focus {
+            opacity: 1;
+            color: var(--ols-blue);
+        }
 
-    .intro-card {
-      background:var(--ols-light);
-      border-left:5px solid var(--ols-blue);
-      padding:24px;
-      border-radius:12px;
-    }
+        main {
+            background: rgba(245, 247, 250, 0.22);
+        }
 
-    .note-box {
-      border:1px solid var(--ols-border);
-      border-radius:12px;
-      padding:24px;
-      background:#fff;
-    }
+        .hero {
+            min-height: calc(88vh - 80px);
+            display: flex;
+            align-items: center;
+            padding: 118px 0 96px;
+            color: #ffffff;
+            background:
+                linear-gradient(90deg, rgba(7, 26, 45, 0.95), rgba(7, 26, 45, 0.78), rgba(7, 26, 45, 0.36)),
+                url("assets/OLS-WEB-V2-RSC-HERO-A001.jpg") center center / cover no-repeat;
+        }
 
-    .article-section {
-      background:#f8fbff;
-      border-top:1px solid var(--ols-border);
-      border-bottom:1px solid var(--ols-border);
-    }
+        .hero .reading {
+            max-width: 980px;
+        }
 
-    .article-grid {
-      display:grid;
-      grid-template-columns:repeat(4,minmax(0,1fr));
-      gap:22px;
-      margin-top:28px;
-    }
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 22px;
+            color: #b7d7f5;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
 
-    .resource-card {
-      background:#fff;
-      border:1px solid var(--ols-border);
-      border-radius:16px;
-      padding:24px;
-      box-shadow:0 10px 24px rgba(11,31,52,.06);
-      display:flex;
-      flex-direction:column;
-      min-height:310px;
-    }
+        h1 {
+            max-width: 960px;
+            margin-bottom: 30px;
+            font-size: clamp(42px, 6vw, 78px);
+            line-height: 1.05;
+            letter-spacing: -0.045em;
+        }
 
-    .resource-kicker {
-      text-transform:uppercase;
-      letter-spacing:.14em;
-      color:var(--ols-blue);
-      font-size:.76rem;
-      font-weight:800;
-      margin-bottom:12px;
-    }
+        h2 {
+            margin-bottom: 24px;
+            font-size: clamp(30px, 4vw, 46px);
+            line-height: 1.14;
+            letter-spacing: -0.035em;
+            color: var(--ols-deep);
+        }
 
-    .read-link {
-      display:inline-block;
-      margin-top:auto;
-      padding:11px 16px;
-      background:var(--ols-navy);
-      color:#fff;
-      text-decoration:none;
-      border-radius:999px;
-      font-weight:800;
-      width:fit-content;
-    }
+        h3 {
+            margin-bottom: 14px;
+            font-size: clamp(22px, 2.5vw, 30px);
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+            color: var(--ols-deep);
+        }
 
-    .coming-soon {
-      opacity:.75;
-    }
+        p {
+            margin-bottom: 22px;
+            font-size: 18px;
+            color: var(--ols-slate);
+        }
 
-    .cta-panel {
-      background:var(--ols-navy);
-      color:#fff;
-      border-radius:18px;
-      padding:34px;
-      display:grid;
-      grid-template-columns:minmax(0,1fr) auto;
-      gap:28px;
-      align-items:center;
-    }
+        .hero p {
+            max-width: 900px;
+            color: rgba(255, 255, 255, 0.91);
+            font-size: 21px;
+            font-weight: 700;
+        }
 
-    .cta-button {
-      background:#fff;
-      color:var(--ols-navy);
-      padding:13px 18px;
-      border-radius:999px;
-      text-decoration:none;
-      font-weight:900;
-    }
+        .hero-title-mark {
+            width: 82px;
+            height: 4px;
+            margin: 34px 0 0;
+            background: var(--ols-gold);
+        }
 
-    .site-footer {
-      background:#071a2d;
-      color:#b8c7d8;
-      padding:30px 0;
-    }
+        .resource-section {
+            position: relative;
+            padding: 112px 0;
+            background: var(--ols-glass);
+            border-top: 1px solid var(--ols-border);
+            backdrop-filter: blur(10px);
+        }
 
-    @media (max-width:980px){
-      .article-grid{
-        grid-template-columns:repeat(2,minmax(0,1fr));
-      }
+        .resource-section.alt {
+            background: var(--ols-glass-alt);
+        }
 
-      .intro-grid,
-      .cta-panel{
-        grid-template-columns:1fr;
-      }
-    }
+        .section-heading {
+            max-width: 880px;
+            margin-bottom: 42px;
+        }
 
-    @media (max-width:640px){
-      .article-grid{
-        grid-template-columns:1fr;
-      }
+        .section-heading p {
+            max-width: 820px;
+            font-size: 19px;
+        }
 
-      .nav-shell{
-        flex-direction:column;
-        align-items:flex-start;
-      }
-    }
-  </style>
+        .canon-grid {
+            display: grid;
+            grid-template-columns: repeat(4, minmax(0, 1fr));
+            gap: 24px;
+        }
+
+        .resource-card {
+            min-height: 520px;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+            color: var(--ols-deep);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--ols-border);
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 26px 70px rgba(7, 26, 45, 0.14);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            backdrop-filter: blur(12px);
+        }
+
+        .resource-card:hover,
+        .resource-card:focus {
+            transform: translateY(-4px);
+            border-color: rgba(47, 62, 52, 0.36);
+            box-shadow: 0 34px 90px rgba(7, 26, 45, 0.19);
+        }
+
+        .resource-visual {
+            min-height: 168px;
+            position: relative;
+            background:
+                linear-gradient(135deg, rgba(7, 26, 45, 0.96), rgba(31, 79, 122, 0.76)),
+                radial-gradient(circle at 24% 32%, rgba(255, 255, 255, 0.14), transparent 34%);
+            background-position: center center;
+            background-size: cover;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+        }
+
+        .resource-visual::before {
+            content: attr(data-resource-id);
+            position: absolute;
+            left: 24px;
+            bottom: 20px;
+            color: rgba(255, 255, 255, 0.92);
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .resource-visual::after {
+            content: "";
+            position: absolute;
+            right: 24px;
+            top: 24px;
+            width: 52px;
+            height: 4px;
+            background: var(--ols-gold);
+        }
+
+        .resource-body {
+            display: flex;
+            flex: 1;
+            flex-direction: column;
+            padding: 30px;
+        }
+
+        .resource-type {
+            display: block;
+            margin-bottom: 16px;
+            color: var(--ols-blue);
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .resource-body h3 {
+            margin-bottom: 18px;
+            font-size: clamp(24px, 2.5vw, 31px);
+        }
+
+        .resource-body p {
+            font-size: 16px;
+            line-height: 1.65;
+        }
+
+        .resource-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: auto 0 24px;
+            padding-top: 18px;
+        }
+
+        .meta-pill {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 8px 12px;
+            color: var(--ols-deep);
+            background: rgba(239, 245, 250, 0.86);
+            border: 1px solid rgba(15, 23, 42, 0.10);
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        .resource-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            padding: 13px 20px;
+            color: #ffffff;
+            background: var(--ols-green);
+            border-radius: 999px;
+            font-size: 15px;
+            font-weight: 900;
+        }
+
+        .library-grid {
+            display: grid;
+            grid-template-columns: 1.05fr 1.05fr 0.9fr;
+            gap: 24px;
+            align-items: start;
+        }
+
+        .library-panel {
+            min-height: 300px;
+            padding: 34px;
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid var(--ols-border);
+            border-radius: 30px;
+            box-shadow: 0 24px 70px rgba(7, 26, 45, 0.12);
+        }
+
+        .library-panel h3 {
+            margin-bottom: 18px;
+        }
+
+        .topic-list,
+        .type-list {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 22px;
+        }
+
+        .topic-pill,
+        .type-pill {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 11px 15px;
+            background: rgba(239, 245, 250, 0.88);
+            border: 1px solid rgba(15, 23, 42, 0.12);
+            border-radius: 999px;
+            color: var(--ols-deep);
+            font-size: 13px;
+            font-weight: 900;
+            text-decoration: none;
+        }
+
+        .resource-list {
+            margin-top: 8px;
+        }
+
+        .resource-list-item {
+            padding: 17px 0;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+        }
+
+        .resource-list-item:last-child {
+            border-bottom: none;
+        }
+
+        .resource-list-item a {
+            display: inline-block;
+            margin-bottom: 6px;
+            color: var(--ols-deep);
+            font-weight: 900;
+            text-decoration: none;
+        }
+
+        .resource-list-item a:hover,
+        .resource-list-item a:focus {
+            color: var(--ols-blue);
+        }
+
+        .resource-list-item span {
+            display: block;
+            color: var(--ols-muted);
+            font-size: 13px;
+            font-weight: 800;
+        }
+
+        .quote-band {
+            padding: 92px 0;
+            color: #ffffff;
+            background: var(--ols-navy);
+        }
+
+        .quote-band .quote-text {
+            max-width: 960px;
+            color: #ffffff;
+            font-size: clamp(28px, 4vw, 48px);
+            line-height: 1.22;
+            letter-spacing: -0.04em;
+            font-weight: 900;
+        }
+
+        .quote-band .quote-text::before {
+            content: "";
+            display: block;
+            width: 72px;
+            height: 4px;
+            margin-bottom: 28px;
+            background: var(--ols-gold);
+        }
+
+        .cta-section {
+            padding: 112px 0;
+            background:
+                linear-gradient(rgba(244, 247, 250, 0.9), rgba(244, 247, 250, 0.9)),
+                url("assets/OLS-WEB-V2-RSC-LIBRARY-A001.jpg") center center / cover no-repeat;
+            border-top: 1px solid var(--ols-border);
+        }
+
+        .cta-intro {
+            max-width: 850px;
+            margin-bottom: 42px;
+        }
+
+        .cta-intro h2 {
+            margin-bottom: 18px;
+        }
+
+        .cta-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 26px;
+        }
+
+        .cta-card {
+            min-height: 310px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 38px;
+            color: var(--ols-deep);
+            background: rgba(255, 255, 255, 0.88);
+            border: 1px solid var(--ols-border);
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 26px 70px rgba(7, 26, 45, 0.14);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            backdrop-filter: blur(12px);
+        }
+
+        .cta-card:hover,
+        .cta-card:focus {
+            transform: translateY(-4px);
+            border-color: rgba(47, 62, 52, 0.36);
+            box-shadow: 0 34px 90px rgba(7, 26, 45, 0.19);
+        }
+
+        .cta-label {
+            display: block;
+            margin-bottom: 18px;
+            color: var(--ols-muted);
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .cta-card h3 {
+            margin-bottom: 20px;
+            font-size: clamp(28px, 3vw, 38px);
+            color: var(--ols-deep);
+        }
+
+        .cta-card p {
+            color: var(--ols-slate);
+            font-size: 18px;
+        }
+
+        .cta-card .cta-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            margin-top: 28px;
+            padding: 14px 22px;
+            color: #ffffff;
+            background: var(--ols-green);
+            border-radius: 999px;
+            font-size: 15px;
+            font-weight: 900;
+        }
+
+        footer {
+            padding: 78px 0 44px;
+            color: rgba(255, 255, 255, 0.86);
+            background: var(--ols-navy);
+        }
+
+        footer h2 {
+            color: #ffffff;
+            font-size: clamp(30px, 3vw, 42px);
+        }
+
+        footer p {
+            max-width: 860px;
+            color: rgba(255, 255, 255, 0.76);
+            font-size: 16px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin: 34px 0 42px;
+        }
+
+        .footer-links a {
+            display: inline-flex;
+            padding: 11px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 999px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 800;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .footer-links a:hover,
+        .footer-links a:focus {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.52);
+        }
+
+        .footer-bottom {
+            padding-top: 34px;
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .footer-bottom p {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 1100px) {
+            .canon-grid {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+
+            .library-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 980px) {
+            .nav-inner {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            nav {
+                justify-content: flex-start;
+                gap: 13px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 86px 0 78px;
+            }
+
+            .resource-section {
+                padding: 86px 0;
+            }
+
+            .cta-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container,
+            .nav-inner {
+                width: min(100% - 30px, var(--max-width));
+            }
+
+            .logo img {
+                height: 46px;
+            }
+
+            nav {
+                font-size: 13px;
+                line-height: 1.45;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            p,
+            .hero p,
+            .cta-card p {
+                font-size: 17px;
+            }
+
+            .canon-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .resource-card {
+                min-height: auto;
+            }
+
+            .resource-body {
+                padding: 26px;
+            }
+
+            .library-panel {
+                padding: 28px;
+                border-radius: 24px;
+            }
+
+            .quote-band {
+                padding: 70px 0;
+            }
+
+            .cta-section {
+                padding: 78px 0;
+            }
+
+            .cta-card {
+                min-height: auto;
+                padding: 28px;
+                border-radius: 24px;
+            }
+
+            .cta-card .cta-action,
+            .resource-action {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-links a {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
 </head>
 
-<body>
+<body
+    oncopy="return false;"
+    oncut="return false;"
+    onpaste="return false;"
+    oncontextmenu="return false;"
+    ondragstart="return false;"
+    onselectstart="return false;"
+>
 
-<header class="site-header">
-  <div class="nav-shell">
+<header>
+    <div class="nav-inner">
+        <a href="index.html" class="logo" aria-label="OLS Group Home">
+            assets/OLS-WEB-V2-LOGO-A001.png
+        </a>
 
-    <a class="brand" href="index.html">
-      OLS Group
-    </a>
-
-    <nav class="nav-links">
-      <a href="framework.html">How We Think</a>
-      <a href="assessment.html">Identify the Problem</a>
-      <a href="services.html">How We Help</a>
-      <a href="about.html">Why OLS</a>
-      <a href="discovery.html">Start the Conversation</a>
-      <a href="resources.html">Resource Center</a>
-    </nav>
-
-  </div>
+        <nav aria-label="Primary navigation">
+            <a href="what-we-believe.html">What We Believe</a>
+            <a href="framework.html">How We Think</a>
+            <a href="assessment.html">Identify the Problem</a>
+            <a href="services.html">How We Help</a>
+            <a href="about.html">Why OLS</a>
+            <a href="discovery.html">Start the Conversation</a>
+            <a href="resources.html">Resource Center</a>
+        </nav>
+    </div>
 </header>
 
 <main>
 
-<section class="hero">
-  <div class="shell">
-    <div class="eyebrow">OLS Resource Center</div>
+    <section class="hero">
+        <div class="container reading">
+            <span class="eyebrow">OLS Resource Center</span>
+            <h1>Resource Center</h1>
+            <p>The public access point to the OLS Knowledge System: canon articles, articles, case studies, media, and practical operating resources built around visibility, trust, ownership, accountability, execution, and adaptability.</p>
+            <div class="hero-title-mark"></div>
+        </div>
+    </section>
 
-    <h1>
-      Articles for leaders trying to see what is really happening.
-    </h1>
+    <section class="resource-section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Foundational Doctrine Series</span>
+                <h2>Start with the OLS Canon.</h2>
+                <p>These four articles establish the public foundation of OLS thinking. They are the first resources to read when an organization is becoming harder to see, harder to trust, harder to hold accountable, or harder to execute through.</p>
+            </div>
 
-    <p class="hero-subtitle">
-      The Resource Center is where OLS publishes its canon articles,
-      operating ideas, and practical leadership thinking.
-      Start here if something inside the organization has become harder to explain.
-    </p>
-  </div>
-</section>
+            <div class="canon-grid">
 
-<section class="section">
-  <div class="shell intro-grid">
+                resources/visibility-precedes-control.html
 
-    <div class="intro-card">
-      <h2>Start with the OLS Canon</h2>
+                    <div class="resource-visual"
+                         data-resource-id="OLS-CAN-001"
+                         data-image-standard="OLS-WEB-V2-CAN-001-HERO-A001.jpg">
+                    </div>
 
-      <p>
-        These articles introduce the core OLS ideas behind visibility,
-        trust, accountability, execution, and operational leadership.
-      </p>
-    </div>
+                    <div class="resource-body">
+                        <span class="resource-type">Canon Article</span>
+                        <h3>Visibility Precedes Control</h3>
+                        <p>The danger of scaling what leadership can no longer clearly see.</p>
 
-    <aside class="note-box">
-      <h3>Recommended First Article</h3>
+                        <div class="resource-meta">
+                            <span class="meta-pill">Theme: Visibility</span>
+                            <span class="meta-pill">OLS-CAN-001</span>
+                        </div>
 
-      <p>
-        If you are new to OLS, begin with
-        <strong>Visibility Precedes Control</strong>.
-      </p>
-    </aside>
+                        <span class="resource-action">Read Article →</span>
+                    </div>
+                </a>
 
-  </div>
-</section>
+                resources/trust-is-organizational-infrastructure.html
 
-<section class="section article-section">
+                    <div class="resource-visual"
+                         data-resource-id="OLS-CAN-002"
+                         data-image-standard="OLS-WEB-V2-CAN-002-HERO-A001.jpg">
+                    </div>
 
-  <div class="shell">
+                    <div class="resource-body">
+                        <span class="resource-type">Canon Article</span>
+                        <h3>Trust Is Organizational Infrastructure</h3>
+                        <p>Why silence inside an organization is rarely empty, and why every company eventually performs at the speed of the truth it is willing to hear.</p>
 
-    <div class="eyebrow">
-      Foundational Doctrine Series
-    </div>
+                        <div class="resource-meta">
+                            <span class="meta-pill">Theme: Trust</span>
+                            <span class="meta-pill">OLS-CAN-002</span>
+                        </div>
 
-    <h2>OLS Canon Articles</h2>
+                        <span class="resource-action">Read Article →</span>
+                    </div>
+                </a>
 
-    <div class="article-grid">
+                resources/leadership-equals-accountability.html
 
-      <article class="resource-card">
+                    <div class="resource-visual"
+                         data-resource-id="OLS-CAN-003"
+                         data-image-standard="OLS-WEB-V2-CAN-003-HERO-A001.jpg">
+                    </div>
 
-        <p class="resource-kicker">
-          OLS Canon 001
-        </p>
+                    <div class="resource-body">
+                        <span class="resource-type">Canon Article</span>
+                        <h3>Leadership Equals Accountability</h3>
+                        <p>Accountability begins with awareness. Leadership is the discipline of turning truth into action before it dies inside the system.</p>
 
-        <h3>
-          Visibility Precedes Control
-        </h3>
+                        <div class="resource-meta">
+                            <span class="meta-pill">Theme: Accountability</span>
+                            <span class="meta-pill">OLS-CAN-003</span>
+                        </div>
 
-        <p>
-          The danger of scaling what leadership can no longer clearly see.
-        </p>
+                        <span class="resource-action">Read Article →</span>
+                    </div>
+                </a>
 
-        <p>
-          Growth creates leadership friction when visibility weakens,
-          local adaptations stay local,
-          and the operating system begins to fragment behind acceptable results.
-        </p>
+                resources/why-organizations-have-execution-problems-not-strategy-problems.html
 
-        articles/visibility-precedes-control.html
-           Read Article
-        </a>
+                    <div class="resource-visual"
+                         data-resource-id="OLS-CAN-004"
+                         data-image-standard="OLS-WEB-V2-CAN-004-HERO-A001.jpg">
+                    </div>
 
-      </article>
+                    <div class="resource-body">
+                        <span class="resource-type">Canon Article</span>
+                        <h3>Why Organizations Don’t Have a Strategy Problem</h3>
+                        <p>Most organizations do not fail because strategy is unclear. They fail when truth, ownership, decisions, and accountability cannot move fast enough through the system.</p>
 
-      <article class="resource-card coming-soon">
-        <p class="resource-kicker">OLS Canon 002</p>
+                        <div class="resource-meta">
+                            <span class="meta-pill">Theme: Execution</span>
+                            <span class="meta-pill">OLS-CAN-004</span>
+                        </div>
 
-        <h3>
-          Trust Is Organizational Infrastructure
-        </h3>
+                        <span class="resource-action">Read Article →</span>
+                    </div>
+                </a>
 
-        <p>
-          Truth has to move before leaders can act.
-        </p>
+            </div>
+        </div>
+    </section>
 
-        <p>
-          Pending website publication.
-        </p>
-      </article>
+    <section class="quote-band">
+        <div class="container">
+            <div class="quote-text">The Resource Center is not a document shelf. It is the public-facing catalog of the OLS Knowledge System.</div>
+        </div>
+    </section>
 
-      <article class="resource-card coming-soon">
-        <p class="resource-kicker">OLS Canon 003</p>
+    <section class="resource-section alt">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Browse the Library</span>
+                <h2>Find resources by topic, type, or published article.</h2>
+                <p>The library is designed to grow without redesign. New articles, case studies, videos, podcasts, interviews, frameworks, and guides can be added as governed resources when they are published.</p>
+            </div>
 
-        <h3>
-          Leadership Equals Accountability
-        </h3>
+            <div class="library-grid">
 
-        <p>
-          Accountability begins with the conditions leaders create.
-        </p>
+                <section class="library-panel protected-copy" aria-label="Browse by topic">
+                    <h3>Browse by Topic</h3>
+                    <p>OLS resources are organized around the operating conditions that determine whether leadership can see, trust, own, account for, execute, and adapt inside the organization.</p>
 
-        <p>
-          Pending website publication.
-        </p>
-      </article>
+                    <div class="topic-list">
+                        <span class="topic-pill">Visibility</span>
+                        <span class="topic-pill">Trust</span>
+                        <span class="topic-pill">Ownership</span>
+                        <span class="topic-pill">Accountability</span>
+                        <span class="topic-pill">Execution</span>
+                        <span class="topic-pill">Adaptability</span>
+                    </div>
+                </section>
 
-      <article class="resource-card coming-soon">
-        <p class="resource-kicker">OLS Canon 004</p>
+                <section class="library-panel protected-copy" aria-label="Browse by resource type">
+                    <h3>Browse by Resource Type</h3>
+                    <p>Only published resource types are shown. Additional categories will appear when governed content exists and is ready for publication.</p>
 
-        <h3>
-          Why Organizations Don't Have a Strategy Problem
-        </h3>
+                    <div class="type-list">
+                        <span class="type-pill">Canon Articles</span>
+                        <span class="type-pill">Articles</span>
+                    </div>
+                </section>
 
-        <p>
-          They have an execution problem.
-        </p>
+                <section class="library-panel protected-copy" aria-label="Published resources">
+                    <h3>Published Resources</h3>
 
-        <p>
-          Pending website publication.
-        </p>
-      </article>
+                    <div class="resource-list">
+                        <div class="resource-list-item">
+                            resources/visibility-precedes-control.htmlVisibility Precedes Control</a>
+                            <span>Canon Article · Visibility · OLS-CAN-001</span>
+                        </div>
 
-    </div>
+                        <div class="resource-list-item">
+                            resources/trust-is-organizational-infrastructure.htmlTrust Is Organizational Infrastructure</a>
+                            <span>Canon Article · Trust · OLS-CAN-002</span>
+                        </div>
 
-  </div>
+                        <div class="resource-list-item">
+                            resources/leadership-equals-accountability.htmlLeadership Equals Accountability</a>
+                            <span>Canon Article · Accountability · OLS-CAN-003</span>
+                        </div>
 
-</section>
+                        <div class="resource-list-item">
+                            resources/why-organizations-have-execution-problems-not-strategy-problems.htmlWhy Organizations Don’t Have a Strategy Problem</a>
+                            <span>Canon Article · Execution · OLS-CAN-004</span>
+                        </div>
+                    </div>
+                </section>
 
-<section class="section">
+            </div>
+        </div>
+    </section>
 
-  <div class="shell">
+    <section class="resource-section">
+        <div class="container">
+            <div class="section-heading">
+                <span class="eyebrow">Publishing Standard</span>
+                <h2>Built for governed growth.</h2>
+                <p>Each public resource points to a clean HTML page, while the permanent governance record remains connected through the OLS Knowledge Inventory, Content ID, website slug, resource type, theme, and publication status.</p>
+            </div>
 
-    <div class="cta-panel">
+            <div class="library-grid">
+                <section class="library-panel protected-copy">
+                    <h3>HTML First</h3>
+                    <p>OLS resources are published as HTML pages for search visibility, internal linking, public readability, future AI discovery, and website indexing.</p>
+                </section>
 
-      <div>
-        <h2>
-          When the issue feels real, start the conversation.
-        </h2>
+                <section class="library-panel protected-copy">
+                    <h3>No Public Word Downloads</h3>
+                    <p>Word documents remain internal governed source files. Public resources appear as website pages, with protected PDF options reserved for future use if needed.</p>
+                </section>
 
-        <p>
-          If these articles describe something taking shape inside your
-          organization, the next useful step may be a Discovery Conversation.
-        </p>
-      </div>
+                <section class="library-panel protected-copy">
+                    <h3>Image Ready</h3>
+                    <p>Cards are structured so image assets can be added later using the approved naming standard without redesigning the page.</p>
+                </section>
+            </div>
+        </div>
+    </section>
 
-      <a class="cta-button"
-         href="discovery.html">
-         Start the Conversation
-      </a>
+    <section class="cta-section">
+        <div class="container">
+            <div class="cta-intro">
+                <span class="eyebrow">Next Step</span>
+                <h2>Continue learning or start the conversation.</h2>
+            </div>
 
-    </div>
+            <div class="cta-grid">
+                <a href="about.html" class="cta-card" aria-label="Return to Why OLS">
+                    <div>
+                        <span class="cta-label">Return to the Framework</span>
+                        <h3>Why OLS →</h3>
+                        <p>Return to Why OLS to understand why the OLS Resource Center belongs inside a larger operating view of visibility, trust, ownership, accountability, execution, and adaptability.</p>
+                    </div>
 
-  </div>
+                    <span class="cta-action">Return to Why OLS</span>
+                </a>
 
-</section>
+                <a href="discovery.html" class="cta-card" aria-label="Start the Discovery Discussion">
+                    <div>
+                        <span class="cta-label">Start the Conversation</span>
+                        <h3>Discovery Discussion →</h3>
+                        <p>If the articles describe something taking shape inside your organization, start the conversation while the condition is still close enough to understand.</p>
+                    </div>
+
+                    <span class="cta-action">Start the Conversation</span>
+                </a>
+            </div>
+        </div>
+    </section>
 
 </main>
 
-<footer class="site-footer">
+<footer>
+    <div class="container">
+        <h2>Operational Leadership Systems</h2>
 
-  <div class="shell">
+        <p>Helping leaders understand what changed inside the operating system of their organization before deciding what should happen next.</p>
 
-    <p>
-      © 2026 Operational Leadership Systems (OLS Group).
-      All Rights Reserved.
-    </p>
+        <div class="footer-links">
+            <a href="what-we-believe.html">What We Believe</a>
+            <a href="framework.html">How We Think</a>
+            <a href="assessment.html">Identify the Problem</a>
+            <a href="services.html">How We Help</a>
+            <a href="about.html">Why OLS</a>
+            <a href="discovery.html">Start the Conversation</a>
+            <a href="resources.html">Resource Center</a>
+        </div>
 
-    <p>
-      Visibility · Trust · Ownership · Accountability · Execution
-    </p>
-
-    <p>
-      Helping leaders understand what changed inside the operating system
-      before deciding what should happen next.
-    </p>
-
-  </div>
-
+        <div class="footer-bottom">
+            <p>© 2026 Operational Leadership Systems (OLS Group). All Rights Reserved.</p>
+            <p>This website and its published resources may not be reproduced, distributed, modified, or republished without written permission from OLS Group, except for brief quotations with proper attribution.</p>
+            <p>Visibility · Trust · Ownership · Accountability · Execution</p>
+        </div>
+    </div>
 </footer>
+
+<script>
+    document.addEventListener("copy", function (event) {
+        event.preventDefault();
+    });
+
+    document.addEventListener("cut", function (event) {
+        event.preventDefault();
+    });
+
+    document.addEventListener("paste", function (event) {
+        event.preventDefault();
+    });
+
+    document.addEventListener("contextmenu", function (event) {
+        event.preventDefault();
+    });
+
+    document.addEventListener("dragstart", function (event) {
+        event.preventDefault();
+    });
+
+    document.addEventListener("selectstart", function (event) {
+        event.preventDefault();
+    });
+
+    document.addEventListener("keydown", function (event) {
+        const key = event.key.toLowerCase();
+
+        if ((event.ctrlKey || event.metaKey) && (key === "c" || key === "x" || key === "a" || key === "s" || key === "p")) {
+            event.preventDefault();
+        }
+    });
+</script>
 
 </body>
 </html>
-
-  </div>
-</footer>
