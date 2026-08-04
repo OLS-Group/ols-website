@@ -22,12 +22,12 @@
       --ols-paper: #f7f3ea;
       --ols-paper-light: #fbfaf6;
       --ols-white: #ffffff;
-      --ols-card: #ffffff;
       --ols-shadow: 0 18px 45px rgba(11, 23, 38, 0.10);
       --ols-radius: 22px;
       --reader-width: 860px;
-      --side-width: 245px;
-      --header-height: 78px;
+      --side-width: 238px;
+      --page-width: 1180px;
+      --header-height: 74px;
     }
 
     * {
@@ -46,7 +46,8 @@
       font-family: Georgia, "Times New Roman", serif;
       color: var(--ols-ink);
       background:
-        radial-gradient(circle at top left, rgba(200, 155, 60, 0.18), transparent 32rem),
+        radial-gradient(circle at top left, rgba(200, 155, 60, 0.16), transparent 30rem),
+        radial-gradient(circle at 88% 28%, rgba(31, 95, 139, 0.08), transparent 34rem),
         linear-gradient(180deg, #fbfaf6 0%, #f4efe3 48%, #fbfaf6 100%);
       line-height: 1.72;
       -webkit-font-smoothing: antialiased;
@@ -79,18 +80,16 @@
     }
 
     .publication-header {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      height: var(--header-height);
-      background: rgba(251, 250, 246, 0.92);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(19, 40, 63, 0.11);
+      position: relative;
+      z-index: 20;
+      min-height: var(--header-height);
+      background: rgba(251, 250, 246, 0.96);
+      border-bottom: 1px solid rgba(19, 40, 63, 0.10);
     }
 
     .publication-header-inner {
-      width: min(1180px, calc(100% - 40px));
-      height: 100%;
+      width: min(var(--page-width), calc(100% - 40px));
+      min-height: var(--header-height);
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -106,14 +105,14 @@
     }
 
     .logo-link img {
-      height: 44px;
+      height: 40px;
       width: auto;
     }
 
     .publication-mark {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.72rem;
-      letter-spacing: 0.16em;
+      font-size: 0.70rem;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
       color: var(--ols-muted);
       white-space: nowrap;
@@ -121,15 +120,15 @@
 
     .header-resource-link {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.78rem;
-      font-weight: 700;
-      letter-spacing: 0.14em;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
       color: var(--ols-navy);
-      padding: 12px 16px;
-      border: 1px solid rgba(19, 40, 63, 0.16);
+      padding: 10px 14px;
+      border: 1px solid rgba(19, 40, 63, 0.15);
       border-radius: 999px;
-      background: rgba(255, 255, 255, 0.70);
+      background: rgba(255, 255, 255, 0.72);
       transition: all 0.2s ease;
       white-space: nowrap;
     }
@@ -145,8 +144,8 @@
       position: relative;
       overflow: hidden;
       background:
-        linear-gradient(135deg, rgba(11, 23, 38, 0.96), rgba(19, 40, 63, 0.92)),
-        radial-gradient(circle at 82% 18%, rgba(200, 155, 60, 0.34), transparent 22rem);
+        linear-gradient(135deg, rgba(11, 23, 38, 0.97), rgba(19, 40, 63, 0.94)),
+        radial-gradient(circle at 82% 18%, rgba(200, 155, 60, 0.32), transparent 22rem);
       color: var(--ols-white);
       border-bottom: 1px solid rgba(200, 155, 60, 0.28);
     }
@@ -156,55 +155,134 @@
       position: absolute;
       inset: 0;
       background:
-        linear-gradient(90deg, rgba(200, 155, 60, 0.13) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(200, 155, 60, 0.12) 1px, transparent 1px),
         linear-gradient(0deg, rgba(200, 155, 60, 0.08) 1px, transparent 1px);
       background-size: 72px 72px;
-      opacity: 0.20;
+      opacity: 0.18;
       pointer-events: none;
     }
 
     .article-cover-inner {
       position: relative;
-      width: min(1180px, calc(100% - 40px));
+      width: min(var(--page-width), calc(100% - 40px));
       margin: 0 auto;
-      padding: 86px 0 82px;
+      padding: 84px 0 88px;
+      display: grid;
+      grid-template-columns: minmax(0, 860px) minmax(180px, 1fr);
+      gap: 48px;
+      align-items: end;
+    }
+
+    .cover-left {
+      max-width: 860px;
     }
 
     .canon-kicker {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.18em;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.20em;
       text-transform: uppercase;
       color: var(--ols-gold-soft);
+      margin-bottom: 16px;
+    }
+
+    .doctrine-label {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
       margin-bottom: 24px;
     }
 
+    .doctrine-label::before {
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: var(--ols-gold);
+    }
+
     .article-title {
-      max-width: 980px;
-      font-size: clamp(3rem, 7vw, 6.65rem);
-      line-height: 0.93;
+      max-width: 840px;
+      font-size: clamp(2.55rem, 5.8vw, 5.05rem);
+      line-height: 0.98;
       font-weight: 500;
-      letter-spacing: -0.055em;
+      letter-spacing: -0.045em;
       color: var(--ols-white);
-      margin-bottom: 28px;
+      margin-bottom: 24px;
     }
 
     .article-subtitle {
-      max-width: 780px;
-      font-size: clamp(1.25rem, 2.3vw, 1.72rem);
-      line-height: 1.42;
+      max-width: 760px;
+      font-size: clamp(1.22rem, 2.1vw, 1.58rem);
+      line-height: 1.44;
       color: rgba(255, 255, 255, 0.82);
-      margin-bottom: 32px;
+      margin-bottom: 30px;
     }
 
     .article-tags {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.82rem;
-      font-weight: 700;
-      letter-spacing: 0.10em;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.11em;
       text-transform: uppercase;
-      color: rgba(255, 255, 255, 0.72);
+      color: rgba(255, 255, 255, 0.64);
+    }
+
+    .cover-right {
+      justify-self: end;
+      width: min(260px, 100%);
+      border-left: 1px solid rgba(200, 155, 60, 0.34);
+      padding-left: 24px;
+      color: rgba(255, 255, 255, 0.74);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .cover-note-label {
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ols-gold-soft);
+      margin-bottom: 12px;
+    }
+
+    .cover-note-text {
+      font-size: 0.92rem;
+      line-height: 1.62;
+    }
+
+    .reader-intro-bar {
+      width: min(var(--page-width), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 24px 0;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid rgba(19, 40, 63, 0.10);
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ols-muted);
+    }
+
+    .reader-intro-title {
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ols-navy);
+    }
+
+    .reader-intro-note {
+      max-width: 650px;
+      text-align: right;
+      font-size: 0.88rem;
+      line-height: 1.5;
     }
 
     .mobile-article-menu-wrap {
@@ -216,7 +294,7 @@
     .mobile-article-menu {
       border: 1px solid rgba(19, 40, 63, 0.14);
       border-radius: 18px;
-      background: rgba(255, 255, 255, 0.82);
+      background: rgba(255, 255, 255, 0.86);
       box-shadow: 0 14px 32px rgba(11, 23, 38, 0.08);
       overflow: hidden;
     }
@@ -225,9 +303,9 @@
       cursor: pointer;
       list-style: none;
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.82rem;
-      font-weight: 800;
-      letter-spacing: 0.13em;
+      font-size: 0.80rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--ols-navy);
       padding: 16px 18px;
@@ -242,33 +320,36 @@
     }
 
     .publication-body {
-      width: min(1180px, calc(100% - 40px));
+      width: min(var(--page-width), calc(100% - 40px));
       margin: 0 auto;
       display: grid;
       grid-template-columns: var(--side-width) minmax(0, var(--reader-width));
-      gap: 58px;
+      gap: 82px;
       align-items: start;
-      padding: 72px 0 54px;
+      justify-content: center;
+      padding: 54px 0 70px;
     }
 
     .desktop-article-nav {
       position: sticky;
-      top: calc(var(--header-height) + 28px);
+      top: 28px;
       align-self: start;
-      padding: 22px 18px;
-      border: 1px solid rgba(19, 40, 63, 0.12);
-      border-radius: 20px;
-      background: rgba(255, 255, 255, 0.64);
-      box-shadow: 0 14px 32px rgba(11, 23, 38, 0.06);
-      max-height: calc(100vh - 126px);
+      padding: 0;
+      background: transparent;
+      max-height: calc(100vh - 56px);
       overflow: auto;
+    }
+
+    .nav-inner {
+      padding: 18px 0 18px 18px;
+      border-left: 3px solid rgba(200, 155, 60, 0.42);
     }
 
     .nav-label {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.74rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
+      font-size: 0.70rem;
+      font-weight: 900;
+      letter-spacing: 0.17em;
       text-transform: uppercase;
       color: var(--ols-gold);
       margin-bottom: 14px;
@@ -276,23 +357,22 @@
 
     .section-links {
       display: grid;
-      gap: 8px;
+      gap: 6px;
     }
 
     .section-links a {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.88rem;
-      line-height: 1.35;
+      font-size: 0.84rem;
+      line-height: 1.38;
       color: var(--ols-muted);
-      padding: 9px 10px;
-      border-radius: 12px;
-      transition: all 0.18s ease;
+      padding: 8px 0;
+      transition: color 0.18s ease, padding-left 0.18s ease;
     }
 
     .section-links a:hover,
     .section-links a:focus-visible {
       color: var(--ols-navy);
-      background: rgba(200, 155, 60, 0.14);
+      padding-left: 6px;
       outline: none;
     }
 
@@ -302,11 +382,24 @@
     }
 
     .manuscript-area {
-      background: rgba(255, 255, 255, 0.74);
+      position: relative;
+      background: rgba(255, 255, 255, 0.82);
       border: 1px solid rgba(19, 40, 63, 0.10);
       border-radius: var(--ols-radius);
-      box-shadow: var(--ols-shadow);
-      padding: clamp(30px, 5.2vw, 66px);
+      box-shadow: 0 24px 70px rgba(11, 23, 38, 0.11);
+      padding: clamp(40px, 5.8vw, 76px);
+      min-height: 92vh;
+    }
+
+    .manuscript-area::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: clamp(40px, 5.8vw, 76px);
+      right: clamp(40px, 5.8vw, 76px);
+      height: 4px;
+      background: linear-gradient(90deg, var(--ols-gold), rgba(200, 155, 60, 0));
+      border-radius: 999px;
     }
 
     .manuscript-area h2,
@@ -319,12 +412,12 @@
     }
 
     .manuscript-area h2 {
-      font-size: clamp(2rem, 3.2vw, 2.85rem);
-      line-height: 1.08;
+      font-size: clamp(2rem, 3.05vw, 2.75rem);
+      line-height: 1.10;
       letter-spacing: -0.035em;
       font-weight: 500;
       color: var(--ols-navy);
-      margin: 2.45em 0 0.68em;
+      margin: 2.55em 0 0.72em;
     }
 
     .manuscript-area h2:first-child {
@@ -333,28 +426,28 @@
 
     .manuscript-area h3 {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: clamp(1.16rem, 1.7vw, 1.34rem);
-      line-height: 1.32;
-      font-weight: 800;
+      font-size: clamp(1.14rem, 1.7vw, 1.32rem);
+      line-height: 1.34;
+      font-weight: 900;
       letter-spacing: -0.012em;
       color: var(--ols-navy-deep);
-      margin: 2.05em 0 0.70em;
+      margin: 2.08em 0 0.70em;
     }
 
     .manuscript-area p {
-      font-size: clamp(1.12rem, 1.45vw, 1.24rem);
-      line-height: 1.86;
+      font-size: clamp(1.14rem, 1.45vw, 1.25rem);
+      line-height: 1.90;
       color: #202b3a;
-      margin: 0 0 1.42em;
+      margin: 0 0 1.48em;
     }
 
     .manuscript-area blockquote {
-      margin: 2.15em 0;
-      padding: 2px 0 2px 28px;
+      margin: 2.25em 0;
+      padding: 2px 0 2px 30px;
       border-left: 4px solid var(--ols-gold);
       color: var(--ols-navy);
-      font-size: clamp(1.28rem, 2vw, 1.68rem);
-      line-height: 1.55;
+      font-size: clamp(1.28rem, 2vw, 1.62rem);
+      line-height: 1.58;
       font-style: italic;
     }
 
@@ -366,7 +459,7 @@
 
     .manuscript-area li {
       font-size: clamp(1.10rem, 1.4vw, 1.20rem);
-      line-height: 1.78;
+      line-height: 1.82;
       margin-bottom: 0.72em;
       color: #202b3a;
     }
@@ -375,19 +468,23 @@
       border: 0;
       height: 1px;
       background: linear-gradient(90deg, transparent, rgba(19, 40, 63, 0.24), transparent);
-      margin: 3.3em 0;
+      margin: 3.5em 0;
+    }
+
+    .after-manuscript {
+      margin-top: 86px;
     }
 
     .related-section,
     .author-section,
     .publication-notice,
     .decision-section {
-      margin-top: 58px;
+      margin-top: 64px;
     }
 
     .section-heading {
-      font-size: clamp(2rem, 3vw, 2.7rem);
-      line-height: 1.05;
+      font-size: clamp(1.9rem, 2.9vw, 2.55rem);
+      line-height: 1.08;
       color: var(--ols-navy);
       letter-spacing: -0.035em;
       font-weight: 500;
@@ -402,7 +499,7 @@
 
     .related-card,
     .decision-card {
-      min-height: 172px;
+      min-height: 176px;
       border: 1px solid rgba(19, 40, 63, 0.12);
       border-radius: 20px;
       background: rgba(255, 255, 255, 0.76);
@@ -427,16 +524,16 @@
     .related-card-title,
     .decision-card-title {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 1rem;
-      line-height: 1.35;
-      font-weight: 800;
+      font-size: 0.98rem;
+      line-height: 1.36;
+      font-weight: 900;
       color: var(--ols-navy);
     }
 
     .related-card-text,
     .decision-card-text {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.88rem;
+      font-size: 0.86rem;
       line-height: 1.55;
       color: var(--ols-muted);
       margin-top: 12px;
@@ -444,8 +541,8 @@
 
     .card-action {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.74rem;
-      font-weight: 800;
+      font-size: 0.72rem;
+      font-weight: 900;
       letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--ols-gold);
@@ -454,7 +551,7 @@
 
     .author-card {
       display: grid;
-      grid-template-columns: 132px minmax(0, 1fr);
+      grid-template-columns: 116px minmax(0, 1fr);
       gap: 26px;
       align-items: center;
       padding: 28px;
@@ -464,20 +561,44 @@
       box-shadow: 0 14px 32px rgba(11, 23, 38, 0.07);
     }
 
-    .author-card img {
-      width: 132px;
-      height: 132px;
-      object-fit: cover;
+    .author-image-wrap {
+      width: 116px;
+      height: 116px;
       border-radius: 50%;
       border: 3px solid rgba(200, 155, 60, 0.35);
-      background: var(--ols-paper-light);
+      background:
+        linear-gradient(135deg, rgba(19, 40, 63, 0.92), rgba(31, 95, 139, 0.76)),
+        var(--ols-paper-light);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .author-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .author-fallback {
+      display: none;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ols-white);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.3;
+      padding: 14px;
     }
 
     .author-name {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 1.05rem;
+      font-size: 1.02rem;
       line-height: 1.35;
-      font-weight: 800;
+      font-weight: 900;
       color: var(--ols-navy);
       margin-bottom: 12px;
     }
@@ -486,7 +607,7 @@
     .publication-notice p,
     .notice-rights {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 0.96rem;
+      font-size: 0.94rem;
       line-height: 1.68;
       color: var(--ols-muted);
       margin-bottom: 12px;
@@ -501,9 +622,9 @@
 
     .publication-notice h2 {
       font-family: Arial, Helvetica, sans-serif;
-      font-size: 1rem;
+      font-size: 0.96rem;
       font-weight: 900;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
       color: var(--ols-navy);
       margin-bottom: 14px;
@@ -522,12 +643,12 @@
 
     .publication-footer {
       border-top: 1px solid rgba(19, 40, 63, 0.11);
-      background: rgba(251, 250, 246, 0.86);
+      background: rgba(251, 250, 246, 0.88);
       padding: 34px 0;
     }
 
     .publication-footer-inner {
-      width: min(1180px, calc(100% - 40px));
+      width: min(var(--page-width), calc(100% - 40px));
       margin: 0 auto;
       display: flex;
       align-items: center;
@@ -537,9 +658,9 @@
     }
 
     .footer-brand {
-      font-size: 0.78rem;
-      font-weight: 800;
-      letter-spacing: 0.16em;
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.17em;
       text-transform: uppercase;
       color: var(--ols-muted);
     }
@@ -553,8 +674,8 @@
     }
 
     .footer-links a {
-      font-size: 0.78rem;
-      font-weight: 800;
+      font-size: 0.76rem;
+      font-weight: 900;
       letter-spacing: 0.13em;
       text-transform: uppercase;
       color: var(--ols-navy);
@@ -598,7 +719,17 @@
       }
     }
 
-    @media (max-width: 1040px) {
+    @media (max-width: 1080px) {
+      .article-cover-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .cover-right {
+        justify-self: start;
+        width: min(520px, 100%);
+      }
+
       .publication-body {
         grid-template-columns: 1fr;
         gap: 0;
@@ -622,14 +753,15 @@
 
     @media (max-width: 760px) {
       :root {
-        --header-height: 70px;
+        --header-height: 68px;
       }
 
       .publication-header-inner,
       .article-cover-inner,
       .reader-column,
       .mobile-article-menu-wrap,
-      .publication-footer-inner {
+      .publication-footer-inner,
+      .reader-intro-bar {
         width: min(100% - 28px, 100%);
       }
 
@@ -638,24 +770,41 @@
       }
 
       .logo-link img {
-        height: 38px;
+        height: 36px;
       }
 
       .header-resource-link {
-        font-size: 0.70rem;
-        padding: 10px 12px;
+        font-size: 0.68rem;
+        padding: 9px 11px;
       }
 
       .article-cover-inner {
-        padding: 60px 0 58px;
+        padding: 58px 0 62px;
       }
 
       .article-title {
-        letter-spacing: -0.045em;
+        letter-spacing: -0.04em;
+      }
+
+      .cover-right {
+        border-left: 0;
+        border-top: 1px solid rgba(200, 155, 60, 0.30);
+        padding-left: 0;
+        padding-top: 22px;
+      }
+
+      .reader-intro-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .reader-intro-note {
+        text-align: left;
       }
 
       .manuscript-area {
         border-radius: 18px;
+        min-height: 78vh;
       }
 
       .related-grid,
@@ -666,11 +815,6 @@
       .author-card {
         grid-template-columns: 1fr;
         text-align: left;
-      }
-
-      .author-card img {
-        width: 112px;
-        height: 112px;
       }
 
       .publication-footer-inner {
@@ -700,12 +844,25 @@
     <main id="main-content">
       <section class="article-cover" aria-label="Article cover">
         <div class="article-cover-inner">
-          <div class="canon-kicker">{{CANON_ID}}</div>
-          <h1 class="article-title">{{ARTICLE_TITLE}}</h1>
-          <p class="article-subtitle">{{ARTICLE_SUBTITLE}}</p>
-          <div class="article-tags">{{ARTICLE_TAGS}}</div>
+          <div class="cover-left">
+            <div class="canon-kicker">{{CANON_ID}}</div>
+            <div class="doctrine-label">Foundational Doctrine</div>
+            <h1 class="article-title">{{ARTICLE_TITLE}}</h1>
+            <p class="article-subtitle">{{ARTICLE_SUBTITLE}}</p>
+            <div class="article-tags">{{ARTICLE_TAGS}}</div>
+          </div>
+
+          <aside class="cover-right" aria-label="Publication context">
+            <div class="cover-note-label">OLS Canon Publication</div>
+            <p class="cover-note-text">A long-form OLS doctrine paper for leaders working through visibility, trust, accountability, execution drag, and growth complexity.</p>
+          </aside>
         </div>
       </section>
+
+      <div class="reader-intro-bar" aria-label="Reading note">
+        <div class="reader-intro-title">Long-Form Reader</div>
+        <div class="reader-intro-note">This publication is designed for sustained reading. The manuscript is the primary object on this page.</div>
+      </div>
 
       <div class="mobile-article-menu-wrap" aria-label="Mobile article navigation">
         <details class="mobile-article-menu">
@@ -718,10 +875,12 @@
 
       <div class="publication-body">
         <aside class="desktop-article-nav" aria-label="Article navigation">
-          <div class="nav-label">Article Sections</div>
-          <nav class="section-links" aria-label="Desktop article sections">
-            {{ARTICLE_SECTIONS}}
-          </nav>
+          <div class="nav-inner">
+            <div class="nav-label">Article Sections</div>
+            <nav class="section-links" aria-label="Desktop article sections">
+              {{ARTICLE_SECTIONS}}
+            </nav>
+          </div>
         </aside>
 
         <article class="reader-column" aria-label="Long-form article">
@@ -729,74 +888,79 @@
             {{ARTICLE_BODY}}
           </section>
 
-          <section class="related-section" aria-labelledby="related-canon-title">
-            <h2 id="related-canon-title" class="section-heading">Continue the OLS Canon</h2>
-            <div class="related-grid">
-              <a class="related-card" href="{{RELATED_ARTICLE_1}}">
-                <div>
-                  <div class="related-card-title">{{RELATED_ARTICLE_1}}</div>
-                  <div class="related-card-text">Continue into the next OLS Canon publication.</div>
-                </div>
-                <div class="card-action">Read Canon</div>
-              </a>
+          <div class="after-manuscript">
+            <section class="related-section" aria-labelledby="related-canon-title">
+              <h2 id="related-canon-title" class="section-heading">Continue the OLS Canon</h2>
+              <div class="related-grid">
+                <a class="related-card" href="{{RELATED_ARTICLE_1}}">
+                  <div>
+                    <div class="related-card-title">{{RELATED_ARTICLE_1}}</div>
+                    <div class="related-card-text">Continue into the next OLS Canon publication.</div>
+                  </div>
+                  <div class="card-action">Read Canon</div>
+                </a>
 
-              <a class="related-card" href="{{RELATED_ARTICLE_2}}">
-                <div>
-                  <div class="related-card-title">{{RELATED_ARTICLE_2}}</div>
-                  <div class="related-card-text">Explore another doctrine paper from the OLS library.</div>
-                </div>
-                <div class="card-action">Read Canon</div>
-              </a>
+                <a class="related-card" href="{{RELATED_ARTICLE_2}}">
+                  <div>
+                    <div class="related-card-title">{{RELATED_ARTICLE_2}}</div>
+                    <div class="related-card-text">Explore another doctrine paper from the OLS library.</div>
+                  </div>
+                  <div class="card-action">Read Canon</div>
+                </a>
 
-              <a class="related-card" href="{{RELATED_ARTICLE_3}}">
-                <div>
-                  <div class="related-card-title">{{RELATED_ARTICLE_3}}</div>
-                  <div class="related-card-text">Move deeper into OLS thinking on visibility, trust, accountability, and execution.</div>
-                </div>
-                <div class="card-action">Read Canon</div>
-              </a>
-            </div>
-          </section>
-
-          <section class="author-section" aria-labelledby="author-title">
-            <h2 id="author-title" class="section-heading">About the Author</h2>
-            <div class="author-card">
-              <img src="../assets/OLS-WEB-V2-AUTH-ANDY-A001.jpg" alt="Andres Andy Roosna" />
-              <div>
-                <div class="author-name">Andres “Andy” Roosna Founder &amp; Principal, OLS Group</div>
-                <p>Andres “Andy” Roosna is the Founder &amp; Principal of OLS Group, where he develops operational leadership systems for organizations facing complexity, growth, execution drag, and leadership visibility challenges. His background spans global operations, finance, corporate restructuring, government contracting, M&amp;A advisory, construction operations, and high-risk leadership environments across 36 countries.</p>
-                <p>To explore more OLS Group perspectives on leadership, trust, visibility, accountability, and execution systems, follow Andres “Andy” Roosna and OLS Group on LinkedIn or visit the OLS Group website.</p>
+                <a class="related-card" href="{{RELATED_ARTICLE_3}}">
+                  <div>
+                    <div class="related-card-title">{{RELATED_ARTICLE_3}}</div>
+                    <div class="related-card-text">Move deeper into OLS thinking on visibility, trust, accountability, and execution.</div>
+                  </div>
+                  <div class="card-action">Read Canon</div>
+                </a>
               </div>
-            </div>
-          </section>
+            </section>
 
-          <section class="publication-notice" aria-labelledby="publication-notice-title">
-            <h2 id="publication-notice-title">Publication Notice</h2>
-            <p>This publication is part of the OLS Group organizational performance and operational leadership library.</p>
-            <p class="notice-rights">© OLS Group. All Rights Reserved.</p>
-            <p class="notice-rights">This publication may not be reproduced, distributed, modified, or republished without written permission from OLS Group, except for brief quotations with proper attribution.</p>
-          </section>
-
-          <section class="decision-section" aria-labelledby="decision-title">
-            <h2 id="decision-title" class="section-heading">Keep learning or begin the conversation.</h2>
-            <div class="decision-grid">
-              <a class="decision-card" href="../resources.html">
-                <div>
-                  <div class="decision-card-title">Resource Center</div>
-                  <div class="decision-card-text">Return to the OLS library and continue through the Canon, field notes, essays, and future resources.</div>
+            <section class="author-section" aria-labelledby="author-title">
+              <h2 id="author-title" class="section-heading">About the Author</h2>
+              <div class="author-card">
+                <div class="author-image-wrap">
+                  <img src="../assets/OLS-WEB-V2-AUTH-ANDY-A001.jpg" alt="Andres Andy Roosna" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
+                  <div class="author-fallback">OLS<br />Author</div>
                 </div>
-                <div class="card-action">Open Resources</div>
-              </a>
-
-              <a class="decision-card" href="../discovery.html">
                 <div>
-                  <div class="decision-card-title">Discovery Discussion</div>
-                  <div class="decision-card-text">Start the conversation about visibility, accountability, execution drag, and the operating system beneath growth.</div>
+                  <div class="author-name">Andres “Andy” Roosna Founder &amp; Principal, OLS Group</div>
+                  <p>Andres “Andy” Roosna is the Founder &amp; Principal of OLS Group, where he develops operational leadership systems for organizations facing complexity, growth, execution drag, and leadership visibility challenges. His background spans global operations, finance, corporate restructuring, government contracting, M&amp;A advisory, construction operations, and high-risk leadership environments across 36 countries.</p>
+                  <p>To explore more OLS Group perspectives on leadership, trust, visibility, accountability, and execution systems, follow Andres “Andy” Roosna and OLS Group on LinkedIn or visit the OLS Group website.</p>
                 </div>
-                <div class="card-action">Start the Conversation</div>
-              </a>
-            </div>
-          </section>
+              </div>
+            </section>
+
+            <section class="publication-notice" aria-labelledby="publication-notice-title">
+              <h2 id="publication-notice-title">Publication Notice</h2>
+              <p>This publication is part of the OLS Group organizational performance and operational leadership library.</p>
+              <p class="notice-rights">© OLS Group. All Rights Reserved.</p>
+              <p class="notice-rights">This publication may not be reproduced, distributed, modified, or republished without written permission from OLS Group, except for brief quotations with proper attribution.</p>
+            </section>
+
+            <section class="decision-section" aria-labelledby="decision-title">
+              <h2 id="decision-title" class="section-heading">Keep learning or begin the conversation.</h2>
+              <div class="decision-grid">
+                <a class="decision-card" href="../resources.html">
+                  <div>
+                    <div class="decision-card-title">Resource Center</div>
+                    <div class="decision-card-text">Return to the OLS library and continue through the Canon, field notes, essays, and future resources.</div>
+                  </div>
+                  <div class="card-action">Open Resources</div>
+                </a>
+
+                <a class="decision-card" href="../discovery.html">
+                  <div>
+                    <div class="decision-card-title">Discovery Discussion</div>
+                    <div class="decision-card-text">Start the conversation about visibility, accountability, execution drag, and the operating system beneath growth.</div>
+                  </div>
+                  <div class="card-action">Start the Conversation</div>
+                </a>
+              </div>
+            </section>
+          </div>
         </article>
       </div>
     </main>
