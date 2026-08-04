@@ -1,1069 +1,887 @@
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <title>ARTICLE TITLE | OLS Group</title>
-
-    <meta name="description" content="ARTICLE META DESCRIPTION">
-
-    <link rel="stylesheet" href="../styles.css">
-    <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>{{ARTICLE_TITLE}} | OLS Canon | OLS Group</title>
+  <meta name="description" content="{{ARTICLE_SUBTITLE}}" />
+  <meta name="robots" content="index, follow" />
+  <link rel="icon" href="../assets/OLS-WEB-V2-LOGO-A001.png" />
 
-    <style>
-        .article-shell {
-            max-width: 900px;
-        }
+  <style>
+    :root {
+      --ols-navy: #13283f;
+      --ols-navy-deep: #0b1726;
+      --ols-blue: #1f5f8b;
+      --ols-gold: #c89b3c;
+      --ols-gold-soft: #ecd7a1;
+      --ols-ink: #182230;
+      --ols-muted: #667085;
+      --ols-line: #d9e0ea;
+      --ols-paper: #f7f3ea;
+      --ols-paper-light: #fbfaf6;
+      --ols-white: #ffffff;
+      --ols-card: #ffffff;
+      --ols-shadow: 0 18px 45px rgba(11, 23, 38, 0.10);
+      --ols-radius: 22px;
+      --reader-width: 860px;
+      --side-width: 245px;
+      --header-height: 78px;
+    }
 
-        .article-label {
-            font-size: 14px;
-            font-weight: bold;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-            margin-bottom: 18px;
-        }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
 
-        .article-meta {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 28px;
-        }
+    html {
+      scroll-behavior: smooth;
+      background: var(--ols-paper);
+    }
 
-        .article-meta span {
-            padding: 8px 14px;
-            border-radius: 30px;
-            background: rgba(255,255,255,0.16);
-            color: #ffffff;
-            font-size: 13px;
-            font-weight: bold;
-        }
+    body {
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ols-ink);
+      background:
+        radial-gradient(circle at top left, rgba(200, 155, 60, 0.18), transparent 32rem),
+        linear-gradient(180deg, #fbfaf6 0%, #f4efe3 48%, #fbfaf6 100%);
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
 
-        .article-summary {
-            background: rgba(255,255,255,0.82);
-            border-left: 5px solid #2f3e34;
-            padding: 30px;
-            border-radius: 8px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-        }
+    body.ols-copy-protected {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
 
-        .article-summary p {
-            max-width: 780px;
-        }
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
 
-        .article-body {
-            max-width: 850px;
-        }
+    img {
+      max-width: 100%;
+      display: block;
+      -webkit-user-drag: none;
+      user-drag: none;
+      user-select: none;
+    }
 
-        .article-body h2 {
-            font-size: 30px;
-            line-height: 1.25;
-            margin-top: 54px;
-            margin-bottom: 22px;
-        }
+    .publication-shell {
+      width: 100%;
+      min-height: 100vh;
+    }
 
-        .article-body h3 {
-            font-size: 23px;
-            line-height: 1.3;
-            margin-top: 38px;
-            margin-bottom: 16px;
-        }
+    .publication-header {
+      position: sticky;
+      top: 0;
+      z-index: 50;
+      height: var(--header-height);
+      background: rgba(251, 250, 246, 0.92);
+      backdrop-filter: blur(18px);
+      border-bottom: 1px solid rgba(19, 40, 63, 0.11);
+    }
 
-        .article-body p {
-            max-width: 780px;
-            margin-bottom: 20px;
-        }
+    .publication-header-inner {
+      width: min(1180px, calc(100% - 40px));
+      height: 100%;
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
 
-        .article-body blockquote {
-            max-width: 780px;
-            margin: 40px 0;
-            padding: 26px 30px;
-            border-left: 5px solid #2f3e34;
-            background: rgba(245,247,250,0.78);
-            font-size: 21px;
-            font-weight: bold;
-            line-height: 1.6;
-            border-radius: 6px;
-        }
+    .logo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
 
-        .article-callout {
-            background: rgba(255,255,255,0.84);
-            border-left: 5px solid #2f3e34;
-            border-radius: 8px;
-            padding: 32px;
-            margin-top: 40px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-        }
+    .logo-link img {
+      height: 44px;
+      width: auto;
+    }
 
-        .author-box {
-            background: rgba(255,255,255,0.84);
-            border-radius: 8px;
-            padding: 32px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-        }
+    .publication-mark {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.72rem;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ols-muted);
+      white-space: nowrap;
+    }
 
-        .author-layout {
-            display: flex;
-            gap: 30px;
-            flex-wrap: wrap;
-            align-items: flex-start;
-        }
+    .header-resource-link {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ols-navy);
+      padding: 12px 16px;
+      border: 1px solid rgba(19, 40, 63, 0.16);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.70);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
 
-        .author-image {
-            width: 180px;
-            max-width: 100%;
-            border-radius: 8px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.08);
-        }
+    .header-resource-link:hover,
+    .header-resource-link:focus-visible {
+      color: var(--ols-white);
+      background: var(--ols-navy);
+      outline: none;
+    }
 
-        .publication-note {
-            font-size: 14px;
-            opacity: 0.82;
-            max-width: 800px;
-        }
+    .article-cover {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(11, 23, 38, 0.96), rgba(19, 40, 63, 0.92)),
+        radial-gradient(circle at 82% 18%, rgba(200, 155, 60, 0.34), transparent 22rem);
+      color: var(--ols-white);
+      border-bottom: 1px solid rgba(200, 155, 60, 0.28);
+    }
 
-        .related-articles {
-            margin-top: 36px;
-        }
+    .article-cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(200, 155, 60, 0.13) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(200, 155, 60, 0.08) 1px, transparent 1px);
+      background-size: 72px 72px;
+      opacity: 0.20;
+      pointer-events: none;
+    }
 
-        @media (max-width: 768px) {
-            .article-body h2 {
-                font-size: 25px;
-            }
+    .article-cover-inner {
+      position: relative;
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      padding: 86px 0 82px;
+    }
 
-            .article-body h3 {
-                font-size: 21px;
-            }
+    .canon-kicker {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ols-gold-soft);
+      margin-bottom: 24px;
+    }
 
-            .article-body blockquote {
-                font-size: 18px;
-                padding: 22px;
-            }
+    .article-title {
+      max-width: 980px;
+      font-size: clamp(3rem, 7vw, 6.65rem);
+      line-height: 0.93;
+      font-weight: 500;
+      letter-spacing: -0.055em;
+      color: var(--ols-white);
+      margin-bottom: 28px;
+    }
 
-            .author-layout {
-                flex-direction: column;
-            }
+    .article-subtitle {
+      max-width: 780px;
+      font-size: clamp(1.25rem, 2.3vw, 1.72rem);
+      line-height: 1.42;
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 32px;
+    }
 
-            .author-image {
-                width: 140px;
-            }
-        }
-    </style>
+    .article-tags {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 700;
+      letter-spacing: 0.10em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+    }
+
+    .mobile-article-menu-wrap {
+      display: none;
+      width: min(var(--reader-width), calc(100% - 40px));
+      margin: 26px auto 0;
+    }
+
+    .mobile-article-menu {
+      border: 1px solid rgba(19, 40, 63, 0.14);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.82);
+      box-shadow: 0 14px 32px rgba(11, 23, 38, 0.08);
+      overflow: hidden;
+    }
+
+    .mobile-article-menu summary {
+      cursor: pointer;
+      list-style: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.82rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--ols-navy);
+      padding: 16px 18px;
+    }
+
+    .mobile-article-menu summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mobile-article-menu .section-links {
+      padding: 0 18px 18px;
+    }
+
+    .publication-body {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: var(--side-width) minmax(0, var(--reader-width));
+      gap: 58px;
+      align-items: start;
+      padding: 72px 0 54px;
+    }
+
+    .desktop-article-nav {
+      position: sticky;
+      top: calc(var(--header-height) + 28px);
+      align-self: start;
+      padding: 22px 18px;
+      border: 1px solid rgba(19, 40, 63, 0.12);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.64);
+      box-shadow: 0 14px 32px rgba(11, 23, 38, 0.06);
+      max-height: calc(100vh - 126px);
+      overflow: auto;
+    }
+
+    .nav-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ols-gold);
+      margin-bottom: 14px;
+    }
+
+    .section-links {
+      display: grid;
+      gap: 8px;
+    }
+
+    .section-links a {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.35;
+      color: var(--ols-muted);
+      padding: 9px 10px;
+      border-radius: 12px;
+      transition: all 0.18s ease;
+    }
+
+    .section-links a:hover,
+    .section-links a:focus-visible {
+      color: var(--ols-navy);
+      background: rgba(200, 155, 60, 0.14);
+      outline: none;
+    }
+
+    .reader-column {
+      width: 100%;
+      max-width: var(--reader-width);
+    }
+
+    .manuscript-area {
+      background: rgba(255, 255, 255, 0.74);
+      border: 1px solid rgba(19, 40, 63, 0.10);
+      border-radius: var(--ols-radius);
+      box-shadow: var(--ols-shadow);
+      padding: clamp(30px, 5.2vw, 66px);
+    }
+
+    .manuscript-area h2,
+    .manuscript-area h3,
+    .manuscript-area p,
+    .manuscript-area blockquote,
+    .manuscript-area ul,
+    .manuscript-area ol {
+      max-width: 100%;
+    }
+
+    .manuscript-area h2 {
+      font-size: clamp(2rem, 3.2vw, 2.85rem);
+      line-height: 1.08;
+      letter-spacing: -0.035em;
+      font-weight: 500;
+      color: var(--ols-navy);
+      margin: 2.45em 0 0.68em;
+    }
+
+    .manuscript-area h2:first-child {
+      margin-top: 0;
+    }
+
+    .manuscript-area h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(1.16rem, 1.7vw, 1.34rem);
+      line-height: 1.32;
+      font-weight: 800;
+      letter-spacing: -0.012em;
+      color: var(--ols-navy-deep);
+      margin: 2.05em 0 0.70em;
+    }
+
+    .manuscript-area p {
+      font-size: clamp(1.12rem, 1.45vw, 1.24rem);
+      line-height: 1.86;
+      color: #202b3a;
+      margin: 0 0 1.42em;
+    }
+
+    .manuscript-area blockquote {
+      margin: 2.15em 0;
+      padding: 2px 0 2px 28px;
+      border-left: 4px solid var(--ols-gold);
+      color: var(--ols-navy);
+      font-size: clamp(1.28rem, 2vw, 1.68rem);
+      line-height: 1.55;
+      font-style: italic;
+    }
+
+    .manuscript-area ul,
+    .manuscript-area ol {
+      margin: 0 0 1.65em 1.35em;
+      padding-left: 1em;
+    }
+
+    .manuscript-area li {
+      font-size: clamp(1.10rem, 1.4vw, 1.20rem);
+      line-height: 1.78;
+      margin-bottom: 0.72em;
+      color: #202b3a;
+    }
+
+    .manuscript-area hr {
+      border: 0;
+      height: 1px;
+      background: linear-gradient(90deg, transparent, rgba(19, 40, 63, 0.24), transparent);
+      margin: 3.3em 0;
+    }
+
+    .related-section,
+    .author-section,
+    .publication-notice,
+    .decision-section {
+      margin-top: 58px;
+    }
+
+    .section-heading {
+      font-size: clamp(2rem, 3vw, 2.7rem);
+      line-height: 1.05;
+      color: var(--ols-navy);
+      letter-spacing: -0.035em;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+    }
+
+    .related-card,
+    .decision-card {
+      min-height: 172px;
+      border: 1px solid rgba(19, 40, 63, 0.12);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.76);
+      box-shadow: 0 14px 32px rgba(11, 23, 38, 0.07);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .related-card:hover,
+    .decision-card:hover,
+    .related-card:focus-visible,
+    .decision-card:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 44px rgba(11, 23, 38, 0.12);
+      border-color: rgba(200, 155, 60, 0.50);
+      outline: none;
+    }
+
+    .related-card-title,
+    .decision-card-title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      line-height: 1.35;
+      font-weight: 800;
+      color: var(--ols-navy);
+    }
+
+    .related-card-text,
+    .decision-card-text {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      color: var(--ols-muted);
+      margin-top: 12px;
+    }
+
+    .card-action {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.74rem;
+      font-weight: 800;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ols-gold);
+      margin-top: 28px;
+    }
+
+    .author-card {
+      display: grid;
+      grid-template-columns: 132px minmax(0, 1fr);
+      gap: 26px;
+      align-items: center;
+      padding: 28px;
+      border: 1px solid rgba(19, 40, 63, 0.12);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 14px 32px rgba(11, 23, 38, 0.07);
+    }
+
+    .author-card img {
+      width: 132px;
+      height: 132px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 3px solid rgba(200, 155, 60, 0.35);
+      background: var(--ols-paper-light);
+    }
+
+    .author-name {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.05rem;
+      line-height: 1.35;
+      font-weight: 800;
+      color: var(--ols-navy);
+      margin-bottom: 12px;
+    }
+
+    .author-card p,
+    .publication-notice p,
+    .notice-rights {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.96rem;
+      line-height: 1.68;
+      color: var(--ols-muted);
+      margin-bottom: 12px;
+    }
+
+    .publication-notice {
+      padding: 28px;
+      border-radius: 20px;
+      border: 1px solid rgba(19, 40, 63, 0.12);
+      background: rgba(19, 40, 63, 0.05);
+    }
+
+    .publication-notice h2 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--ols-navy);
+      margin-bottom: 14px;
+    }
+
+    .notice-rights {
+      color: var(--ols-ink);
+      margin-bottom: 0;
+    }
+
+    .decision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .publication-footer {
+      border-top: 1px solid rgba(19, 40, 63, 0.11);
+      background: rgba(251, 250, 246, 0.86);
+      padding: 34px 0;
+    }
+
+    .publication-footer-inner {
+      width: min(1180px, calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .footer-brand {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: var(--ols-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--ols-navy);
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      color: var(--ols-gold);
+      outline: none;
+    }
+
+    .copy-warning {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%) translateY(14px);
+      z-index: 999;
+      max-width: min(520px, calc(100% - 40px));
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: rgba(11, 23, 38, 0.94);
+      color: var(--ols-white);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.86rem;
+      line-height: 1.45;
+      box-shadow: 0 20px 40px rgba(11, 23, 38, 0.22);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease, transform 0.22s ease;
+      text-align: center;
+    }
+
+    .copy-warning.is-visible {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media print {
+      body {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 1040px) {
+      .publication-body {
+        grid-template-columns: 1fr;
+        gap: 0;
+        width: 100%;
+        padding-top: 34px;
+      }
+
+      .desktop-article-nav {
+        display: none;
+      }
+
+      .mobile-article-menu-wrap {
+        display: block;
+      }
+
+      .reader-column {
+        width: min(var(--reader-width), calc(100% - 40px));
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --header-height: 70px;
+      }
+
+      .publication-header-inner,
+      .article-cover-inner,
+      .reader-column,
+      .mobile-article-menu-wrap,
+      .publication-footer-inner {
+        width: min(100% - 28px, 100%);
+      }
+
+      .publication-mark {
+        display: none;
+      }
+
+      .logo-link img {
+        height: 38px;
+      }
+
+      .header-resource-link {
+        font-size: 0.70rem;
+        padding: 10px 12px;
+      }
+
+      .article-cover-inner {
+        padding: 60px 0 58px;
+      }
+
+      .article-title {
+        letter-spacing: -0.045em;
+      }
+
+      .manuscript-area {
+        border-radius: 18px;
+      }
+
+      .related-grid,
+      .decision-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .author-card {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      .author-card img {
+        width: 112px;
+        height: 112px;
+      }
+
+      .publication-footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+    }
+  </style>
 </head>
 
-<body>
-
-<header>
-    <div class="nav-inner">
-
-        ../index.html
-            ../assets/LOGO.png
+<body class="ols-copy-protected">
+  <div class="publication-shell">
+    <header class="publication-header" aria-label="OLS publication header">
+      <div class="publication-header-inner">
+        <a class="logo-link" href="../index.html" aria-label="OLS Group home">
+          <img src="../assets/OLS-WEB-V2-LOGO-A001.png" alt="OLS Group" />
+          <span class="publication-mark">OLS Publication</span>
         </a>
+        <a class="header-resource-link" href="../resources.html">Resource Center</a>
+      </div>
+    </header>
 
-        <nav>
-            ../what-we-believe.htmlWhat We Believe</a>
-            ../framework.htmlHow We Think</a>
-            ../assessment.htmlIdentify the Problem</a>
-            ../services.htmlHow We Help</a>
-            ../about.htmlWhy OLS</a>
-            ../discovery.htmlStart the Conversation</a>
-            ../resources.htmlResource Center</a>
+    <main id="main-content">
+      <section class="article-cover" aria-label="Article cover">
+        <div class="article-cover-inner">
+          <div class="canon-kicker">{{CANON_ID}}</div>
+          <h1 class="article-title">{{ARTICLE_TITLE}}</h1>
+          <p class="article-subtitle">{{ARTICLE_SUBTITLE}}</p>
+          <div class="article-tags">{{ARTICLE_TAGS}}</div>
+        </div>
+      </section>
+
+      <div class="mobile-article-menu-wrap" aria-label="Mobile article navigation">
+        <details class="mobile-article-menu">
+          <summary>Article Sections</summary>
+          <nav class="section-links" aria-label="Mobile article sections">
+            {{ARTICLE_SECTIONS}}
+          </nav>
+        </details>
+      </div>
+
+      <div class="publication-body">
+        <aside class="desktop-article-nav" aria-label="Article navigation">
+          <div class="nav-label">Article Sections</div>
+          <nav class="section-links" aria-label="Desktop article sections">
+            {{ARTICLE_SECTIONS}}
+          </nav>
+        </aside>
+
+        <article class="reader-column" aria-label="Long-form article">
+          <section class="manuscript-area" aria-label="Article manuscript">
+            {{ARTICLE_BODY}}
+          </section>
+
+          <section class="related-section" aria-labelledby="related-canon-title">
+            <h2 id="related-canon-title" class="section-heading">Continue the OLS Canon</h2>
+            <div class="related-grid">
+              <a class="related-card" href="{{RELATED_ARTICLE_1}}">
+                <div>
+                  <div class="related-card-title">{{RELATED_ARTICLE_1}}</div>
+                  <div class="related-card-text">Continue into the next OLS Canon publication.</div>
+                </div>
+                <div class="card-action">Read Canon</div>
+              </a>
+
+              <a class="related-card" href="{{RELATED_ARTICLE_2}}">
+                <div>
+                  <div class="related-card-title">{{RELATED_ARTICLE_2}}</div>
+                  <div class="related-card-text">Explore another doctrine paper from the OLS library.</div>
+                </div>
+                <div class="card-action">Read Canon</div>
+              </a>
+
+              <a class="related-card" href="{{RELATED_ARTICLE_3}}">
+                <div>
+                  <div class="related-card-title">{{RELATED_ARTICLE_3}}</div>
+                  <div class="related-card-text">Move deeper into OLS thinking on visibility, trust, accountability, and execution.</div>
+                </div>
+                <div class="card-action">Read Canon</div>
+              </a>
+            </div>
+          </section>
+
+          <section class="author-section" aria-labelledby="author-title">
+            <h2 id="author-title" class="section-heading">About the Author</h2>
+            <div class="author-card">
+              <img src="../assets/OLS-WEB-V2-AUTH-ANDY-A001.jpg" alt="Andres Andy Roosna" />
+              <div>
+                <div class="author-name">Andres “Andy” Roosna Founder &amp; Principal, OLS Group</div>
+                <p>Andres “Andy” Roosna is the Founder &amp; Principal of OLS Group, where he develops operational leadership systems for organizations facing complexity, growth, execution drag, and leadership visibility challenges. His background spans global operations, finance, corporate restructuring, government contracting, M&amp;A advisory, construction operations, and high-risk leadership environments across 36 countries.</p>
+                <p>To explore more OLS Group perspectives on leadership, trust, visibility, accountability, and execution systems, follow Andres “Andy” Roosna and OLS Group on LinkedIn or visit the OLS Group website.</p>
+              </div>
+            </div>
+          </section>
+
+          <section class="publication-notice" aria-labelledby="publication-notice-title">
+            <h2 id="publication-notice-title">Publication Notice</h2>
+            <p>This publication is part of the OLS Group organizational performance and operational leadership library.</p>
+            <p class="notice-rights">© OLS Group. All Rights Reserved.</p>
+            <p class="notice-rights">This publication may not be reproduced, distributed, modified, or republished without written permission from OLS Group, except for brief quotations with proper attribution.</p>
+          </section>
+
+          <section class="decision-section" aria-labelledby="decision-title">
+            <h2 id="decision-title" class="section-heading">Keep learning or begin the conversation.</h2>
+            <div class="decision-grid">
+              <a class="decision-card" href="../resources.html">
+                <div>
+                  <div class="decision-card-title">Resource Center</div>
+                  <div class="decision-card-text">Return to the OLS library and continue through the Canon, field notes, essays, and future resources.</div>
+                </div>
+                <div class="card-action">Open Resources</div>
+              </a>
+
+              <a class="decision-card" href="../discovery.html">
+                <div>
+                  <div class="decision-card-title">Discovery Discussion</div>
+                  <div class="decision-card-text">Start the conversation about visibility, accountability, execution drag, and the operating system beneath growth.</div>
+                </div>
+                <div class="card-action">Start the Conversation</div>
+              </a>
+            </div>
+          </section>
+        </article>
+      </div>
+    </main>
+
+    <footer class="publication-footer" aria-label="OLS publication footer">
+      <div class="publication-footer-inner">
+        <div class="footer-brand">OLS Group</div>
+        <nav class="footer-links" aria-label="Footer links">
+          <a href="../index.html">Home</a>
+          <a href="../resources.html">Resource Center</a>
+          <a href="../discovery.html">Start the Conversation</a>
         </nav>
-
-    </div>
-</header>
-
-<main>
-
-    <section class="hero">
-        <div class="container article-shell">
-
-            <p class="article-label">
-                OLS Canon Article
-            </p>
-
-            <h1>
-                ARTICLE TITLE
-            </h1>
-
-            <p>
-                ARTICLE SUBTITLE
-            </p>
-
-            <div class="article-meta">
-                <span>CONTENT ID</span>
-                <span>OLS Canon</span>
-                <span>Foundational Doctrine</span>
-                <span>PRIMARY PILLAR</span>
-            </div>
-
-        </div>
-    </section>
-
-    <div class="window"></div>
-
-    <section class="section">
-        <div class="container article-shell">
-
-            <div class="article-summary">
-
-                <h2>
-                    Executive Summary
-                </h2>
-
-                <p>
-                    ARTICLE SUMMARY GOES HERE. Use the approved website excerpt or website summary from the article publication package. This should briefly explain the leadership friction, hidden constraint, business impact, and leadership realignment opportunity.
-                </p>
-
-            </div>
-
-        </div>
-    </section>
-
-    <div class="window"></div>
-
-    <section class="section alt">
-        <div class="container article-shell">
-
-            <article class="article-body">
-
-                <h2>
-                    Main Article
-                </h2>
-
-                <p>
-                    ARTICLE BODY STARTS HERE. Replace this area with the approved Main Article text from the Word document.
-                </p>
-
-                <p>
-                    Keep each paragraph inside its own paragraph tag. Use section headings as h2 tags. Use smaller internal headings as h3 tags only when needed.
-                </p>
-
-                <h2>
-                    SECTION HEADING
-                </h2>
-
-                <p>
-                    SECTION BODY PARAGRAPH GOES HERE.
-                </p>
-
-                <blockquote>
-                    OPTIONAL PULL QUOTE GOES HERE.
-                </blockquote>
-
-                <p>
-                    CONTINUE ARTICLE BODY HERE.
-                </p>
-
-            </article>
-
-        </div>
-    </section>
-
-    <div class="window"></div>
-
-    <section class="section">
-        <div class="container article-shell">
-
-            <h2>
-                Leadership Friction
-            </h2>
-
-            <p>
-                LEADERSHIP FRICTION SECTION GOES HERE. Use the approved Leadership Friction section from the Word document when available.
-            </p>
-
-        </div>
-    </section>
-
-    <div class="window"></div>
-
-    <section class="section alt">
-        <div class="container article-shell">
-
-            <h2>
-                What OLS Sees
-            </h2>
-
-            <div class="grid-2">
-
-                <div class="card">
-                    <h3>Mission</h3>
-                    <p>MISSION OBSERVATION GOES HERE.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Visibility</h3>
-                    <p>VISIBILITY OBSERVATION GOES HERE.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Trust</h3>
-                    <p>TRUST OBSERVATION GOES HERE.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Information Flow</h3>
-                    <p>INFORMATION FLOW OBSERVATION GOES HERE.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Ownership</h3>
-                    <p>OWNERSHIP OBSERVATION GOES HERE.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Accountability</h3>
-                    <p>ACCOUNTABILITY OBSERVATION GOES HERE.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Execution</h3>
-                    <p>EXECUTION OBSERVATION GOES HERE.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Adaptability</h3>
-                    <p>ADAPTABILITY OBSERVATION GOES HERE.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Results</h3>
-                    <p>RESULTS OBSERVATION GOES HERE.</p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <div class="window"></div>
-
-    <section class="section">
-        <div class="container article-shell">
-
-            <h2>
-                Leadership Realignment Opportunity
-            </h2>
-
-            <p>
-                LEADERSHIP REALIGNMENT OPPORTUNITY SECTION GOES HERE. Use the approved Leadership Realignment Opportunity section from the Word document when available.
-            </p>
-
-        </div>
-    </section>
-
-    <div class="window"></div>
-
-    <section class="section alt">
-        <div class="container article-shell">
-
-            <h2>
-                Final Thought
-            </h2>
-
-            <p>
-                FINAL THOUGHT GOES HERE. Use the approved Final Thought section from the Word document.
-            </p>
-
-            <div class="article-callout">
-
-                <h2>
-                    Schedule a Discovery Conversation
-                </h2>
-
-                <p>
-                    We'll identify where visibility, trust, information flow, ownership, accountability, execution, and adaptability are breaking down inside your operating system and develop a practical path forward.
-                </p>
-
-                ../discovery.html
-                    Start the Conversation
-                </a>
-
-            </div>
-
-        </div>
-    </section>
-
-    <div class="window"></div>
-
-    <section class="section">
-        <div class="container article-shell">
-
-            <div class="author-box">
-
-                <div class="author-layout">
-
-                    <div>
-                        ../assets/andyprofile.png
-                    </div>
-
-                    <div>
-
-                        <h2>
-                            About the Author
-                        </h2>
-
-                        <p>
-                            <strong>Andres "Andy" Roosna</strong><br>
-                            Founder & Principal, OLS Group
-                        </p>
-
-                        <p>
-                            Operational Leadership Systems Practitioner<br>
-                            36 Countries • Corporate Operations • Finance • M&amp;A • Organizational Transformation
-                        </p>
-
-                        <p>
-                            Andres "Andy" Roosna is the Founder and Principal of Operational Leadership Systems (OLS Group), a consulting practice focused on helping organizations improve visibility, trust, ownership, accountability, execution, and adaptability.
-                        </p>
-
-                        <p>
-                            Over a career spanning leadership and operational roles across 36 countries, Andy has worked in finance, corporate operations, government contracting, mergers and acquisitions, organizational transformation, construction operations, and complex leadership environments.
-                        </p>
-
-                        <p>
-                            His work focuses on helping leaders understand what has changed inside the operating system of their organization before deciding what should happen next.
-                        </p>
-
-                        <p>
-                            The OLS Canon is a collection of operational leadership doctrine developed from decades of practical experience building teams, solving execution problems, leading change initiatives, and supporting leaders responsible for complex organizations.
-                        </p>
-
-                    </div>
-
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <div class="window"></div>
-
-    <section class="section alt">
-        <div class="container article-shell">
-
-            <h2>
-                Other Articles in the OLS Canon
-            </h2>
-
-            <p>
-                Continue exploring the foundational doctrine behind visibility, trust, ownership, accountability, execution, and adaptability.
-            </p>
-
-            <div class="grid-2 related-articles">
-
-                <div class="card">
-                    <h3>Visibility Precedes Control</h3>
-                    <p>
-                        The danger of scaling what leadership can no longer clearly see.
-                    </p>
-                    <a href="visibility-precedes-control.html" class="btn-secondary">
-                        Read Article
-                    </a>
-                </div>
-
-                <div class="card">
-                    <h3>Trust Is Organizational Infrastructure</h3>
-                    <p>
-                        Why every organization eventually performs at the speed of the truth it is willing to hear.
-                    </p>
-                    trust-is-organizational-infrastructure.html
-                        Read Article
-                    </a>
-                </div>
-
-                <div class="card">
-                    <h3>Leadership Equals Accountability</h3>
-                    <p>
-                        Accountability begins when awareness has a trusted path to authority and action.
-                    </p>
-                    leadership-equals-accountability.html
-                        Read Article
-                    </a>
-                </div>
-
-                <div class="card">
-                    <h3>Why Organizations Don't Have a Strategy Problem</h3>
-                    <p>
-                        They have an execution problem.
-                    </p>
-                    why-organizations-dont-have-a-strategy-problem.html
-                        Read Article
-                    </a>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <div class="window"></div>
-
-    <section class="section">
-        <div class="container article-shell">
-
-            <p class="publication-note">
-                © 2026 Operational Leadership Systems (OLS Group). All Rights Reserved.
-            </p>
-
-            <p class="publication-note">
-                This publication is part of the OLS Canon and may not be reproduced, distributed, modified, or republished without written permission from OLS Group except for brief quotations with proper attribution.
-            </p>
-
-        </div>
-    </section>
-
-</main>
-
-<footer>
-
-    <div class="container">
-
-        <h2>
-            Operational Leadership Systems
-        </h2>
-
-        <p>
-            Helping leaders understand what changed inside the operating system of their organization before deciding what should happen next.
-        </p>
-
-        <div class="button-group">
-
-            ../resources.html
-                Resource Center
-            </a>
-
-            ../discovery.html
-                Start the Conversation
-            </a>
-
-        </div>
-
-        <br><br>
-
-        <p>
-            © 2026 Operational Leadership Systems (OLS Group). All Rights Reserved.
-        </p>
-
-        <p>
-            Visibility · Trust · Ownership · Accountability · Execution
-        </p>
-
-    </div>
-
-</footer>
-
+      </div>
+    </footer>
+  </div>
+
+  <div id="copyWarning" class="copy-warning" role="status" aria-live="polite">This OLS publication is protected. Brief quotations with proper attribution are permitted. Full reproduction is not permitted.</div>
+
+  <script>
+    (function () {
+      "use strict";
+
+      const protectedMessage = "This OLS publication is protected. Brief quotations with proper attribution are permitted. Full reproduction is not permitted.";
+      const warning = document.getElementById("copyWarning");
+      let warningTimer = null;
+
+      function showWarning() {
+        if (!warning) return;
+        warning.textContent = protectedMessage;
+        warning.classList.add("is-visible");
+        if (warningTimer) {
+          window.clearTimeout(warningTimer);
+        }
+        warningTimer = window.setTimeout(function () {
+          warning.classList.remove("is-visible");
+        }, 2600);
+      }
+
+      function blockEvent(event) {
+        if (!event) return false;
+        event.preventDefault();
+        event.stopPropagation();
+        showWarning();
+        return false;
+      }
+
+      document.addEventListener("contextmenu", blockEvent, true);
+      document.addEventListener("copy", blockEvent, true);
+      document.addEventListener("cut", blockEvent, true);
+      document.addEventListener("dragstart", blockEvent, true);
+      document.addEventListener("selectstart", function (event) {
+        const target = event.target;
+        if (target && target.closest && target.closest("a, button, summary")) {
+          return true;
+        }
+        return blockEvent(event);
+      }, true);
+
+      document.addEventListener("keydown", function (event) {
+        const key = String(event.key || "").toLowerCase();
+        const blockedCombo =
+          (event.ctrlKey || event.metaKey) && ["a", "c", "x", "s", "p", "u"].includes(key) ||
+          (event.ctrlKey || event.metaKey) && event.shiftKey && ["i", "j", "c"].includes(key) ||
+          key === "f12" ||
+          key === "printscreen";
+
+        if (blockedCombo) {
+          blockEvent(event);
+        }
+      }, true);
+
+      document.addEventListener("keyup", function (event) {
+        const key = String(event.key || "").toLowerCase();
+        if (key === "printscreen") {
+          try {
+            navigator.clipboard.writeText("");
+          } catch (error) {}
+          showWarning();
+        }
+      }, true);
+
+      window.addEventListener("beforeprint", function (event) {
+        blockEvent(event);
+      });
+    })();
+  </script>
 </body>
 </html>
-
-ro-meta {
-            margin-top: 28px;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            font-size: 14px;
-            color: #dbeafe;
-        }
-
-        .article-hero-meta span {
-            border: 1px solid rgba(255,255,255,0.35);
-            border-radius: 999px;
-            padding: 8px 12px;
-            background: rgba(255,255,255,0.08);
-        }
-
-        .article-shell {
-            max-width: 900px;
-        }
-
-        .article-summary {
-            background: rgba(255,255,255,0.78);
-            border-left: 5px solid #2f3e34;
-            padding: 28px;
-            margin-bottom: 42px;
-            border-radius: 8px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-        }
-
-        .article-summary p {
-            max-width: 100%;
-        }
-
-        .article-body h2 {
-            font-size: 30px;
-            line-height: 1.25;
-            margin-top: 54px;
-            margin-bottom: 22px;
-        }
-
-        .article-body h3 {
-            font-size: 23px;
-            line-height: 1.3;
-            margin-top: 36px;
-            margin-bottom: 16px;
-        }
-
-        .article-body p {
-            max-width: 760px;
-            margin-bottom: 20px;
-        }
-
-        .article-body blockquote {
-            max-width: 760px;
-            margin: 34px 0;
-            padding: 24px 28px;
-            background: rgba(245,247,250,0.75);
-            border-left: 5px solid #2f3e34;
-            font-size: 20px;
-            line-height: 1.6;
-            font-weight: bold;
-        }
-
-        .article-meta-panel {
-            background: rgba(245,247,250,0.72);
-            border: 1px solid #E5E7EB;
-            border-radius: 8px;
-            padding: 28px;
-            margin-top: 42px;
-            margin-bottom: 42px;
-        }
-
-        .article-meta-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 18px;
-            margin-top: 22px;
-        }
-
-        .article-meta-item {
-            background: rgba(255,255,255,0.78);
-            border-radius: 8px;
-            padding: 18px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.04);
-        }
-
-        .article-meta-item strong {
-            display: block;
-            margin-bottom: 6px;
-        }
-
-        .article-callout {
-            background: rgba(255,255,255,0.80);
-            border-left: 5px solid #2f3e34;
-            padding: 28px;
-            border-radius: 8px;
-            margin: 42px 0;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-        }
-
-        .related-articles {
-            margin-top: 40px;
-        }
-
-        .author-box {
-            background: rgba(255,255,255,0.78);
-            border-radius: 8px;
-            padding: 30px;
-            box-shadow: 0 8px 25px rgba(0,0,0,0.06);
-        }
-
-        .publication-note {
-            font-size: 14px;
-            color: #334155;
-            max-width: 760px;
-            margin-top: 28px;
-        }
-
-        @media (max-width: 768px) {
-            .article-body h2 {
-                font-size: 25px;
-            }
-
-            .article-body h3 {
-                font-size: 21px;
-            }
-
-            .article-body blockquote {
-                font-size: 18px;
-            }
-        }
-    </style>
-</head>
-
-<body>
-
-<header>
-    <div class="nav-inner">
-
-        <a href="../index.html" class="logo"../assets/LOGO.png" alt="OLS Group">
-            <a href="../framework.html">How We Think</a>
- <a href="../assessment.html">Identify the Problem</a>
- <a href="../services.htmllp</a>
-            <a href="../about.html">Why OLS</a>
- <a href="../discovery.html">Start the Conversation      <a href="../resources.htmlCenter</a>
-        </nav>
-
-    </div>
-</header>
-
-<main>
-
-    <section class="hero">
-        <div class="container article-shell">
-
-            <p>
-                OLS Canon Article
-            </p>
-
-            <h1>
-                ARTICLE TITLE
-            </h1>
-
-            <p>
-                ARTICLE SUBTITLE
-            </p>
-
-            <div class="article-hero-meta">
-                <span>CONTENT ID</span>
-                <span>OLS Foundational Doctrine Series</span>
-                <span>PRIMARY PILLAR</span>
-            </div>
-
-        </div>
-    </section>
-
-    <div class="window"></div>
-
-    <section class="section">
-        <div class="container article-shell">
-
-            <div class="article-summary">
-
-                <h2>
-                    Article Summary
-                </h2>
-
-                <p>
-                    ARTICLE EXCERPT OR WEBSITE SUMMARY GOES HERE. Use the article's approved Website Excerpt or Website Summary from the publication package. This should briefly explain the leadership friction, hidden constraint, business impact, and leadership realignment opportunity.
-                </p>
-
-            </div>
-
-            <div class="article-meta-panel">
-
-                <h2>
-                    Article Position
-                </h2>
-
-                <div class="article-meta-grid">
-
-                    <div class="article-meta-item">
-                        <strong>Canonical Status</strong>
-                        OLS Canon / Foundational Doctrine Article
-                    </div>
-
-                    <div class="article-meta-item">
-                        <strong>Primary Pillar</strong>
-                        PRIMARY PILLAR
-                    </div>
-
-                    <div class="article-meta-item">
-                        <strong>Supporting Pillars</strong>
-                        SUPPORTING PILLARS
-                    </div>
-
-                    <div class="article-meta-item">
-                        <strong>Core Leadership Question</strong>
-                        CORE LEADERSHIP QUESTION
-                    </div>
-
-                </div>
-
-            </div>
-
-            <article class="article-body">
-
-                <h2>
-                    Main Article
-                </h2>
-
-                <!--
-                ARTICLE BODY GOES HERE.
-
-                Conversion rule:
-                - Use <h2> for main section headings.
-                - Use <h3> for sub-section headings if needed.
-                - Use <p> for each paragraph.
-                - Use <blockquote> for short high-impact quotes.
-                - Do not paste Article Management, LinkedIn packages, Newsletter packages, or Knowledge Inventory sections into the public article body.
-                - Use the approved Main Article section as the source of truth.
-                -->
-
-                <p>
-                    FIRST ARTICLE PARAGRAPH GOES HERE.
-                </p>
-
-                <p>
-                    SECOND ARTICLE PARAGRAPH GOES HERE.
-                </p>
-
-                <h2>
-                    SECTION HEADING
-                </h2>
-
-                <p>
-                    SECTION BODY PARAGRAPH GOES HERE.
-                </p>
-
-                <blockquote>
-                    OPTIONAL PULL QUOTE GOES HERE.
-                </blockquote>
-
-                <p>
-                    CONTINUE ARTICLE BODY HERE.
-                </p>
-
-            </article>
-
-        </div>
-    </section>
-
-    <div class="window"></div>
-
-    <section class="section alt">
-        <div class="container article-shell">
-
-            <h2>
-                Leadership Friction
-            </h2>
-
-            <p>
-                LEADERSHIP FRICTION SECTION GOES HERE. This section should explain the operating friction revealed by the article without rewriting the narrative.
-            </p>
-
-        </div>
-    </section>
-
-    <div class="window"></div>
-
-    <section class="section">
-        <div class="container article-shell">
-
-            <h2>
-                What OLS Sees
-            </h2>
-
-            <div class="grid-2">
-
-                <div class="card">
-                    <h3>Mission</h3>
-                    <p>MISSION OBSERVATION GOES HERE.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Visibility</h3>
-                    <p>VISIBILITY OBSERVATION GOES HERE.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Trust</h3>
-                    <p>TRUST OBSERVATION GOES HERE.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Information Flow</h3>
-                    <p>INFORMATION FLOW OBSERVATION GOES HERE.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Ownership</h3>
-                    <p>OWNERSHIP OBSERVATION GOES HERE.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Accountability</h3>
-                    <p>ACCOUNTABILITY OBSERVATION GOES HERE.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Execution</h3>
-                    <p>EXECUTION OBSERVATION GOES HERE.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Adaptability</h3>
-                    <p>ADAPTABILITY OBSERVATION GOES HERE.</p>
-                </div>
-
-                <div class="card">
-                    <h3>Results</h3>
-                    <p>RESULTS OBSERVATION GOES HERE.</p>
-                </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <div class="window"></div>
-
-    <section class="section alt">
-        <div class="container article-shell">
-
-            <h2>
-                Leadership Realignment Opportunity
-            </h2>
-
-            <p>
-                LEADERSHIP REALIGNMENT OPPORTUNITY GOES HERE. This section should explain the system improvement opportunity using OLS language.
-            </p>
-
-        </div>
-    </section>
-
-    <div class="window"></div>
-
-    <section class="section">
-        <div class="container article-shell">
-
-            <h2>
-                Final Thought
-            </h2>
-
-            <p>
-                FINAL THOUGHT GOES HERE.
-            </p>
-
-            <div class="article-callout">
-
-                <h2>
-                    Schedule a Discovery Conversation
-                </h2>
-
-                <p>
-                    We'll identify where visibility, trust, information flow, ownership, accountability, execution, and adaptability are breaking down inside your operating system and develop a practical path forward.
-                </p>
-
-                <a href="../discovery.                Start the Conversation
-                </a>
-
-            </div>
-
-        </div>
-    </section>
-
-    <div class="window"></div>
-
-    <section class="section alt">
-        <div class="container article-shell">
-
-            <h2>
-                Continue Exploring
-            </h2>
-
-            <p>
-                This article is part of the OLS Foundational Doctrine Series. Continue through the canon to understand how visibility, trust, accountability, and execution connect inside the operating system.
-            </p>
-
-            <div class="grid-2 related-articles">
-
-                <div class="card">
-                    <h3>Visibility Precedes Control</h3>
-                    <p>The danger of scaling what leadership can no longer clearly see.</p>
-                    <a href="visibility-precedes-control.html" class="btn-secondary">Read Article</a>
-                </div>
-
-                <div class="card">
-                    <h3>Trust Is Organizational Infrastructure</h3>
-                    <p>Why every organization eventually performs at the speed of the truth it is willing to hear.</p>
-                    <a href="trust-is-organizational-infrastructure.html" class="btn-secondary">Read Article            <div class="card">
-                    <h3>Leadership Equals Accountability</h3>
-                    <p>Accountability begins when awareness has a trusted path to authority and action.</p>
-                    <a href="leadership-equals-accountability.html" class="btn-secondary">Read Article</a>
-       <div class="card">
-                    <h3>Why Organizations Don’t Have a Strategy Problem</h3>
-                    <p>They have an execution problem.</p>
-                    <a href="why-organizations-dont-have-a-strategy-problem.html" class="btn-secondary  </div>
-
-            </div>
-
-        </div>
-    </section>
-
-    <div class="window"></div>
-
-    <section class="section">
-        <div class="container article-shell">
-
-            <div class="author-box">
-
-                <h2>
-                    About the Author
-                </h2>
-
-                <p>
-                    <strong>By Andres “Andy” Roosna</strong><br>
-                    Founder & Principal, OLS Group
-                </p>
-
-                <p>
-                    Andres “Andy” Roosna is the Founder & Principal of OLS Group, where he develops operational leadership systems for organizations facing complexity, growth, execution drag, and leadership visibility challenges.
-                </p>
-
-                <p>
-                    His background spans global operations, finance, corporate restructuring, government contracting, M&A advisory, construction operations, and high-risk leadership environments across 36 countries.
-                </p>
-
-            </div>
-
-            <p class="publication-note">
-                This publication is part of the OLS Group organizational performance and operational leadership library. This publication may not be reproduced, distributed, modified, or republished without written permission from OLS Group, except for brief quotations with proper attribution.
-            </p>
-
-        </div>
-    </section>
-
-</main>
-
-<footer>
-
-    <div class="container">
-
-        <h2>
-            Operational Leadership Systems
-        </h2>
-
-        <p>
-            Helping leaders understand what changed inside the operating system of their organization before deciding what should happen next.
-        </p>
-
-        <div class="button-group">
-
-            <a href="../resources.            Resource Center
-            </a>
-
-            <a href="../discovery.html" class=Start the Conversation
-            </a>
-
-        </div>
-
-        <br><br>
-
-        <p>
-            © 2026 Operational Leadership Systems (OLS Group). All Rights Reserved.
-        </p>
-
-        <p>
-            Visibility · Trust · Ownership · Accountability · Execution
-        </p>
-
-    </div>
-
-</footer>
-
-</body>
-</html>
-``
