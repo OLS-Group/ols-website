@@ -24,6 +24,7 @@
             --ols-gold: #c8a45d;
             --max-width: 1180px;
             --reading-width: 900px;
+            --companion-width: 480px;
         }
 
         * {
@@ -44,6 +45,7 @@
             background:
                 linear-gradient(rgba(7, 26, 45, 0.66), rgba(7, 26, 45, 0.66)),
                 url("assets/OLS-WEB-V2-RSC-HERO-A001.jpg") center center / cover fixed no-repeat;
+            overflow-x: hidden;
         }
 
         img {
@@ -63,6 +65,16 @@
 
         button {
             cursor: pointer;
+        }
+
+        .site-shell {
+            min-height: 100vh;
+            transition: margin-right 0.28s ease, filter 0.28s ease;
+        }
+
+        body.companion-open .site-shell {
+            margin-right: var(--companion-width);
+            filter: saturate(0.94);
         }
 
         .container {
@@ -209,7 +221,9 @@
             margin-top: 38px;
         }
 
-        .button {
+        .button,
+        .card-action,
+        .cta-action {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -227,7 +241,11 @@
         }
 
         .button:hover,
-        .button:focus {
+        .button:focus,
+        .card-action:hover,
+        .card-action:focus,
+        .cta-action:hover,
+        .cta-action:focus {
             background: var(--ols-green-hover);
             transform: translateY(-2px);
             border-color: rgba(255, 255, 255, 0.46);
@@ -331,209 +349,6 @@
             background: var(--ols-gold);
         }
 
-        .assistant-section {
-            padding: 118px 0;
-            background:
-                linear-gradient(rgba(244, 247, 250, 0.92), rgba(244, 247, 250, 0.92)),
-                url("assets/OLS-WEB-V2-RSC-LIBRARY-A001.jpg") center center / cover no-repeat;
-            border-top: 1px solid var(--ols-border);
-        }
-
-        .assistant-intro {
-            max-width: 920px;
-            margin-bottom: 52px;
-        }
-
-        .assistant-intro p {
-            max-width: 850px;
-            font-size: 19px;
-        }
-
-        .assistant-shell {
-            overflow: hidden;
-            background: rgba(255, 255, 255, 0.92);
-            border: 1px solid var(--ols-border);
-            border-radius: 34px;
-            box-shadow: 0 32px 90px rgba(7, 26, 45, 0.18);
-            backdrop-filter: blur(14px);
-        }
-
-        .assistant-shell-header {
-            padding: 44px 48px 40px;
-            color: #ffffff;
-            background:
-                linear-gradient(135deg, rgba(7, 26, 45, 0.98), rgba(10, 26, 47, 0.94), rgba(31, 79, 122, 0.86));
-        }
-
-        .assistant-shell-header .eyebrow {
-            margin-bottom: 14px;
-            color: #b7d7f5;
-        }
-
-        .assistant-shell-header h2 {
-            max-width: 920px;
-            margin-bottom: 18px;
-            color: #ffffff;
-            font-size: clamp(34px, 5vw, 62px);
-        }
-
-        .assistant-shell-header p {
-            max-width: 860px;
-            margin-bottom: 0;
-            color: rgba(255, 255, 255, 0.84);
-            font-size: 19px;
-        }
-
-        .assistant-stage {
-            min-height: 540px;
-            display: grid;
-            grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
-            background:
-                radial-gradient(circle at top right, rgba(200, 164, 93, 0.13), transparent 34%),
-                rgba(255, 255, 255, 0.92);
-        }
-
-        .assistant-left {
-            padding: 42px;
-            background: rgba(239, 245, 250, 0.72);
-            border-right: 1px solid var(--ols-border);
-        }
-
-        .assistant-left h3 {
-            margin-bottom: 18px;
-            font-size: clamp(26px, 3vw, 38px);
-        }
-
-        .assistant-left p {
-            font-size: 17px;
-        }
-
-        .conversation-starters {
-            display: grid;
-            margin-top: 28px;
-            border-top: 1px solid rgba(15, 23, 42, 0.12);
-        }
-
-        .starter-link {
-            padding: 18px 0;
-            color: var(--ols-deep);
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid rgba(15, 23, 42, 0.12);
-            text-align: left;
-            font-size: 17px;
-            font-weight: 900;
-            line-height: 1.35;
-            transition: color 0.2s ease, padding-left 0.2s ease;
-        }
-
-        .starter-link:hover,
-        .starter-link:focus {
-            color: var(--ols-blue);
-            padding-left: 8px;
-        }
-
-        .assistant-right {
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            padding: 42px;
-        }
-
-        .assistant-native-frame {
-            min-height: 360px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 42px;
-            background:
-                linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(239, 245, 250, 0.72));
-            border: 1px solid rgba(15, 23, 42, 0.10);
-            border-radius: 28px;
-        }
-
-        .assistant-prompt-card {
-            width: min(720px, 100%);
-        }
-
-        .assistant-prompt-card label {
-            display: block;
-            margin-bottom: 14px;
-            color: var(--ols-deep);
-            font-size: 14px;
-            font-weight: 900;
-            letter-spacing: 0.14em;
-            text-transform: uppercase;
-        }
-
-        .assistant-prompt-card textarea {
-            width: 100%;
-            min-height: 150px;
-            resize: vertical;
-            padding: 20px;
-            color: var(--ols-deep);
-            background: rgba(255, 255, 255, 0.96);
-            border: 1px solid rgba(15, 23, 42, 0.15);
-            border-radius: 22px;
-            outline: none;
-            font-size: 18px;
-            line-height: 1.6;
-            box-shadow: 0 18px 46px rgba(7, 26, 45, 0.08);
-        }
-
-        .assistant-prompt-card textarea:focus {
-            border-color: rgba(31, 79, 122, 0.55);
-            box-shadow: 0 0 0 3px rgba(31, 79, 122, 0.12), 0 18px 46px rgba(7, 26, 45, 0.08);
-        }
-
-        .assistant-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            margin-top: 18px;
-        }
-
-        .assistant-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: fit-content;
-            min-height: 48px;
-            padding: 14px 22px;
-            color: #ffffff;
-            background: var(--ols-green);
-            border: 1px solid rgba(255, 255, 255, 0.22);
-            border-radius: 999px;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 900;
-            transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
-        }
-
-        .assistant-button:hover,
-        .assistant-button:focus {
-            background: var(--ols-green-hover);
-            transform: translateY(-2px);
-            border-color: rgba(255, 255, 255, 0.46);
-        }
-
-        .assistant-button.secondary {
-            color: var(--ols-deep);
-            background: rgba(239, 245, 250, 0.95);
-            border: 1px solid rgba(15, 23, 42, 0.14);
-        }
-
-        .assistant-integration-note {
-            margin: 28px 0 0;
-            color: var(--ols-muted);
-            font-size: 13px;
-            line-height: 1.55;
-        }
-
-        .assistant-sdk-mount {
-            display: none;
-        }
-
         .pathway-section,
         .canon-section {
             padding: 112px 0;
@@ -606,15 +421,14 @@
             font-size: 15px;
         }
 
-        .canon-grid,
-        .cta-grid {
+        .canon-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 26px;
         }
 
-        .canon-card,
-        .cta-card {
+        .canon-card {
+            min-height: 330px;
             display: flex;
             flex-direction: column;
             justify-content: space-between;
@@ -629,26 +443,14 @@
             backdrop-filter: blur(12px);
         }
 
-        .canon-card {
-            min-height: 330px;
-        }
-
-        .cta-card {
-            min-height: 310px;
-            background: rgba(255, 255, 255, 0.88);
-        }
-
         .canon-card:hover,
-        .canon-card:focus,
-        .cta-card:hover,
-        .cta-card:focus {
+        .canon-card:focus {
             transform: translateY(-4px);
             border-color: rgba(47, 62, 52, 0.36);
             box-shadow: 0 34px 90px rgba(7, 26, 45, 0.19);
         }
 
-        .card-kicker,
-        .cta-label {
+        .card-kicker {
             display: block;
             margin-bottom: 18px;
             color: var(--ols-blue);
@@ -658,19 +460,13 @@
             text-transform: uppercase;
         }
 
-        .cta-label {
-            color: var(--ols-muted);
-        }
-
-        .canon-card h3,
-        .cta-card h3 {
+        .canon-card h3 {
             margin-bottom: 20px;
             font-size: clamp(28px, 3vw, 40px);
             color: var(--ols-deep);
         }
 
-        .canon-card p,
-        .cta-card p {
+        .canon-card p {
             color: var(--ols-slate);
             font-size: 18px;
         }
@@ -693,35 +489,6 @@
             border-radius: 999px;
             font-size: 12px;
             font-weight: 900;
-        }
-
-        .card-action,
-        .cta-action {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: fit-content;
-            min-height: 48px;
-            padding: 14px 22px;
-            color: #ffffff;
-            background: var(--ols-green);
-            border-radius: 999px;
-            text-decoration: none;
-            font-size: 15px;
-            font-weight: 900;
-        }
-
-        .cta-section {
-            padding: 112px 0;
-            background:
-                linear-gradient(rgba(244, 247, 250, 0.9), rgba(244, 247, 250, 0.9)),
-                url("assets/OLS-WEB-V2-RSC-LIBRARY-A001.jpg") center center / cover no-repeat;
-            border-top: 1px solid var(--ols-border);
-        }
-
-        .cta-intro {
-            max-width: 850px;
-            margin-bottom: 42px;
         }
 
         footer {
@@ -776,16 +543,269 @@
             font-size: 14px;
         }
 
+        .companion-launcher {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 2000;
+            width: min(360px, calc(100vw - 48px));
+            padding: 18px 20px;
+            color: #ffffff;
+            background:
+                linear-gradient(135deg, rgba(7, 26, 45, 0.96), rgba(31, 79, 122, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 24px;
+            box-shadow: 0 24px 70px rgba(7, 26, 45, 0.34);
+            backdrop-filter: blur(16px);
+            transition: transform 0.24s ease, opacity 0.24s ease;
+        }
+
+        body.companion-open .companion-launcher {
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(16px);
+        }
+
+        .companion-launcher .launcher-kicker {
+            display: block;
+            margin-bottom: 8px;
+            color: #b7d7f5;
+            font-size: 11px;
+            font-weight: 900;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .companion-launcher h3 {
+            margin-bottom: 8px;
+            color: #ffffff;
+            font-size: 22px;
+        }
+
+        .companion-launcher p {
+            margin-bottom: 14px;
+            color: rgba(255, 255, 255, 0.78);
+            font-size: 14px;
+            line-height: 1.45;
+        }
+
+        .launcher-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 12px 16px;
+            color: #ffffff;
+            background: var(--ols-green);
+            border: none;
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        .companion-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 2100;
+            width: var(--companion-width);
+            max-width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--ols-deep);
+            background: rgba(255, 255, 255, 0.96);
+            border-left: 1px solid var(--ols-border);
+            box-shadow: -28px 0 80px rgba(7, 26, 45, 0.24);
+            backdrop-filter: blur(18px);
+            transform: translateX(100%);
+            transition: transform 0.28s ease;
+        }
+
+        body.companion-open .companion-panel {
+            transform: translateX(0);
+        }
+
+        .companion-header {
+            padding: 28px;
+            color: #ffffff;
+            background:
+                linear-gradient(135deg, rgba(7, 26, 45, 0.98), rgba(31, 79, 122, 0.9));
+            border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .companion-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .companion-header .eyebrow {
+            margin-bottom: 10px;
+            color: #b7d7f5;
+        }
+
+        .companion-header h2 {
+            margin-bottom: 12px;
+            color: #ffffff;
+            font-size: 34px;
+        }
+
+        .companion-header p {
+            margin-bottom: 0;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        .companion-close {
+            flex: 0 0 auto;
+            width: 42px;
+            height: 42px;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 50%;
+            font-size: 22px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .companion-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 26px;
+            background:
+                radial-gradient(circle at top right, rgba(200, 164, 93, 0.12), transparent 32%),
+                rgba(244, 247, 250, 0.92);
+        }
+
+        .companion-section {
+            margin-bottom: 28px;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(15, 23, 42, 0.10);
+            border-radius: 24px;
+            box-shadow: 0 18px 46px rgba(7, 26, 45, 0.09);
+        }
+
+        .companion-section h3 {
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+
+        .companion-section p {
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        .companion-starters {
+            display: grid;
+            gap: 0;
+            border-top: 1px solid rgba(15, 23, 42, 0.10);
+        }
+
+        .companion-starter {
+            width: 100%;
+            padding: 14px 0;
+            color: var(--ols-deep);
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+            text-align: left;
+            font-size: 15px;
+            font-weight: 900;
+            line-height: 1.35;
+            transition: color 0.2s ease, padding-left 0.2s ease;
+        }
+
+        .companion-starter:hover,
+        .companion-starter:focus {
+            color: var(--ols-blue);
+            padding-left: 8px;
+        }
+
+        .companion-input label {
+            display: block;
+            margin-bottom: 12px;
+            color: var(--ols-deep);
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .companion-input textarea {
+            width: 100%;
+            min-height: 160px;
+            resize: vertical;
+            padding: 18px;
+            color: var(--ols-deep);
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid rgba(15, 23, 42, 0.15);
+            border-radius: 20px;
+            outline: none;
+            font-size: 16px;
+            line-height: 1.55;
+        }
+
+        .companion-input textarea:focus {
+            border-color: rgba(31, 79, 122, 0.55);
+            box-shadow: 0 0 0 3px rgba(31, 79, 122, 0.12);
+        }
+
+        .companion-actions {
+            display: grid;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .companion-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 12px 16px;
+            color: #ffffff;
+            background: var(--ols-green);
+            border: none;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        .companion-action.secondary {
+            color: var(--ols-deep);
+            background: rgba(239, 245, 250, 0.95);
+            border: 1px solid rgba(15, 23, 42, 0.14);
+        }
+
+        .companion-note {
+            margin-top: 14px;
+            color: var(--ols-muted);
+            font-size: 12px;
+            line-height: 1.5;
+        }
+
+        .companion-sdk-mount {
+            display: none;
+        }
+
+        @media (max-width: 1220px) {
+            body.companion-open .site-shell {
+                margin-right: 0;
+                filter: none;
+            }
+
+            .companion-panel {
+                width: min(var(--companion-width), 94vw);
+            }
+        }
+
         @media (max-width: 1050px) {
-            .assistant-stage {
-                grid-template-columns: 1fr;
-            }
-
-            .assistant-left {
-                border-right: none;
-                border-bottom: 1px solid var(--ols-border);
-            }
-
             .pathway-line {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
@@ -809,7 +829,6 @@
             }
 
             .book-section,
-            .assistant-section,
             .pathway-section,
             .canon-section {
                 padding: 86px 0;
@@ -824,8 +843,7 @@
                 position: static;
             }
 
-            .canon-grid,
-            .cta-grid {
+            .canon-grid {
                 grid-template-columns: 1fr;
             }
         }
@@ -854,39 +872,20 @@
             }
 
             p,
-            .hero p,
-            .cta-card p {
+            .hero p {
                 font-size: 17px;
             }
 
             .opening-panel,
-            .assistant-shell-header,
-            .assistant-left,
-            .assistant-right,
-            .assistant-native-frame,
             .pathway-panel,
             .pathway-step,
-            .canon-card,
-            .cta-card {
+            .canon-card {
                 padding: 28px;
                 border-radius: 24px;
             }
 
             .opening-panel p:first-child {
                 font-size: 20px;
-            }
-
-            .assistant-shell {
-                border-radius: 24px;
-            }
-
-            .assistant-native-frame {
-                min-height: 280px;
-            }
-
-            .assistant-prompt-card textarea {
-                min-height: 130px;
-                font-size: 16px;
             }
 
             .pathway-line {
@@ -897,14 +896,9 @@
                 padding: 70px 0;
             }
 
-            .cta-section {
-                padding: 78px 0;
-            }
-
             .button,
-            .assistant-button,
-            .cta-action,
-            .card-action {
+            .card-action,
+            .cta-action {
                 width: 100%;
                 text-align: center;
             }
@@ -913,325 +907,347 @@
                 width: 100%;
                 justify-content: center;
             }
+
+            .companion-launcher {
+                right: 15px;
+                bottom: 15px;
+                width: calc(100vw - 30px);
+                border-radius: 22px;
+            }
+
+            .companion-panel {
+                width: 100vw;
+            }
+
+            .companion-header,
+            .companion-body {
+                padding: 22px;
+            }
+
+            .companion-section {
+                padding: 20px;
+            }
         }
     </style>
 </head>
 
 <body>
-<header>
-    <div class="nav-inner">
-        <a href="index.html" class="logo" aria-label="OLS Group Home">
-            assets/OLS-WEB-V2-LOGO-A001.png
-        </a>
-        <nav aria-label="Primary navigation">
-            <a href="what-we-believe.html">What We Believe</a>
-            <a href="framework.html">How We Think</a>
-            <a href="assessment.html">Identify the Problem</a>
-            <a href="services.html">How We Help</a>
-            <a href="about.html">Why OLS</a>
-            <a href="discovery.html">Start the Conversation</a>
-            <a href="resources.html">Resource Center</a>
-        </nav>
-    </div>
-</header>
+<div class="site-shell">
+    <header>
+        <div class="nav-inner">
+            <a href="index.html" class="logo" aria-label="OLS Group Home">
+                assets/OLS-WEB-V2-LOGO-A001.png
+            </a>
+            <nav aria-label="Primary navigation">
+                <a href="what-we-believe.html">What We Believe</a>
+                <a href="framework.html">How We Think</a>
+                <a href="assessment.html">Identify the Problem</a>
+                <a href="services.html">How We Help</a>
+                <a href="about.html">Why OLS</a>
+                <a href="discovery.html">Start the Conversation</a>
+                <a href="resources.html">Resource Center</a>
+            </nav>
+        </div>
+    </header>
 
-<main>
-    <section class="hero">
-        <div class="container reading">
-            <span class="eyebrow">OLS Discovery Conversation</span>
-            <h1>Start the Conversation</h1>
-            <p>Talk through what has changed before the organization adds another layer of activity around the wrong problem.</p>
-            <div class="hero-title-mark"></div>
-            <div class="hero-actions">
-                #ols-assistant-centerBegin the Conversation</a>
-                <a class="button secondary" href="resources.html">Continue to Resource Center</a>
+    <main>
+        <section class="hero">
+            <div class="container reading">
+                <span class="eyebrow">OLS Discovery Conversation</span>
+                <h1>Start the Conversation</h1>
+                <p>Talk through what has changed before the organization adds another layer of activity around the wrong problem.</p>
+                <div class="hero-title-mark"></div>
+                <div class="hero-actions">
+                    <button class="button" type="button" data-open-companion>Begin the Conversation</button>
+                    <a class="button secondary" href="resources.html">Continue to Resource Center</a>
+                </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="book-section">
-        <div class="container book-grid">
-            <aside class="book-side">
-                <span>Start the Conversation</span>
-            </aside>
-            <article class="book-copy opening-panel">
-                <p>Most leaders do not reach this point because they are looking for a consultant.</p>
-                <p>They reach it because something in the organization has become harder to explain.</p>
-                <p>Activity has increased, but clarity has thinned. People still care, but truth arrives later than it should. Execution still happens, but too much of it depends on recovery, translation, and the same people stepping in to hold the system together.</p>
-                <p>There is often a moment before action. A quiet one. A leader has heard the reports. The explanations make sense. The meetings have happened. The organization has done what serious organizations do: adjusted, responded, recovered, and kept moving.</p>
-                <p>But something underneath the explanations still does not sit right. That is a useful moment, not because it proves there is a problem, but because it means the leader is still listening for reality beneath the activity.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="quote-band">
-        <div class="container">
-            <div class="quote-text">The first conversation does not need to begin with a diagnosis.</div>
-        </div>
-    </section>
-
-    <section class="book-section alt">
-        <div class="container book-grid">
-            <aside class="book-side">
-                <span>Naming What Changed</span>
-            </aside>
-            <article class="book-copy">
-                <p>The first conversation does not need to begin with a diagnosis. It does not need to begin with a solution. It does not need to begin with a project, a scope, a service, or a formal engagement. It can begin with the simpler and often harder act of naming what has changed.</p>
-                <p>Where does the organization feel farther away from itself? Where is visibility thinner than it used to be? Where has recovery become normal? Where are leaders receiving activity when they need insight? Where do capable people keep saving the result without the system learning why rescue was necessary?</p>
-                <p>The OLS conversation pathway should respect that uncertainty. A leader should not have to pretend to know the root cause before starting a serious conversation.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="book-section">
-        <div class="container book-grid">
-            <aside class="book-side">
-                <span>The Beginning</span>
-            </aside>
-            <article class="book-copy">
-                <p>The beginning can be plain: this is what we are seeing, this is where the pattern seems to repeat, this is where the organization feels harder to understand, this is what we have already tried, and this is what still does not make sense.</p>
-                <p>That is enough to begin because a useful conversation does not require pretending the answer is already known.</p>
-                <p>If the first exchange reveals enough to keep going, the next step can become a Discovery Conversation. If it does not, the conversation should still leave the leader with clearer language, better questions, and a more useful way to keep thinking about the pattern.</p>
-                <p>Start the Conversation &rarr; Talk through what has changed before the organization adds another layer of activity around the wrong problem.</p>
-                <p>If the pattern is not clear enough yet, continue to the Resource Center. Keep reading until the pattern fades, or until it becomes clear enough to name in conversation.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="assistant-section" id="ols-assistant-center">
-        <div class="container">
-            <div class="assistant-intro">
-                <span class="eyebrow">OLS Website Assistant V1</span>
-                <h2>The assistant is the conversation starter.</h2>
-                <p>This page is built around a native assistant experience. The assistant is designed to help visitors explore what has changed, recognize useful patterns, continue into the Resource Center, and move toward a Discovery Conversation when the conversation supports that next step.</p>
+        <section class="book-section">
+            <div class="container book-grid">
+                <aside class="book-side">
+                    <span>Start the Conversation</span>
+                </aside>
+                <article class="book-copy opening-panel">
+                    <p>Most leaders do not reach this point because they are looking for a consultant.</p>
+                    <p>They reach it because something in the organization has become harder to explain.</p>
+                    <p>Activity has increased, but clarity has thinned. People still care, but truth arrives later than it should. Execution still happens, but too much of it depends on recovery, translation, and the same people stepping in to hold the system together.</p>
+                    <p>There is often a moment before action. A quiet one. A leader has heard the reports. The explanations make sense. The meetings have happened. The organization has done what serious organizations do: adjusted, responded, recovered, and kept moving.</p>
+                    <p>But something underneath the explanations still does not sit right. That is a useful moment, not because it proves there is a problem, but because it means the leader is still listening for reality beneath the activity.</p>
+                </article>
             </div>
+        </section>
 
-            <section class="assistant-shell" aria-label="OLS Website Assistant V1 Command Center">
-                <div class="assistant-shell-header">
-                    <span class="eyebrow">Assistant Command Center</span>
-                    <h2>Describe what has become harder to explain.</h2>
-                    <p>Start with what you are noticing. The assistant will ultimately carry the guided conversation, Resource Center recommendations, lead capture, and scheduling path inside this permanent SDK-first section.</p>
+        <section class="quote-band">
+            <div class="container">
+                <div class="quote-text">The first conversation does not need to begin with a diagnosis.</div>
+            </div>
+        </section>
+
+        <section class="book-section alt">
+            <div class="container book-grid">
+                <aside class="book-side">
+                    <span>Naming What Changed</span>
+                </aside>
+                <article class="book-copy">
+                    <p>The first conversation does not need to begin with a diagnosis. It does not need to begin with a solution. It does not need to begin with a project, a scope, a service, or a formal engagement. It can begin with the simpler and often harder act of naming what has changed.</p>
+                    <p>Where does the organization feel farther away from itself? Where is visibility thinner than it used to be? Where has recovery become normal? Where are leaders receiving activity when they need insight? Where do capable people keep saving the result without the system learning why rescue was necessary?</p>
+                    <p>The OLS conversation pathway should respect that uncertainty. A leader should not have to pretend to know the root cause before starting a serious conversation.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="book-section">
+            <div class="container book-grid">
+                <aside class="book-side">
+                    <span>The Beginning</span>
+                </aside>
+                <article class="book-copy">
+                    <p>The beginning can be plain: this is what we are seeing, this is where the pattern seems to repeat, this is where the organization feels harder to understand, this is what we have already tried, and this is what still does not make sense.</p>
+                    <p>That is enough to begin because a useful conversation does not require pretending the answer is already known.</p>
+                    <p>If the first exchange reveals enough to keep going, the next step can become a Discovery Conversation. If it does not, the conversation should still leave the leader with clearer language, better questions, and a more useful way to keep thinking about the pattern.</p>
+                    <p>Start the Conversation &rarr; Talk through what has changed before the organization adds another layer of activity around the wrong problem.</p>
+                    <p>If the pattern is not clear enough yet, continue to the Resource Center. Keep reading until the pattern fades, or until it becomes clear enough to name in conversation.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="pathway-section">
+            <div class="container">
+                <div class="pathway-panel">
+                    <div class="section-intro">
+                        <span class="eyebrow">Discovery Conversation Pathway</span>
+                        <h2>Conversation first. Scheduling later.</h2>
+                        <p>The visitor should not have to pretend the answer is already known. The assistant is designed to help move from observation into clearer language, and only then toward a Discovery Conversation when the pattern has enough shape to discuss seriously.</p>
+                    </div>
+
+                    <div class="pathway-line" aria-label="Discovery pathway">
+                        <div class="pathway-step">
+                            <span>1</span>
+                            <h3>Conversation</h3>
+                            <p>The visitor describes what changed, what repeats, and what still does not make sense.</p>
+                        </div>
+
+                        <div class="pathway-step">
+                            <span>2</span>
+                            <h3>Pattern</h3>
+                            <p>The assistant helps organize the pattern around visibility, trust, ownership, accountability, execution, adaptability, or results.</p>
+                        </div>
+
+                        <div class="pathway-step">
+                            <span>3</span>
+                            <h3>Understanding</h3>
+                            <p>The conversation gives language to the condition before anyone pretends the solution is already obvious.</p>
+                        </div>
+
+                        <div class="pathway-step">
+                            <span>4</span>
+                            <h3>Discovery</h3>
+                            <p>If the pattern is ready, the assistant can guide the visitor toward a Discovery Conversation.</p>
+                        </div>
+
+                        <div class="pathway-step">
+                            <span>5</span>
+                            <h3>Scheduling</h3>
+                            <p>Scheduling becomes a result of clarity, not the first demand placed on the visitor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="canon-section">
+            <div class="container">
+                <div class="section-intro">
+                    <span class="eyebrow">Resource Center References</span>
+                    <h2>Continue learning while the pattern takes shape.</h2>
+                    <p>If the visitor is not ready to begin the conversation, the Resource Center gives them a governed place to keep reading until the pattern fades or becomes clear enough to name.</p>
                 </div>
 
-                <div class="assistant-stage">
-                    <aside class="assistant-left">
-                        <h3>Begin with the pattern, not the pitch.</h3>
-                        <p>The first exchange should help the visitor name what changed, not force a contact form, a sales call, or a premature diagnosis.</p>
-
-                        <div class="conversation-starters" aria-label="Conversation starters">
-                            <button class="starter-link" type="button" data-prompt="Visibility feels thinner than it used to. Help me describe what may have changed.">Visibility feels thinner than it used to.</button>
-                            <button class="starter-link" type="button" data-prompt="Execution still happens, but too much depends on recovery. Help me think through that pattern.">Execution still happens, but too much depends on recovery.</button>
-                            <button class="starter-link" type="button" data-prompt="The same capable people keep saving the result. Help me understand what the system may not be learning.">The same capable people keep saving the result.</button>
-                            <button class="starter-link" type="button" data-prompt="Leadership is receiving activity when we need insight. Help me name the condition.">Leadership is receiving activity when it needs insight.</button>
-                            <button class="starter-link" type="button" data-prompt="I am not ready to schedule yet. Recommend OLS resources that can help me keep thinking.">I am not ready to schedule yet. Help me keep thinking.</button>
-                        </div>
-                    </aside>
-
-                    <div class="assistant-right">
-                        <div class="assistant-native-frame">
-                            <div class="assistant-prompt-card">
-                                <label for="assistantPrompt">Start here</label>
-                                <textarea id="assistantPrompt" name="assistantPrompt" placeholder="Describe what has changed, where the pattern repeats, or what still does not make sense."></textarea>
-                                <div class="assistant-actions">
-                                    <button class="assistant-button" type="button" id="beginConversationButton">Begin the Conversation</button>
-                                    <a class="assistant-button secondary" href="resources.html">Continue Learning</a>
-                                </div>
-                                <p class="assistant-integration-note">This is the permanent OLS assistant shell. The visual page can remain stable while Copilot Studio, Microsoft 365 Agents SDK, lead capture, automation, and Bookings connections are upgraded behind this section.</p>
+                <div class="canon-grid">
+                    <a href="resources/visibility-precedes-control.html" class="canon-card">
+                        <div>
+                            <span class="card-kicker">Canon Article</span>
+                            <h3>Visibility Precedes Control</h3>
+                            <p>Visibility Precedes Control explains why leaders cannot control what they cannot clearly see.</p>
+                            <div class="card-meta">
+                                <span class="meta-pill">Theme: Visibility</span>
+                                <span class="meta-pill">OLS-CAN-001</span>
                             </div>
                         </div>
+                        <span class="card-action">Read Article &rarr;</span>
+                    </a>
 
-                        <div id="ols-assistant-sdk-mount" class="assistant-sdk-mount" data-agent="OLS Website Assistant V1" data-integration="microsoft-365-agents-sdk"></div>
-                    </div>
-                </div>
-            </section>
-        </div>
-    </section>
+                    <a href="resources/trust-is-organizational-infrastructure.html" class="canon-card">
+                        <div>
+                            <span class="card-kicker">Canon Article</span>
+                            <h3>Trust Is Organizational Infrastructure</h3>
+                            <p>Trust Is Organizational Infrastructure explains why every organization eventually performs at the speed of the truth it is willing to hear.</p>
+                            <div class="card-meta">
+                                <span class="meta-pill">Theme: Trust</span>
+                                <span class="meta-pill">OLS-CAN-002</span>
+                            </div>
+                        </div>
+                        <span class="card-action">Read Article &rarr;</span>
+                    </a>
 
-    <section class="pathway-section">
-        <div class="container">
-            <div class="pathway-panel">
-                <div class="section-intro">
-                    <span class="eyebrow">Discovery Conversation Pathway</span>
-                    <h2>Conversation first. Scheduling later.</h2>
-                    <p>The visitor should not have to pretend the answer is already known. The assistant is designed to help move from observation into clearer language, and only then toward a Discovery Conversation when the pattern has enough shape to discuss seriously.</p>
-                </div>
+                    <a href="resources/leadership-equals-accountability.html" class="canon-card">
+                        <div>
+                            <span class="card-kicker">Canon Article</span>
+                            <h3>Leadership Equals Accountability</h3>
+                            <p>Leadership Equals Accountability explains why awareness must have a trusted path to authority and action.</p>
+                            <div class="card-meta">
+                                <span class="meta-pill">Theme: Accountability</span>
+                                <span class="meta-pill">OLS-CAN-003</span>
+                            </div>
+                        </div>
+                        <span class="card-action">Read Article &rarr;</span>
+                    </a>
 
-                <div class="pathway-line" aria-label="Discovery pathway">
-                    <div class="pathway-step">
-                        <span>1</span>
-                        <h3>Conversation</h3>
-                        <p>The visitor describes what changed, what repeats, and what still does not make sense.</p>
-                    </div>
-
-                    <div class="pathway-step">
-                        <span>2</span>
-                        <h3>Pattern</h3>
-                        <p>The assistant helps organize the pattern around visibility, trust, ownership, accountability, execution, adaptability, or results.</p>
-                    </div>
-
-                    <div class="pathway-step">
-                        <span>3</span>
-                        <h3>Understanding</h3>
-                        <p>The conversation gives language to the condition before anyone pretends the solution is already obvious.</p>
-                    </div>
-
-                    <div class="pathway-step">
-                        <span>4</span>
-                        <h3>Discovery</h3>
-                        <p>If the pattern is ready, the assistant can guide the visitor toward a Discovery Conversation.</p>
-                    </div>
-
-                    <div class="pathway-step">
-                        <span>5</span>
-                        <h3>Scheduling</h3>
-                        <p>Scheduling becomes a result of clarity, not the first demand placed on the visitor.</p>
-                    </div>
+                    <a href="resources/why-organizations-have-execution-problems-not-strategy-problems.html" class="canon-card">
+                        <div>
+                            <span class="card-kicker">Canon Article</span>
+                            <h3>Why Organizations Don&rsquo;t Have a Strategy Problem</h3>
+                            <p>Why Organizations Don&rsquo;t Have a Strategy Problem &mdash; They Have an Execution Problem explains why execution fails in the system that is supposed to carry the plan.</p>
+                            <div class="card-meta">
+                                <span class="meta-pill">Theme: Execution</span>
+                                <span class="meta-pill">OLS-CAN-004</span>
+                            </div>
+                        </div>
+                        <span class="card-action">Read Article &rarr;</span>
+                    </a>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <section class="canon-section">
+        <section class="quote-band">
+            <div class="container">
+                <div class="quote-text">Keep reading until the pattern fades, or until it becomes clear enough to name in conversation.</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
         <div class="container">
-            <div class="section-intro">
-                <span class="eyebrow">Resource Center References</span>
-                <h2>Continue learning while the pattern takes shape.</h2>
-                <p>If the visitor is not ready to begin the conversation, the Resource Center gives them a governed place to keep reading until the pattern fades or becomes clear enough to name.</p>
+            <h2>Operational Leadership Systems</h2>
+            <p>Helping leaders understand what changed inside the operating system of their organization before deciding what should happen next.</p>
+
+            <div class="footer-links">
+                <a href="what-we-believe.html">What We Believe</a>
+                <a href="framework.html">How We Think</a>
+                <a href="assessment.html">Identify the Problem</a>
+                <a href="services.html">How We Help</a>
+                <a href="about.html">Why OLS</a>
+                <a href="discovery.html">Start the Conversation</a>
+                <a href="resources.html">Resource Center</a>
             </div>
 
-            <div class="canon-grid">
-                <a href="resources/visibility-precedes-control.html" class="canon-card">
-                    <div>
-                        <span class="card-kicker">Canon Article</span>
-                        <h3>Visibility Precedes Control</h3>
-                        <p>Visibility Precedes Control explains why leaders cannot control what they cannot clearly see.</p>
-                        <div class="card-meta">
-                            <span class="meta-pill">Theme: Visibility</span>
-                            <span class="meta-pill">OLS-CAN-001</span>
-                        </div>
-                    </div>
-                    <span class="card-action">Read Article &rarr;</span>
-                </a>
-
-                <a href="resources/trust-is-organizational-infrastructure.html" class="canon-card">
-                    <div>
-                        <span class="card-kicker">Canon Article</span>
-                        <h3>Trust Is Organizational Infrastructure</h3>
-                        <p>Trust Is Organizational Infrastructure explains why every organization eventually performs at the speed of the truth it is willing to hear.</p>
-                        <div class="card-meta">
-                            <span class="meta-pill">Theme: Trust</span>
-                            <span class="meta-pill">OLS-CAN-002</span>
-                        </div>
-                    </div>
-                    <span class="card-action">Read Article &rarr;</span>
-                </a>
-
-                <a href="resources/leadership-equals-accountability.html" class="canon-card">
-                    <div>
-                        <span class="card-kicker">Canon Article</span>
-                        <h3>Leadership Equals Accountability</h3>
-                        <p>Leadership Equals Accountability explains why awareness must have a trusted path to authority and action.</p>
-                        <div class="card-meta">
-                            <span class="meta-pill">Theme: Accountability</span>
-                            <span class="meta-pill">OLS-CAN-003</span>
-                        </div>
-                    </div>
-                    <span class="card-action">Read Article &rarr;</span>
-                </a>
-
-                <a href="resources/why-organizations-have-execution-problems-not-strategy-problems.html" class="canon-card">
-                    <div>
-                        <span class="card-kicker">Canon Article</span>
-                        <h3>Why Organizations Don&rsquo;t Have a Strategy Problem</h3>
-                        <p>Why Organizations Don&rsquo;t Have a Strategy Problem &mdash; They Have an Execution Problem explains why execution fails in the system that is supposed to carry the plan.</p>
-                        <div class="card-meta">
-                            <span class="meta-pill">Theme: Execution</span>
-                            <span class="meta-pill">OLS-CAN-004</span>
-                        </div>
-                    </div>
-                    <span class="card-action">Read Article &rarr;</span>
-                </a>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Operational Leadership Systems (OLS Group). All Rights Reserved.</p>
+                <p>This website and its published resources may not be reproduced, distributed, modified, or republished without written permission from OLS Group, except for brief quotations with proper attribution.</p>
+                <p>Visibility &middot; Trust &middot; Ownership &middot; Accountability &middot; Execution</p>
             </div>
         </div>
-    </section>
+    </footer>
+</div>
 
-    <section class="quote-band">
-        <div class="container">
-            <div class="quote-text">Keep reading until the pattern fades, or until it becomes clear enough to name in conversation.</div>
-        </div>
-    </section>
+<div class="companion-launcher" id="companionLauncher">
+    <span class="launcher-kicker">OLS Learning Companion</span>
+    <h3>Start with what changed.</h3>
+    <p>The assistant stays with the page while you read, think, and begin naming the pattern.</p>
+    <button class="launcher-button" type="button" data-open-companion>Start the Conversation</button>
+</div>
 
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-intro">
-                <span class="eyebrow">Next Step</span>
-                <h2>Begin the conversation or continue learning.</h2>
+<aside class="companion-panel" id="companionPanel" aria-label="OLS Learning Companion">
+    <div class="companion-header">
+        <div class="companion-top">
+            <div>
+                <span class="eyebrow">OLS Website Assistant V1</span>
+                <h2>Describe what changed.</h2>
+                <p>Start with what feels harder to explain. The companion can help organize the pattern, recommend resources, and guide the path toward a Discovery Conversation when the pattern is ready.</p>
             </div>
-
-            <div class="cta-grid">
-                #ols-assistant-center
-                    <div>
-                        <span class="cta-label">Start the Conversation</span>
-                        <h3>OLS Website Assistant V1 &rarr;</h3>
-                        <p>Talk through what has changed before the organization adds another layer of activity around the wrong problem.</p>
-                    </div>
-                    <span class="cta-action">Begin the Conversation</span>
-                </a>
-
-                <a href="resources.html" class="cta-card" aria-label="Continue learning in the Resource Center">
-                    <div>
-                        <span class="cta-label">Continue Learning</span>
-                        <h3>Resource Center &rarr;</h3>
-                        <p>If the pattern is not clear enough yet, continue to the Resource Center and keep reading until the pattern has a name.</p>
-                    </div>
-                    <span class="cta-action">Explore Resources</span>
-                </a>
-            </div>
-        </div>
-    </section>
-</main>
-
-<footer>
-    <div class="container">
-        <h2>Operational Leadership Systems</h2>
-        <p>Helping leaders understand what changed inside the operating system of their organization before deciding what should happen next.</p>
-
-        <div class="footer-links">
-            <a href="what-we-believe.html">What We Believe</a>
-            <a href="framework.html">How We Think</a>
-            <a href="assessment.html">Identify the Problem</a>
-            <a href="services.html">How We Help</a>
-            <a href="about.html">Why OLS</a>
-            <a href="discovery.html">Start the Conversation</a>
-            <a href="resources.html">Resource Center</a>
-        </div>
-
-        <div class="footer-bottom">
-            <p>&copy; 2026 Operational Leadership Systems (OLS Group). All Rights Reserved.</p>
-            <p>This website and its published resources may not be reproduced, distributed, modified, or republished without written permission from OLS Group, except for brief quotations with proper attribution.</p>
-            <p>Visibility &middot; Trust &middot; Ownership &middot; Accountability &middot; Execution</p>
+            <button class="companion-close" type="button" id="companionClose" aria-label="Close OLS Learning Companion">&times;</button>
         </div>
     </div>
-</footer>
+
+    <div class="companion-body">
+        <section class="companion-section">
+            <h3>Conversation starters</h3>
+            <p>Use one of these if the pattern is present but not fully clear yet.</p>
+            <div class="companion-starters">
+                <button class="companion-starter" type="button" data-prompt="Visibility feels thinner than it used to. Help me describe what may have changed.">Visibility feels thinner than it used to.</button>
+                <button class="companion-starter" type="button" data-prompt="Execution still happens, but too much depends on recovery. Help me think through that pattern.">Execution still happens, but too much depends on recovery.</button>
+                <button class="companion-starter" type="button" data-prompt="The same capable people keep saving the result. Help me understand what the system may not be learning.">The same capable people keep saving the result.</button>
+                <button class="companion-starter" type="button" data-prompt="Leadership is receiving activity when we need insight. Help me name the condition.">Leadership is receiving activity when it needs insight.</button>
+                <button class="companion-starter" type="button" data-prompt="I am not ready to schedule yet. Recommend OLS resources that can help me keep thinking.">I am not ready to schedule yet. Help me keep thinking.</button>
+            </div>
+        </section>
+
+        <section class="companion-section companion-input">
+            <label for="companionPrompt">Start here</label>
+            <textarea id="companionPrompt" name="companionPrompt" placeholder="Describe what has changed, where the pattern repeats, or what still does not make sense."></textarea>
+
+            <div class="companion-actions">
+                <button class="companion-action" type="button" id="companionBegin">Begin the Conversation</button>
+                <a class="companion-action secondary" href="resources.html">Continue Learning</a>
+            </div>
+
+            <p class="companion-note">This is the permanent OLS companion shell. The visual layer can remain stable while Copilot Studio, Microsoft 365 Agents SDK, lead capture, automation, and Bookings connections are upgraded behind it.</p>
+        </section>
+
+        <section class="companion-section">
+            <h3>Future integration bay</h3>
+            <p>This hidden mount point is reserved for the Microsoft 365 Agents SDK or a future custom Copilot Studio implementation.</p>
+            <div id="ols-companion-sdk-mount" class="companion-sdk-mount" data-agent="OLS Website Assistant V1" data-page="discovery" data-integration="microsoft-365-agents-sdk"></div>
+        </section>
+    </div>
+</aside>
 
 <script>
-    const assistantPrompt = document.getElementById("assistantPrompt");
-    const starterLinks = document.querySelectorAll("[data-prompt]");
-    const beginConversationButton = document.getElementById("beginConversationButton");
+    const body = document.body;
+    const openButtons = document.querySelectorAll("[data-open-companion]");
+    const closeButton = document.getElementById("companionClose");
+    const promptBox = document.getElementById("companionPrompt");
+    const promptButtons = document.querySelectorAll("[data-prompt]");
+    const companionBegin = document.getElementById("companionBegin");
 
-    starterLinks.forEach(function(button) {
+    function openCompanion() {
+        body.classList.add("companion-open");
+        setTimeout(function () {
+            promptBox.focus();
+        }, 280);
+    }
+
+    function closeCompanion() {
+        body.classList.remove("companion-open");
+    }
+
+    openButtons.forEach(function(button) {
+        button.addEventListener("click", openCompanion);
+    });
+
+    closeButton.addEventListener("click", closeCompanion);
+
+    promptButtons.forEach(function(button) {
         button.addEventListener("click", function() {
-            assistantPrompt.value = button.getAttribute("data-prompt");
-            assistantPrompt.focus();
+            promptBox.value = button.getAttribute("data-prompt");
+            openCompanion();
         });
     });
 
-    beginConversationButton.addEventListener("click", function() {
-        if (!assistantPrompt.value.trim()) {
-            assistantPrompt.value = "Something in the organization has become harder to explain. Help me start naming what changed.";
+    companionBegin.addEventListener("click", function() {
+        if (!promptBox.value.trim()) {
+            promptBox.value = "Something in the organization has become harder to explain. Help me start naming what changed.";
         }
 
-        assistantPrompt.focus();
+        promptBox.focus();
+    });
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            closeCompanion();
+        }
     });
 </script>
 </body>
