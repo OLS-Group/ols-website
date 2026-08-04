@@ -222,8 +222,7 @@
         }
 
         .button,
-        .card-action,
-        .cta-action {
+        .card-action {
             display: inline-flex;
             align-items: center;
             justify-content: center;
@@ -243,9 +242,7 @@
         .button:hover,
         .button:focus,
         .card-action:hover,
-        .card-action:focus,
-        .cta-action:hover,
-        .cta-action:focus {
+        .card-action:focus {
             background: var(--ols-green-hover);
             transform: translateY(-2px);
             border-color: rgba(255, 255, 255, 0.46);
@@ -548,13 +545,13 @@
             right: 24px;
             bottom: 24px;
             z-index: 2000;
-            width: min(360px, calc(100vw - 48px));
-            padding: 18px 20px;
+            width: min(300px, calc(100vw - 48px));
+            padding: 15px 17px;
             color: #ffffff;
             background:
                 linear-gradient(135deg, rgba(7, 26, 45, 0.96), rgba(31, 79, 122, 0.9));
             border: 1px solid rgba(255, 255, 255, 0.18);
-            border-radius: 24px;
+            border-radius: 22px;
             box-shadow: 0 24px 70px rgba(7, 26, 45, 0.34);
             backdrop-filter: blur(16px);
             transition: transform 0.24s ease, opacity 0.24s ease;
@@ -570,23 +567,17 @@
             display: block;
             margin-bottom: 8px;
             color: #b7d7f5;
-            font-size: 11px;
+            font-size: 10px;
             font-weight: 900;
             letter-spacing: 0.16em;
             text-transform: uppercase;
         }
 
         .companion-launcher h3 {
-            margin-bottom: 8px;
+            margin-bottom: 12px;
             color: #ffffff;
-            font-size: 22px;
-        }
-
-        .companion-launcher p {
-            margin-bottom: 14px;
-            color: rgba(255, 255, 255, 0.78);
-            font-size: 14px;
-            line-height: 1.45;
+            font-size: 20px;
+            line-height: 1.15;
         }
 
         .launcher-button {
@@ -594,12 +585,12 @@
             align-items: center;
             justify-content: center;
             width: 100%;
-            padding: 12px 16px;
+            padding: 11px 14px;
             color: #ffffff;
             background: var(--ols-green);
             border: none;
             border-radius: 999px;
-            font-size: 14px;
+            font-size: 13px;
             font-weight: 900;
         }
 
@@ -682,7 +673,7 @@
         }
 
         .companion-section {
-            margin-bottom: 28px;
+            margin-bottom: 22px;
             padding: 24px;
             background: rgba(255, 255, 255, 0.9);
             border: 1px solid rgba(15, 23, 42, 0.10);
@@ -699,32 +690,6 @@
             margin-bottom: 16px;
             font-size: 15px;
             line-height: 1.55;
-        }
-
-        .companion-starters {
-            display: grid;
-            gap: 0;
-            border-top: 1px solid rgba(15, 23, 42, 0.10);
-        }
-
-        .companion-starter {
-            width: 100%;
-            padding: 14px 0;
-            color: var(--ols-deep);
-            background: transparent;
-            border: none;
-            border-bottom: 1px solid rgba(15, 23, 42, 0.10);
-            text-align: left;
-            font-size: 15px;
-            font-weight: 900;
-            line-height: 1.35;
-            transition: color 0.2s ease, padding-left 0.2s ease;
-        }
-
-        .companion-starter:hover,
-        .companion-starter:focus {
-            color: var(--ols-blue);
-            padding-left: 8px;
         }
 
         .companion-input label {
@@ -783,11 +748,31 @@
             border: 1px solid rgba(15, 23, 42, 0.14);
         }
 
-        .companion-note {
-            margin-top: 14px;
-            color: var(--ols-muted);
-            font-size: 12px;
-            line-height: 1.5;
+        .companion-starters {
+            display: grid;
+            gap: 0;
+            margin-top: 8px;
+            border-top: 1px solid rgba(15, 23, 42, 0.10);
+        }
+
+        .companion-starter {
+            width: 100%;
+            padding: 14px 0;
+            color: var(--ols-deep);
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+            text-align: left;
+            font-size: 15px;
+            font-weight: 900;
+            line-height: 1.35;
+            transition: color 0.2s ease, padding-left 0.2s ease;
+        }
+
+        .companion-starter:hover,
+        .companion-starter:focus {
+            color: var(--ols-blue);
+            padding-left: 8px;
         }
 
         .companion-sdk-mount {
@@ -897,8 +882,7 @@
             }
 
             .button,
-            .card-action,
-            .cta-action {
+            .card-action {
                 width: 100%;
                 text-align: center;
             }
@@ -1154,27 +1138,36 @@
 
 <div class="companion-launcher" id="companionLauncher">
     <span class="launcher-kicker">OLS Learning Companion</span>
-    <h3>Start with what changed.</h3>
-    <p>The assistant stays with the page while you read, think, and begin naming the pattern.</p>
-    <button class="launcher-button" type="button" data-open-companion>Start the Conversation</button>
+    <h3>Start the Conversation</h3>
+    <button class="launcher-button" type="button" data-open-companion>Open Companion</button>
 </div>
 
 <aside class="companion-panel" id="companionPanel" aria-label="OLS Learning Companion">
     <div class="companion-header">
         <div class="companion-top">
             <div>
-                <span class="eyebrow">OLS Website Assistant V1</span>
-                <h2>Describe what changed.</h2>
-                <p>Start with what feels harder to explain. The companion can help organize the pattern, recommend resources, and guide the path toward a Discovery Conversation when the pattern is ready.</p>
+                <span class="eyebrow">OLS Learning Companion</span>
+                <h2>Start with what you are seeing.</h2>
+                <p>You do not need to know the answer. Describe what changed, where the pattern repeats, or what still does not make sense.</p>
             </div>
             <button class="companion-close" type="button" id="companionClose" aria-label="Close OLS Learning Companion">&times;</button>
         </div>
     </div>
 
     <div class="companion-body">
+        <section class="companion-section companion-input">
+            <label for="companionPrompt">Start here</label>
+            <textarea id="companionPrompt" name="companionPrompt" placeholder="Describe what has changed, where the pattern repeats, or what still does not make sense."></textarea>
+
+            <div class="companion-actions">
+                <button class="companion-action" type="button" id="companionBegin">Begin the Conversation</button>
+                <a class="companion-action secondary" href="resources.html">Continue Learning</a>
+            </div>
+        </section>
+
         <section class="companion-section">
             <h3>Conversation starters</h3>
-            <p>Use one of these if the pattern is present but not fully clear yet.</p>
+            <p>If the pattern is present but not fully clear yet, start with one of these.</p>
             <div class="companion-starters">
                 <button class="companion-starter" type="button" data-prompt="Visibility feels thinner than it used to. Help me describe what may have changed.">Visibility feels thinner than it used to.</button>
                 <button class="companion-starter" type="button" data-prompt="Execution still happens, but too much depends on recovery. Help me think through that pattern.">Execution still happens, but too much depends on recovery.</button>
@@ -1184,23 +1177,7 @@
             </div>
         </section>
 
-        <section class="companion-section companion-input">
-            <label for="companionPrompt">Start here</label>
-            <textarea id="companionPrompt" name="companionPrompt" placeholder="Describe what has changed, where the pattern repeats, or what still does not make sense."></textarea>
-
-            <div class="companion-actions">
-                <button class="companion-action" type="button" id="companionBegin">Begin the Conversation</button>
-                <a class="companion-action secondary" href="resources.html">Continue Learning</a>
-            </div>
-
-            <p class="companion-note">This is the permanent OLS companion shell. The visual layer can remain stable while Copilot Studio, Microsoft 365 Agents SDK, lead capture, automation, and Bookings connections are upgraded behind it.</p>
-        </section>
-
-        <section class="companion-section">
-            <h3>Future integration bay</h3>
-            <p>This hidden mount point is reserved for the Microsoft 365 Agents SDK or a future custom Copilot Studio implementation.</p>
-            <div id="ols-companion-sdk-mount" class="companion-sdk-mount" data-agent="OLS Website Assistant V1" data-page="discovery" data-integration="microsoft-365-agents-sdk"></div>
-        </section>
+        <div id="ols-companion-sdk-mount" class="companion-sdk-mount" data-agent="OLS Website Assistant V1" data-page="discovery" data-integration="microsoft-365-agents-sdk"></div>
     </div>
 </aside>
 
