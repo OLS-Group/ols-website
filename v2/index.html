@@ -1,0 +1,744 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OLS Group | Operational Leadership Systems</title>
+    <meta name="description" content="Organizations rarely fail because people stop caring. The organization may not be failing. That is what makes the warning harder to recognize.">
+    <link rel="icon" type="image/png" href="assets/OLS-WEB-V2-FAV-A001.png">
+    <style>
+        :root {
+            --ols-navy: #071a2d;
+            --ols-deep: #0a1a2f;
+            --ols-blue: #1f4f7a;
+            --ols-slate: #334155;
+            --ols-muted: #64748b;
+            --ols-light: #f4f7fa;
+            --ols-glass: rgba(255, 255, 255, 0.76);
+            --ols-glass-alt: rgba(239, 245, 250, 0.72);
+            --ols-border: rgba(15, 23, 42, 0.12);
+            --ols-green: #2f3e34;
+            --ols-green-hover: #3c5145;
+            --max-width: 1180px;
+            --reading-width: 900px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--ols-deep);
+            line-height: 1.75;
+            background:
+                linear-gradient(rgba(7, 26, 45, 0.58), rgba(7, 26, 45, 0.58)),
+                url("assets/OLS-WEB-V2-HOM-A001.jpg") center center / cover fixed no-repeat;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        .container {
+            width: min(var(--max-width), calc(100% - 44px));
+            margin: 0 auto;
+        }
+
+        .reading {
+            max-width: var(--reading-width);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.94);
+            border-bottom: 1px solid var(--ols-border);
+            backdrop-filter: blur(14px);
+        }
+
+        .nav-inner {
+            width: min(1280px, calc(100% - 44px));
+            margin: 0 auto;
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            flex: 0 0 auto;
+        }
+.logo img {
+    height: 72px;
+    width: auto;
+}
+      
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 18px;
+            font-size: 13px;
+            line-height: 1.2;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--ols-deep);
+            font-weight: 800;
+            opacity: 0.9;
+            transition: opacity 0.2s ease, color 0.2s ease;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            opacity: 1;
+            color: var(--ols-blue);
+        }
+
+        main {
+            background: rgba(245, 247, 250, 0.24);
+        }
+
+        .hero {
+            min-height: calc(100vh - 80px);
+            display: flex;
+            align-items: center;
+            padding: 112px 0 94px;
+            color: #ffffff;
+            background:
+                linear-gradient(90deg, rgba(7, 26, 45, 0.92), rgba(7, 26, 45, 0.76), rgba(7, 26, 45, 0.46)),
+                url("assets/OLS-WEB-V2-HOM-A001.jpg") center center / cover no-repeat;
+        }
+
+        .hero .reading {
+            max-width: 930px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 22px;
+            color: #b7d7f5;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            max-width: 960px;
+            margin-bottom: 28px;
+            font-size: clamp(42px, 6vw, 78px);
+            line-height: 1.05;
+            letter-spacing: -0.045em;
+        }
+
+        h2 {
+            margin-bottom: 24px;
+            font-size: clamp(32px, 4vw, 48px);
+            line-height: 1.14;
+            letter-spacing: -0.035em;
+            color: var(--ols-deep);
+        }
+
+        p {
+            margin-bottom: 22px;
+            font-size: 18px;
+            color: var(--ols-slate);
+        }
+
+        .hero p {
+            max-width: 890px;
+            color: rgba(255, 255, 255, 0.91);
+            font-size: 19px;
+        }
+
+        .hero p:first-of-type {
+            color: #ffffff;
+            font-size: 22px;
+            font-weight: 800;
+        }
+
+        .visual-window {
+            min-height: 380px;
+            display: flex;
+            align-items: center;
+            position: relative;
+            overflow: hidden;
+            background-position: center center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+            border-bottom: 1px solid rgba(10, 26, 47, 0.18);
+        }
+
+        .visual-window::before {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background:
+                linear-gradient(90deg, rgba(7, 26, 45, 0.84), rgba(7, 26, 45, 0.56), rgba(7, 26, 45, 0.28));
+            z-index: 1;
+        }
+
+        .visual-window::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            background: radial-gradient(circle at 20% 50%, rgba(255, 255, 255, 0.10), transparent 34%);
+            z-index: 2;
+        }
+
+        .window-inner {
+            position: relative;
+            z-index: 3;
+            width: min(var(--max-width), calc(100% - 44px));
+            margin: 0 auto;
+        }
+
+        .window-line {
+            max-width: 760px;
+            color: rgba(255, 255, 255, 0.93);
+            font-size: clamp(24px, 3vw, 38px);
+            line-height: 1.28;
+            letter-spacing: -0.03em;
+            font-weight: 800;
+        }
+
+        .window-b {
+            background-image: url("assets/OLS-WEB-V2-HOM-B001.jpg");
+        }
+
+        .window-c {
+            background-image: url("assets/OLS-WEB-V2-HOM-C001.jpg");
+        }
+
+        .window-d {
+            background-image: url("assets/OLS-WEB-V2-HOM-D001.jpg");
+        }
+
+        .window-e {
+            background-image: url("assets/OLS-WEB-V2-HOM-E001.jpg");
+        }
+
+        .window-f {
+            background-image: url("assets/OLS-WEB-V2-HOM-F001.jpg");
+        }
+
+        .window-g {
+            background-image: url("assets/OLS-WEB-V2-HOM-G001.jpg");
+        }
+
+        .window-h {
+            background-image: url("assets/OLS-WEB-V2-HOM-H001.jpg");
+        }
+
+        .chapter {
+            position: relative;
+            padding: 112px 0;
+            background: var(--ols-glass);
+            border-top: 1px solid var(--ols-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .chapter.alt {
+            background: var(--ols-glass-alt);
+        }
+
+        .chapter-inner {
+            display: grid;
+            grid-template-columns: minmax(160px, 250px) minmax(0, 900px);
+            gap: 62px;
+            align-items: start;
+        }
+
+        .chapter-marker {
+            position: sticky;
+            top: 108px;
+            padding-top: 6px;
+        }
+
+        .chapter-marker a {
+            display: inline-block;
+            max-width: 210px;
+            color: var(--ols-muted);
+            text-decoration: none;
+            font-size: 13px;
+            line-height: 1.35;
+            font-weight: 900;
+            letter-spacing: 0.15em;
+            text-transform: uppercase;
+            transition: color 0.2s ease, transform 0.2s ease;
+        }
+
+        .chapter-marker a:hover,
+        .chapter-marker a:focus {
+            color: var(--ols-green);
+            transform: translateX(3px);
+        }
+
+        .chapter-marker a::after {
+            content: "";
+            display: block;
+            width: 58px;
+            height: 3px;
+            margin-top: 18px;
+            background: var(--ols-green);
+        }
+
+        .chapter-copy {
+            max-width: var(--reading-width);
+        }
+
+        .chapter-copy p:last-of-type {
+            margin-bottom: 0;
+        }
+
+        .btn,
+        .btn-secondary {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 34px;
+            padding: 15px 26px;
+            border-radius: 999px;
+            font-size: 15px;
+            font-weight: 900;
+            text-decoration: none;
+            transition: background 0.2s ease, color 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .btn {
+            color: #ffffff;
+            background: var(--ols-green);
+            border: 2px solid var(--ols-green);
+        }
+
+        .btn:hover,
+        .btn:focus {
+            background: var(--ols-green-hover);
+            border-color: var(--ols-green-hover);
+            transform: translateY(-2px);
+        }
+
+        .btn-secondary {
+            color: var(--ols-green);
+            background: rgba(255, 255, 255, 0.28);
+            border: 2px solid var(--ols-green);
+        }
+
+        .btn-secondary:hover,
+        .btn-secondary:focus {
+            color: #ffffff;
+            background: var(--ols-green);
+            transform: translateY(-2px);
+        }
+
+        footer {
+            padding: 78px 0 44px;
+            color: rgba(255, 255, 255, 0.86);
+            background: var(--ols-navy);
+        }
+
+        footer h2 {
+            color: #ffffff;
+            font-size: clamp(30px, 3vw, 42px);
+        }
+
+        footer p {
+            max-width: 860px;
+            color: rgba(255, 255, 255, 0.76);
+            font-size: 16px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin: 34px 0 42px;
+        }
+
+        .footer-links a {
+            display: inline-flex;
+            padding: 11px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 999px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 800;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .footer-links a:hover,
+        .footer-links a:focus {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.52);
+        }
+
+        .footer-bottom {
+            padding-top: 34px;
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .footer-bottom p {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        @media (max-width: 980px) {
+            .nav-inner {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            nav {
+                justify-content: flex-start;
+                gap: 13px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 84px 0 76px;
+            }
+
+            .chapter {
+                padding: 86px 0;
+            }
+
+            .chapter-inner {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .chapter-marker {
+                position: static;
+            }
+
+            .chapter-marker a {
+                max-width: none;
+            }
+
+            .visual-window {
+                min-height: 300px;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container,
+            .nav-inner,
+            .window-inner {
+                width: min(100% - 30px, var(--max-width));
+            }
+
+            .logo img {
+                height: 46px;
+            }
+
+            nav {
+                font-size: 13px;
+                line-height: 1.45;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            p,
+            .hero p {
+                font-size: 17px;
+            }
+
+            .hero p:first-of-type {
+                font-size: 19px;
+            }
+
+            .visual-window {
+                min-height: 245px;
+            }
+
+            .window-line {
+                font-size: 23px;
+            }
+
+            .btn,
+            .btn-secondary {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-links a {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+<header>
+    <div class="nav-inner">
+       <a href="index.html" class="logo" aria-label="OLS Group Home">
+<img src="assets/OLS-WEB-V2-LOGO-A001.png"alt="OLS Group Logo">
+</a>
+    
+</a>
+        <nav aria-label="Primary navigation">
+            <a href="what-we-believe.html">What We Believe</a>
+            <a href="framework.html">How We Think</a>
+            <a href="assessment.html">Identify the Problem</a>
+            <a href="services.html">How We Help</a>
+            <a href="about.html">Why OLS</a>
+            <a href="discovery.html">Start the Conversation</a>
+            <a href="resources.html">Resource Center</a>
+        </nav>
+    </div>
+</header>
+
+<main>
+
+    <section class="hero">
+        <div class="container reading">
+            <span class="eyebrow">Operational Leadership Systems</span>
+
+            <h1>Organizations rarely fail because people stop caring.</h1>
+
+            <p>The organization may not be failing. That is what makes the warning harder to recognize.</p>
+
+            <p>The meetings are still happening. Customers are still being served. Revenue may still be growing. Reports continue arriving. Projects continue moving. From a distance, the organization can still look healthy.</p>
+
+            <p>Still, something feels different.</p>
+
+            <p>Questions travel farther before they find answers. Decisions require more coordination than they once did. Priorities leave the leadership meeting looking clear and arrive elsewhere carrying less certainty. Problems appear later. Solutions take longer. More effort goes into maintaining alignment than creating momentum.</p>
+
+            <p>Nobody stopped caring. Nobody stopped working. Nobody forgot how to lead. The organization simply became more complex than it used to be.</p>
+
+            <p>Most leaders eventually encounter this moment. The challenge is not simply recognizing that the organization has changed. The challenge is understanding what changed, why it matters, and how much of the organization has already adapted to conditions leadership can no longer fully see.</p>
+
+            <p>That is where this story begins.</p>
+        </div>
+    </section>
+
+    <section class="visual-window window-b">
+        <div class="window-inner">
+            <div class="window-line">The first signal is rarely failure. More often, it is recognition.</div>
+        </div>
+    </section>
+
+    <section class="chapter">
+        <div class="container chapter-inner">
+            <div class="chapter-marker">
+                <a href="what-we-believe.html">What We Believe</a>
+            </div>
+
+            <div class="chapter-copy">
+                <h2>What We Believe</h2>
+
+                <p>Most leadership challenges first appear in the part of the business where the pain is easiest to see. A missed commitment becomes an accountability problem. A delayed decision becomes a communication problem. A failed initiative becomes an execution problem. Those descriptions may be true, but they rarely tell the whole story. Visibility, trust, ownership, accountability, and execution do not operate in separate rooms. They affect one another quietly, and by the time one condition is weak enough to be noticed, the others have usually already begun to carry the strain.</p>
+
+                <p>The beliefs behind OLS emerged from watching that strain repeat across organizations. Leaders arrived looking for answers to visible problems and often discovered a better question beneath them. What changed in the system? Where did truth slow? Where did ownership thin? Where did execution become dependent on recovery instead of design? That is the doorway into what OLS believes.</p>
+
+                <a href="what-we-believe.html" class="btn-secondary">Explore What We Believe →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="visual-window window-c">
+        <div class="window-inner">
+            <div class="window-line">The visible problem matters. It is not always the real problem.</div>
+        </div>
+    </section>
+
+    <section class="chapter alt">
+        <div class="container chapter-inner">
+            <div class="chapter-marker">
+                <a href="framework.html">How We Think</a>
+            </div>
+
+            <div class="chapter-copy">
+                <h2>How We Think</h2>
+
+                <p>Most organizational friction does not travel alone. What appears to be a communication problem may have started with visibility. What appears to be an accountability problem may have started with ownership. What appears to be an execution problem may have started much earlier, somewhere in the way information moved, decisions were made, or risk was carried across the organization.</p>
+
+                <p>Organizations are systems of relationships. Information shapes decisions. Decisions shape execution. Execution shapes results. When those relationships are strong, momentum feels natural. When they weaken, leaders often feel the symptoms long before they understand the source. Seeing those relationships clearly changes the question, and once the question changes, leadership can stop chasing isolated fixes and begin looking at the condition producing the pattern.</p>
+
+                <a href="framework.html" class="btn-secondary">Explore How We Think →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="visual-window window-d">
+        <div class="window-inner">
+            <div class="window-line">Success can create distance from the reality leadership depends on seeing.</div>
+        </div>
+    </section>
+
+    <section class="chapter">
+        <div class="container chapter-inner">
+            <div class="chapter-marker">
+                <a href="assessment.html">Identify the Problem</a>
+            </div>
+
+            <div class="chapter-copy">
+                <h2>Identify the Problem</h2>
+
+                <p>The first problem named is rarely the whole problem. It is usually the first signal visible enough to attract attention. Communication slows. Decisions stall. Ownership becomes difficult to follow. Execution depends on the same people stepping in again and again to recover outcomes that should have been predictable.</p>
+
+                <p>None of those signals should be dismissed, but neither should they be mistaken for the whole condition. Organizations rarely drift because of one dramatic event. More often they drift through a series of reasonable adjustments, softened warnings, unclear handoffs, and repeated recoveries that seem unrelated until someone stops long enough to examine what connects them. The signal matters. The condition producing the signal matters more.</p>
+
+                <a href="assessment.html" class="btn-secondary">Identify the Problem →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="visual-window window-e">
+        <div class="window-inner">
+            <div class="window-line">Organizations do not always break. Sometimes they adapt around the friction.</div>
+        </div>
+    </section>
+
+    <section class="chapter alt">
+        <div class="container chapter-inner">
+            <div class="chapter-marker">
+                <a href="services.html">How We Help</a>
+            </div>
+
+            <div class="chapter-copy">
+                <h2>How We Help</h2>
+
+                <p>When pressure increases, organizations naturally move toward action. They add meetings, increase reporting, expand oversight, and create more urgency because action feels responsible when the business is under strain. Sometimes those moves help. Sometimes they only create more activity around a problem the organization still does not fully understand.</p>
+
+                <p>Before deciding what should change, there is value in seeing clearly what already exists. Where does information slow? Where does ownership become difficult to trace? Where does accountability arrive after the outcome is already decided? Where has execution quietly become recovery? Meaningful action tends to follow leaders who can see reality more clearly.</p>
+
+                <a href="services.html" class="btn-secondary">How We Help →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="visual-window window-f">
+        <div class="window-inner">
+            <div class="window-line">Understanding comes before action when the wrong fix can deepen the strain.</div>
+        </div>
+    </section>
+
+    <section class="chapter">
+        <div class="container chapter-inner">
+            <div class="chapter-marker">
+                <a href="about.html">Why OLS</a>
+            </div>
+
+            <div class="chapter-copy">
+                <h2>Why OLS</h2>
+
+                <p>Growth changes leadership. The approach that works in a twenty-person organization is not always enough for a two-hundred-person organization. The habits that succeed in one location often change as additional locations, business units, acquisitions, and leadership layers emerge. The organization may keep moving forward, but the environment around it has changed.</p>
+
+                <p>For many leaders, this is the first time they confront challenges that effort alone cannot solve. Not because they are incapable, and not because the organization has lost its seriousness, but because the organization they are leading is no longer the same organization they originally built. That realization is where a different way of seeing begins.</p>
+
+                <a href="about.html" class="btn-secondary">Why OLS Exists →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="visual-window window-g">
+        <div class="window-inner">
+            <div class="window-line">Leadership exists to create the conditions where reality can move and the mission can hold.</div>
+        </div>
+    </section>
+
+    <section class="chapter alt">
+        <div class="container chapter-inner">
+            <div class="chapter-marker">
+                <a href="discovery.html">Start the Conversation</a>
+            </div>
+
+            <div class="chapter-copy">
+                <h2>Start the Conversation</h2>
+
+                <p>Most leaders do not wake up searching for a consultant. They wake up trying to understand what feels different. Something they used to see clearly now requires interpretation. Something that once moved naturally now requires intervention. Something that once felt aligned now demands increasing effort to hold together.</p>
+
+                <p>Not every pattern requires a solution, but every pattern deserves an honest conversation. Understanding often begins before anyone decides what to do next. Sometimes the most useful first step is simply to name what has changed, what remains difficult to see, and whether the friction is isolated or becoming a pattern.</p>
+
+                <a href="discovery.html" class="btn">Start the Conversation →</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="visual-window window-h">
+        <div class="window-inner">
+            <div class="window-line">Some leaders are ready to talk. Others need language before the pattern has a name.</div>
+        </div>
+    </section>
+
+    <section class="chapter">
+        <div class="container chapter-inner">
+            <div class="chapter-marker">
+                <a href="resources.html">Resource Center</a>
+            </div>
+
+            <div class="chapter-copy">
+                <h2>Resource Center</h2>
+
+                <p>Some leaders are ready to talk as soon as the pattern becomes visible. Others need more language before they can describe what they are experiencing. The Resource Center exists for the leader who wants to keep reading, keep testing the language, and keep thinking through whether the issue is isolated or part of a larger operating condition.</p>
+
+                <p>The articles, field reports, frameworks, guides, and observations are meant to help leaders recognize patterns, compare those patterns against their own reality, and give structure to something they may have felt before they fully understood it. Not every resource will apply to every organization. The point is not to provide universal answers. The point is to help the right leader read until the pattern fades, or read until it becomes impossible to ignore.</p>
+
+                <p>If the pattern becomes impossible to ignore, the next step does not need to be a pitch or a diagnosis. It can simply be a conversation about what has changed, what remains difficult to see, and whether the organization is experiencing a condition that deserves closer attention. Until then, keep reading. The Resource Center is where the story continues.</p>
+
+                <a href="resources.html" class="btn">Continue to Resource Center →</a>
+            </div>
+        </div>
+    </section>
+
+</main>
+
+<footer>
+    <div class="container">
+        <h2>Operational Leadership Systems</h2>
+
+        <p>Helping leaders understand what changed inside the operating system of their organization before deciding what should happen next.</p>
+
+        <div class="footer-links">
+            <a href="what-we-believe.html">What We Believe</a>
+            <a href="framework.html">How We Think</a>
+            <a href="assessment.html">Identify the Problem</a>
+            <a href="services.html">How We Help</a>
+            <a href="about.html">Why OLS</a>
+            <a href="discovery.html">Start the Conversation</a>
+            <a href="resources.html">Resource Center</a>
+        </div>
+
+        <div class="footer-bottom">
+            <p>© 2026 Operational Leadership Systems (OLS Group). All Rights Reserved.</p>
+            <p>Visibility · Trust · Ownership · Accountability · Execution</p>
+        </div>
+    </div>
+</footer>
+
+</body>
+</html>

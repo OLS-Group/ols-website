@@ -1,0 +1,287 @@
+/* ===============================
+   RESET
+================================= */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+/* ===============================
+   BODY + BACKGROUND
+================================= */
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  color: #0A1A2F;
+  line-height: 1.7;
+
+  background: url('/hero.png') center / cover no-repeat fixed;
+}
+
+/* DARK OVERLAY */
+body::after {
+  content: "";
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  background: rgba(10,26,47,0.25);
+}
+
+/* ===============================
+   CONTAINER
+================================= */
+.container {
+  width: 88%;
+  max-width: 1100px;
+  margin: 0 auto;
+}
+
+/* ===============================
+   HEADER
+================================= */
+header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid #E5E7EB;
+}
+
+.nav-inner {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 14px 30px;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo img {
+  height: 60px;
+}
+
+/* NAV */
+nav {
+  display: flex;
+  gap: 28px;
+}
+
+nav a {
+  text-decoration: none;
+  color: #0A1A2F;
+  font-size: 14px;
+  transition: 0.25s ease;
+}
+
+nav a:hover {
+  opacity: 0.65;
+}
+
+nav a.active {
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+
+/* ===============================
+   HERO + SECTIONS
+================================= */
+.hero,
+.section {
+  position: relative;
+  z-index: 2;
+
+  padding: 140px 0;
+
+  background-color: rgba(255,255,255,0.65);
+  backdrop-filter: blur(12px);
+
+  /* ✅ subtle depth */
+  box-shadow: 0 10px 40px rgba(0,0,0,0.06);
+}
+
+/* HERO ADJUSTMENT */
+.hero {
+  padding-top: 180px;
+  padding-bottom: 140px;
+}
+
+/* TYPOGRAPHY */
+.hero h1 {
+  font-size: 44px;
+  line-height: 1.2;
+  margin-bottom: 22px;
+}
+
+.section h2 {
+  font-size: 28px;
+  margin-bottom: 22px;
+}
+
+.section p {
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 18px;
+  max-width: 650px;
+}
+
+/* ALTERNATE SECTIONS */
+.section.alt {
+  background-color: rgba(245,247,250,0.55);
+}
+
+/* ===============================
+   BUTTONS
+================================= */
+.btn {
+  display: inline-block;
+  margin-top: 28px;
+  padding: 14px 28px;
+
+  background: #2f3e34;
+  color: #ffffff;
+
+  text-decoration: none;
+  border-radius: 4px;
+
+  font-weight: bold;
+  letter-spacing: 0.2px;
+  transition: all 0.25s ease;
+}
+
+.btn:hover {
+  background: #3c5145;
+  transform: translateY(-2px);
+}
+
+/* ===============================
+   WINDOWS
+================================= */
+.window {
+  height: 300px;
+  position: relative;
+  z-index: 1;
+}
+
+/* smoother fades */
+.window::before,
+.window::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 90px;
+  z-index: 3;
+}
+
+.window::before {
+  top: 0;
+  background: linear-gradient(to bottom, rgba(255,255,255,0.95), transparent);
+}
+
+.window::after {
+  bottom: 0;
+  background: linear-gradient(to top, rgba(255,255,255,0.95), transparent);
+}
+
+/* ===============================
+   FOOTER
+================================= */
+footer {
+  padding: 90px 0;
+  text-align: center;
+
+  background: rgba(255,255,255,0.70);
+  backdrop-filter: blur(10px);
+
+  position: relative;
+  z-index: 2;
+}
+
+footer p {
+  margin-bottom: 14px;
+}
+
+/* ===============================
+   MOBILE
+================================= */
+@media (max-width: 768px) {
+
+  nav {
+    display: none;
+  }
+
+  .hero h1 {
+    font-size: 30px;
+  }
+
+  .section h2 {
+    font-size: 24px;
+  }
+
+  .window {
+    height: 200px;
+  }
+}
+/* ===============================
+   OLS FRAMEWORK BLOCKS
+================================= */
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(320px,1fr));
+  gap: 30px;
+  margin-top: 40px;
+}
+
+.card {
+  background: rgba(255,255,255,0.80);
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 8px 25px rgba(0,0,0,0.06);
+}
+
+.card h3 {
+  margin-bottom: 15px;
+  font-size: 22px;
+}
+
+.card p {
+  margin-bottom: 0;
+}
+
+.framework-flow {
+  margin-top: 40px;
+  font-size: 18px;
+  font-weight: bold;
+  line-height: 2;
+}
+
+.button-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  margin-top: 30px;
+}
+
+.btn-secondary {
+  display: inline-block;
+  padding: 14px 28px;
+  border: 2px solid #2f3e34;
+  color: #2f3e34;
+  text-decoration: none;
+  border-radius: 4px;
+  font-weight: bold;
+  background: transparent;
+}
+
+.btn-secondary:hover {
+  background: rgba(47,62,52,0.08);
+}

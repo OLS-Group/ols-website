@@ -1,0 +1,1231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start the Conversation | OLS Group</title>
+    <meta name="description" content="Start the Conversation with OLS Group through a guided discovery experience designed to help leaders name what has changed before adding another layer of activity around the wrong problem.">
+    <link rel="icon" type="image/png" href="assets/OLS-WEB-V2-FAV-A001.png">
+
+    <style>
+        :root {
+            --ols-navy: #071a2d;
+            --ols-deep: #0a1a2f;
+            --ols-blue: #1f4f7a;
+            --ols-slate: #334155;
+            --ols-muted: #64748b;
+            --ols-light: #f4f7fa;
+            --ols-glass: rgba(255, 255, 255, 0.78);
+            --ols-glass-strong: rgba(255, 255, 255, 0.9);
+            --ols-glass-alt: rgba(239, 245, 250, 0.78);
+            --ols-border: rgba(15, 23, 42, 0.12);
+            --ols-green: #2f3e34;
+            --ols-green-hover: #3c5145;
+            --ols-gold: #c8a45d;
+            --max-width: 1180px;
+            --reading-width: 900px;
+            --companion-width: 480px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            min-height: 100vh;
+            font-family: Arial, Helvetica, sans-serif;
+            color: var(--ols-deep);
+            line-height: 1.75;
+            background:
+                linear-gradient(rgba(7, 26, 45, 0.66), rgba(7, 26, 45, 0.66)),
+                url("assets/OLS-WEB-V2-RSC-HERO-A001.jpg") center center / cover fixed no-repeat;
+            overflow-x: hidden;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        a {
+            color: inherit;
+        }
+
+        button,
+        textarea {
+            font: inherit;
+        }
+
+        button {
+            cursor: pointer;
+        }
+
+        .site-shell {
+            min-height: 100vh;
+            transition: margin-right 0.28s ease, filter 0.28s ease;
+        }
+
+        body.companion-open .site-shell {
+            margin-right: var(--companion-width);
+            filter: saturate(0.94);
+        }
+
+        .container {
+            width: min(var(--max-width), calc(100% - 44px));
+            margin: 0 auto;
+        }
+
+        .reading {
+            max-width: var(--reading-width);
+        }
+
+        header {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            background: rgba(255, 255, 255, 0.94);
+            border-bottom: 1px solid var(--ols-border);
+            backdrop-filter: blur(14px);
+        }
+
+        .nav-inner {
+            width: min(1280px, calc(100% - 44px));
+            margin: 0 auto;
+            padding: 12px 0;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 30px;
+        }
+
+        .logo {
+            display: inline-flex;
+            align-items: center;
+            text-decoration: none;
+            flex: 0 0 auto;
+        }
+
+        .logo img {
+            height: 72px;
+            width: auto;
+        }
+
+        nav {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            flex-wrap: wrap;
+            gap: 18px;
+            font-size: 13px;
+            line-height: 1.2;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: var(--ols-deep);
+            font-weight: 800;
+            opacity: 0.9;
+            transition: opacity 0.2s ease, color 0.2s ease;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            opacity: 1;
+            color: var(--ols-blue);
+        }
+
+        main {
+            background: rgba(245, 247, 250, 0.22);
+        }
+
+        .hero {
+            min-height: calc(88vh - 80px);
+            display: flex;
+            align-items: center;
+            padding: 118px 0 96px;
+            color: #ffffff;
+            background:
+                linear-gradient(90deg, rgba(7, 26, 45, 0.96), rgba(7, 26, 45, 0.82), rgba(7, 26, 45, 0.42)),
+                url("assets/OLS-WEB-V2-RSC-HERO-A001.jpg") center center / cover no-repeat;
+        }
+
+        .hero .reading {
+            max-width: 930px;
+        }
+
+        .eyebrow {
+            display: inline-block;
+            margin-bottom: 22px;
+            color: #b7d7f5;
+            font-size: 13px;
+            font-weight: 800;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            max-width: 960px;
+            margin-bottom: 30px;
+            font-size: clamp(42px, 6vw, 78px);
+            line-height: 1.05;
+            letter-spacing: -0.045em;
+        }
+
+        h2 {
+            margin-bottom: 24px;
+            font-size: clamp(30px, 4vw, 46px);
+            line-height: 1.14;
+            letter-spacing: -0.035em;
+            color: var(--ols-deep);
+        }
+
+        h3 {
+            margin-bottom: 14px;
+            font-size: clamp(22px, 2.5vw, 30px);
+            line-height: 1.2;
+            letter-spacing: -0.025em;
+            color: var(--ols-deep);
+        }
+
+        p {
+            margin-bottom: 22px;
+            font-size: 18px;
+            color: var(--ols-slate);
+        }
+
+        .hero p {
+            max-width: 850px;
+            color: rgba(255, 255, 255, 0.91);
+            font-size: 21px;
+            font-weight: 700;
+        }
+
+        .hero-title-mark {
+            width: 82px;
+            height: 4px;
+            margin: 34px 0 0;
+            background: var(--ols-gold);
+        }
+
+        .hero-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin-top: 38px;
+        }
+
+        .button,
+        .card-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            min-height: 48px;
+            padding: 14px 22px;
+            color: #ffffff;
+            background: var(--ols-green);
+            border: 1px solid rgba(255, 255, 255, 0.22);
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 900;
+            transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
+        }
+
+        .button:hover,
+        .button:focus,
+        .card-action:hover,
+        .card-action:focus {
+            background: var(--ols-green-hover);
+            transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.46);
+        }
+
+        .button.secondary {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.12);
+            backdrop-filter: blur(10px);
+        }
+
+        .book-section {
+            position: relative;
+            padding: 112px 0;
+            background: var(--ols-glass);
+            border-top: 1px solid var(--ols-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .book-section.alt {
+            background: var(--ols-glass-alt);
+        }
+
+        .book-grid {
+            display: grid;
+            grid-template-columns: minmax(170px, 255px) minmax(0, 900px);
+            gap: 66px;
+            align-items: start;
+        }
+
+        .book-side {
+            position: sticky;
+            top: 108px;
+            padding-top: 8px;
+        }
+
+        .book-side span {
+            display: block;
+            color: var(--ols-muted);
+            font-size: 12px;
+            line-height: 1.35;
+            font-weight: 900;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .book-side span::after {
+            content: "";
+            display: block;
+            width: 58px;
+            height: 3px;
+            margin-top: 18px;
+            background: var(--ols-green);
+        }
+
+        .book-copy {
+            max-width: var(--reading-width);
+        }
+
+        .book-copy p:last-child {
+            margin-bottom: 0;
+        }
+
+        .opening-panel {
+            padding: 46px;
+            background: var(--ols-glass-strong);
+            border: 1px solid var(--ols-border);
+            border-radius: 28px;
+            box-shadow: 0 24px 70px rgba(7, 26, 45, 0.14);
+        }
+
+        .opening-panel p:first-child {
+            color: var(--ols-deep);
+            font-size: 23px;
+            font-weight: 900;
+            line-height: 1.45;
+            letter-spacing: -0.02em;
+        }
+
+        .quote-band {
+            padding: 92px 0;
+            color: #ffffff;
+            background: var(--ols-navy);
+        }
+
+        .quote-band .quote-text {
+            max-width: 980px;
+            color: #ffffff;
+            font-size: clamp(28px, 4vw, 48px);
+            line-height: 1.22;
+            letter-spacing: -0.04em;
+            font-weight: 900;
+        }
+
+        .quote-band .quote-text::before {
+            content: "";
+            display: block;
+            width: 72px;
+            height: 4px;
+            margin-bottom: 28px;
+            background: var(--ols-gold);
+        }
+
+        .pathway-section,
+        .canon-section {
+            padding: 112px 0;
+            border-top: 1px solid var(--ols-border);
+            backdrop-filter: blur(10px);
+        }
+
+        .pathway-section {
+            background: var(--ols-glass);
+        }
+
+        .canon-section {
+            background: var(--ols-glass-alt);
+        }
+
+        .section-intro {
+            max-width: 880px;
+            margin-bottom: 46px;
+        }
+
+        .section-intro p {
+            max-width: 820px;
+            font-size: 19px;
+        }
+
+        .pathway-panel {
+            padding: 42px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--ols-border);
+            border-radius: 30px;
+            box-shadow: 0 26px 70px rgba(7, 26, 45, 0.14);
+        }
+
+        .pathway-line {
+            display: grid;
+            grid-template-columns: repeat(5, minmax(0, 1fr));
+            gap: 16px;
+            margin-top: 30px;
+        }
+
+        .pathway-step {
+            min-height: 180px;
+            padding: 24px;
+            background: rgba(239, 245, 250, 0.9);
+            border: 1px solid rgba(15, 23, 42, 0.10);
+            border-radius: 24px;
+        }
+
+        .pathway-step span {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 38px;
+            height: 38px;
+            margin-bottom: 18px;
+            color: #ffffff;
+            background: var(--ols-green);
+            border-radius: 50%;
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        .pathway-step h3 {
+            margin-bottom: 10px;
+            font-size: 20px;
+        }
+
+        .pathway-step p {
+            margin-bottom: 0;
+            font-size: 15px;
+        }
+
+        .canon-grid {
+            display: grid;
+            grid-template-columns: repeat(2, minmax(0, 1fr));
+            gap: 26px;
+        }
+
+        .canon-card {
+            min-height: 330px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            padding: 38px;
+            color: var(--ols-deep);
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid var(--ols-border);
+            border-radius: 30px;
+            text-decoration: none;
+            box-shadow: 0 26px 70px rgba(7, 26, 45, 0.14);
+            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+            backdrop-filter: blur(12px);
+        }
+
+        .canon-card:hover,
+        .canon-card:focus {
+            transform: translateY(-4px);
+            border-color: rgba(47, 62, 52, 0.36);
+            box-shadow: 0 34px 90px rgba(7, 26, 45, 0.19);
+        }
+
+        .card-kicker {
+            display: block;
+            margin-bottom: 18px;
+            color: var(--ols-blue);
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .canon-card h3 {
+            margin-bottom: 20px;
+            font-size: clamp(28px, 3vw, 40px);
+            color: var(--ols-deep);
+        }
+
+        .canon-card p {
+            color: var(--ols-slate);
+            font-size: 18px;
+        }
+
+        .card-meta {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin: 24px 0 28px;
+        }
+
+        .meta-pill {
+            display: inline-flex;
+            align-items: center;
+            width: fit-content;
+            padding: 8px 12px;
+            color: var(--ols-deep);
+            background: rgba(239, 245, 250, 0.92);
+            border: 1px solid rgba(15, 23, 42, 0.10);
+            border-radius: 999px;
+            font-size: 12px;
+            font-weight: 900;
+        }
+
+        footer {
+            padding: 78px 0 44px;
+            color: rgba(255, 255, 255, 0.86);
+            background: var(--ols-navy);
+        }
+
+        footer h2 {
+            color: #ffffff;
+            font-size: clamp(30px, 3vw, 42px);
+        }
+
+        footer p {
+            max-width: 860px;
+            color: rgba(255, 255, 255, 0.76);
+            font-size: 16px;
+        }
+
+        .footer-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            margin: 34px 0 42px;
+        }
+
+        .footer-links a {
+            display: inline-flex;
+            padding: 11px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.28);
+            border-radius: 999px;
+            color: #ffffff;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 800;
+            transition: background 0.2s ease, border-color 0.2s ease;
+        }
+
+        .footer-links a:hover,
+        .footer-links a:focus {
+            background: rgba(255, 255, 255, 0.12);
+            border-color: rgba(255, 255, 255, 0.52);
+        }
+
+        .footer-bottom {
+            padding-top: 34px;
+            border-top: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .footer-bottom p {
+            margin-bottom: 12px;
+            font-size: 14px;
+        }
+
+        .companion-launcher {
+            position: fixed;
+            right: 24px;
+            bottom: 24px;
+            z-index: 2000;
+            width: min(300px, calc(100vw - 48px));
+            padding: 15px 17px;
+            color: #ffffff;
+            background:
+                linear-gradient(135deg, rgba(7, 26, 45, 0.96), rgba(31, 79, 122, 0.9));
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 22px;
+            box-shadow: 0 24px 70px rgba(7, 26, 45, 0.34);
+            backdrop-filter: blur(16px);
+            transition: transform 0.24s ease, opacity 0.24s ease;
+        }
+
+        body.companion-open .companion-launcher {
+            pointer-events: none;
+            opacity: 0;
+            transform: translateY(16px);
+        }
+
+        .companion-launcher .launcher-kicker {
+            display: block;
+            margin-bottom: 8px;
+            color: #b7d7f5;
+            font-size: 10px;
+            font-weight: 900;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .companion-launcher h3 {
+            margin-bottom: 12px;
+            color: #ffffff;
+            font-size: 20px;
+            line-height: 1.15;
+        }
+
+        .launcher-button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: 100%;
+            padding: 11px 14px;
+            color: #ffffff;
+            background: var(--ols-green);
+            border: none;
+            border-radius: 999px;
+            font-size: 13px;
+            font-weight: 900;
+        }
+
+        .companion-panel {
+            position: fixed;
+            top: 0;
+            right: 0;
+            z-index: 2100;
+            width: var(--companion-width);
+            max-width: 100vw;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            color: var(--ols-deep);
+            background: rgba(255, 255, 255, 0.96);
+            border-left: 1px solid var(--ols-border);
+            box-shadow: -28px 0 80px rgba(7, 26, 45, 0.24);
+            backdrop-filter: blur(18px);
+            transform: translateX(100%);
+            transition: transform 0.28s ease;
+        }
+
+        body.companion-open .companion-panel {
+            transform: translateX(0);
+        }
+
+        .companion-header {
+            padding: 28px;
+            color: #ffffff;
+            background:
+                linear-gradient(135deg, rgba(7, 26, 45, 0.98), rgba(31, 79, 122, 0.9));
+            border-bottom: 1px solid rgba(255, 255, 255, 0.16);
+        }
+
+        .companion-top {
+            display: flex;
+            align-items: flex-start;
+            justify-content: space-between;
+            gap: 18px;
+        }
+
+        .companion-header .eyebrow {
+            margin-bottom: 10px;
+            color: #b7d7f5;
+        }
+
+        .companion-header h2 {
+            margin-bottom: 12px;
+            color: #ffffff;
+            font-size: 34px;
+        }
+
+        .companion-header p {
+            margin-bottom: 0;
+            color: rgba(255, 255, 255, 0.82);
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        .companion-close {
+            flex: 0 0 auto;
+            width: 42px;
+            height: 42px;
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.12);
+            border: 1px solid rgba(255, 255, 255, 0.18);
+            border-radius: 50%;
+            font-size: 22px;
+            font-weight: 900;
+            line-height: 1;
+        }
+
+        .companion-body {
+            flex: 1;
+            overflow-y: auto;
+            padding: 26px;
+            background:
+                radial-gradient(circle at top right, rgba(200, 164, 93, 0.12), transparent 32%),
+                rgba(244, 247, 250, 0.92);
+        }
+
+        .companion-section {
+            margin-bottom: 22px;
+            padding: 24px;
+            background: rgba(255, 255, 255, 0.9);
+            border: 1px solid rgba(15, 23, 42, 0.10);
+            border-radius: 24px;
+            box-shadow: 0 18px 46px rgba(7, 26, 45, 0.09);
+        }
+
+        .companion-section h3 {
+            margin-bottom: 12px;
+            font-size: 24px;
+        }
+
+        .companion-section p {
+            margin-bottom: 16px;
+            font-size: 15px;
+            line-height: 1.55;
+        }
+
+        .companion-input label {
+            display: block;
+            margin-bottom: 12px;
+            color: var(--ols-deep);
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.14em;
+            text-transform: uppercase;
+        }
+
+        .companion-input textarea {
+            width: 100%;
+            min-height: 160px;
+            resize: vertical;
+            padding: 18px;
+            color: var(--ols-deep);
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid rgba(15, 23, 42, 0.15);
+            border-radius: 20px;
+            outline: none;
+            font-size: 16px;
+            line-height: 1.55;
+        }
+
+        .companion-input textarea:focus {
+            border-color: rgba(31, 79, 122, 0.55);
+            box-shadow: 0 0 0 3px rgba(31, 79, 122, 0.12);
+        }
+
+        .companion-actions {
+            display: grid;
+            gap: 10px;
+            margin-top: 14px;
+        }
+
+        .companion-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 46px;
+            padding: 12px 16px;
+            color: #ffffff;
+            background: var(--ols-green);
+            border: none;
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 14px;
+            font-weight: 900;
+        }
+
+        .companion-action.secondary {
+            color: var(--ols-deep);
+            background: rgba(239, 245, 250, 0.95);
+            border: 1px solid rgba(15, 23, 42, 0.14);
+        }
+
+        .companion-starters {
+            display: grid;
+            gap: 0;
+            margin-top: 8px;
+            border-top: 1px solid rgba(15, 23, 42, 0.10);
+        }
+
+        .companion-starter {
+            width: 100%;
+            padding: 14px 0;
+            color: var(--ols-deep);
+            background: transparent;
+            border: none;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.10);
+            text-align: left;
+            font-size: 15px;
+            font-weight: 900;
+            line-height: 1.35;
+            transition: color 0.2s ease, padding-left 0.2s ease;
+        }
+
+        .companion-starter:hover,
+        .companion-starter:focus {
+            color: var(--ols-blue);
+            padding-left: 8px;
+        }
+
+        .companion-sdk-mount {
+            display: none;
+        }
+
+        @media (max-width: 1220px) {
+            body.companion-open .site-shell {
+                margin-right: 0;
+                filter: none;
+            }
+
+            .companion-panel {
+                width: min(var(--companion-width), 94vw);
+            }
+        }
+
+        @media (max-width: 1050px) {
+            .pathway-line {
+                grid-template-columns: repeat(2, minmax(0, 1fr));
+            }
+        }
+
+        @media (max-width: 980px) {
+            .nav-inner {
+                align-items: flex-start;
+                flex-direction: column;
+                gap: 14px;
+            }
+
+            nav {
+                justify-content: flex-start;
+                gap: 13px;
+            }
+
+            .hero {
+                min-height: auto;
+                padding: 86px 0 78px;
+            }
+
+            .book-section,
+            .pathway-section,
+            .canon-section {
+                padding: 86px 0;
+            }
+
+            .book-grid {
+                grid-template-columns: 1fr;
+                gap: 28px;
+            }
+
+            .book-side {
+                position: static;
+            }
+
+            .canon-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 640px) {
+            .container,
+            .nav-inner {
+                width: min(100% - 30px, var(--max-width));
+            }
+
+            .logo img {
+                height: 46px;
+            }
+
+            nav {
+                font-size: 13px;
+                line-height: 1.45;
+            }
+
+            h1 {
+                font-size: 38px;
+            }
+
+            h2 {
+                font-size: 30px;
+            }
+
+            p,
+            .hero p {
+                font-size: 17px;
+            }
+
+            .opening-panel,
+            .pathway-panel,
+            .pathway-step,
+            .canon-card {
+                padding: 28px;
+                border-radius: 24px;
+            }
+
+            .opening-panel p:first-child {
+                font-size: 20px;
+            }
+
+            .pathway-line {
+                grid-template-columns: 1fr;
+            }
+
+            .quote-band {
+                padding: 70px 0;
+            }
+
+            .button,
+            .card-action {
+                width: 100%;
+                text-align: center;
+            }
+
+            .footer-links a {
+                width: 100%;
+                justify-content: center;
+            }
+
+            .companion-launcher {
+                right: 15px;
+                bottom: 15px;
+                width: calc(100vw - 30px);
+                border-radius: 22px;
+            }
+
+            .companion-panel {
+                width: 100vw;
+            }
+
+            .companion-header,
+            .companion-body {
+                padding: 22px;
+            }
+
+            .companion-section {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+<div class="site-shell">
+    <header>
+        <div class="nav-inner">
+            <a href="index.html" class="logo" aria-label="OLS Group Home">
+              <img src="assets/OLS-WEB-V2-LOGO-A001.png"alt="OLS Group Logo">
+            </a>
+            <nav aria-label="Primary navigation">
+                <a href="what-we-believe.html">What We Believe</a>
+                <a href="framework.html">How We Think</a>
+                <a href="assessment.html">Identify the Problem</a>
+                <a href="services.html">How We Help</a>
+                <a href="about.html">Why OLS</a>
+                <a href="discovery.html">Start the Conversation</a>
+                <a href="resources.html">Resource Center</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="container reading">
+                <span class="eyebrow">OLS Discovery Conversation</span>
+                <h1>Start the Conversation</h1>
+                <p>Talk through what has changed before the organization adds another layer of activity around the wrong problem.</p>
+                <div class="hero-title-mark"></div>
+                <div class="hero-actions">
+                    <button class="button" type="button" data-open-companion>Begin the Conversation</button>
+                    <a class="button secondary" href="resources.html">Continue to Resource Center</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="book-section">
+            <div class="container book-grid">
+                <aside class="book-side">
+                    <span>Start the Conversation</span>
+                </aside>
+                <article class="book-copy opening-panel">
+                    <p>Most leaders do not reach this point because they are looking for a consultant.</p>
+                    <p>They reach it because something in the organization has become harder to explain.</p>
+                    <p>Activity has increased, but clarity has thinned. People still care, but truth arrives later than it should. Execution still happens, but too much of it depends on recovery, translation, and the same people stepping in to hold the system together.</p>
+                    <p>There is often a moment before action. A quiet one. A leader has heard the reports. The explanations make sense. The meetings have happened. The organization has done what serious organizations do: adjusted, responded, recovered, and kept moving.</p>
+                    <p>But something underneath the explanations still does not sit right. That is a useful moment, not because it proves there is a problem, but because it means the leader is still listening for reality beneath the activity.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="quote-band">
+            <div class="container">
+                <div class="quote-text">The first conversation does not need to begin with a diagnosis.</div>
+            </div>
+        </section>
+
+        <section class="book-section alt">
+            <div class="container book-grid">
+                <aside class="book-side">
+                    <span>Naming What Changed</span>
+                </aside>
+                <article class="book-copy">
+                    <p>The first conversation does not need to begin with a diagnosis. It does not need to begin with a solution. It does not need to begin with a project, a scope, a service, or a formal engagement. It can begin with the simpler and often harder act of naming what has changed.</p>
+                    <p>Where does the organization feel farther away from itself? Where is visibility thinner than it used to be? Where has recovery become normal? Where are leaders receiving activity when they need insight? Where do capable people keep saving the result without the system learning why rescue was necessary?</p>
+                    <p>The OLS conversation pathway should respect that uncertainty. A leader should not have to pretend to know the root cause before starting a serious conversation.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="book-section">
+            <div class="container book-grid">
+                <aside class="book-side">
+                    <span>The Beginning</span>
+                </aside>
+                <article class="book-copy">
+                    <p>The beginning can be plain: this is what we are seeing, this is where the pattern seems to repeat, this is where the organization feels harder to understand, this is what we have already tried, and this is what still does not make sense.</p>
+                    <p>That is enough to begin because a useful conversation does not require pretending the answer is already known.</p>
+                    <p>If the first exchange reveals enough to keep going, the next step can become a Discovery Conversation. If it does not, the conversation should still leave the leader with clearer language, better questions, and a more useful way to keep thinking about the pattern.</p>
+                    <p>Start the Conversation &rarr; Talk through what has changed before the organization adds another layer of activity around the wrong problem.</p>
+                    <p>If the pattern is not clear enough yet, continue to the Resource Center. Keep reading until the pattern fades, or until it becomes clear enough to name in conversation.</p>
+                </article>
+            </div>
+        </section>
+
+        <section class="pathway-section">
+            <div class="container">
+                <div class="pathway-panel">
+                    <div class="section-intro">
+                        <span class="eyebrow">Discovery Conversation Pathway</span>
+                        <h2>Conversation first. Scheduling later.</h2>
+                        <p>The visitor should not have to pretend the answer is already known. The assistant is designed to help move from observation into clearer language, and only then toward a Discovery Conversation when the pattern has enough shape to discuss seriously.</p>
+                    </div>
+
+                    <div class="pathway-line" aria-label="Discovery pathway">
+                        <div class="pathway-step">
+                            <span>1</span>
+                            <h3>Conversation</h3>
+                            <p>The visitor describes what changed, what repeats, and what still does not make sense.</p>
+                        </div>
+
+                        <div class="pathway-step">
+                            <span>2</span>
+                            <h3>Pattern</h3>
+                            <p>The assistant helps organize the pattern around visibility, trust, ownership, accountability, execution, adaptability, or results.</p>
+                        </div>
+
+                        <div class="pathway-step">
+                            <span>3</span>
+                            <h3>Understanding</h3>
+                            <p>The conversation gives language to the condition before anyone pretends the solution is already obvious.</p>
+                        </div>
+
+                        <div class="pathway-step">
+                            <span>4</span>
+                            <h3>Discovery</h3>
+                            <p>If the pattern is ready, the assistant can guide the visitor toward a Discovery Conversation.</p>
+                        </div>
+
+                        <div class="pathway-step">
+                            <span>5</span>
+                            <h3>Scheduling</h3>
+                            <p>Scheduling becomes a result of clarity, not the first demand placed on the visitor.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="canon-section">
+            <div class="container">
+                <div class="section-intro">
+                    <span class="eyebrow">Resource Center References</span>
+                    <h2>Continue learning while the pattern takes shape.</h2>
+                    <p>If the visitor is not ready to begin the conversation, the Resource Center gives them a governed place to keep reading until the pattern fades or becomes clear enough to name.</p>
+                </div>
+
+                <div class="canon-grid">
+                    <a href="resources/visibility-precedes-control.html" class="canon-card">
+                        <div>
+                            <span class="card-kicker">Canon Article</span>
+                            <h3>Visibility Precedes Control</h3>
+                            <p>Visibility Precedes Control explains why leaders cannot control what they cannot clearly see.</p>
+                            <div class="card-meta">
+                                <span class="meta-pill">Theme: Visibility</span>
+                                <span class="meta-pill">OLS-CAN-001</span>
+                            </div>
+                        </div>
+                        <span class="card-action">Read Article &rarr;</span>
+                    </a>
+
+                    <a href="resources/trust-is-organizational-infrastructure.html" class="canon-card">
+                        <div>
+                            <span class="card-kicker">Canon Article</span>
+                            <h3>Trust Is Organizational Infrastructure</h3>
+                            <p>Trust Is Organizational Infrastructure explains why every organization eventually performs at the speed of the truth it is willing to hear.</p>
+                            <div class="card-meta">
+                                <span class="meta-pill">Theme: Trust</span>
+                                <span class="meta-pill">OLS-CAN-002</span>
+                            </div>
+                        </div>
+                        <span class="card-action">Read Article &rarr;</span>
+                    </a>
+
+                    <a href="resources/leadership-equals-accountability.html" class="canon-card">
+                        <div>
+                            <span class="card-kicker">Canon Article</span>
+                            <h3>Leadership Equals Accountability</h3>
+                            <p>Leadership Equals Accountability explains why awareness must have a trusted path to authority and action.</p>
+                            <div class="card-meta">
+                                <span class="meta-pill">Theme: Accountability</span>
+                                <span class="meta-pill">OLS-CAN-003</span>
+                            </div>
+                        </div>
+                        <span class="card-action">Read Article &rarr;</span>
+                    </a>
+
+                    <a href="resources/why-organizations-have-execution-problems-not-strategy-problems.html" class="canon-card">
+                        <div>
+                            <span class="card-kicker">Canon Article</span>
+                            <h3>Why Organizations Don&rsquo;t Have a Strategy Problem</h3>
+                            <p>Why Organizations Don&rsquo;t Have a Strategy Problem &mdash; They Have an Execution Problem explains why execution fails in the system that is supposed to carry the plan.</p>
+                            <div class="card-meta">
+                                <span class="meta-pill">Theme: Execution</span>
+                                <span class="meta-pill">OLS-CAN-004</span>
+                            </div>
+                        </div>
+                        <span class="card-action">Read Article &rarr;</span>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <section class="quote-band">
+            <div class="container">
+                <div class="quote-text">Keep reading until the pattern fades, or until it becomes clear enough to name in conversation.</div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container">
+            <h2>Operational Leadership Systems</h2>
+            <p>Helping leaders understand what changed inside the operating system of their organization before deciding what should happen next.</p>
+
+            <div class="footer-links">
+                <a href="what-we-believe.html">What We Believe</a>
+                <a href="framework.html">How We Think</a>
+                <a href="assessment.html">Identify the Problem</a>
+                <a href="services.html">How We Help</a>
+                <a href="about.html">Why OLS</a>
+                <a href="discovery.html">Start the Conversation</a>
+                <a href="resources.html">Resource Center</a>
+            </div>
+
+            <div class="footer-bottom">
+                <p>&copy; 2026 Operational Leadership Systems (OLS Group). All Rights Reserved.</p>
+                <p>This website and its published resources may not be reproduced, distributed, modified, or republished without written permission from OLS Group, except for brief quotations with proper attribution.</p>
+                <p>Visibility &middot; Trust &middot; Ownership &middot; Accountability &middot; Execution</p>
+            </div>
+        </div>
+    </footer>
+</div>
+
+<div class="companion-launcher" id="companionLauncher">
+    <span class="launcher-kicker">OLS Learning Companion</span>
+    <h3>Start the Conversation</h3>
+    <button class="launcher-button" type="button" data-open-companion>Open Companion</button>
+</div>
+
+<aside class="companion-panel" id="companionPanel" aria-label="OLS Learning Companion">
+    <div class="companion-header">
+        <div class="companion-top">
+            <div>
+                <span class="eyebrow">OLS Learning Companion</span>
+                <h2>Start with what you are seeing.</h2>
+                <p>You do not need to know the answer. Describe what changed, where the pattern repeats, or what still does not make sense.</p>
+            </div>
+            <button class="companion-close" type="button" id="companionClose" aria-label="Close OLS Learning Companion">&times;</button>
+        </div>
+    </div>
+
+    <div class="companion-body">
+        <section class="companion-section companion-input">
+            <label for="companionPrompt">Start here</label>
+            <textarea id="companionPrompt" name="companionPrompt" placeholder="Describe what has changed, where the pattern repeats, or what still does not make sense."></textarea>
+
+            <div class="companion-actions">
+                <button class="companion-action" type="button" id="companionBegin">Begin the Conversation</button>
+                <a class="companion-action secondary" href="resources.html">Continue Learning</a>
+            </div>
+        </section>
+
+        <section class="companion-section">
+            <h3>Conversation starters</h3>
+            <p>If the pattern is present but not fully clear yet, start with one of these.</p>
+            <div class="companion-starters">
+                <button class="companion-starter" type="button" data-prompt="Visibility feels thinner than it used to. Help me describe what may have changed.">Visibility feels thinner than it used to.</button>
+                <button class="companion-starter" type="button" data-prompt="Execution still happens, but too much depends on recovery. Help me think through that pattern.">Execution still happens, but too much depends on recovery.</button>
+                <button class="companion-starter" type="button" data-prompt="The same capable people keep saving the result. Help me understand what the system may not be learning.">The same capable people keep saving the result.</button>
+                <button class="companion-starter" type="button" data-prompt="Leadership is receiving activity when we need insight. Help me name the condition.">Leadership is receiving activity when it needs insight.</button>
+                <button class="companion-starter" type="button" data-prompt="I am not ready to schedule yet. Recommend OLS resources that can help me keep thinking.">I am not ready to schedule yet. Help me keep thinking.</button>
+            </div>
+        </section>
+
+        <div id="ols-companion-sdk-mount" class="companion-sdk-mount" data-agent="OLS Website Assistant V1" data-page="discovery" data-integration="microsoft-365-agents-sdk"></div>
+    </div>
+</aside>
+
+<script>
+    const body = document.body;
+    const openButtons = document.querySelectorAll("[data-open-companion]");
+    const closeButton = document.getElementById("companionClose");
+    const promptBox = document.getElementById("companionPrompt");
+    const promptButtons = document.querySelectorAll("[data-prompt]");
+    const companionBegin = document.getElementById("companionBegin");
+
+    function openCompanion() {
+        body.classList.add("companion-open");
+        setTimeout(function () {
+            promptBox.focus();
+        }, 280);
+    }
+
+    function closeCompanion() {
+        body.classList.remove("companion-open");
+    }
+
+    openButtons.forEach(function(button) {
+        button.addEventListener("click", openCompanion);
+    });
+
+    closeButton.addEventListener("click", closeCompanion);
+
+    promptButtons.forEach(function(button) {
+        button.addEventListener("click", function() {
+            promptBox.value = button.getAttribute("data-prompt");
+            openCompanion();
+        });
+    });
+
+    companionBegin.addEventListener("click", function() {
+        if (!promptBox.value.trim()) {
+            promptBox.value = "Something in the organization has become harder to explain. Help me start naming what changed.";
+        }
+
+        promptBox.focus();
+    });
+
+    document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape") {
+            closeCompanion();
+        }
+    });
+</script>
+</body>
+</html>
