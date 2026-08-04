@@ -22,7 +22,6 @@
             --ols-green: #2f3e34;
             --ols-green-hover: #3c5145;
             --ols-gold: #c8a45d;
-            --ols-red: #7f1d1d;
             --max-width: 1180px;
             --reading-width: 900px;
         }
@@ -43,7 +42,7 @@
             color: var(--ols-deep);
             line-height: 1.75;
             background:
-                linear-gradient(rgba(7, 26, 45, 0.64), rgba(7, 26, 45, 0.64)),
+                linear-gradient(rgba(7, 26, 45, 0.66), rgba(7, 26, 45, 0.66)),
                 url("assets/OLS-WEB-V2-RSC-HERO-A001.jpg") center center / cover fixed no-repeat;
         }
 
@@ -51,8 +50,6 @@
             max-width: 100%;
             height: auto;
             display: block;
-            -webkit-user-drag: none;
-            user-drag: none;
         }
 
         a {
@@ -60,9 +57,7 @@
         }
 
         button,
-        input,
-        textarea,
-        select {
+        textarea {
             font: inherit;
         }
 
@@ -214,10 +209,11 @@
             margin-top: 38px;
         }
 
-        .hero-button {
+        .button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
+            width: fit-content;
             min-height: 48px;
             padding: 14px 22px;
             color: #ffffff;
@@ -230,21 +226,17 @@
             transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
         }
 
-        .hero-button:hover,
-        .hero-button:focus {
+        .button:hover,
+        .button:focus {
             background: var(--ols-green-hover);
             transform: translateY(-2px);
             border-color: rgba(255, 255, 255, 0.46);
         }
 
-        .hero-button.secondary {
+        .button.secondary {
+            color: #ffffff;
             background: rgba(255, 255, 255, 0.12);
             backdrop-filter: blur(10px);
-        }
-
-        .hero-button.secondary:hover,
-        .hero-button.secondary:focus {
-            background: rgba(255, 255, 255, 0.18);
         }
 
         .book-section {
@@ -340,361 +332,221 @@
         }
 
         .assistant-section {
-            position: relative;
             padding: 118px 0;
             background:
-                linear-gradient(rgba(244, 247, 250, 0.9), rgba(244, 247, 250, 0.9)),
+                linear-gradient(rgba(244, 247, 250, 0.92), rgba(244, 247, 250, 0.92)),
                 url("assets/OLS-WEB-V2-RSC-LIBRARY-A001.jpg") center center / cover no-repeat;
             border-top: 1px solid var(--ols-border);
-            backdrop-filter: blur(10px);
         }
 
         .assistant-intro {
-            max-width: 900px;
-            margin-bottom: 46px;
+            max-width: 920px;
+            margin-bottom: 52px;
         }
 
         .assistant-intro p {
-            max-width: 840px;
+            max-width: 850px;
             font-size: 19px;
         }
 
-        .assistant-command-center {
-            display: grid;
-            grid-template-columns: minmax(0, 1.15fr) minmax(320px, 0.85fr);
-            gap: 26px;
-            align-items: stretch;
-        }
-
-        .assistant-panel {
-            min-height: 720px;
-            display: flex;
-            flex-direction: column;
+        .assistant-shell {
             overflow: hidden;
             background: rgba(255, 255, 255, 0.92);
             border: 1px solid var(--ols-border);
-            border-radius: 32px;
+            border-radius: 34px;
             box-shadow: 0 32px 90px rgba(7, 26, 45, 0.18);
             backdrop-filter: blur(14px);
         }
 
-        .assistant-panel-header {
-            padding: 32px 34px 26px;
+        .assistant-shell-header {
+            padding: 44px 48px 40px;
             color: #ffffff;
             background:
-                linear-gradient(135deg, rgba(7, 26, 45, 0.98), rgba(31, 79, 122, 0.92));
-            border-bottom: 1px solid rgba(255, 255, 255, 0.14);
+                linear-gradient(135deg, rgba(7, 26, 45, 0.98), rgba(10, 26, 47, 0.94), rgba(31, 79, 122, 0.86));
         }
 
-        .assistant-panel-header .eyebrow {
+        .assistant-shell-header .eyebrow {
             margin-bottom: 14px;
             color: #b7d7f5;
         }
 
-        .assistant-panel-header h2 {
-            margin-bottom: 12px;
+        .assistant-shell-header h2 {
+            max-width: 920px;
+            margin-bottom: 18px;
             color: #ffffff;
-            font-size: clamp(30px, 4vw, 48px);
+            font-size: clamp(34px, 5vw, 62px);
         }
 
-        .assistant-panel-header p {
-            max-width: 760px;
+        .assistant-shell-header p {
+            max-width: 860px;
             margin-bottom: 0;
-            color: rgba(255, 255, 255, 0.82);
+            color: rgba(255, 255, 255, 0.84);
+            font-size: 19px;
+        }
+
+        .assistant-stage {
+            min-height: 540px;
+            display: grid;
+            grid-template-columns: minmax(280px, 0.72fr) minmax(0, 1.28fr);
+            background:
+                radial-gradient(circle at top right, rgba(200, 164, 93, 0.13), transparent 34%),
+                rgba(255, 255, 255, 0.92);
+        }
+
+        .assistant-left {
+            padding: 42px;
+            background: rgba(239, 245, 250, 0.72);
+            border-right: 1px solid var(--ols-border);
+        }
+
+        .assistant-left h3 {
+            margin-bottom: 18px;
+            font-size: clamp(26px, 3vw, 38px);
+        }
+
+        .assistant-left p {
             font-size: 17px;
         }
 
-        .assistant-status-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 22px;
-        }
-
-        .status-pill {
-            display: inline-flex;
-            align-items: center;
-            width: fit-content;
-            padding: 8px 12px;
-            color: rgba(255, 255, 255, 0.92);
-            background: rgba(255, 255, 255, 0.11);
-            border: 1px solid rgba(255, 255, 255, 0.18);
-            border-radius: 999px;
-            font-size: 12px;
-            font-weight: 900;
-        }
-
-        .assistant-body {
+        .conversation-starters {
             display: grid;
-            grid-template-rows: auto 1fr auto;
-            min-height: 560px;
-            flex: 1;
+            margin-top: 28px;
+            border-top: 1px solid rgba(15, 23, 42, 0.12);
         }
 
-        .starter-strip {
-            display: flex;
-            gap: 10px;
-            overflow-x: auto;
-            padding: 18px 22px;
-            background: rgba(239, 245, 250, 0.82);
-            border-bottom: 1px solid var(--ols-border);
-        }
-
-        .starter-button {
-            flex: 0 0 auto;
-            padding: 10px 14px;
+        .starter-link {
+            padding: 18px 0;
             color: var(--ols-deep);
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid rgba(15, 23, 42, 0.12);
-            border-radius: 999px;
-            font-size: 13px;
-            font-weight: 900;
-            transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
-        }
-
-        .starter-button:hover,
-        .starter-button:focus {
-            color: #ffffff;
-            background: var(--ols-green);
-            border-color: var(--ols-green);
-        }
-
-        .conversation-window {
-            min-height: 410px;
-            max-height: 520px;
-            overflow-y: auto;
-            padding: 28px 26px;
-            background:
-                radial-gradient(circle at top left, rgba(200, 164, 93, 0.12), transparent 30%),
-                rgba(255, 255, 255, 0.84);
-        }
-
-        .message-row {
-            display: flex;
-            margin-bottom: 18px;
-        }
-
-        .message-row.user {
-            justify-content: flex-end;
-        }
-
-        .message-bubble {
-            max-width: min(78%, 660px);
-            padding: 16px 18px;
-            border-radius: 22px;
-            color: var(--ols-slate);
-            background: rgba(239, 245, 250, 0.96);
-            border: 1px solid rgba(15, 23, 42, 0.08);
-            box-shadow: 0 10px 28px rgba(7, 26, 45, 0.08);
-        }
-
-        .message-row.assistant .message-bubble {
-            border-top-left-radius: 8px;
-        }
-
-        .message-row.user .message-bubble {
-            color: #ffffff;
-            background: var(--ols-green);
-            border-color: rgba(47, 62, 52, 0.28);
-            border-top-right-radius: 8px;
-        }
-
-        .message-bubble strong {
-            display: block;
-            margin-bottom: 6px;
-            color: var(--ols-deep);
-            font-size: 12px;
-            letter-spacing: 0.12em;
-            text-transform: uppercase;
-        }
-
-        .message-row.user .message-bubble strong {
-            color: rgba(255, 255, 255, 0.88);
-        }
-
-        .message-bubble p {
-            margin-bottom: 10px;
-            font-size: 16px;
-        }
-
-        .message-bubble p:last-child {
-            margin-bottom: 0;
-        }
-
-        .assistant-input-area {
-            padding: 22px;
-            background: rgba(255, 255, 255, 0.96);
-            border-top: 1px solid var(--ols-border);
-        }
-
-        .lead-fields {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 10px;
-            margin-bottom: 12px;
-        }
-
-        .field {
-            width: 100%;
-            min-height: 44px;
-            padding: 11px 13px;
-            color: var(--ols-deep);
-            background: rgba(239, 245, 250, 0.92);
-            border: 1px solid rgba(15, 23, 42, 0.14);
-            border-radius: 14px;
-            font-size: 14px;
-            outline: none;
-        }
-
-        .field:focus {
-            border-color: rgba(31, 79, 122, 0.52);
-            box-shadow: 0 0 0 3px rgba(31, 79, 122, 0.12);
-        }
-
-        .chat-form {
-            display: grid;
-            grid-template-columns: minmax(0, 1fr) auto;
-            gap: 12px;
-            align-items: end;
-        }
-
-        .chat-form textarea {
-            min-height: 82px;
-            max-height: 160px;
-            resize: vertical;
-            padding: 15px 16px;
-            color: var(--ols-deep);
-            background: rgba(239, 245, 250, 0.82);
-            border: 1px solid rgba(15, 23, 42, 0.14);
-            border-radius: 18px;
-            font-size: 16px;
-            line-height: 1.5;
-            outline: none;
-        }
-
-        .chat-form textarea:focus {
-            border-color: rgba(31, 79, 122, 0.52);
-            box-shadow: 0 0 0 3px rgba(31, 79, 122, 0.12);
-        }
-
-        .send-button {
-            min-height: 82px;
-            padding: 0 24px;
-            color: #ffffff;
-            background: var(--ols-green);
+            background: transparent;
             border: none;
-            border-radius: 18px;
-            font-size: 15px;
+            border-bottom: 1px solid rgba(15, 23, 42, 0.12);
+            text-align: left;
+            font-size: 17px;
             font-weight: 900;
-            transition: background 0.2s ease, transform 0.2s ease;
+            line-height: 1.35;
+            transition: color 0.2s ease, padding-left 0.2s ease;
         }
 
-        .send-button:hover,
-        .send-button:focus {
-            background: var(--ols-green-hover);
-            transform: translateY(-2px);
+        .starter-link:hover,
+        .starter-link:focus {
+            color: var(--ols-blue);
+            padding-left: 8px;
         }
 
-        .send-button:disabled {
-            cursor: not-allowed;
-            opacity: 0.62;
-            transform: none;
+        .assistant-right {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 42px;
         }
 
-        .assistant-note {
-            margin: 12px 0 0;
-            color: var(--ols-muted);
-            font-size: 12px;
-            line-height: 1.45;
+        .assistant-native-frame {
+            min-height: 360px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 42px;
+            background:
+                linear-gradient(180deg, rgba(255, 255, 255, 0.94), rgba(239, 245, 250, 0.72));
+            border: 1px solid rgba(15, 23, 42, 0.10);
+            border-radius: 28px;
         }
 
-        .assistant-side-panel {
-            display: grid;
-            gap: 18px;
+        .assistant-prompt-card {
+            width: min(720px, 100%);
         }
 
-        .side-card {
-            padding: 30px;
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid var(--ols-border);
-            border-radius: 30px;
-            box-shadow: 0 24px 70px rgba(7, 26, 45, 0.13);
-            backdrop-filter: blur(12px);
-        }
-
-        .side-card .card-kicker {
+        .assistant-prompt-card label {
             display: block;
             margin-bottom: 14px;
-            color: var(--ols-blue);
-            font-size: 12px;
+            color: var(--ols-deep);
+            font-size: 14px;
             font-weight: 900;
-            letter-spacing: 0.16em;
+            letter-spacing: 0.14em;
             text-transform: uppercase;
         }
 
-        .side-card h3 {
-            font-size: clamp(24px, 3vw, 34px);
+        .assistant-prompt-card textarea {
+            width: 100%;
+            min-height: 150px;
+            resize: vertical;
+            padding: 20px;
+            color: var(--ols-deep);
+            background: rgba(255, 255, 255, 0.96);
+            border: 1px solid rgba(15, 23, 42, 0.15);
+            border-radius: 22px;
+            outline: none;
+            font-size: 18px;
+            line-height: 1.6;
+            box-shadow: 0 18px 46px rgba(7, 26, 45, 0.08);
         }
 
-        .side-card p {
-            font-size: 16px;
+        .assistant-prompt-card textarea:focus {
+            border-color: rgba(31, 79, 122, 0.55);
+            box-shadow: 0 0 0 3px rgba(31, 79, 122, 0.12), 0 18px 46px rgba(7, 26, 45, 0.08);
         }
 
-        .side-card ul {
-            display: grid;
-            gap: 10px;
-            margin: 18px 0 0;
-            list-style: none;
+        .assistant-actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 18px;
         }
 
-        .side-card li {
-            position: relative;
-            padding-left: 22px;
-            color: var(--ols-slate);
-            font-size: 15px;
-            font-weight: 800;
-            line-height: 1.5;
-        }
-
-        .side-card li::before {
-            content: "";
-            position: absolute;
-            left: 0;
-            top: 0.66em;
-            width: 8px;
-            height: 8px;
-            background: var(--ols-gold);
-            border-radius: 50%;
-        }
-
-        .booking-action {
+        .assistant-button {
             display: inline-flex;
             align-items: center;
             justify-content: center;
             width: fit-content;
-            margin-top: 16px;
-            padding: 13px 18px;
+            min-height: 48px;
+            padding: 14px 22px;
             color: #ffffff;
             background: var(--ols-green);
+            border: 1px solid rgba(255, 255, 255, 0.22);
             border-radius: 999px;
-            border: none;
             text-decoration: none;
-            font-size: 14px;
+            font-size: 15px;
             font-weight: 900;
-            transition: background 0.2s ease, transform 0.2s ease;
+            transition: background 0.2s ease, transform 0.2s ease, border-color 0.2s ease;
         }
 
-        .booking-action:hover,
-        .booking-action:focus {
+        .assistant-button:hover,
+        .assistant-button:focus {
             background: var(--ols-green-hover);
             transform: translateY(-2px);
+            border-color: rgba(255, 255, 255, 0.46);
         }
 
-        .capability-section {
+        .assistant-button.secondary {
+            color: var(--ols-deep);
+            background: rgba(239, 245, 250, 0.95);
+            border: 1px solid rgba(15, 23, 42, 0.14);
+        }
+
+        .assistant-integration-note {
+            margin: 28px 0 0;
+            color: var(--ols-muted);
+            font-size: 13px;
+            line-height: 1.55;
+        }
+
+        .assistant-sdk-mount {
+            display: none;
+        }
+
+        .pathway-section,
+        .canon-section {
             padding: 112px 0;
-            background: var(--ols-glass-alt);
             border-top: 1px solid var(--ols-border);
             backdrop-filter: blur(10px);
+        }
+
+        .pathway-section {
+            background: var(--ols-glass);
+        }
+
+        .canon-section {
+            background: var(--ols-glass-alt);
         }
 
         .section-intro {
@@ -707,75 +559,6 @@
             font-size: 19px;
         }
 
-        .capability-grid {
-            display: grid;
-            grid-template-columns: repeat(3, minmax(0, 1fr));
-            gap: 24px;
-        }
-
-        .capability-card {
-            min-height: 300px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 34px;
-            color: var(--ols-deep);
-            background: rgba(255, 255, 255, 0.9);
-            border: 1px solid var(--ols-border);
-            border-radius: 30px;
-            text-decoration: none;
-            box-shadow: 0 24px 70px rgba(7, 26, 45, 0.13);
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-            backdrop-filter: blur(12px);
-        }
-
-        .capability-card:hover,
-        .capability-card:focus {
-            transform: translateY(-4px);
-            border-color: rgba(47, 62, 52, 0.36);
-            box-shadow: 0 34px 90px rgba(7, 26, 45, 0.19);
-        }
-
-        .card-kicker {
-            display: block;
-            margin-bottom: 18px;
-            color: var(--ols-blue);
-            font-size: 12px;
-            font-weight: 900;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-        }
-
-        .capability-card h3 {
-            margin-bottom: 18px;
-            font-size: clamp(26px, 3vw, 36px);
-        }
-
-        .capability-card p {
-            font-size: 17px;
-        }
-
-        .card-action {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: fit-content;
-            margin-top: 24px;
-            padding: 12px 18px;
-            color: #ffffff;
-            background: var(--ols-green);
-            border-radius: 999px;
-            font-size: 14px;
-            font-weight: 900;
-        }
-
-        .pathway-section {
-            padding: 112px 0;
-            background: var(--ols-glass);
-            border-top: 1px solid var(--ols-border);
-            backdrop-filter: blur(10px);
-        }
-
         .pathway-panel {
             padding: 42px;
             background: rgba(255, 255, 255, 0.9);
@@ -784,16 +567,15 @@
             box-shadow: 0 26px 70px rgba(7, 26, 45, 0.14);
         }
 
-        .pathway-grid {
+        .pathway-line {
             display: grid;
             grid-template-columns: repeat(5, minmax(0, 1fr));
             gap: 16px;
-            margin-top: 28px;
+            margin-top: 30px;
         }
 
         .pathway-step {
-            position: relative;
-            min-height: 190px;
+            min-height: 180px;
             padding: 24px;
             background: rgba(239, 245, 250, 0.9);
             border: 1px solid rgba(15, 23, 42, 0.10);
@@ -824,25 +606,20 @@
             font-size: 15px;
         }
 
-        .canon-section {
-            padding: 112px 0;
-            background: var(--ols-glass-alt);
-            border-top: 1px solid var(--ols-border);
-            backdrop-filter: blur(10px);
-        }
-
-        .canon-grid {
+        .canon-grid,
+        .cta-grid {
             display: grid;
             grid-template-columns: repeat(2, minmax(0, 1fr));
             gap: 26px;
         }
 
-        .canon-card {
-            min-height: 330px;
+        .canon-card,
+        .cta-card {
             display: flex;
             flex-direction: column;
             justify-content: space-between;
             padding: 38px;
+            color: var(--ols-deep);
             background: rgba(255, 255, 255, 0.9);
             border: 1px solid var(--ols-border);
             border-radius: 30px;
@@ -852,20 +629,48 @@
             backdrop-filter: blur(12px);
         }
 
+        .canon-card {
+            min-height: 330px;
+        }
+
+        .cta-card {
+            min-height: 310px;
+            background: rgba(255, 255, 255, 0.88);
+        }
+
         .canon-card:hover,
-        .canon-card:focus {
+        .canon-card:focus,
+        .cta-card:hover,
+        .cta-card:focus {
             transform: translateY(-4px);
             border-color: rgba(47, 62, 52, 0.36);
             box-shadow: 0 34px 90px rgba(7, 26, 45, 0.19);
         }
 
-        .canon-card h3 {
+        .card-kicker,
+        .cta-label {
+            display: block;
+            margin-bottom: 18px;
+            color: var(--ols-blue);
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: 0.16em;
+            text-transform: uppercase;
+        }
+
+        .cta-label {
+            color: var(--ols-muted);
+        }
+
+        .canon-card h3,
+        .cta-card h3 {
             margin-bottom: 20px;
             font-size: clamp(28px, 3vw, 40px);
             color: var(--ols-deep);
         }
 
-        .canon-card p {
+        .canon-card p,
+        .cta-card p {
             color: var(--ols-slate);
             font-size: 18px;
         }
@@ -890,6 +695,22 @@
             font-weight: 900;
         }
 
+        .card-action,
+        .cta-action {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            width: fit-content;
+            min-height: 48px;
+            padding: 14px 22px;
+            color: #ffffff;
+            background: var(--ols-green);
+            border-radius: 999px;
+            text-decoration: none;
+            font-size: 15px;
+            font-weight: 900;
+        }
+
         .cta-section {
             padding: 112px 0;
             background:
@@ -901,74 +722,6 @@
         .cta-intro {
             max-width: 850px;
             margin-bottom: 42px;
-        }
-
-        .cta-intro h2 {
-            margin-bottom: 18px;
-        }
-
-        .cta-grid {
-            display: grid;
-            grid-template-columns: repeat(2, minmax(0, 1fr));
-            gap: 26px;
-        }
-
-        .cta-card {
-            min-height: 310px;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-            padding: 38px;
-            color: var(--ols-deep);
-            background: rgba(255, 255, 255, 0.88);
-            border: 1px solid var(--ols-border);
-            border-radius: 30px;
-            text-decoration: none;
-            box-shadow: 0 26px 70px rgba(7, 26, 45, 0.14);
-            transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
-            backdrop-filter: blur(12px);
-        }
-
-        .cta-card:hover,
-        .cta-card:focus {
-            transform: translateY(-4px);
-            border-color: rgba(47, 62, 52, 0.36);
-            box-shadow: 0 34px 90px rgba(7, 26, 45, 0.19);
-        }
-
-        .cta-label {
-            display: block;
-            margin-bottom: 18px;
-            color: var(--ols-muted);
-            font-size: 12px;
-            font-weight: 900;
-            letter-spacing: 0.16em;
-            text-transform: uppercase;
-        }
-
-        .cta-card h3 {
-            margin-bottom: 20px;
-            font-size: clamp(28px, 3vw, 38px);
-            color: var(--ols-deep);
-        }
-
-        .cta-card p {
-            color: var(--ols-slate);
-            font-size: 18px;
-        }
-
-        .cta-card .cta-action {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            width: fit-content;
-            margin-top: 28px;
-            padding: 14px 22px;
-            color: #ffffff;
-            background: var(--ols-green);
-            border-radius: 999px;
-            font-size: 15px;
-            font-weight: 900;
         }
 
         footer {
@@ -1023,20 +776,17 @@
             font-size: 14px;
         }
 
-        @media (max-width: 1100px) {
-            .assistant-command-center {
+        @media (max-width: 1050px) {
+            .assistant-stage {
                 grid-template-columns: 1fr;
             }
 
-            .assistant-side-panel {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
+            .assistant-left {
+                border-right: none;
+                border-bottom: 1px solid var(--ols-border);
             }
 
-            .capability-grid {
-                grid-template-columns: repeat(2, minmax(0, 1fr));
-            }
-
-            .pathway-grid {
+            .pathway-line {
                 grid-template-columns: repeat(2, minmax(0, 1fr));
             }
         }
@@ -1060,7 +810,6 @@
 
             .book-section,
             .assistant-section,
-            .capability-section,
             .pathway-section,
             .canon-section {
                 padding: 86px 0;
@@ -1075,47 +824,9 @@
                 position: static;
             }
 
-            .lead-fields {
-                grid-template-columns: 1fr;
-            }
-
             .canon-grid,
             .cta-grid {
                 grid-template-columns: 1fr;
-            }
-        }
-
-        @media (max-width: 700px) {
-            .assistant-side-panel,
-            .capability-grid,
-            .pathway-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .assistant-panel {
-                min-height: auto;
-                border-radius: 24px;
-            }
-
-            .assistant-panel-header {
-                padding: 28px;
-            }
-
-            .assistant-input-area {
-                padding: 18px;
-            }
-
-            .chat-form {
-                grid-template-columns: 1fr;
-            }
-
-            .send-button {
-                min-height: 54px;
-                width: 100%;
-            }
-
-            .message-bubble {
-                max-width: 92%;
             }
         }
 
@@ -1149,18 +860,37 @@
             }
 
             .opening-panel,
-            .side-card,
-            .capability-card,
+            .assistant-shell-header,
+            .assistant-left,
+            .assistant-right,
+            .assistant-native-frame,
             .pathway-panel,
+            .pathway-step,
             .canon-card,
             .cta-card {
-                min-height: auto;
                 padding: 28px;
                 border-radius: 24px;
             }
 
             .opening-panel p:first-child {
                 font-size: 20px;
+            }
+
+            .assistant-shell {
+                border-radius: 24px;
+            }
+
+            .assistant-native-frame {
+                min-height: 280px;
+            }
+
+            .assistant-prompt-card textarea {
+                min-height: 130px;
+                font-size: 16px;
+            }
+
+            .pathway-line {
+                grid-template-columns: 1fr;
             }
 
             .quote-band {
@@ -1171,9 +901,10 @@
                 padding: 78px 0;
             }
 
-            .cta-card .cta-action,
-            .card-action,
-            .booking-action {
+            .button,
+            .assistant-button,
+            .cta-action,
+            .card-action {
                 width: 100%;
                 text-align: center;
             }
@@ -1190,7 +921,7 @@
 <header>
     <div class="nav-inner">
         <a href="index.html" class="logo" aria-label="OLS Group Home">
-         <img src="assets/OLS-WEB-V2-LOGO-A001.png"alt="OLS Group Logo">
+            assets/OLS-WEB-V2-LOGO-A001.png
         </a>
         <nav aria-label="Primary navigation">
             <a href="what-we-believe.html">What We Believe</a>
@@ -1213,7 +944,7 @@
             <div class="hero-title-mark"></div>
             <div class="hero-actions">
                 #ols-assistant-centerBegin the Conversation</a>
-                <a class="hero-button secondary" href="resources.html">Continue to Resource Center</a>
+                <a class="button secondary" href="resources.html">Continue to Resource Center</a>
             </div>
         </div>
     </section>
@@ -1261,7 +992,7 @@
                 <p>The beginning can be plain: this is what we are seeing, this is where the pattern seems to repeat, this is where the organization feels harder to understand, this is what we have already tried, and this is what still does not make sense.</p>
                 <p>That is enough to begin because a useful conversation does not require pretending the answer is already known.</p>
                 <p>If the first exchange reveals enough to keep going, the next step can become a Discovery Conversation. If it does not, the conversation should still leave the leader with clearer language, better questions, and a more useful way to keep thinking about the pattern.</p>
-                <p>Start the Conversation → Talk through what has changed before the organization adds another layer of activity around the wrong problem.</p>
+                <p>Start the Conversation &rarr; Talk through what has changed before the organization adds another layer of activity around the wrong problem.</p>
                 <p>If the pattern is not clear enough yet, continue to the Resource Center. Keep reading until the pattern fades, or until it becomes clear enough to name in conversation.</p>
             </article>
         </div>
@@ -1275,149 +1006,44 @@
                 <p>This page is built around a native assistant experience. The assistant is designed to help visitors explore what has changed, recognize useful patterns, continue into the Resource Center, and move toward a Discovery Conversation when the conversation supports that next step.</p>
             </div>
 
-            <div class="assistant-command-center">
-                <section class="assistant-panel" aria-label="OLS Website Assistant V1 conversation area">
-                    <div class="assistant-panel-header">
-                        <span class="eyebrow">Assistant Command Center</span>
-                        <h2>Describe what feels harder to see.</h2>
-                        <p>Start with what you are noticing. The assistant can help organize the pattern, point to relevant OLS concepts, recommend resources, and support the path toward a Discovery Conversation when the pattern is ready.</p>
-                        <div class="assistant-status-row" aria-label="Assistant capability status">
-                            <span class="status-pill">SDK-first architecture</span>
-                            <span class="status-pill">Copilot Studio powered</span>
-                            <span class="status-pill">Lead capture ready</span>
-                            <span class="status-pill">Bookings pathway ready</span>
-                        </div>
-                    </div>
+            <section class="assistant-shell" aria-label="OLS Website Assistant V1 Command Center">
+                <div class="assistant-shell-header">
+                    <span class="eyebrow">Assistant Command Center</span>
+                    <h2>Describe what has become harder to explain.</h2>
+                    <p>Start with what you are noticing. The assistant will ultimately carry the guided conversation, Resource Center recommendations, lead capture, and scheduling path inside this permanent SDK-first section.</p>
+                </div>
 
-                    <div class="assistant-body">
-                        <div class="starter-strip" aria-label="Conversation starters">
-                            <button class="starter-button" type="button" data-prompt="Visibility feels thinner than it used to. Help me describe what might be changing.">Visibility feels thinner</button>
-                            <button class="starter-button" type="button" data-prompt="Execution is still happening, but too much depends on recovery. Help me think through the pattern.">Execution depends on recovery</button>
-                            <button class="starter-button" type="button" data-prompt="Our leadership team is receiving activity when we need insight. Help me name the condition.">Activity without insight</button>
-                            <button class="starter-button" type="button" data-prompt="The same capable people keep saving the result. Help me understand what the system may not be learning.">The same people keep saving it</button>
-                            <button class="starter-button" type="button" data-prompt="I am not ready to schedule yet. Recommend OLS resources that help me keep thinking.">Recommend resources</button>
-                        </div>
+                <div class="assistant-stage">
+                    <aside class="assistant-left">
+                        <h3>Begin with the pattern, not the pitch.</h3>
+                        <p>The first exchange should help the visitor name what changed, not force a contact form, a sales call, or a premature diagnosis.</p>
 
-                        <div class="conversation-window" id="conversationWindow" aria-live="polite">
-                            <div class="message-row assistant">
-                                <div class="message-bubble">
-                                    <strong>OLS Website Assistant V1</strong>
-                                    <p>Hello. Start with what has become harder to explain. You do not need a diagnosis, a solution, or a project scope. Describe what you are seeing, where the pattern repeats, and what still does not make sense.</p>
+                        <div class="conversation-starters" aria-label="Conversation starters">
+                            <button class="starter-link" type="button" data-prompt="Visibility feels thinner than it used to. Help me describe what may have changed.">Visibility feels thinner than it used to.</button>
+                            <button class="starter-link" type="button" data-prompt="Execution still happens, but too much depends on recovery. Help me think through that pattern.">Execution still happens, but too much depends on recovery.</button>
+                            <button class="starter-link" type="button" data-prompt="The same capable people keep saving the result. Help me understand what the system may not be learning.">The same capable people keep saving the result.</button>
+                            <button class="starter-link" type="button" data-prompt="Leadership is receiving activity when we need insight. Help me name the condition.">Leadership is receiving activity when it needs insight.</button>
+                            <button class="starter-link" type="button" data-prompt="I am not ready to schedule yet. Recommend OLS resources that can help me keep thinking.">I am not ready to schedule yet. Help me keep thinking.</button>
+                        </div>
+                    </aside>
+
+                    <div class="assistant-right">
+                        <div class="assistant-native-frame">
+                            <div class="assistant-prompt-card">
+                                <label for="assistantPrompt">Start here</label>
+                                <textarea id="assistantPrompt" name="assistantPrompt" placeholder="Describe what has changed, where the pattern repeats, or what still does not make sense."></textarea>
+                                <div class="assistant-actions">
+                                    <button class="assistant-button" type="button" id="beginConversationButton">Begin the Conversation</button>
+                                    <a class="assistant-button secondary" href="resources.html">Continue Learning</a>
                                 </div>
+                                <p class="assistant-integration-note">This is the permanent OLS assistant shell. The visual page can remain stable while Copilot Studio, Microsoft 365 Agents SDK, lead capture, automation, and Bookings connections are upgraded behind this section.</p>
                             </div>
                         </div>
 
-                        <div class="assistant-input-area">
-                            <div class="lead-fields" aria-label="Optional contact information">
-                                <input class="field" id="leadName" name="leadName" type="text" autocomplete="name" placeholder="Name">
-                                <input class="field" id="leadEmail" name="leadEmail" type="email" autocomplete="email" placeholder="Email">
-                                <input class="field" id="leadOrganization" name="leadOrganization" type="text" autocomplete="organization" placeholder="Organization">
-                            </div>
-
-                            <form class="chat-form" id="assistantForm">
-                                <textarea id="assistantMessage" name="assistantMessage" placeholder="Describe what has changed, where the pattern repeats, or what still does not make sense." required></textarea>
-                                <button class="send-button" id="sendButton" type="submit">Send</button>
-                            </form>
-
-                            <p class="assistant-note">This assistant experience is structured for an SDK-first integration. The page keeps the OLS interface stable while Copilot Studio, automation, booking, and lead-capture capabilities continue to improve behind it.</p>
-                        </div>
+                        <div id="ols-assistant-sdk-mount" class="assistant-sdk-mount" data-agent="OLS Website Assistant V1" data-integration="microsoft-365-agents-sdk"></div>
                     </div>
-                </section>
-
-                <aside class="assistant-side-panel" aria-label="Assistant support panels">
-                    <div class="side-card">
-                        <span class="card-kicker">What the Assistant Does</span>
-                        <h3>It starts with the pattern.</h3>
-                        <p>The assistant is designed to help visitors move from unclear operational discomfort into clearer language, better questions, and a more useful next step.</p>
-                        <ul>
-                            <li>Explore visibility, trust, accountability, ownership, execution, adaptability, and results.</li>
-                            <li>Recommend relevant OLS articles and resources.</li>
-                            <li>Support lead capture without making the page feel like a form.</li>
-                            <li>Route qualified conversations toward a Discovery Conversation.</li>
-                        </ul>
-                    </div>
-
-                    <div class="side-card">
-                        <span class="card-kicker">Discovery Pathway</span>
-                        <h3>Conversation before scheduling.</h3>
-                        <p>The assistant should not force a meeting before the visitor has language for what changed. Scheduling should happen after the conversation has produced enough clarity to justify a Discovery Conversation.</p>
-                        <button class="booking-action" type="button" id="bookingButton">Ask about scheduling</button>
-                    </div>
-
-                    <div class="side-card">
-                        <span class="card-kicker">Resource Support</span>
-                        <h3>Keep learning if the pattern is not ready.</h3>
-                        <p>If the visitor is not ready to talk, the assistant can point them back into the Resource Center and the OLS Canon articles.</p>
-                        <a class="booking-action" href="resources.html">Continue to Resource Center</a>
-                    </div>
-                </aside>
-            </div>
-        </div>
-    </section>
-
-    <section class="capability-section">
-        <div class="container">
-            <div class="section-intro">
-                <span class="eyebrow">Assistant-Guided Exploration</span>
-                <h2>What the conversation can explore.</h2>
-                <p>The page is intentionally structured around the assistant because the assistant is the working demonstration of the future OLS intends to help organizations build: guided intelligence, practical automation, and clearer decision pathways inside the operating environment itself.</p>
-            </div>
-
-            <div class="capability-grid">
-                #ols-assistant-center
-                    <div>
-                        <span class="card-kicker">Visibility</span>
-                        <h3>What is harder to see?</h3>
-                        <p>Explore where reality may be arriving late, softened, translated, or separated from authority.</p>
-                    </div>
-                    <span class="card-action">Explore Visibility →</span>
-                </a>
-
-                #ols-assistant-center
-                    <div>
-                        <span class="card-kicker">Trust</span>
-                        <h3>What is harder to say?</h3>
-                        <p>Explore whether people can move difficult information before it is polished into something safer.</p>
-                    </div>
-                    <span class="card-action">Explore Trust →</span>
-                </a>
-
-                #ols-assistant-center
-                    <div>
-                        <span class="card-kicker">Accountability</span>
-                        <h3>What arrives too late?</h3>
-                        <p>Explore whether accountability is built into the system or arriving after damage has already spread.</p>
-                    </div>
-                    <span class="card-action">Explore Accountability →</span>
-                </a>
-
-                #ols-assistant-center
-                    <div>
-                        <span class="card-kicker">Execution</span>
-                        <h3>Where has recovery become normal?</h3>
-                        <p>Explore whether execution is becoming capability or whether the organization is surviving through repeated rescue.</p>
-                    </div>
-                    <span class="card-action">Explore Execution →</span>
-                </a>
-
-                #ols-assistant-center
-                    <div>
-                        <span class="card-kicker">Growth Complexity</span>
-                        <h3>What changed as the organization grew?</h3>
-                        <p>Explore how layers, handoffs, locations, systems, and reporting may have changed what leadership can see.</p>
-                    </div>
-                    <span class="card-action">Explore Growth →</span>
-                </a>
-
-                #ols-assistant-center
-                    <div>
-                        <span class="card-kicker">Next Step</span>
-                        <h3>Is the pattern ready to name?</h3>
-                        <p>Explore whether the conversation should continue into discovery or remain in the learning stage.</p>
-                    </div>
-                    <span class="card-action">Find the Next Step →</span>
-                </a>
-            </div>
+                </div>
+            </section>
         </div>
     </section>
 
@@ -1426,11 +1052,11 @@
             <div class="pathway-panel">
                 <div class="section-intro">
                     <span class="eyebrow">Discovery Conversation Pathway</span>
-                    <h2>The path is conversation first.</h2>
+                    <h2>Conversation first. Scheduling later.</h2>
                     <p>The visitor should not have to pretend the answer is already known. The assistant is designed to help move from observation into clearer language, and only then toward a Discovery Conversation when the pattern has enough shape to discuss seriously.</p>
                 </div>
 
-                <div class="pathway-grid" aria-label="Discovery pathway">
+                <div class="pathway-line" aria-label="Discovery pathway">
                     <div class="pathway-step">
                         <span>1</span>
                         <h3>Conversation</h3>
@@ -1445,8 +1071,8 @@
 
                     <div class="pathway-step">
                         <span>3</span>
-                        <h3>Resources</h3>
-                        <p>If the pattern is not ready, the assistant points the visitor into the Resource Center and relevant OLS Canon articles.</p>
+                        <h3>Understanding</h3>
+                        <p>The conversation gives language to the condition before anyone pretends the solution is already obvious.</p>
                     </div>
 
                     <div class="pathway-step">
@@ -1484,7 +1110,7 @@
                             <span class="meta-pill">OLS-CAN-001</span>
                         </div>
                     </div>
-                    <span class="card-action">Read Article →</span>
+                    <span class="card-action">Read Article &rarr;</span>
                 </a>
 
                 <a href="resources/trust-is-organizational-infrastructure.html" class="canon-card">
@@ -1497,7 +1123,7 @@
                             <span class="meta-pill">OLS-CAN-002</span>
                         </div>
                     </div>
-                    <span class="card-action">Read Article →</span>
+                    <span class="card-action">Read Article &rarr;</span>
                 </a>
 
                 <a href="resources/leadership-equals-accountability.html" class="canon-card">
@@ -1510,20 +1136,20 @@
                             <span class="meta-pill">OLS-CAN-003</span>
                         </div>
                     </div>
-                    <span class="card-action">Read Article →</span>
+                    <span class="card-action">Read Article &rarr;</span>
                 </a>
 
                 <a href="resources/why-organizations-have-execution-problems-not-strategy-problems.html" class="canon-card">
                     <div>
                         <span class="card-kicker">Canon Article</span>
-                        <h3>Why Organizations Don’t Have a Strategy Problem</h3>
-                        <p>Why Organizations Don’t Have a Strategy Problem — They Have an Execution Problem explains why execution fails in the system that is supposed to carry the plan.</p>
+                        <h3>Why Organizations Don&rsquo;t Have a Strategy Problem</h3>
+                        <p>Why Organizations Don&rsquo;t Have a Strategy Problem &mdash; They Have an Execution Problem explains why execution fails in the system that is supposed to carry the plan.</p>
                         <div class="card-meta">
                             <span class="meta-pill">Theme: Execution</span>
                             <span class="meta-pill">OLS-CAN-004</span>
                         </div>
                     </div>
-                    <span class="card-action">Read Article →</span>
+                    <span class="card-action">Read Article &rarr;</span>
                 </a>
             </div>
         </div>
@@ -1546,7 +1172,7 @@
                 #ols-assistant-center
                     <div>
                         <span class="cta-label">Start the Conversation</span>
-                        <h3>OLS Website Assistant V1 →</h3>
+                        <h3>OLS Website Assistant V1 &rarr;</h3>
                         <p>Talk through what has changed before the organization adds another layer of activity around the wrong problem.</p>
                     </div>
                     <span class="cta-action">Begin the Conversation</span>
@@ -1555,7 +1181,7 @@
                 <a href="resources.html" class="cta-card" aria-label="Continue learning in the Resource Center">
                     <div>
                         <span class="cta-label">Continue Learning</span>
-                        <h3>Resource Center →</h3>
+                        <h3>Resource Center &rarr;</h3>
                         <p>If the pattern is not clear enough yet, continue to the Resource Center and keep reading until the pattern has a name.</p>
                     </div>
                     <span class="cta-action">Explore Resources</span>
@@ -1581,188 +1207,31 @@
         </div>
 
         <div class="footer-bottom">
-            <p>© 2026 Operational Leadership Systems (OLS Group). All Rights Reserved.</p>
+            <p>&copy; 2026 Operational Leadership Systems (OLS Group). All Rights Reserved.</p>
             <p>This website and its published resources may not be reproduced, distributed, modified, or republished without written permission from OLS Group, except for brief quotations with proper attribution.</p>
-            <p>Visibility · Trust · Ownership · Accountability · Execution</p>
+            <p>Visibility &middot; Trust &middot; Ownership &middot; Accountability &middot; Execution</p>
         </div>
     </div>
 </footer>
 
 <script>
-    const OLS_ASSISTANT_CONFIG = {
-        mode: "sdk-first",
-        sessionEndpoint: "/api/ols-assistant/session",
-        messageEndpoint: "/api/ols-assistant/message",
-        leadEndpoint: "/api/ols-assistant/lead",
-        bookingEndpoint: "/api/ols-assistant/booking",
-        fallbackResourceUrl: "resources.html",
-        assistantName: "OLS Website Assistant V1"
-    };
+    const assistantPrompt = document.getElementById("assistantPrompt");
+    const starterLinks = document.querySelectorAll("[data-prompt]");
+    const beginConversationButton = document.getElementById("beginConversationButton");
 
-    const conversationWindow = document.getElementById("conversationWindow");
-    const assistantForm = document.getElementById("assistantForm");
-    const assistantMessage = document.getElementById("assistantMessage");
-    const sendButton = document.getElementById("sendButton");
-    const starterButtons = document.querySelectorAll("[data-prompt]");
-    const capabilityCards = document.querySelectorAll("[data-card-prompt]");
-    const bookingButton = document.getElementById("bookingButton");
-    let olsConversationSessionId = null;
-
-    function escapeHtml(value) {
-        return String(value)
-            .replaceAll("&", "&amp;")
-            .replaceAll("<", "&lt;")
-            .replaceAll(">", "&gt;")
-            .replaceAll('"', "&quot;")
-            .replaceAll("'", "&#039;");
-    }
-
-    function appendMessage(role, message) {
-        const row = document.createElement("div");
-        row.className = role === "user" ? "message-row user" : "message-row assistant";
-
-        const bubble = document.createElement("div");
-        bubble.className = "message-bubble";
-
-        const label = document.createElement("strong");
-        label.textContent = role === "user" ? "You" : OLS_ASSISTANT_CONFIG.assistantName;
-
-        const paragraph = document.createElement("p");
-        paragraph.innerHTML = escapeHtml(message).replaceAll("\n", "<br>");
-
-        bubble.appendChild(label);
-        bubble.appendChild(paragraph);
-        row.appendChild(bubble);
-        conversationWindow.appendChild(row);
-        conversationWindow.scrollTop = conversationWindow.scrollHeight;
-    }
-
-    function collectLeadContext() {
-        return {
-            name: document.getElementById("leadName").value.trim(),
-            email: document.getElementById("leadEmail").value.trim(),
-            organization: document.getElementById("leadOrganization").value.trim(),
-            page: "discovery.html",
-            source: "ols-website-assistant-v1"
-        };
-    }
-
-    async function ensureSession() {
-        if (olsConversationSessionId) {
-            return olsConversationSessionId;
-        }
-
-        try {
-            const response = await fetch(OLS_ASSISTANT_CONFIG.sessionEndpoint, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    assistant: OLS_ASSISTANT_CONFIG.assistantName,
-                    lead: collectLeadContext(),
-                    page: "discovery.html"
-                })
-            });
-
-            if (!response.ok) {
-                throw new Error("Session endpoint unavailable");
-            }
-
-            const data = await response.json();
-            olsConversationSessionId = data.sessionId || data.conversationId || data.id || null;
-            return olsConversationSessionId;
-        } catch (error) {
-            olsConversationSessionId = "local-discovery-session-" + Date.now();
-            return olsConversationSessionId;
-        }
-    }
-
-    async function sendToAssistant(message) {
-        const sessionId = await ensureSession();
-
-        try {
-            const response = await fetch(OLS_ASSISTANT_CONFIG.messageEndpoint, {
-                method: "POST",
-                headers: {
-                    "Content-Type": "application/json"
-                },
-                body: JSON.stringify({
-                    sessionId: sessionId,
-                    message: message,
-                    lead: collectLeadContext(),
-                    page: "discovery.html",
-                    assistant: OLS_ASSISTANT_CONFIG.assistantName
-                })
-            });
-
-            if (!response.ok) {
-                throw new Error("Message endpoint unavailable");
-            }
-
-            const data = await response.json();
-            return data.reply || data.message || data.text || "I received your message. Tell me more about where the pattern repeats, what has already been tried, and what still does not make sense.";
-        } catch (error) {
-            return "The native OLS Assistant interface is ready on this page. The live Copilot Studio SDK connection still needs to be connected behind this interface. For now, use this prompt with OLS Website Assistant V1: " + message;
-        }
-    }
-
-    async function handleAssistantSubmit(message) {
-        const cleanMessage = message.trim();
-
-        if (!cleanMessage) {
-            return;
-        }
-
-        appendMessage("user", cleanMessage);
-        assistantMessage.value = "";
-        sendButton.disabled = true;
-        sendButton.textContent = "Sending";
-
-        const reply = await sendToAssistant(cleanMessage);
-        appendMessage("assistant", reply);
-
-        sendButton.disabled = false;
-        sendButton.textContent = "Send";
-        assistantMessage.focus();
-    }
-
-    assistantForm.addEventListener("submit", function (event) {
-        event.preventDefault();
-        handleAssistantSubmit(assistantMessage.value);
-    });
-
-    starterButtons.forEach(function (button) {
-        button.addEventListener("click", function () {
-            const prompt = button.getAttribute("data-prompt");
-            assistantMessage.value = prompt;
-            assistantMessage.focus();
+    starterLinks.forEach(function(button) {
+        button.addEventListener("click", function() {
+            assistantPrompt.value = button.getAttribute("data-prompt");
+            assistantPrompt.focus();
         });
     });
 
-    capabilityCards.forEach(function (card) {
-        card.addEventListener("click", function () {
-            const prompt = card.getAttribute("data-card-prompt");
-            assistantMessage.value = prompt;
-            setTimeout(function () {
-                assistantMessage.focus();
-            }, 350);
-        });
-    });
-
-    bookingButton.addEventListener("click", function () {
-        const bookingPrompt = "Help me decide whether this pattern is ready for a Discovery Conversation and, if appropriate, guide me toward scheduling a one-on-one discovery call.";
-        assistantMessage.value = bookingPrompt;
-        assistantMessage.focus();
-    });
-
-    document.addEventListener("keydown", function (event) {
-        if ((event.ctrlKey || event.metaKey) && event.key === "Enter") {
-            if (document.activeElement === assistantMessage) {
-                event.preventDefault();
-                handleAssistantSubmit(assistantMessage.value);
-            }
+    beginConversationButton.addEventListener("click", function() {
+        if (!assistantPrompt.value.trim()) {
+            assistantPrompt.value = "Something in the organization has become harder to explain. Help me start naming what changed.";
         }
+
+        assistantPrompt.focus();
     });
 </script>
 </body>
