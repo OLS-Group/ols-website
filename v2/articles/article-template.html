@@ -1,4 +1,5 @@
 
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -566,9 +567,7 @@
       height: 116px;
       border-radius: 50%;
       border: 3px solid rgba(200, 155, 60, 0.35);
-      background:
-        linear-gradient(135deg, rgba(19, 40, 63, 0.92), rgba(31, 95, 139, 0.76)),
-        var(--ols-paper-light);
+      background: var(--ols-paper-light);
       overflow: hidden;
       display: flex;
       align-items: center;
@@ -579,6 +578,14 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .author-image-wrap.has-fallback {
+      background:
+        linear-gradient(135deg, rgba(19, 40, 63, 0.92), rgba(31, 95, 139, 0.76)),
+        var(--ols-paper-light);
     }
 
     .author-fallback {
@@ -921,9 +928,14 @@
             <section class="author-section" aria-labelledby="author-title">
               <h2 id="author-title" class="section-heading">About the Author</h2>
               <div class="author-card">
-                <div class="author-image-wrap">
-                  <img src="assets/OLS-WEB-V2-AUTH-ANDY-A001.jpg" alt="Andres Andy Roosna" onerror="this.style.display='none'; this.nextElementSibling.style.display='block';" />
-                  <div class="author-fallback">OLS<br />Author</div>
+                <div class="author-image-wrap" id="authorImageWrap">
+                  <img
+                    id="authorImage"
+                    src="v2/assets/OLS-WEB-V2-AUTH-ANDY-A001.png"
+                    alt="Andres Andy Roosna"
+                    data-author-srcs="v2/assets/OLS-WEB-V2-AUTH-ANDY-A001.png|../v2/assets/OLS-WEB-V2-AUTH-ANDY-A001.png|../assets/OLS-WEB-V2-AUTH-ANDY-A001.png"
+                  />
+                  <div class="author-fallback" id="authorFallback">OLS<br />Author</div>
                 </div>
                 <div>
                   <div class="author-name">Andres “Andy” Roosna Founder &amp; Principal, OLS Group</div>
@@ -1007,6 +1019,32 @@
         return false;
       }
 
+      function initializeAuthorImageFallback() {
+        const image = document.getElementById("authorImage");
+        const fallback = document.getElementById("authorFallback");
+        const wrap = document.getElementById("authorImageWrap");
+        if (!image || !fallback || !wrap) return;
+
+        const sources = String(image.getAttribute("data-author-srcs") || "")
+          .split("|")
+          .map(function (src) { return src.trim(); })
+          .filter(Boolean);
+
+        let index = 0;
+
+        image.addEventListener("error", function () {
+          index += 1;
+          if (index < sources.length) {
+            image.src = sources[index];
+            return;
+          }
+
+          image.style.display = "none";
+          fallback.style.display = "block";
+          wrap.classList.add("has-fallback");
+        });
+      }
+
       document.addEventListener("contextmenu", blockEvent, true);
       document.addEventListener("copy", blockEvent, true);
       document.addEventListener("cut", blockEvent, true);
@@ -1045,6 +1083,8 @@
       window.addEventListener("beforeprint", function (event) {
         blockEvent(event);
       });
+
+      initializeAuthorImageFallback();
     })();
   </script>
 </body>
