@@ -1,1 +1,52 @@
-
+[
+  {
+    "contentId": "OLS-CAN-001",
+    "title": "Visibility Precedes Control",
+    "resourceType": "Canon Article",
+    "primaryTopic": "Visibility",
+    "description": "Why leaders cannot control what they cannot clearly see and why visibility must exist before growth can be controlled.",
+    "featuredAssetId": "OLS-WEB-V2-CAN-VIS-A001",
+    "url": "articles/visibility-precedes-control.html",
+    "featured": true
+  },
+  {
+    "contentId": "OLS-CAN-002",
+    "title": "Trust Is Organizational Infrastructure",
+    "resourceType": "Canon Article",
+    "primaryTopic": "Trust",
+    "description": "Why every organization eventually performs at the speed of the truth it is willing to hear.",
+    "featuredAssetId": "OLS-WEB-V2-CAN-TRUST-A001",
+    "url": "articles/trust-is-organizational-infrastructure.html",
+    "featured": true
+  },
+  {
+    "contentId": "OLS-CAN-003",
+    "title": "Leadership Equals Accountability",
+    "resourceType": "Canon Article",
+    "primaryTopic": "Accountability",
+    "description": "Why awareness must have a trusted path to authority and action before failure reaches the customer.",
+    "featuredAssetId": "OLS-WEB-V2-CAN-ACC-A001",
+    "url": "articles/leadership-equals-accountability.html",
+    "featured": true
+  },
+  {
+    "contentId": "OLS-CAN-004",
+    "title": "Why Organizations Don't Have a Strategy Problem",
+    "resourceType": "Canon Article",
+    "primaryTopic": "Execution",
+    "description": "Why organizations often fail in execution rather than strategy and how operating systems create results.",
+    "featuredAssetId": "OLS-WEB-V2-CAN-EXEC-A001",
+    "url": "articles/why-organizations-have-execution-problems-not-strategy-problems.html",
+    "featured": true
+  },
+  {
+    "contentId": "OLS-INS-001",
+    "title": "Why Good Businesses Struggle",
+    "resourceType": "Insight Article",
+    "primaryTopic": "Leadership",
+    "description": "A practical leadership insight examining why good businesses struggle when operating conditions begin to change.",
+    "featuredAssetId": "OLS-WEB-V2-INS-LEAD-A001",
+    "url": "articles/why-good-businesses-struggle.html",
+    "featured": false
+  }
+]
