@@ -18,10 +18,6 @@
 
     let allResources = [];
 
-    function escapeHtml(value) {
-        return String(value || "");
-    }
-
     function getAsset(resource) {
         return assetMap[resource.featuredAssetId] || "assets/OLS-WEB-V2-RSC-A001.jpg";
     }
@@ -31,143 +27,103 @@
         const featuredResources =
             resources.filter(r => r.featured === true);
 
-        if (!featuredResources.length) {
-
-            featuredContainer.innerHTML =
-                '<div class="resource-empty">No featured resources found.</div>';
-
-            return;
-        }
-
         featuredContainer.innerHTML =
-            featuredResources.map(resource => {
-
-                return `
-                    <a
-                        href="${resource.url}"
-                        class="canon-card"
-                        style="
-                            background:
-                            linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.90)),
-                            url('${getAsset(resource)}')
-                            center center / cover no-repeat;
-                        "
-                    >
-
-                        <div>
-
-                            <span class="card-kicker">
-                                ${escapeHtml(resource.resourceType)}
-                            </span>
-
-                            <h3>
-                                ${escapeHtml(resource.title)}
-                            </h3>
-
-                            <p>
-                                ${escapeHtml(resource.description)}
-                            </p>
-
-                            <div class="card-meta">
-
-                                <span class="meta-pill">
-                                    Topic: ${escapeHtml(resource.primaryTopic)}
-                                </span>
-
-                                <span class="meta-pill">
-                                    ${escapeHtml(resource.contentId)}
-                                </span>
-
-                            </div>
-
-                        </div>
-
-                        <span class="card-action">
-                            Open Resource →
+            featuredResources.map(resource => `
+                <a href="${resource.url}" class="canon-card">
+                    <div>
+                        <span class="card-kicker">
+                            ${resource.resourceType}
                         </span>
 
-                    </a>
-                `;
+                        <h3>
+                            ${resource.title}
+                        </h3>
 
-            }).join("");
+                        <p>
+                            ${resource.description}
+                        </p>
+
+                        <div class="card-meta">
+                            <span class="meta-pill">
+                                Topic: ${resource.primaryTopic}
+                            </span>
+
+                            <span class="meta-pill">
+                                ${resource.contentId}
+                            </span>
+                        </div>
+                    </div>
+
+                    <span class="card-action">
+                        Open Resource →
+                    </span>
+                </a>
+            `).join("");
 
     }
 
     function renderLibrary(resources) {
 
-        if (!resources.length) {
-
-            libraryContainer.innerHTML =
-                '<div class="resource-empty">No resources found.</div>';
-
-            return;
-        }
-
         libraryContainer.innerHTML =
-            resources.map(resource => {
+            resources.map(resource => `
+                <div class="library-item">
 
-                return `
-                    <div class="library-item">
+                    <span class="library-type">
+                        ${resource.resourceType}
+                    </span>
 
-                        <span class="library-type">
-                            ${escapeHtml(resource.resourceType)}
-                        </span>
+                    <a class="library-title"
+                       href="${resource.url}">
+                        ${resource.title}
+                    </a>
 
-                        <a
-                            class="library-title"
-                            href="${resource.url}"
-                        >
-                            ${escapeHtml(resource.title)}
-                        </a>
+                    <span class="library-theme">
+                        ${resource.primaryTopic}
+                    </span>
 
-                        <span class="library-theme">
-                            ${escapeHtml(resource.primaryTopic)}
-                        </span>
+                    <a class="library-read"
+                       href="${resource.url}">
+                        Open →
+                    </a>
 
-                        <a
-                            class="library-read"
-                            href="${resource.url}"
-                        >
-                            Open →
-                        </a>
-
-                    </div>
-                `;
-
-            }).join("");
+                </div>
+            `).join("");
 
     }
 
     function applyFilters() {
 
         const search =
-            (searchInput?.value || "").toLowerCase();
+            (searchInput.value || "").toLowerCase();
 
-        const resourceType =
-            typeFilter?.value || "All";
+        const selectedType =
+            typeFilter.value || "All";
 
-        const topic =
-            topicFilter?.value || "All";
+        const selectedTopic =
+            topicFilter.value || "All";
 
-        const filtered = allResources.filter(resource => {
+        const filtered =
+            allResources.filter(resource => {
 
-            const searchMatch =
-                !search ||
-                JSON.stringify(resource)
-                    .toLowerCase()
-                    .includes(search);
+                const text =
+                    JSON.stringify(resource)
+                    .toLowerCase();
 
-            const typeMatch =
-                resourceType === "All" ||
-                resource.resourceType === resourceType;
+                const matchSearch =
+                    !search || text.includes(search);
 
-            const topicMatch =
-                topic === "All" ||
-                resource.primaryTopic === topic;
+                const matchType =
+                    selectedType === "All" ||
+                    resource.resourceType === selectedType;
 
-            return searchMatch && typeMatch && topicMatch;
+                const matchTopic =
+                    selectedTopic === "All" ||
+                    resource.primaryTopic === selectedTopic;
 
-        });
+                return matchSearch &&
+                       matchType &&
+                       matchTopic;
+            });
 
         renderLibrary(filtered);
 
@@ -177,14 +133,6 @@
 
         const response =
             await fetch("data/resources.json");
-
-        if (!response.ok) {
-
-            throw new Error(
-                "Unable to load resources.json"
-            );
-
-        }
 
         allResources =
             await response.json();
@@ -203,48 +151,37 @@
                 allResources.map(r => r.primaryTopic)
             )].sort();
 
-        if (typeFilter) {
+        typeFilter.innerHTML =
+            '<option value="All">All Resource Types</option>' +
+            types.map(t =>
+                `<option value="${t}">${t}</option>`
+            ).join("");
 
-            typeFilter.innerHTML =
-                '<option value="All">All Resource Types</option>' +
-                types.map(type =>
-                    `<option value="${type}">${type}</option>`
-                ).join("");
+        topicFilter.innerHTML =
+            '<option value="All">All Topics</option>' +
+            topics.map(t =>
+                `<option value="${t}">${t}</option>`
+            ).join("");
 
-        }
+        searchInput.addEventListener(
+            "input",
+            applyFilters
+        );
 
-        if (topicFilter) {
+        typeFilter.addEventListener(
+            "change",
+            applyFilters
+        );
 
-            topicFilter.innerHTML =
-                '<option value="All">All Topics</option>' +
-                topics.map(topic =>
-                    `<option value="${topic}">${topic}</option>`
-                ).join("");
-
-        }
-
-        searchInput?.addEventListener("input", applyFilters);
-        typeFilter?.addEventListener("change", applyFilters);
-        topicFilter?.addEventListener("change", applyFilters);
+        topicFilter.addEventListener(
+            "change",
+            applyFilters
+        );
 
     }
     catch (error) {
 
         console.error(error);
-
-        if (featuredContainer) {
-
-            featuredContainer.innerHTML =
-                '<div class="resource-load-error">Unable to load featured resources.</div>';
-
-        }
-
-        if (libraryContainer) {
-
-            libraryContainer.innerHTML =
-                '<div class="resource-load-error">Unable to load resources.</div>';
-
-        }
 
     }
 
