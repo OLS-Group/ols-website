@@ -48,5 +48,15 @@
     "featuredAssetId": "OLS-WEB-V2-INS-LEAD-A001",
     "url": "articles/why-good-businesses-struggle.html",
     "featured": false
-  }
+  },
+{
+  "contentId": "OLS-STORY-001",
+  "title": "Test Story Resource",
+  "resourceType": "Story",
+  "primaryTopic": "Leadership",
+  "description": "Test story used to verify the Resource Center data feed.",
+  "featuredAssetId": "OLS-WEB-V2-STORY-A001",
+  "url": "articles/test-story-resource.html",
+  "featured": true
+}
 ]
