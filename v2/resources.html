@@ -5,8 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Resource Center | OLS Group</title>
 
-    <meta name="description" content="The OLS Resource Center is the governed learning environment for the OLS body of work and the public access point to OLS canon articles, doctrine, observations, field reports, frameworks, guides, tools, and future resources.">
+    <meta name="description" content="The OLS Resource Center is the governed learning environment for the OLS body of work and the public access point to OLS canon articles, doctrine, observations, field reports, stories, case studies, commentary, talks, interviews, webinars, podcasts, and future public resources.">
     <link rel="icon" type="image/png" href="assets/OLS-WEB-V2-FAV-A001.png">
+
     <style>
         :root {
             --ols-navy: #071a2d;
@@ -397,6 +398,32 @@
             backdrop-filter: blur(10px);
         }
 
+        .library-controls {
+            display: grid;
+            grid-template-columns: minmax(0, 1.2fr) minmax(180px, 0.45fr) minmax(180px, 0.45fr);
+            gap: 14px;
+            margin: 0 0 26px;
+        }
+
+        .library-search,
+        .library-filter {
+            width: 100%;
+            padding: 13px 14px;
+            color: var(--ols-deep);
+            background: rgba(255, 255, 255, 0.94);
+            border: 1px solid rgba(15, 23, 42, 0.14);
+            border-radius: 999px;
+            font-size: 14px;
+            font-weight: 800;
+            outline: none;
+        }
+
+        .library-search:focus,
+        .library-filter:focus {
+            border-color: rgba(31, 79, 122, 0.42);
+            box-shadow: 0 0 0 4px rgba(31, 79, 122, 0.10);
+        }
+
         .library-panel {
             padding: 42px;
             background: rgba(255, 255, 255, 0.9);
@@ -461,6 +488,17 @@
             font-size: 13px;
             font-weight: 900;
             text-decoration: none;
+        }
+
+        .resource-empty,
+        .resource-load-error {
+            padding: 26px;
+            color: var(--ols-slate);
+            background: rgba(255, 255, 255, 0.84);
+            border: 1px solid rgba(15, 23, 42, 0.12);
+            border-radius: 22px;
+            font-size: 16px;
+            font-weight: 800;
         }
 
         .cta-section {
@@ -633,6 +671,10 @@
                 grid-template-columns: 1fr;
             }
 
+            .library-controls {
+                grid-template-columns: 1fr;
+            }
+
             .library-item {
                 grid-template-columns: 1fr;
                 gap: 8px;
@@ -708,6 +750,7 @@
         }
     </style>
 </head>
+
 <body
     oncopy="return false;"
     oncut="return false;"
@@ -720,9 +763,7 @@
     <div class="nav-inner">
         <a href="index.html" class="logo" aria-label="OLS Group Home">
             <img src="assets/OLS-WEB-V2-LOGO-A001.png" alt="OLS Group Logo">
-        </a>
-
-        <nav aria-label="Primary navigation">
+abel="Primary navigation">
             <a href="what-we-believe.html">What We Believe</a>
             <a href="framework.html">How We Think</a>
             <a href="assessment.html">Identify the Problem</a>
@@ -755,7 +796,7 @@
 
                 <p>The Resource Center exists for that work. It is not a blog archive. It is not a content warehouse. It is not a collection of disconnected posts. It is the governed learning environment for the OLS body of work.</p>
 
-                <p>The Resource Center collects doctrine, observations, field reports, frameworks, guides, tools, and future resources designed to help leaders recognize what visibility, trust, accountability, ownership, execution, adaptability, and results look like when they are connected, and what they look like when they begin to separate.</p>
+                <p>The Resource Center collects doctrine, observations, field reports, stories, case studies, commentary, talks, discussions, interviews, webinars, podcasts, and future public resources designed to help leaders recognize what visibility, trust, accountability, ownership, execution, adaptability, and results look like when they are connected, and what they look like when they begin to separate.</p>
             </article>
         </div>
     </section>
@@ -769,63 +810,13 @@
     <section class="canon-section">
         <div class="container">
             <div class="section-intro">
-                <span class="eyebrow">Foundational Doctrine Series</span>
-                <h2>The OLS Canon</h2>
-                <p>The four foundational articles establish the public starting point for the OLS body of work.</p>
+                <span class="eyebrow">Selected From The OLS Library</span>
+                <h2>Featured Resources</h2>
+                <p>These resources are currently highlighted because they provide useful entry points into the OLS body of work. Featured resources may include doctrine, insights, stories, case studies, commentary, talks, interviews, webinars, roundtables, or podcast episodes.</p>
             </div>
 
-            <div class="canon-grid">
-                <a href="articles/visibility-precedes-control.html" class="canon-card">
-                    <div>
-                        <span class="card-kicker">Canon Article</span>
-                        <h3>Visibility Precedes Control</h3>
-                        <p>Visibility Precedes Control explains why leaders cannot control what they cannot clearly see.</p>
-                        <div class="card-meta">
-                            <span class="meta-pill">Theme: Visibility</span>
-                            <span class="meta-pill">OLS-CAN-001</span>
-                        </div>
-                    </div>
-                    <span class="card-action">Read Article →</span>
-                </a>
-
-                <a href="articles/trust-is-organizational-infrastructure.html" class="canon-card">
-                    <div>
-                        <span class="card-kicker">Canon Article</span>
-                        <h3>Trust Is Organizational Infrastructure</h3>
-                        <p>Trust Is Organizational Infrastructure explains why every organization eventually performs at the speed of the truth it is willing to hear.</p>
-                        <div class="card-meta">
-                            <span class="meta-pill">Theme: Trust</span>
-                            <span class="meta-pill">OLS-CAN-002</span>
-                        </div>
-                    </div>
-                    <span class="card-action">Read Article →</span>
-                </a>
-
-                <a href="articles/leadership-equals-accountability.html" class="canon-card">
-                    <div>
-                        <span class="card-kicker">Canon Article</span>
-                        <h3>Leadership Equals Accountability</h3>
-                        <p>Leadership Equals Accountability explains why awareness must have a trusted path to authority and action.</p>
-                        <div class="card-meta">
-                            <span class="meta-pill">Theme: Accountability</span>
-                            <span class="meta-pill">OLS-CAN-003</span>
-                        </div>
-                    </div>
-                    <span class="card-action">Read Article →</span>
-                </a>
-
-                <a href="articles/why-organizations-have-execution-problems-not-strategy-problems.html" class="canon-card">
-                    <div>
-                        <span class="card-kicker">Canon Article</span>
-                        <h3>Why Organizations Don’t Have a Strategy Problem</h3>
-                        <p>Why Organizations Don’t Have a Strategy Problem — They Have an Execution Problem explains why execution fails in the system that is supposed to carry the plan.</p>
-                        <div class="card-meta">
-                            <span class="meta-pill">Theme: Execution</span>
-                            <span class="meta-pill">OLS-CAN-004</span>
-                        </div>
-                    </div>
-                    <span class="card-action">Read Article →</span>
-                </a>
+            <div id="featured-resources" class="canon-grid">
+                <div class="resource-empty">Loading featured resources...</div>
             </div>
         </div>
     </section>
@@ -851,38 +842,24 @@
             <div class="section-intro">
                 <span class="eyebrow">Knowledge Library</span>
                 <h2>Published Resources</h2>
-                <p>Only published resources appear in the library. As OLS publishes new articles, guides, field observations, diagnostic resources, visual frameworks, and practical tools, they will be added here as governed HTML resources.</p>
+                <p>Only published resources appear in the library. As OLS publishes new articles, field observations, case studies, commentary, talks, discussions, interviews, webinars, podcasts, and future public resources, they will be added here as governed resources.</p>
             </div>
 
             <div class="library-panel">
-                <div class="library-list">
-                    <div class="library-item">
-                        <span class="library-type">Canon Article</span>
-                        <a class="library-title" href="resources/visibility-precedes-control.html">Visibility Precedes Control</a>
-                        <span class="library-theme">Visibility</span>
-                        <a class="library-read" href="resources/visibility-precedes-control.html">Read →</a>
-                    </div>
+                <div class="library-controls" aria-label="Resource filters">
+                    <input id="resource-search" class="library-search" type="search" placeholder="Search resources" aria-label="Search resources">
 
-                    <div class="library-item">
-                        <span class="library-type">Canon Article</span>
-                        <a class="library-title" href="resources/trust-is-organizational-infrastructure.html">Trust Is Organizational Infrastructure</a>
-                        <span class="library-theme">Trust</span>
-                        <a class="library-read" href="resources/trust-is-organizational-infrastructure.html">Read →</a>
-                    </div>
+                    <select id="resource-type-filter" class="library-filter" aria-label="Filter by resource type">
+                        <option value="All">All Resource Types</option>
+                    </select>
 
-                    <div class="library-item">
-                        <span class="library-type">Canon Article</span>
-                        <a class="library-title" href="resources/leadership-equals-accountability.html">Leadership Equals Accountability</a>
-                        <span class="library-theme">Accountability</span>
-                        <a class="library-read" href="resources/leadership-equals-accountability.html">Read →</a>
-                    </div>
+                    <select id="resource-topic-filter" class="library-filter" aria-label="Filter by topic">
+                        <option value="All">All Topics</option>
+                    </select>
+                </div>
 
-                    <div class="library-item">
-                        <span class="library-type">Canon Article</span>
-                        <a class="library-title" href="resources/why-organizations-have-execution-problems-not-strategy-problems.html">Why Organizations Don’t Have a Strategy Problem</a>
-                        <span class="library-theme">Execution</span>
-                        <a class="library-read" href="resources/why-organizations-have-execution-problems-not-strategy-problems.html">Read →</a>
-                    </div>
+                <div id="knowledge-library" class="library-list">
+                    <div class="resource-empty">Loading published resources...</div>
                 </div>
             </div>
         </div>
@@ -901,7 +878,7 @@
             </aside>
 
             <article class="book-copy">
-                <p>The Resource Center will continue to evolve as OLS publishes new articles, guides, field observations, diagnostic resources, visual frameworks, and practical tools.</p>
+                <p>The Resource Center will continue to evolve as OLS publishes new articles, field observations, stories, case studies, commentary, talks, discussions, interviews, webinars, podcasts, and future public resources.</p>
 
                 <p>That evolution is intentional.</p>
 
@@ -969,37 +946,203 @@
 </footer>
 
 <script>
-    document.addEventListener("copy", function (event) {
-        event.preventDefault();
-    });
+    (function () {
+        "use strict";
 
-    document.addEventListener("cut", function (event) {
-        event.preventDefault();
-    });
+        const assetMap = {
+            "OLS-WEB-V2-CAN-VIS-A001": "assets/OLS-WEB-V2-RSC-HERO-A001.jpg",
+            "OLS-WEB-V2-CAN-TRUST-A001": "assets/OLS-WEB-V2-RSC-HERO-A001.jpg",
+            "OLS-WEB-V2-CAN-ACC-A001": "assets/OLS-WEB-V2-RSC-HERO-A001.jpg",
+            "OLS-WEB-V2-CAN-EXEC-A001": "assets/OLS-WEB-V2-RSC-HERO-A001.jpg",
+            "OLS-WEB-V2-INS-LEAD-A001": "assets/OLS-WEB-V2-RSC-LIBRARY-A001.jpg"
+        };
 
-    document.addEventListener("paste", function (event) {
-        event.preventDefault();
-    });
+        let allResources = [];
 
-    document.addEventListener("contextmenu", function (event) {
-        event.preventDefault();
-    });
+        const featuredContainer = document.getElementById("featured-resources");
+        const libraryContainer = document.getElementById("knowledge-library");
+        const searchInput = document.getElementById("resource-search");
+        const typeFilter = document.getElementById("resource-type-filter");
+        const topicFilter = document.getElementById("resource-topic-filter");
 
-    document.addEventListener("dragstart", function (event) {
-        event.preventDefault();
-    });
-
-    document.addEventListener("selectstart", function (event) {
-        event.preventDefault();
-    });
-
-    document.addEventListener("keydown", function (event) {
-        const key = event.key.toLowerCase();
-
-        if ((event.ctrlKey || event.metaKey) && (key === "c" || key === "x" || key === "a" || key === "s" || key === "p")) {
-            event.preventDefault();
+        function escapeHtml(value) {
+            return String(value || "")
+                .replace(/&/g, "&amp;")
+                .replace(/</g, "&lt;")
+                .replace(/>/g, "&gt;")
+                .replace(/"/g, "&quot;")
+                .replace(/'/g, "&#039;");
         }
-    });
+
+        function normalizeBoolean(value) {
+            return value === true || value === "true" || value === "Yes" || value === "yes";
+        }
+
+        function getAssetUrl(resource) {
+            if (!resource || !resource.featuredAssetId) {
+                return "assets/OLS-WEB-V2-RSC-HERO-A001.jpg";
+            }
+
+            return assetMap[resource.featuredAssetId] || "assets/OLS-WEB-V2-RSC-HERO-A001.jpg";
+        }
+
+        function buildFeaturedCard(resource) {
+            const imageUrl = getAssetUrl(resource);
+
+            return `
+                <a href="${escapeHtml(resource.url)}" class="canon-card" style="background:
+                    linear-gradient(rgba(255,255,255,0.90), rgba(255,255,255,0.90)),
+                    url('${escapeHtml(imageUrl)}') center center / cover no-repeat;">
+                    <div>
+                        <span class="card-kicker">${escapeHtml(resource.resourceType)}</span>
+                        <h3>${escapeHtml(resource.title)}</h3>
+                        <p>${escapeHtml(resource.description)}</p>
+                        <div class="card-meta">
+                            <span class="meta-pill">Topic: ${escapeHtml(resource.primaryTopic)}</span>
+                            <span class="meta-pill">${escapeHtml(resource.contentId)}</span>
+                        </div>
+                    </div>
+                    <span class="card-action">Open Resource →</span>
+                </a>
+            `;
+        }
+
+        function buildLibraryItem(resource) {
+            return `
+                <div class="library-item">
+                    <span class="library-type">${escapeHtml(resource.resourceType)}</span>
+                    <a class="library-title" href="${escapeHtml(resource.url)}">${escapeHtml(resource.title)}</a>
+                    <span class="library-theme">${escapeHtml(resource.primaryTopic)}</span>
+                    <a class="library-read" href="${escapeHtml(resource.url)}">Open →</a>
+                </div>
+            `;
+        }
+
+        function populateFilters(resources) {
+            const resourceTypes = Array.from(new Set(resources.map(item => item.resourceType).filter(Boolean))).sort();
+            const topics = Array.from(new Set(resources.map(item => item.primaryTopic).filter(Boolean))).sort();
+
+            typeFilter.innerHTML = '<option value="All">All Resource Types</option>' + resourceTypes.map(type => {
+                return `<option value="${escapeHtml(type)}">${escapeHtml(type)}</option>`;
+            }).join("");
+
+            topicFilter.innerHTML = '<option value="All">All Topics</option>' + topics.map(topic => {
+                return `<option value="${escapeHtml(topic)}">${escapeHtml(topic)}</option>`;
+            }).join("");
+        }
+
+        function renderFeatured(resources) {
+            const featuredResources = resources.filter(resource => normalizeBoolean(resource.featured));
+
+            if (!featuredResources.length) {
+                featuredContainer.innerHTML = '<div class="resource-empty">No featured resources are currently selected.</div>';
+                return;
+            }
+
+            featuredContainer.innerHTML = featuredResources.map(buildFeaturedCard).join("");
+        }
+
+        function getFilteredResources() {
+            const searchValue = String(searchInput.value || "").trim().toLowerCase();
+            const selectedType = typeFilter.value;
+            const selectedTopic = topicFilter.value;
+
+            return allResources.filter(resource => {
+                const matchesType = selectedType === "All" || resource.resourceType === selectedType;
+                const matchesTopic = selectedTopic === "All" || resource.primaryTopic === selectedTopic;
+
+                const searchableText = [
+                    resource.contentId,
+                    resource.title,
+                    resource.resourceType,
+                    resource.primaryTopic,
+                    resource.description
+                ].join(" ").toLowerCase();
+
+                const matchesSearch = !searchValue || searchableText.includes(searchValue);
+
+                return matchesType && matchesTopic && matchesSearch;
+            });
+        }
+
+        function renderLibrary() {
+            const filteredResources = getFilteredResources();
+
+            if (!filteredResources.length) {
+                libraryContainer.innerHTML = '<div class="resource-empty">No resources match the current search or filter.</div>';
+                return;
+            }
+
+            libraryContainer.innerHTML = filteredResources.map(buildLibraryItem).join("");
+        }
+
+        async function loadResources() {
+            try {
+                const response = await fetch("data/resources.json", { cache: "no-store" });
+
+                if (!response.ok) {
+                    throw new Error("Unable to load resources.json");
+                }
+
+                allResources = await response.json();
+
+                if (!Array.isArray(allResources)) {
+                    throw new Error("resources.json must contain an array of resources");
+                }
+
+                populateFilters(allResources);
+                renderFeatured(allResources);
+                renderLibrary();
+
+                searchInput.addEventListener("input", renderLibrary);
+                typeFilter.addEventListener("change", renderLibrary);
+                topicFilter.addEventListener("change", renderLibrary);
+            } catch (error) {
+                if (featuredContainer) {
+                    featuredContainer.innerHTML = '<div class="resource-load-error">Resource data could not be loaded.</div>';
+                }
+
+                if (libraryContainer) {
+                    libraryContainer.innerHTML = '<div class="resource-load-error">Resource data could not be loaded.</div>';
+                }
+            }
+        }
+
+        document.addEventListener("copy", function (event) {
+            event.preventDefault();
+        });
+
+        document.addEventListener("cut", function (event) {
+            event.preventDefault();
+        });
+
+        document.addEventListener("paste", function (event) {
+            event.preventDefault();
+        });
+
+        document.addEventListener("contextmenu", function (event) {
+            event.preventDefault();
+        });
+
+        document.addEventListener("dragstart", function (event) {
+            event.preventDefault();
+        });
+
+        document.addEventListener("selectstart", function (event) {
+            event.preventDefault();
+        });
+
+        document.addEventListener("keydown", function (event) {
+            const key = event.key.toLowerCase();
+
+            if ((event.ctrlKey || event.metaKey) && (key === "c" || key === "x" || key === "a" || key === "s" || key === "p")) {
+                event.preventDefault();
+            }
+        });
+
+        loadResources();
+    }());
 </script>
+
 </body>
 </html>
