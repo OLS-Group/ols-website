@@ -51,12 +51,12 @@
   },
 {
   "contentId": "OLS-STORY-001",
-  "title": "Test Story Resource",
+  "title": "The Blinds",
   "resourceType": "Story",
-  "primaryTopic": "Leadership",
-  "description": "Test story used to verify the Resource Center data feed.",
-  "featuredAssetId": "OLS-WEB-V2-STORY-A001",
-  "url": "articles/test-story-resource.html",
+  "primaryTopic": "Reality",
+  "description": "A story about memory, history, truth, and why understanding reality often requires hearing more than one version of the same event.",
+  "featuredAssetId": "OLS-WEB-V2-STORY-001-THUMB-A001",
+  "url": "articles/the-blinds.html",
   "featured": true
 }
 ]
