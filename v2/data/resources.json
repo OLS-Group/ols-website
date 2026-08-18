@@ -58,5 +58,17 @@
   "featuredAssetId": "OLS-WEB-V2-STORY-001-THUMB-A001",
   "url": "articles/the-blinds.html",
   "featured": true
+},
+  {
+  "id": "OLS-INS-001",
+  "title": "Why Good Businesses Struggle",
+  "subtitle": "The Problem Isn't The Work. It's The Business Around The Work.",
+  "slug": "why-good-businesses-struggle",
+  "url": "https://www.ols-group.com/articles/why-good-businesses-struggle.html",
+  "category": "Articles",
+  "type": "Insight Article",
+  "excerpt": "Good businesses can still know how to do the work while the operating picture around the work becomes harder for the owner to see, control, or trust. This OLS Resource Center article explains why growth often pulls owners into avoidable confusion and why clarity must come before fixes, systems, or accountability demands.",
+  "status": "published-after-upload",
+  "sortDate": "08/18/2026"
 }
 ]
