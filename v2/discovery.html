@@ -1137,63 +1137,135 @@
 </div>
 
 <div class="companion-launcher" id="companionLauncher">
-    <span class="launcher-kicker">OLS Learning Companion</span>
+    <span class="launcher-kicker">OLS Website Assistant</span>
     <h3>Start the Conversation</h3>
-    <button class="launcher-button" type="button" data-open-companion>Open Companion</button>
+    <button class="launcher-button" type="button" data-open-companion>Open Assistant</button>
 </div>
 
-<aside class="companion-panel" id="companionPanel" aria-label="OLS Learning Companion">
+<aside class="companion-panel" id="companionPanel" aria-label="OLS Website Assistant">
     <div class="companion-header">
         <div class="companion-top">
             <div>
-                <span class="eyebrow">OLS Learning Companion</span>
+                <span class="eyebrow">OLS Website Assistant</span>
                 <h2>Start with what you are seeing.</h2>
                 <p>You do not need to know the answer. Describe what changed, where the pattern repeats, or what still does not make sense.</p>
             </div>
-            <button class="companion-close" type="button" id="companionClose" aria-label="Close OLS Learning Companion">&times;</button>
+            <button class="companion-close" type="button" id="companionClose" aria-label="Close OLS Website Assistant">&times;</button>
         </div>
     </div>
 
-    <div class="companion-body">
-        <section class="companion-section companion-input">
-            <label for="companionPrompt">Start here</label>
-            <textarea id="companionPrompt" name="companionPrompt" placeholder="Describe what has changed, where the pattern repeats, or what still does not make sense."></textarea>
-
-            <div class="companion-actions">
-                <button class="companion-action" type="button" id="companionBegin">Begin the Conversation</button>
-                <a class="companion-action secondary" href="resources.html">Continue Learning</a>
+    <div class="companion-body companion-body-chat">
+        <div class="companion-chat-shell">
+            <div class="companion-chat-note" id="companionChatNote">
+                <span>OLS Website Assistant</span>
+                <p>The assistant may take a moment to load. If the chat does not appear, refresh the page and open the assistant again.</p>
             </div>
-        </section>
-
-        <section class="companion-section">
-            <h3>Conversation starters</h3>
-            <p>If the pattern is present but not fully clear yet, start with one of these.</p>
-            <div class="companion-starters">
-                <button class="companion-starter" type="button" data-prompt="Visibility feels thinner than it used to. Help me describe what may have changed.">Visibility feels thinner than it used to.</button>
-                <button class="companion-starter" type="button" data-prompt="Execution still happens, but too much depends on recovery. Help me think through that pattern.">Execution still happens, but too much depends on recovery.</button>
-                <button class="companion-starter" type="button" data-prompt="The same capable people keep saving the result. Help me understand what the system may not be learning.">The same capable people keep saving the result.</button>
-                <button class="companion-starter" type="button" data-prompt="Leadership is receiving activity when we need insight. Help me name the condition.">Leadership is receiving activity when it needs insight.</button>
-                <button class="companion-starter" type="button" data-prompt="I am not ready to schedule yet. Recommend OLS resources that can help me keep thinking.">I am not ready to schedule yet. Help me keep thinking.</button>
-            </div>
-        </section>
-
-        <div id="ols-companion-sdk-mount" class="companion-sdk-mount" data-agent="OLS Website Assistant V1" data-page="discovery" data-integration="microsoft-365-agents-sdk"></div>
+            <iframe
+                id="olsCopilotFrame"
+                class="ols-copilot-frame"
+                title="OLS Website Assistant"
+                src="https://copilotstudio.microsoft.com/environments/Default-500e2811-0932-45c0-b4a4-5c59bda7032b/bots/crbab_olsWebsiteAssistantV1/webchat?__version__=2"
+                loading="lazy"
+                referrerpolicy="no-referrer-when-downgrade"
+                allow="clipboard-read; clipboard-write; microphone">
+            </iframe>
+        </div>
     </div>
 </aside>
+
+<style>
+    .companion-body-chat {
+        padding: 0;
+        overflow: hidden;
+        background:
+            radial-gradient(circle at top right, rgba(200, 164, 93, 0.10), transparent 32%),
+            rgba(244, 247, 250, 0.96);
+    }
+
+    .companion-chat-shell {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        min-height: calc(100vh - 190px);
+        background: #ffffff;
+        border-top: 1px solid rgba(15, 23, 42, 0.08);
+    }
+
+    .ols-copilot-frame {
+        position: relative;
+        z-index: 2;
+        display: block;
+        width: 100%;
+        height: 100%;
+        min-height: calc(100vh - 190px);
+        border: 0;
+        background: #ffffff;
+    }
+
+    .companion-chat-note {
+        position: absolute;
+        inset: 22px;
+        z-index: 1;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: flex-start;
+        padding: 22px;
+        color: var(--ols-deep);
+        background: rgba(255, 255, 255, 0.88);
+        border: 1px solid rgba(15, 23, 42, 0.10);
+        border-radius: 22px;
+        box-shadow: 0 16px 42px rgba(7, 26, 45, 0.10);
+    }
+
+    .companion-chat-note span {
+        display: block;
+        margin-bottom: 10px;
+        color: var(--ols-blue);
+        font-size: 12px;
+        font-weight: 900;
+        letter-spacing: 0.14em;
+        text-transform: uppercase;
+    }
+
+    .companion-chat-note p {
+        margin: 0;
+        color: var(--ols-slate);
+        font-size: 15px;
+        line-height: 1.55;
+    }
+
+    body.companion-open .companion-panel {
+        transform: translateX(0);
+    }
+
+    @media (max-width: 640px) {
+        .companion-chat-shell,
+        .ols-copilot-frame {
+            min-height: calc(100vh - 160px);
+        }
+
+        .companion-chat-note {
+            inset: 16px;
+            padding: 18px;
+            border-radius: 18px;
+        }
+    }
+</style>
 
 <script>
     const body = document.body;
     const openButtons = document.querySelectorAll("[data-open-companion]");
     const closeButton = document.getElementById("companionClose");
-    const promptBox = document.getElementById("companionPrompt");
-    const promptButtons = document.querySelectorAll("[data-prompt]");
-    const companionBegin = document.getElementById("companionBegin");
+    const companionFrame = document.getElementById("olsCopilotFrame");
+    const companionNote = document.getElementById("companionChatNote");
 
     function openCompanion() {
         body.classList.add("companion-open");
-        setTimeout(function () {
-            promptBox.focus();
-        }, 280);
+
+        if (companionFrame) {
+            companionFrame.focus();
+        }
     }
 
     function closeCompanion() {
@@ -1204,22 +1276,17 @@
         button.addEventListener("click", openCompanion);
     });
 
-    closeButton.addEventListener("click", closeCompanion);
+    if (closeButton) {
+        closeButton.addEventListener("click", closeCompanion);
+    }
 
-    promptButtons.forEach(function(button) {
-        button.addEventListener("click", function() {
-            promptBox.value = button.getAttribute("data-prompt");
-            openCompanion();
+    if (companionFrame) {
+        companionFrame.addEventListener("load", function() {
+            if (companionNote) {
+                companionNote.style.display = "none";
+            }
         });
-    });
-
-    companionBegin.addEventListener("click", function() {
-        if (!promptBox.value.trim()) {
-            promptBox.value = "Something in the organization has become harder to explain. Help me start naming what changed.";
-        }
-
-        promptBox.focus();
-    });
+    }
 
     document.addEventListener("keydown", function(event) {
         if (event.key === "Escape") {
