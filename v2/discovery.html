@@ -1142,113 +1142,144 @@
     <button class="launcher-button" type="button" data-open-companion>Open Assistant</button>
 </div>
 
-<aside class="companion-panel" id="companionPanel" aria-label="OLS Website Assistant">
-    <div class="companion-header">
-        <div class="companion-top">
-            <div>
-                <span class="eyebrow">OLS Website Assistant</span>
-                <h2>Start with what you are seeing.</h2>
-                <p>You do not need to know the answer. Describe what changed, where the pattern repeats, or what still does not make sense.</p>
-            </div>
-            <button class="companion-close" type="button" id="companionClose" aria-label="Close OLS Website Assistant">&times;</button>
+<aside class="companion-panel companion-panel-live" id="companionPanel" aria-label="OLS Website Assistant">
+    <div class="companion-live-bar">
+        <div class="companion-live-title">
+            <span>OLS Website Assistant</span>
+            <strong>Start the Conversation</strong>
         </div>
+        <button class="companion-close" type="button" id="companionClose" aria-label="Close OLS Website Assistant">&times;</button>
     </div>
 
-    <div class="companion-body companion-body-chat">
-        <div class="companion-chat-shell">
-            <div class="companion-chat-note" id="companionChatNote">
-                <span>OLS Website Assistant</span>
-                <p>The assistant may take a moment to load. If the chat does not appear, refresh the page and open the assistant again.</p>
-            </div>
-            <iframe
-                id="olsCopilotFrame"
-                class="ols-copilot-frame"
-                title="OLS Website Assistant"
-                src="https://copilotstudio.microsoft.com/environments/Default-500e2811-0932-45c0-b4a4-5c59bda7032b/bots/crbab_olsWebsiteAssistantV1/webchat?__version__=2"
-                loading="lazy"
-                referrerpolicy="no-referrer-when-downgrade"
-                allow="clipboard-read; clipboard-write; microphone">
-            </iframe>
-        </div>
+    <div class="companion-live-frame-wrap">
+        <iframe
+            id="olsCopilotFrame"
+            class="ols-copilot-frame"
+            title="OLS Website Assistant"
+            src="https://copilotstudio.microsoft.com/environments/Default-500e2811-0932-45c0-b4a4-5c59bda7032b/bots/crbab_olsWebsiteAssistantV1/webchat?__version__=2"
+            frameborder="0"
+            allow="clipboard-read; clipboard-write; microphone">
+        </iframe>
     </div>
 </aside>
 
 <style>
-    .companion-body-chat {
-        padding: 0;
+    body.companion-open {
         overflow: hidden;
-        background:
-            radial-gradient(circle at top right, rgba(200, 164, 93, 0.10), transparent 32%),
-            rgba(244, 247, 250, 0.96);
     }
 
-    .companion-chat-shell {
-        position: relative;
+    .companion-panel-live {
+        display: flex !important;
+        flex-direction: column !important;
+        height: 100vh !important;
+        height: 100dvh !important;
+        overflow: hidden !important;
+        background: #ffffff !important;
+    }
+
+    .companion-live-bar {
+        flex: 0 0 auto;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 14px;
+        min-height: 74px;
+        padding: 14px 18px;
+        color: #ffffff;
+        background:
+            linear-gradient(135deg, rgba(7, 26, 45, 0.98), rgba(31, 79, 122, 0.94));
+        border-bottom: 3px solid var(--ols-gold);
+        box-shadow: 0 10px 28px rgba(7, 26, 45, 0.24);
+    }
+
+    .companion-live-title {
+        min-width: 0;
+    }
+
+    .companion-live-title span {
+        display: block;
+        margin-bottom: 3px;
+        color: #b7d7f5;
+        font-size: 10px;
+        font-weight: 900;
+        letter-spacing: 0.16em;
+        line-height: 1.2;
+        text-transform: uppercase;
+    }
+
+    .companion-live-title strong {
+        display: block;
+        color: #ffffff;
+        font-size: 18px;
+        font-weight: 900;
+        line-height: 1.2;
+        letter-spacing: -0.02em;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+    }
+
+    .companion-panel-live .companion-close {
+        flex: 0 0 auto;
+        width: 38px;
+        height: 38px;
+        color: #ffffff;
+        background: rgba(255, 255, 255, 0.12);
+        border: 1px solid rgba(255, 255, 255, 0.22);
+        border-radius: 50%;
+        font-size: 22px;
+        font-weight: 900;
+        line-height: 1;
+    }
+
+    .companion-live-frame-wrap {
+        flex: 1 1 auto;
+        min-height: 0;
         width: 100%;
-        height: 100%;
-        min-height: calc(100vh - 190px);
+        overflow: hidden;
         background: #ffffff;
-        border-top: 1px solid rgba(15, 23, 42, 0.08);
     }
 
     .ols-copilot-frame {
-        position: relative;
-        z-index: 2;
         display: block;
         width: 100%;
         height: 100%;
-        min-height: calc(100vh - 190px);
+        min-height: 0;
         border: 0;
         background: #ffffff;
     }
 
-    .companion-chat-note {
-        position: absolute;
-        inset: 22px;
-        z-index: 1;
-        display: flex;
-        flex-direction: column;
-        align-items: flex-start;
-        justify-content: flex-start;
-        padding: 22px;
-        color: var(--ols-deep);
-        background: rgba(255, 255, 255, 0.88);
-        border: 1px solid rgba(15, 23, 42, 0.10);
-        border-radius: 22px;
-        box-shadow: 0 16px 42px rgba(7, 26, 45, 0.10);
+    @supports (height: 100dvh) {
+        .companion-panel-live {
+            height: 100dvh !important;
+        }
     }
 
-    .companion-chat-note span {
-        display: block;
-        margin-bottom: 10px;
-        color: var(--ols-blue);
-        font-size: 12px;
-        font-weight: 900;
-        letter-spacing: 0.14em;
-        text-transform: uppercase;
-    }
-
-    .companion-chat-note p {
-        margin: 0;
-        color: var(--ols-slate);
-        font-size: 15px;
-        line-height: 1.55;
-    }
-
-    body.companion-open .companion-panel {
-        transform: translateX(0);
+    @media (max-width: 1220px) {
+        body.companion-open .site-shell {
+            margin-right: 0;
+            filter: none;
+        }
     }
 
     @media (max-width: 640px) {
-        .companion-chat-shell,
-        .ols-copilot-frame {
-            min-height: calc(100vh - 160px);
+        .companion-panel-live {
+            width: 100vw !important;
         }
 
-        .companion-chat-note {
-            inset: 16px;
-            padding: 18px;
-            border-radius: 18px;
+        .companion-live-bar {
+            min-height: 66px;
+            padding: 12px 14px;
+        }
+
+        .companion-live-title strong {
+            font-size: 16px;
+        }
+
+        .companion-panel-live .companion-close {
+            width: 36px;
+            height: 36px;
+            font-size: 20px;
         }
     }
 </style>
@@ -1258,11 +1289,9 @@
     const openButtons = document.querySelectorAll("[data-open-companion]");
     const closeButton = document.getElementById("companionClose");
     const companionFrame = document.getElementById("olsCopilotFrame");
-    const companionNote = document.getElementById("companionChatNote");
 
     function openCompanion() {
         body.classList.add("companion-open");
-
         if (companionFrame) {
             companionFrame.focus();
         }
@@ -1278,14 +1307,6 @@
 
     if (closeButton) {
         closeButton.addEventListener("click", closeCompanion);
-    }
-
-    if (companionFrame) {
-        companionFrame.addEventListener("load", function() {
-            if (companionNote) {
-                companionNote.style.display = "none";
-            }
-        });
     }
 
     document.addEventListener("keydown", function(event) {
