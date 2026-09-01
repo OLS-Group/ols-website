@@ -1,1 +1,1115 @@
+<!DOCTYPE html>
+<!DOCTYPE html>
+
+<html lang="en">
+<head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>AI Is Not the Revolution Most Businesses Think It Is | OLS Group</title>
+<meta content="Businesses that judged AI months ago may be relying on an outdated answer. The real shift is the shrinking distance between operational knowledge and functioning systems." name="description"/>
+<meta content="index, follow" name="robots"/>
+<link href="../assets/OLS-WEB-V2-FAV-A001.png" rel="icon" type="image/png"/>
+<style>
+    :root {
+      --ols-navy: #13283f;
+      --ols-navy-deep: #0b1726;
+      --ols-blue: #1f5f8b;
+      --ols-gold: #c89b3c;
+      --ols-gold-soft: #ecd7a1;
+      --ols-ink: #182230;
+      --ols-muted: #667085;
+      --ols-line: #d9e0ea;
+      --ols-paper: #f7f3ea;
+      --ols-paper-light: #fbfaf6;
+      --ols-white: #ffffff;
+      --ols-shadow: 0 18px 45px rgba(11, 23, 38, 0.10);
+      --ols-radius: 22px;
+      --reader-width: 860px;
+      --side-width: 238px;
+      --page-width: 1180px;
+      --header-height: 74px;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    html {
+      scroll-behavior: smooth;
+      background: var(--ols-paper);
+    }
+
+    body {
+      min-height: 100vh;
+      font-family: Georgia, "Times New Roman", serif;
+      color: var(--ols-ink);
+      background:
+        radial-gradient(circle at top left, rgba(200, 155, 60, 0.16), transparent 30rem),
+        radial-gradient(circle at 88% 28%, rgba(31, 95, 139, 0.08), transparent 34rem),
+        linear-gradient(180deg, #fbfaf6 0%, #f4efe3 48%, #fbfaf6 100%);
+      line-height: 1.72;
+      -webkit-font-smoothing: antialiased;
+      text-rendering: optimizeLegibility;
+    }
+
+    body.ols-copy-protected {
+      -webkit-user-select: none;
+      -moz-user-select: none;
+      -ms-user-select: none;
+      user-select: none;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    img {
+      max-width: 100%;
+      display: block;
+      -webkit-user-drag: none;
+      user-drag: none;
+      user-select: none;
+    }
+
+    .publication-shell {
+      width: 100%;
+      min-height: 100vh;
+    }
+
+    .publication-header {
+      position: relative;
+      z-index: 20;
+      min-height: var(--header-height);
+      background: rgba(251, 250, 246, 0.96);
+      border-bottom: 1px solid rgba(19, 40, 63, 0.10);
+    }
+
+    .publication-header-inner {
+      width: min(var(--page-width), calc(100% - 40px));
+      min-height: var(--header-height);
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+
+    .logo-link {
+      display: inline-flex;
+      align-items: center;
+      gap: 12px;
+      min-width: 0;
+    }
+
+    .logo-link img {
+      height: 40px;
+      width: auto;
+    }
+
+    .publication-mark {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.70rem;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ols-muted);
+      white-space: nowrap;
+    }
+
+    .header-resource-link {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 800;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ols-navy);
+      padding: 10px 14px;
+      border: 1px solid rgba(19, 40, 63, 0.15);
+      border-radius: 999px;
+      background: rgba(255, 255, 255, 0.72);
+      transition: all 0.2s ease;
+      white-space: nowrap;
+    }
+
+    .header-resource-link:hover,
+    .header-resource-link:focus-visible {
+      color: var(--ols-white);
+      background: var(--ols-navy);
+      outline: none;
+    }
+
+    .article-cover {
+      position: relative;
+      overflow: hidden;
+      background:
+        linear-gradient(135deg, rgba(11, 23, 38, 0.97), rgba(19, 40, 63, 0.94)),
+        radial-gradient(circle at 82% 18%, rgba(200, 155, 60, 0.32), transparent 22rem);
+      color: var(--ols-white);
+      border-bottom: 1px solid rgba(200, 155, 60, 0.28);
+    }
+
+    .article-cover::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(90deg, rgba(200, 155, 60, 0.12) 1px, transparent 1px),
+        linear-gradient(0deg, rgba(200, 155, 60, 0.08) 1px, transparent 1px);
+      background-size: 72px 72px;
+      opacity: 0.18;
+      pointer-events: none;
+    }
+
+    .article-cover-inner {
+      position: relative;
+      width: min(var(--page-width), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 84px 0 88px;
+      display: grid;
+      grid-template-columns: minmax(0, 860px) minmax(180px, 1fr);
+      gap: 48px;
+      align-items: end;
+    }
+
+    .cover-left {
+      max-width: 860px;
+    }
+
+    .insight-kicker {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.20em;
+      text-transform: uppercase;
+      color: var(--ols-gold-soft);
+      margin-bottom: 16px;
+    }
+
+    .article-class {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.72);
+      margin-bottom: 24px;
+    }
+
+    .article-class::before {
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: var(--ols-gold);
+    }
+
+    .article-title {
+      max-width: 840px;
+      font-size: clamp(2.55rem, 5.8vw, 5.05rem);
+      line-height: 0.98;
+      font-weight: 500;
+      letter-spacing: -0.045em;
+      color: var(--ols-white);
+      margin-bottom: 24px;
+    }
+
+    .article-subtitle {
+      max-width: 760px;
+      font-size: clamp(1.22rem, 2.1vw, 1.58rem);
+      line-height: 1.44;
+      color: rgba(255, 255, 255, 0.82);
+      margin-bottom: 30px;
+    }
+
+    .article-tags {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.78rem;
+      font-weight: 800;
+      letter-spacing: 0.11em;
+      text-transform: uppercase;
+      color: rgba(255, 255, 255, 0.64);
+    }
+
+    .cover-right {
+      justify-self: end;
+      width: min(290px, 100%);
+      border-left: 1px solid rgba(200, 155, 60, 0.34);
+      padding-left: 24px;
+      color: rgba(255, 255, 255, 0.74);
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .cover-note-label {
+      font-size: 0.68rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ols-gold-soft);
+      margin-bottom: 12px;
+    }
+
+    .cover-note-text {
+      font-size: 0.92rem;
+      line-height: 1.62;
+    }
+
+    .featured-image-section {
+      width: min(var(--page-width), calc(100% - 40px));
+      margin: -42px auto 0;
+      position: relative;
+      z-index: 5;
+    }
+
+    .featured-image-wrap {
+      border-radius: 28px;
+      overflow: hidden;
+      border: 1px solid rgba(19, 40, 63, 0.14);
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 28px 72px rgba(11, 23, 38, 0.18);
+    }
+
+    .featured-image-wrap img {
+      width: 100%;
+      height: clamp(260px, 38vw, 470px);
+      object-fit: cover;
+      object-position: center center;
+    }
+
+    .featured-image-caption {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.78rem;
+      line-height: 1.55;
+      color: var(--ols-muted);
+      padding: 14px 18px 16px;
+      background: rgba(255, 255, 255, 0.86);
+    }
+
+    .reader-intro-bar {
+      width: min(var(--page-width), calc(100% - 40px));
+      margin: 0 auto;
+      padding: 34px 0 24px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+      border-bottom: 1px solid rgba(19, 40, 63, 0.10);
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ols-muted);
+    }
+
+    .reader-intro-title {
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--ols-navy);
+    }
+
+    .reader-intro-note {
+      max-width: 650px;
+      text-align: right;
+      font-size: 0.88rem;
+      line-height: 1.5;
+    }
+
+    .mobile-article-menu-wrap {
+      display: none;
+      width: min(var(--reader-width), calc(100% - 40px));
+      margin: 26px auto 0;
+    }
+
+    .mobile-article-menu {
+      border: 1px solid rgba(19, 40, 63, 0.14);
+      border-radius: 18px;
+      background: rgba(255, 255, 255, 0.86);
+      box-shadow: 0 14px 32px rgba(11, 23, 38, 0.08);
+      overflow: hidden;
+    }
+
+    .mobile-article-menu summary {
+      cursor: pointer;
+      list-style: none;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.80rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ols-navy);
+      padding: 16px 18px;
+    }
+
+    .mobile-article-menu summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .mobile-article-menu .section-links {
+      padding: 0 18px 18px;
+    }
+
+    .publication-body {
+      width: min(var(--page-width), calc(100% - 40px));
+      margin: 0 auto;
+      display: grid;
+      grid-template-columns: var(--side-width) minmax(0, var(--reader-width));
+      gap: 82px;
+      align-items: start;
+      justify-content: center;
+      padding: 54px 0 70px;
+    }
+
+    .desktop-article-nav {
+      position: sticky;
+      top: 28px;
+      align-self: start;
+      padding: 0;
+      background: transparent;
+      max-height: calc(100vh - 56px);
+      overflow: auto;
+    }
+
+    .nav-inner {
+      padding: 18px 0 18px 18px;
+      border-left: 3px solid rgba(200, 155, 60, 0.42);
+    }
+
+    .nav-label {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.70rem;
+      font-weight: 900;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      color: var(--ols-gold);
+      margin-bottom: 14px;
+    }
+
+    .section-links {
+      display: grid;
+      gap: 6px;
+    }
+
+    .section-links a {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.84rem;
+      line-height: 1.38;
+      color: var(--ols-muted);
+      padding: 8px 0;
+      transition: color 0.18s ease, padding-left 0.18s ease;
+    }
+
+    .section-links a:hover,
+    .section-links a:focus-visible {
+      color: var(--ols-navy);
+      padding-left: 6px;
+      outline: none;
+    }
+
+    .reader-column {
+      width: 100%;
+      max-width: var(--reader-width);
+    }
+
+    .manuscript-area {
+      position: relative;
+      background: rgba(255, 255, 255, 0.82);
+      border: 1px solid rgba(19, 40, 63, 0.10);
+      border-radius: var(--ols-radius);
+      box-shadow: 0 24px 70px rgba(11, 23, 38, 0.11);
+      padding: clamp(40px, 5.8vw, 76px);
+      min-height: 72vh;
+    }
+
+    .manuscript-area::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: clamp(40px, 5.8vw, 76px);
+      right: clamp(40px, 5.8vw, 76px);
+      height: 4px;
+      background: linear-gradient(90deg, var(--ols-gold), rgba(200, 155, 60, 0));
+      border-radius: 999px;
+    }
+
+    .manuscript-area h2,
+    .manuscript-area h3,
+    .manuscript-area p,
+    .manuscript-area blockquote,
+    .manuscript-area ul,
+    .manuscript-area ol {
+      max-width: 100%;
+    }
+
+    .manuscript-area h2 {
+      font-size: clamp(2rem, 3.05vw, 2.75rem);
+      line-height: 1.10;
+      letter-spacing: -0.035em;
+      font-weight: 500;
+      color: var(--ols-navy);
+      margin: 2.55em 0 0.72em;
+    }
+
+    .manuscript-area h2:first-child {
+      margin-top: 0;
+    }
+
+    .manuscript-area h3 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: clamp(1.14rem, 1.7vw, 1.32rem);
+      line-height: 1.34;
+      font-weight: 900;
+      letter-spacing: -0.012em;
+      color: var(--ols-navy-deep);
+      margin: 2.08em 0 0.70em;
+    }
+
+    .manuscript-area p {
+      font-size: clamp(1.14rem, 1.45vw, 1.25rem);
+      line-height: 1.90;
+      color: #202b3a;
+      margin: 0 0 1.48em;
+    }
+
+    .manuscript-area .article-lede {
+      font-size: clamp(1.28rem, 1.9vw, 1.52rem);
+      line-height: 1.72;
+      color: var(--ols-navy);
+      font-weight: 600;
+    }
+
+    .manuscript-area blockquote {
+      margin: 2.25em 0;
+      padding: 2px 0 2px 30px;
+      border-left: 4px solid var(--ols-gold);
+      color: var(--ols-navy);
+      font-size: clamp(1.28rem, 2vw, 1.62rem);
+      line-height: 1.58;
+      font-style: italic;
+    }
+
+    .manuscript-area ul,
+    .manuscript-area ol {
+      margin: 0 0 1.65em 1.35em;
+      padding-left: 1em;
+    }
+
+    .manuscript-area li {
+      font-size: clamp(1.10rem, 1.4vw, 1.20rem);
+      line-height: 1.82;
+      margin-bottom: 0.72em;
+      color: #202b3a;
+    }
+
+    .article-cta-note {
+      margin-top: 2.4em;
+      padding: 26px;
+      border: 1px solid rgba(200, 155, 60, 0.34);
+      border-radius: 20px;
+      background: rgba(200, 155, 60, 0.10);
+    }
+
+    .article-cta-note p:last-child {
+      margin-bottom: 0;
+    }
+
+    .after-manuscript {
+      margin-top: 86px;
+    }
+
+    .related-section,
+    .author-section,
+    .publication-notice,
+    .decision-section {
+      margin-top: 64px;
+    }
+
+    .section-heading {
+      font-size: clamp(1.9rem, 2.9vw, 2.55rem);
+      line-height: 1.08;
+      color: var(--ols-navy);
+      letter-spacing: -0.035em;
+      font-weight: 500;
+      margin-bottom: 24px;
+    }
+
+    .related-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .related-card,
+    .decision-card {
+      min-height: 176px;
+      border: 1px solid rgba(19, 40, 63, 0.12);
+      border-radius: 20px;
+      background: rgba(255, 255, 255, 0.76);
+      box-shadow: 0 14px 32px rgba(11, 23, 38, 0.07);
+      padding: 22px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      transition: transform 0.18s ease, box-shadow 0.18s ease, border-color 0.18s ease;
+    }
+
+    .related-card:hover,
+    .decision-card:hover,
+    .related-card:focus-visible,
+    .decision-card:focus-visible {
+      transform: translateY(-3px);
+      box-shadow: 0 22px 44px rgba(11, 23, 38, 0.12);
+      border-color: rgba(200, 155, 60, 0.50);
+      outline: none;
+    }
+
+    .related-card-title,
+    .decision-card-title {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.98rem;
+      line-height: 1.36;
+      font-weight: 900;
+      color: var(--ols-navy);
+    }
+
+    .related-card-text,
+    .decision-card-text {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.86rem;
+      line-height: 1.55;
+      color: var(--ols-muted);
+      margin-top: 12px;
+    }
+
+    .card-action {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.72rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ols-gold);
+      margin-top: 28px;
+    }
+
+    .author-card {
+      display: grid;
+      grid-template-columns: 116px minmax(0, 1fr);
+      gap: 26px;
+      align-items: center;
+      padding: 28px;
+      border: 1px solid rgba(19, 40, 63, 0.12);
+      border-radius: 22px;
+      background: rgba(255, 255, 255, 0.78);
+      box-shadow: 0 14px 32px rgba(11, 23, 38, 0.07);
+    }
+
+    .author-image-wrap {
+      width: 116px;
+      height: 116px;
+      border-radius: 50%;
+      border: 3px solid rgba(200, 155, 60, 0.35);
+      background: var(--ols-paper-light);
+      overflow: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .author-image-wrap img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      object-position: center center;
+      display: block;
+    }
+
+    .author-image-wrap.has-fallback {
+      background:
+        linear-gradient(135deg, rgba(19, 40, 63, 0.92), rgba(31, 95, 139, 0.76)),
+        var(--ols-paper-light);
+    }
+
+    .author-fallback {
+      display: none;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ols-white);
+      font-size: 0.78rem;
+      font-weight: 900;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      text-align: center;
+      line-height: 1.3;
+      padding: 14px;
+    }
+
+    .author-name {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 1.02rem;
+      line-height: 1.35;
+      font-weight: 900;
+      color: var(--ols-navy);
+      margin-bottom: 12px;
+    }
+
+    .author-card p,
+    .publication-notice p,
+    .notice-rights {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.94rem;
+      line-height: 1.68;
+      color: var(--ols-muted);
+      margin-bottom: 12px;
+    }
+
+    .publication-notice {
+      padding: 28px;
+      border-radius: 20px;
+      border: 1px solid rgba(19, 40, 63, 0.12);
+      background: rgba(19, 40, 63, 0.05);
+    }
+
+    .publication-notice h2 {
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.96rem;
+      font-weight: 900;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--ols-navy);
+      margin-bottom: 14px;
+    }
+
+    .notice-rights {
+      color: var(--ols-ink);
+      margin-bottom: 0;
+    }
+
+    .decision-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 18px;
+    }
+
+    .publication-footer {
+      border-top: 1px solid rgba(19, 40, 63, 0.11);
+      background: rgba(251, 250, 246, 0.88);
+      padding: 34px 0;
+    }
+
+    .publication-footer-inner {
+      width: min(var(--page-width), calc(100% - 40px));
+      margin: 0 auto;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 18px;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .footer-brand {
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.17em;
+      text-transform: uppercase;
+      color: var(--ols-muted);
+    }
+
+    .footer-links {
+      display: flex;
+      align-items: center;
+      justify-content: flex-end;
+      flex-wrap: wrap;
+      gap: 18px;
+    }
+
+    .footer-links a {
+      font-size: 0.76rem;
+      font-weight: 900;
+      letter-spacing: 0.13em;
+      text-transform: uppercase;
+      color: var(--ols-navy);
+    }
+
+    .footer-links a:hover,
+    .footer-links a:focus-visible {
+      color: var(--ols-gold);
+      outline: none;
+    }
+
+    .copy-warning {
+      position: fixed;
+      left: 50%;
+      bottom: 24px;
+      transform: translateX(-50%) translateY(14px);
+      z-index: 999;
+      max-width: min(520px, calc(100% - 40px));
+      padding: 14px 18px;
+      border-radius: 999px;
+      background: rgba(11, 23, 38, 0.94);
+      color: var(--ols-white);
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 0.86rem;
+      line-height: 1.45;
+      box-shadow: 0 20px 40px rgba(11, 23, 38, 0.22);
+      opacity: 0;
+      pointer-events: none;
+      transition: opacity 0.22s ease, transform 0.22s ease;
+      text-align: center;
+    }
+
+    .copy-warning.is-visible {
+      opacity: 1;
+      transform: translateX(-50%) translateY(0);
+    }
+
+    @media print {
+      body {
+        display: none !important;
+      }
+    }
+
+    @media (max-width: 1080px) {
+      .article-cover-inner {
+        grid-template-columns: 1fr;
+        gap: 36px;
+      }
+
+      .cover-right {
+        justify-self: start;
+        width: min(520px, 100%);
+      }
+
+      .publication-body {
+        grid-template-columns: 1fr;
+        gap: 0;
+        width: 100%;
+        padding-top: 34px;
+      }
+
+      .desktop-article-nav {
+        display: none;
+      }
+
+      .mobile-article-menu-wrap {
+        display: block;
+      }
+
+      .reader-column {
+        width: min(var(--reader-width), calc(100% - 40px));
+        margin: 0 auto;
+      }
+    }
+
+    @media (max-width: 760px) {
+      :root {
+        --header-height: 68px;
+      }
+
+      .publication-header-inner,
+      .article-cover-inner,
+      .reader-column,
+      .mobile-article-menu-wrap,
+      .publication-footer-inner,
+      .reader-intro-bar,
+      .featured-image-section {
+        width: min(100% - 28px, 100%);
+      }
+
+      .publication-mark {
+        display: none;
+      }
+
+      .logo-link img {
+        height: 36px;
+      }
+
+      .header-resource-link {
+        font-size: 0.68rem;
+        padding: 9px 11px;
+      }
+
+      .article-cover-inner {
+        padding: 58px 0 62px;
+      }
+
+      .article-title {
+        letter-spacing: -0.04em;
+      }
+
+      .cover-right {
+        border-left: 0;
+        border-top: 1px solid rgba(200, 155, 60, 0.30);
+        padding-left: 0;
+        padding-top: 22px;
+      }
+
+      .featured-image-section {
+        margin-top: -28px;
+      }
+
+      .reader-intro-bar {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .reader-intro-note {
+        text-align: left;
+      }
+
+      .manuscript-area {
+        border-radius: 18px;
+        min-height: 60vh;
+      }
+
+      .related-grid,
+      .decision-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .author-card {
+        grid-template-columns: 1fr;
+        text-align: left;
+      }
+
+      .publication-footer-inner {
+        align-items: flex-start;
+        flex-direction: column;
+      }
+
+      .footer-links {
+        justify-content: flex-start;
+      }
+    }
+  </style>
+<link href="https://www.ols-group.com/articles/ai-is-not-the-revolution-most-businesses-think-it-is.html" rel="canonical"/><meta content="AI Is Not the Revolution Most Businesses Think It Is" property="og:title"/><meta content="The real shift is not smarter software. It is the shrinking distance between operational knowledge and functioning systems." property="og:description"/><meta content="article" property="og:type"/><meta content="https://www.ols-group.com/articles/ai-is-not-the-revolution-most-businesses-think-it-is.html" property="og:url"/><meta content="OLS Group" property="og:site_name"/><meta content="summary_large_image" name="twitter:card"/><meta content="AI Is Not the Revolution Most Businesses Think It Is" name="twitter:title"/><meta content="The real shift is not smarter software. It is the shrinking distance between operational knowledge and functioning systems." name="twitter:description"/><meta content="OLS-INS-002" name="ols-content-id"/><meta content="https://www.ols-group.com/assets/OLS-WEB-V2-INS-002-HERO-A001.jpg" property="og:image"/><meta content="Business operator reviewing process maps and an OLS-branded digital system representing the connection between operational knowledge and AI." property="og:image:alt"/><meta content="https://www.ols-group.com/assets/OLS-WEB-V2-INS-002-HERO-A001.jpg" name="twitter:image"/><script type="application/ld+json">{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "identifier": "OLS-INS-002",
+  "headline": "AI Is Not the Revolution Most Businesses Think It Is",
+  "alternativeHeadline": "The real shift is not smarter software. It is the shrinking distance between operational knowledge and functioning systems.",
+  "description": "Businesses that judged AI months ago may be relying on an outdated answer. The real shift is the shrinking distance between operational knowledge and functioning systems.",
+  "author": {
+    "@type": "Person",
+    "name": "Andres Andy Roosna"
+  },
+  "publisher": {
+    "@type": "Organization",
+    "name": "OLS Group"
+  },
+  "mainEntityOfPage": "https://www.ols-group.com/articles/ai-is-not-the-revolution-most-businesses-think-it-is.html",
+  "url": "https://www.ols-group.com/articles/ai-is-not-the-revolution-most-businesses-think-it-is.html",
+  "image": "https://www.ols-group.com/assets/OLS-WEB-V2-INS-002-HERO-A001.jpg",
+  "datePublished": "2026-09-01",
+  "dateModified": "2026-09-01"
+}</script></head>
+<body class="ols-copy-protected">
+<div class="publication-shell">
+<header aria-label="OLS publication header" class="publication-header">
+<div class="publication-header-inner">
+<a aria-label="OLS Group home" class="logo-link" href="../index.html">
+<img alt="OLS Group" src="../assets/OLS-WEB-V2-LOGO-A001.png"/>
+<span class="publication-mark">OLS Publication</span>
+</a>
+<a class="header-resource-link" href="../resources.html">Resource Center</a>
+</div>
+</header>
+<main id="main-content">
+<section aria-label="Article cover" class="article-cover">
+<div class="article-cover-inner">
+<div class="cover-left">
+<div class="insight-kicker">OLS-INS-002</div>
+<div class="article-class">Resource Center Insight</div>
+<h1 class="article-title">AI Is Not the Revolution Most Businesses Think It Is</h1>
+<p class="article-subtitle">The real shift is not smarter software. It is the shrinking distance between operational knowledge and functioning systems.</p>
+<div class="article-tags">AI Readiness · Operating Reality · Business Automation · Human Judgment · Adaptability</div>
+</div>
+<aside aria-label="Publication context" class="cover-right">
+<div class="cover-note-label">OLS Resource Center Insight</div>
+<p class="cover-note-text">A narrative OLS article on why yesterday’s judgment about artificial intelligence may no longer describe what businesses can build today.</p>
+</aside>
+</div>
+</section>
+<section aria-label="Featured article image" class="featured-image-section">
+<div class="featured-image-wrap">
+<img alt="Business operator reviewing process maps and an OLS-branded digital system representing the connection between operational knowledge and AI" src="../assets/OLS-WEB-V2-INS-002-HERO-A001.jpg"/>
+<div class="featured-image-caption">Featured Image: The shrinking distance between operational knowledge and functioning AI-enabled systems.</div>
+</div>
+</section>
+<div aria-label="Reading note" class="reader-intro-bar">
+<div class="reader-intro-title">Insight Reader</div>
+<div class="reader-intro-note">This publication follows one operator’s experience with AI across finance, government process design, legal research, automation, and the building of OLS.</div>
+</div>
+<div aria-label="Mobile article navigation" class="mobile-article-menu-wrap">
+<details class="mobile-article-menu">
+<summary>Article Sections</summary>
+<nav aria-label="Mobile article sections" class="section-links"><a href="#compared-to-when">Compared to When?</a><a href="#from-formulas-to-systems">From Formulas to Systems</a><a href="#the-tools-changed-the-search">The Tools Changed the Search</a><a href="#a-bridge-under-construction">A Bridge Still Under Construction</a><a href="#building-ols-with-ai">Building OLS With AI</a><a href="#the-distance-is-shrinking">The Distance Is Shrinking</a><a href="#operating-reality-still-decides">Operating Reality Still Decides</a></nav>
+</details>
+</div>
+<div class="publication-body">
+<aside aria-label="Article navigation" class="desktop-article-nav">
+<div class="nav-inner">
+<div class="nav-label">Article Sections</div>
+<nav aria-label="Desktop article sections" class="section-links"><a href="#compared-to-when">Compared to When?</a><a href="#from-formulas-to-systems">From Formulas to Systems</a><a href="#the-tools-changed-the-search">The Tools Changed the Search</a><a href="#a-bridge-under-construction">A Bridge Still Under Construction</a><a href="#building-ols-with-ai">Building OLS With AI</a><a href="#the-distance-is-shrinking">The Distance Is Shrinking</a><a href="#operating-reality-still-decides">Operating Reality Still Decides</a></nav>
+</div>
+</aside>
+<article aria-label="Insight article" class="reader-column">
+<section aria-label="Article manuscript" class="manuscript-area"><h2 id="compared-to-when">Compared to When?</h2><p class="article-lede">Whenever someone confidently explains what artificial intelligence can or cannot do, one question matters more than the conclusion: Compared to when? That question becomes especially important when the judgment was formed six months ago, a year ago, or after one disappointing attempt with an earlier version of the technology.</p><p>Artificial intelligence is not standing still long enough for yesterday’s judgment to remain reliable. A business may have evaluated AI twelve months ago and reached a reasonable conclusion based on what existed then. Today, the tools, integrations, models, and practical capabilities may bear little resemblance to the system it evaluated. I learned that over several years, through projects where I could see what should be possible long before I could make it happen.</p><h2 id="from-formulas-to-systems">From Formulas to Systems</h2><p>My first practical experience with generative AI came while I was managing several large land-development projects and helping assemble financing for others. That work required a great deal of Excel, which has never been one of my strongest tools. I understood the projects, the financing, the variables, and what decision-makers needed to see. What I could not do nearly as well was turn that understanding into formulas, calculations, and a one-page dashboard that showed the whole picture.</p><p>When ChatGPT first became available, I began experimenting with it as a way to bridge that gap. I would describe the result I wanted, explain which variables needed to change, and ask it to create the formulas required to make the spreadsheet respond correctly. The process was rough, and the answers were far from perfect, but enough of it worked to keep me interested. For the first time, I could take a business requirement that I understood and translate part of it into a technical structure I did not know how to create on my own.</p><p>ChatGPT still left gaps. At one point, I called a friend who was an Excel expert and asked him to explain several things the AI could not resolve. He showed me where the formulas were going wrong and why the workbook was not behaving the way I expected. Even so, the finished spreadsheets looked better, tracked the numbers more effectively, and gave me a clearer view of projects with a tremendous number of moving parts. The AI did not replace expertise. It helped me get far enough to know where I needed it.</p><p>About eight months later, I encountered a larger version of the same problem at the Florida State Guard. I had joined the recruiting program and found roughly 5,000 applicants moving through one shared Excel workbook. Every application, document, interview, background check, approval, and administrative step depended on that file. I still do not know how the team kept the process functioning as well as it did. What I do remember is looking at that workbook and realizing how much responsibility had been placed inside something never designed to carry it.</p><p>At the same time, the Florida State Guard was trying to build more of its own administrative capability instead of relying on the National Guard for parts of that support. I began talking with our human resources director and a Microsoft representative working with the government. The recruiting process had clearly outgrown the spreadsheet, but the larger need went beyond recruiting. The organization also needed a better way to manage human resources and payroll. I could see how those needs might connect through Microsoft’s business and automation tools, even though the tools were still in an earlier stage.</p><p>Before Microsoft’s technical team could build anything, however, someone had to explain how the organization actually worked. I sat down with computer engineers and began mapping the process from beginning to end. We had to identify who entered the system, what happened first, which documents were required, where checks occurred, who made decisions, what happened after each approval, and how exceptions should be handled. Every handoff and decision point had to be pulled out of people’s heads and placed where the people developing the system could understand it.</p><p>That experience left me with two competing impressions. The first was excitement because the completed system demonstrated what could happen when a complicated manual process was translated into a better operating environment. The second was frustration because I had helped define the operational reality, but Microsoft’s specialists still had to complete the technical implementation. I could describe the destination and help map the route, but I had not learned how to build the road.</p><h2 id="the-tools-changed-the-search">The Tools Changed the Search</h2><p>The same question followed me into law school, where the issue was no longer whether AI could help build a system, but whether it could shorten the distance to useful information without replacing the judgment required to use it. Legal education means navigating statutes, judicial opinions, interpretations, and generations of case law. The volume can be overwhelming, and finding the right authority may consume nearly as much time as analyzing it. AI-supported research tools could search that material far faster than traditional manual research. The tools changed the search. They did not change the responsibility.</p><p>The research agents did not eliminate the work. They identified potentially relevant cases, produced quick summaries, and helped narrow the field, but every case still had to be opened and read. Citations still had to be checked. The facts, reasoning, and holding of each decision still had to be compared against the argument being developed. A quick synopsis could point me toward a useful case, but it could not relieve me of the responsibility to determine whether the case actually supported the position I intended to cite it for.</p><p>The real gain was not less thinking but more time for it. Instead of spending hours searching through generations of case law and hoping to find something relevant, I could reach promising material faster and spend more time deciding whether it actually mattered. The tool did not write the argument or exercise judgment for me. It shortened the distance between the question and the information I needed to think responsibly about the answer.</p><p>By the time I completed my law degree last year, I had seen AI support financial modeling, process development, and legal research. None of those experiences convinced me that artificial intelligence could replace subject-matter knowledge or human responsibility. They convinced me that it could give someone with a clear objective far greater access to capabilities that had previously required either extensive technical expertise or considerable amounts of time.</p><h2 id="a-bridge-under-construction">A Bridge Still Under Construction</h2><p>My perspective changed again after I moved from Florida back to Washington and spent time with my mother in Cashmere, just outside Wenatchee. From there, Microsoft’s growing central Washington data-center presence was difficult to ignore. Microsoft operates datacenters in East Wenatchee and Quincy and is developing additional facilities in Malaga and East Wenatchee. Those buildings are not abstract strategy decks; they are land, power, equipment, construction, and capital made visible.</p><p>Standing near that construction made the future feel less theoretical. Companies do not commit that much land, power, equipment, construction, and capital to something they expect to disappear in the next technology cycle. Whatever artificial intelligence ultimately becomes, the infrastructure rising throughout central Washington made one thing clear: the companies responsible for the world’s computing capacity were preparing for demand most ordinary users had not yet begun to imagine.</p><p>That physical commitment reminded me of an observation Bill Gates included in <em>The Road Ahead</em>: “People often overestimate what will happen in the next two years and underestimate what will happen in ten.” The internet created companies, industries, and fortunes that had not existed before. AI may create a shift just as large, perhaps larger, because it is not only changing how information moves. It is changing who can use that information to analyze, create, build, and act.</p><p>While I was living in Cashmere, I tried to put together several relatively simple systems for my mother’s company. The business problems were not mysterious. I understood what she needed, and I could see how Microsoft 365, Copilot, SharePoint, and Power Automate should have been able to support the work. I began those efforts between December 2025 and February 2026 with the expectation that conversation with AI would help me bridge the technical gaps in much the same way ChatGPT had helped with Excel.</p><p>What I found instead was a bridge still under construction. Copilot could discuss the architecture, suggest possibilities, and help describe workflows, but completing the systems was another matter.</p><p>Power Automate remained difficult to navigate without deeper technical knowledge, and the AI assistance available at the time could not reliably guide me from an idea to a finished result. I could see the solution, but I could not get the tools to help me build it. Eventually, many of those projects stalled because the distance between understanding what the business needed and implementing a working system remained too wide.</p><p>If I returned to those same projects today, I can see ways to finish nearly all of them. My mother’s business has not suddenly become simpler, and I have not transformed into a programmer or computer engineer. The meaningful change is that the systems and the AI assistance surrounding them have moved forward. Work that felt inaccessible only months ago now appears achievable because the tools are increasingly capable of helping an ordinary user work through the steps required to complete it.</p><h2 id="building-ols-with-ai">Building OLS With AI</h2><p>The same pattern kept appearing: AI was useful when it shortened the distance between knowledge and action, and far less useful when it could describe a destination but could not help me reach it. That was the problem I carried into building OLS.</p><p>Building Operational Leadership Systems brought that problem into sharper focus. OLS needed a website, a customer relationship management system, product portfolios, governance structures, automation, knowledge systems, publishing capabilities, and a disciplined way to preserve decisions and continue unfinished work. In nearly every project, I understood the business outcome far better than the technical path required to reach it. AI could help turn that understanding into working systems, but only if the work remained anchored to a clear operating reality.</p><p>The early experience was not smooth. Copilot produced an enormous amount of material, but it treated almost every new task as a reason to redesign the whole environment. I would ask it to solve one problem and end up with another architecture, another planning exercise, or another stack of documents. One conversation went so far into documentation that OLS now has material spread across SharePoint that will eventually have to be reduced to seven or eight governing documents, with the useful work products kept separately as history. It was producing work, but not always moving the work forward.</p><p>The irony was hard to miss. I was using artificial intelligence to create clarity, and the volume it produced was creating another kind of confusion. Conversations that began with one practical problem would drift into a new architecture, abandon decisions already made, and rebuild the same work from another angle.</p><p>The coding experience produced a more immediate kind of frustration. I am not a coder, but building the OLS website required me to work with HTML, scripts, integrations, and other technical elements that I could review only from the perspective of whether the finished page worked. Copilot would identify a problem, place a block of code in front of me, and instruct me to replace the existing section with the corrected version. I would compare the original and the replacement and find no visible difference between them.</p><p><em>“What exactly am I replacing?”</em></p><p>Copilot seemed certain that it had corrected something, while I was equally certain that it had handed me the same code twice. Even when there was a technical difference buried somewhere inside the block, the method still required me to locate and replace fragments inside code I did not fully understand. I lost count of the number of nights when I repeated the same instruction, sometimes nine times or more, asking for the complete HTML file instead of another isolated section that created additional opportunities for error.</p><p>The website did not begin coming together reliably until the workflow changed. Once Copilot could see the complete page and work on the entire file instead of handing me disconnected fragments, the quality of the output improved. The AI had not made me a programmer. It had finally learned to meet me where I was and return something complete enough to use.</p><p>Automation followed the same pattern. Early attempts could become trapped in changing recommendations, unnecessary redesign, or explanations that never produced a functioning outcome. A process moving in the right direction could suddenly be redirected for no clear reason. OLS eventually developed operating rules, logbooks, and continuity practices partly because the AI needed guardrails to preserve direction and prevent every new conversation from becoming a fresh start.</p><p>More recently, improved Copilot capabilities inside Microsoft’s applications, combined with stronger outside guidance, have changed the experience again. Automations that once felt unreachable can now be worked through step by step. Copilot can work inside the application while a separate AI conversation keeps hold of the larger objective, helps diagnose problems, and remembers where the work is supposed to go. The first answer no longer has to be perfect. The project can improve through a working conversation without losing sight of the business need.</p><p>The improvement does not mean the frustration has disappeared. Even while developing this article, I have had to correct the AI for explaining my own writing voice back to me instead of simply applying the standard I had already established. It still drifts into overplanning, overexplaining, and offering fragments when I need complete work. It sometimes needs to be reminded that a previous decision remains valid and that the task is to continue rather than redesign.</p><p>What changed was how often those corrections began producing something I could actually use. As the system improved, and as I became more consistent about teaching it how I work, it became a better assistant. It learned the language of OLS, the difference between business doctrine and a temporary marketing idea, and the importance of continuing from decisions already made. The technology was improving everywhere. The working relationship was improving here.</p><p>Looking back, I can see how easy it would have been to form a permanent opinion at the wrong moment. If I had judged generative AI by the formulas it could not complete during those early Excel projects, I might have dismissed it. If I had judged Microsoft’s tools by my inability to build my mother’s systems, I might have concluded that the promise exceeded the practical value. If I had walked away during one of those nights arguing with Copilot over incomplete HTML, the OLS website, assistant, automated briefings, lead-capture system, and publishing environment might never have reached their current form. Every one of those conclusions would have been understandable at the time, but none of them would still be accurate now. The most important change is not simply that AI produces better answers. It is that the distance between understanding a problem and building a working response is shrinking.</p><h2 id="the-distance-is-shrinking">The Distance Is Shrinking</h2><p>A business owner who cannot write software can increasingly develop functional systems through conversation. A student can locate relevant research faster without surrendering responsibility for evaluating it. A project manager who is not an Excel expert can create a financial model and bring qualified expertise in where validation still matters. A leader who understands how work moves can take a more active role in shaping the tools that support it.</p><p>That does not eliminate the need for expertise, judgment, verification, or responsibility. It places greater power in the hands of people who understand the problem but previously lacked the technical ability to act on their understanding. It also increases the risk of moving quickly in the wrong direction when the underlying business is unclear.</p><p>When I looked back across those experiences, they all led me to the same place: operating reality. The Florida State Guard system could not be built until the recruiting and administrative processes were mapped. The law-school research agents could not determine whether a case truly supported an argument. My mother’s systems could not be completed merely because the applications existed. OLS could not benefit from automation until its objectives, information, ownership, and processes became clear enough to guide the work. Capability did not remove the need for diagnosis. It made diagnosis more important.</p><p>Artificial intelligence can accelerate the work, but it cannot choose a responsible destination for the organization. It can expose patterns, retrieve information, generate options, and increasingly perform work across multiple applications. The organization still has to decide which outcomes matter, which information can be trusted, who owns the result, and what must remain under human judgment.</p><h2 id="operating-reality-still-decides">Operating Reality Still Decides</h2><p>That is why I do not believe AI is the revolution most businesses think it is. The meaningful shift is not smarter software or faster automation by itself. It is the growing ability of ordinary people to turn operational knowledge into functioning systems without waiting for a large technical team to interpret every step. The revolution is not that the machine understands the business. It is that the person who understands the business can now get much closer to building what the business needs.</p><p>That creates an uncomfortable choice for any organization that tested AI once and filed away the answer. The target moved. A system dismissed twelve months ago may now work across applications it could not reach then. A workflow abandoned six months ago may now be possible. A project that once required a specialized development team may now begin with a well-structured conversation.</p><p>The answer is not to chase every release or buy every tool with an AI label. Motion without direction creates its own waste. The responsible response is to reassess what is possible as the technology changes, compare it against what the business actually needs, and separate useful progress from expensive distraction. That is familiar OLS discipline: when the facts, constraints, or opportunities change, diagnosis has to happen again.</p><p>For organizations that want to know where AI and automation can create real value now, OLS begins with an Operational AI Assessment. The work starts with the business, not the software: how information moves, where time is being lost, which workflows create friction, what knowledge is difficult to reach, where human judgment must remain protected, and which opportunities are ready to justify implementation.</p><p>The final question for any organization is whether it understands its own operating reality well enough to recognize what has become possible, choose what is worth building, and protect the judgment that should never be surrendered. Before accepting anyone’s answer about the limits of AI, ask one more question: <em>“Compared to when?”</em></p><div class="article-cta-note"><p><strong>Schedule an OLS Discovery Conversation. </strong>If your organization wants to understand where AI and automation can create real value now, the next step is not to chase another tool. It is to examine operating reality and determine what has become possible.</p></div></section>
+<div class="after-manuscript">
+<section aria-labelledby="related-reading-title" class="related-section">
+<h2 class="section-heading" id="related-reading-title">Continue Reading</h2>
+<div class="related-grid"><a class="related-card" href="visibility-precedes-control.html"><div><div class="related-card-title">Visibility Precedes Control</div><div class="related-card-text">Read the OLS Canon article on why leaders must see operating reality before they can control or scale it.</div></div><div class="card-action">Read Article</div></a><a class="related-card" href="trust-is-organizational-infrastructure.html"><div><div class="related-card-title">Trust Is Organizational Infrastructure</div><div class="related-card-text">Continue into the OLS Canon article on trust as an operating condition, not just a personal value.</div></div><div class="card-action">Read Article</div></a><a class="related-card" href="leadership-equals-accountability.html"><div><div class="related-card-title">Leadership Equals Accountability</div><div class="related-card-text">Explore how awareness needs a trusted path to authority and action before the system can protect results.</div></div><div class="card-action">Read Article</div></a><a class="related-card" href="why-good-businesses-struggle.html"><div><div class="related-card-title">Why Good Businesses Struggle</div><div class="related-card-text">Read why growth can make the operating picture around otherwise strong work harder to see, control, or trust.</div></div><div class="card-action">Read Article</div></a></div>
+</section>
+<section aria-labelledby="sources-title" class="publication-notice"><h2 id="sources-title">Sources and References</h2><p><a href="https://local.microsoft.com/blog/understanding-microsoft-datacenters-in-central-washington/" rel="noopener noreferrer" target="_blank">Microsoft Local: Understanding Microsoft datacenters in Central Washington</a></p><p>Bill Gates, <em>The Road Ahead</em>, Afterword to the 1996 edition.</p></section><section aria-labelledby="author-title" class="author-section">
+<h2 class="section-heading" id="author-title">About the Author</h2>
+<div class="author-card">
+<div class="author-image-wrap" id="authorImageWrap">
+<img alt="Andres Andy Roosna" data-author-srcs="../assets/OLS-WEB-V2-AUTH-ANDY-A001.png|../v2/assets/OLS-WEB-V2-AUTH-ANDY-A001.png|v2/assets/OLS-WEB-V2-AUTH-ANDY-A001.png" id="authorImage" src="../assets/OLS-WEB-V2-AUTH-ANDY-A001.png"/>
+<div class="author-fallback" id="authorFallback">OLS<br/>Author</div>
+</div>
+<div>
+<div class="author-name">Andres “Andy” Roosna Founder &amp; Principal, OLS Group</div>
+<p>Andres “Andy” Roosna is the Founder &amp; Principal of OLS Group, where he develops operational leadership systems for organizations facing complexity, growth, execution drag, and leadership visibility challenges. His background spans global operations, finance, corporate restructuring, government contracting, M&amp;A advisory, construction operations, and high-risk leadership environments across 36 countries.</p>
+<p>To explore more OLS Group perspectives on leadership, trust, visibility, accountability, and execution systems, follow Andres “Andy” Roosna and OLS Group on LinkedIn or visit the OLS Group website.</p>
+</div>
+</div>
+</section>
+<section aria-labelledby="publication-notice-title" class="publication-notice">
+<h2 id="publication-notice-title">Publication Notice</h2>
+<p>This publication is part of the OLS Group organizational performance and operational leadership library.</p>
+<p class="notice-rights">© OLS Group. All Rights Reserved.</p>
+<p class="notice-rights">This publication may not be reproduced, distributed, modified, or republished without written permission from OLS Group, except for brief quotations with proper attribution.</p>
+</section>
+<section aria-labelledby="decision-title" class="decision-section">
+<h2 class="section-heading" id="decision-title">Keep learning or begin the conversation.</h2>
+<div class="decision-grid">
+<a class="decision-card" href="../resources.html">
+<div>
+<div class="decision-card-title">Resource Center</div>
+<div class="decision-card-text">Return to the OLS library and continue through the Canon, insight articles, field notes, essays, and future resources.</div>
+</div>
+<div class="card-action">Open Resources</div>
+</a>
+<a class="decision-card" href="../discovery.html">
+<div>
+<div class="decision-card-title">Discovery Conversation</div>
+<div class="decision-card-text">Start a conversation about operating reality, AI readiness, workflow friction, and what has become possible.</div>
+</div>
+<div class="card-action">Schedule a Discovery Conversation</div>
+</a>
+</div>
+</section>
+</div>
+</article>
+</div>
+</main>
+<footer aria-label="OLS publication footer" class="publication-footer">
+<div class="publication-footer-inner">
+<div class="footer-brand">OLS Group</div>
+<nav aria-label="Footer links" class="footer-links">
+<a href="../index.html">Home</a>
+<a href="../resources.html">Resource Center</a>
+<a href="../discovery.html">Start the Conversation</a>
+</nav>
+</div>
+</footer>
+</div>
+<div aria-live="polite" class="copy-warning" id="copyWarning" role="status">This OLS publication is protected. Brief quotations with proper attribution are permitted. Full reproduction is not permitted.</div>
+<script>
+    (function () {
+      "use strict";
+
+      const protectedMessage = "This OLS publication is protected. Brief quotations with proper attribution are permitted. Full reproduction is not permitted.";
+      const warning = document.getElementById("copyWarning");
+      let warningTimer = null;
+
+      function showWarning() {
+        if (!warning) return;
+        warning.textContent = protectedMessage;
+        warning.classList.add("is-visible");
+        if (warningTimer) {
+          window.clearTimeout(warningTimer);
+        }
+        warningTimer = window.setTimeout(function () {
+          warning.classList.remove("is-visible");
+        }, 2600);
+      }
+
+      function blockEvent(event) {
+        if (!event) return false;
+        event.preventDefault();
+        event.stopPropagation();
+        showWarning();
+        return false;
+      }
+
+      function initializeAuthorImageFallback() {
+        const image = document.getElementById("authorImage");
+        const fallback = document.getElementById("authorFallback");
+        const wrap = document.getElementById("authorImageWrap");
+        if (!image || !fallback || !wrap) return;
+
+        const sources = String(image.getAttribute("data-author-srcs") || "")
+          .split("|")
+          .map(function (src) { return src.trim(); })
+          .filter(Boolean);
+
+        let index = 0;
+
+        image.addEventListener("error", function () {
+          index += 1;
+          if (index < sources.length) {
+            image.src = sources[index];
+            return;
+          }
+
+          image.style.display = "none";
+          fallback.style.display = "block";
+          wrap.classList.add("has-fallback");
+        });
+      }
+
+      document.addEventListener("contextmenu", blockEvent, true);
+      document.addEventListener("copy", blockEvent, true);
+      document.addEventListener("cut", blockEvent, true);
+      document.addEventListener("dragstart", blockEvent, true);
+      document.addEventListener("selectstart", function (event) {
+        const target = event.target;
+        if (target && target.closest && target.closest("a, button, summary")) {
+          return true;
+        }
+        return blockEvent(event);
+      }, true);
+
+      document.addEventListener("keydown", function (event) {
+        const key = String(event.key || "").toLowerCase();
+        const blockedCombo =
+          (event.ctrlKey || event.metaKey) && ["a", "c", "x", "s", "p", "u"].includes(key) ||
+          (event.ctrlKey || event.metaKey) && event.shiftKey && ["i", "j", "c"].includes(key) ||
+          key === "f12" ||
+          key === "printscreen";
+
+        if (blockedCombo) {
+          blockEvent(event);
+        }
+      }, true);
+
+      document.addEventListener("keyup", function (event) {
+        const key = String(event.key || "").toLowerCase();
+        if (key === "printscreen") {
+          try {
+            navigator.clipboard.writeText("");
+          } catch (error) {}
+          showWarning();
+        }
+      }, true);
+
+      window.addEventListener("beforeprint", function (event) {
+        blockEvent(event);
+      });
+
+      initializeAuthorImageFallback();
+    })();
+  </script>
+</body>
+</html>
 
