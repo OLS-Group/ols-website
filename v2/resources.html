@@ -957,7 +957,8 @@
             "OLS-WEB-V2-CAN-TRUST-A001": "assets/OLS-WEB-V2-RSC-HERO-A001.jpg",
             "OLS-WEB-V2-CAN-ACC-A001": "assets/OLS-WEB-V2-RSC-HERO-A001.jpg",
             "OLS-WEB-V2-CAN-EXEC-A001": "assets/OLS-WEB-V2-RSC-HERO-A001.jpg",
-            "OLS-WEB-V2-INS-LEAD-A001": "assets/OLS-WEB-V2-RSC-LIBRARY-A001.jpg"
+            "OLS-WEB-V2-INS-LEAD-A001": "assets/OLS-WEB-V2-RSC-LIBRARY-A001.jpg",
+            "OLS-WEB-V2-INS-002-HERO-A001": "assets/OLS-WEB-V2-INS-002-HERO-A001.jpg"
         };
 
         let allResources = [];
@@ -1091,6 +1092,27 @@
 
                 if (!Array.isArray(allResources)) {
                     throw new Error("resources.json must contain an array of resources");
+                }
+
+                const newArticle = {
+                    contentId: "OLS-INS-002",
+                    title: "AI Is Not the Revolution Most Businesses Think It Is",
+                    resourceType: "Insight Article",
+                    primaryTopic: "AI Readiness",
+                    description: "A narrative account of how rapidly improving AI tools are changing what ordinary business operators can research, design, automate, and build, and why yesterday's conclusions about AI may no longer be accurate.",
+                    featured: true,
+                    featuredAssetId: "OLS-WEB-V2-INS-002-HERO-A001",
+                    url: "articles/ai-is-not-the-revolution-most-businesses-think-it-is.html"
+                };
+
+                const existingArticleIndex = allResources.findIndex(function (resource) {
+                    return resource && resource.contentId === newArticle.contentId;
+                });
+
+                if (existingArticleIndex === -1) {
+                    allResources.unshift(newArticle);
+                } else {
+                    allResources[existingArticleIndex] = Object.assign({}, allResources[existingArticleIndex], newArticle);
                 }
 
                 populateFilters(allResources);
