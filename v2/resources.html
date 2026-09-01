@@ -44,7 +44,7 @@
             line-height: 1.75;
             background:
                 linear-gradient(rgba(7, 26, 45, 0.66), rgba(7, 26, 45, 0.66)),
-                url("assets/OLS-WEB-V2-RSC-HERO-A001.jpg") center center / cover fixed no-repeat;
+                url("assets/OLS-WEB-V2-RSC-A001.jpg") center center / cover fixed no-repeat;
             user-select: none;
             -webkit-user-select: none;
             -ms-user-select: none;
@@ -139,7 +139,7 @@
             color: #ffffff;
             background:
                 linear-gradient(90deg, rgba(7, 26, 45, 0.95), rgba(7, 26, 45, 0.80), rgba(7, 26, 45, 0.40)),
-                url("assets/OLS-WEB-V2-RSC-HERO-A001.jpg") center center / cover no-repeat;
+                url("assets/OLS-WEB-V2-RSC-A001.jpg") center center / cover no-repeat;
         }
 
         .hero .reading {
@@ -203,7 +203,9 @@
         .book-section {
             position: relative;
             padding: 112px 0;
-            background: var(--ols-glass);
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)),
+                url("assets/OLS-WEB-V2-RSC-B001.jpg") center center / cover no-repeat;
             border-top: 1px solid var(--ols-border);
             backdrop-filter: blur(10px);
         }
@@ -294,7 +296,9 @@
 
         .canon-section {
             padding: 112px 0;
-            background: var(--ols-glass-alt);
+            background:
+                linear-gradient(rgba(239, 245, 250, 0.88), rgba(239, 245, 250, 0.88)),
+                url("assets/OLS-WEB-V2-RSC-C001.jpg") center center / cover no-repeat;
             border-top: 1px solid var(--ols-border);
             backdrop-filter: blur(10px);
         }
@@ -393,7 +397,9 @@
 
         .library-section {
             padding: 112px 0;
-            background: var(--ols-glass);
+            background:
+                linear-gradient(rgba(255, 255, 255, 0.90), rgba(255, 255, 255, 0.90)),
+                url("assets/OLS-WEB-V2-RSC-D001.jpg") center center / cover no-repeat;
             border-top: 1px solid var(--ols-border);
             backdrop-filter: blur(10px);
         }
@@ -505,7 +511,7 @@
             padding: 112px 0;
             background:
                 linear-gradient(rgba(244, 247, 250, 0.9), rgba(244, 247, 250, 0.9)),
-                url("assets/OLS-WEB-V2-RSC-LIBRARY-A001.jpg") center center / cover no-repeat;
+                url("assets/OLS-WEB-V2-RSC-E001.jpg") center center / cover no-repeat;
             border-top: 1px solid var(--ols-border);
         }
 
@@ -1092,27 +1098,6 @@
 
                 if (!Array.isArray(allResources)) {
                     throw new Error("resources.json must contain an array of resources");
-                }
-
-                const newArticle = {
-                    contentId: "OLS-INS-002",
-                    title: "AI Is Not the Revolution Most Businesses Think It Is",
-                    resourceType: "Insight Article",
-                    primaryTopic: "AI Readiness",
-                    description: "A narrative account of how rapidly improving AI tools are changing what ordinary business operators can research, design, automate, and build, and why yesterday's conclusions about AI may no longer be accurate.",
-                    featured: true,
-                    featuredAssetId: "OLS-WEB-V2-INS-002-HERO-A001",
-                    url: "articles/ai-is-not-the-revolution-most-businesses-think-it-is.html"
-                };
-
-                const existingArticleIndex = allResources.findIndex(function (resource) {
-                    return resource && resource.contentId === newArticle.contentId;
-                });
-
-                if (existingArticleIndex === -1) {
-                    allResources.unshift(newArticle);
-                } else {
-                    allResources[existingArticleIndex] = Object.assign({}, allResources[existingArticleIndex], newArticle);
                 }
 
                 populateFilters(allResources);
