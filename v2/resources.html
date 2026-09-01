@@ -1,14 +1,14 @@
 <!DOCTYPE html>
+<!DOCTYPE html>
+
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Resource Center | OLS Group</title>
-
-    <meta name="description" content="The OLS Resource Center is the governed learning environment for the OLS body of work and the public access point to OLS canon articles, doctrine, observations, field reports, stories, case studies, commentary, talks, interviews, webinars, podcasts, and future public resources.">
-    <link rel="icon" type="image/png" href="assets/OLS-WEB-V2-FAV-A001.png">
-
-    <style>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Resource Center | OLS Group</title>
+<meta content="The OLS Resource Center is the governed learning environment for the OLS body of work and the public access point to OLS canon articles, doctrine, observations, field reports, stories, case studies, commentary, talks, interviews, webinars, podcasts, and future public resources." name="description"/>
+<link href="assets/OLS-WEB-V2-FAV-A001.png" rel="icon" type="image/png"/>
+<style>
         :root {
             --ols-navy: #071a2d;
             --ols-deep: #0a1a2f;
@@ -215,13 +215,13 @@
         .resource-introduction {
             background:
                 linear-gradient(90deg, rgba(255, 255, 255, 0.26), rgba(255, 255, 255, 0.16)),
-                url("assets/OLS-WEB-V2-RSC-B001.jpg") center center / cover no-repeat;
+                none;
         }
 
         .learning-environment {
             background:
                 linear-gradient(90deg, rgba(239, 245, 250, 0.30), rgba(239, 245, 250, 0.18)),
-                url("assets/OLS-WEB-V2-RSC-E001.jpg") center center / cover no-repeat;
+                none;
         }
 
         .resource-introduction .book-copy,
@@ -317,7 +317,7 @@
             padding: 112px 0;
             background:
                 linear-gradient(90deg, rgba(239, 245, 250, 0.28), rgba(239, 245, 250, 0.16)),
-                url("assets/OLS-WEB-V2-RSC-C001.jpg") center center / cover no-repeat;
+                none;
             border-top: 1px solid var(--ols-border);
             backdrop-filter: blur(10px);
         }
@@ -418,7 +418,7 @@
             padding: 112px 0;
             background:
                 linear-gradient(90deg, rgba(255, 255, 255, 0.34), rgba(255, 255, 255, 0.20)),
-                url("assets/OLS-WEB-V2-RSC-D001.jpg") center center / cover no-repeat;
+                none;
             border-top: 1px solid var(--ols-border);
             backdrop-filter: blur(10px);
         }
@@ -657,6 +657,42 @@
             font-size: 14px;
         }
 
+
+
+        .resource-visual-window {
+            width: min(var(--max-width), calc(100% - 44px));
+            margin: 0 auto 54px;
+            border-radius: 30px;
+            overflow: hidden;
+            border: 1px solid rgba(15, 23, 42, 0.14);
+            background: #ffffff;
+            box-shadow: 0 28px 78px rgba(7, 26, 45, 0.20);
+        }
+
+        .resource-visual-window img {
+            width: 100%;
+            height: clamp(300px, 45vw, 600px);
+            object-fit: cover;
+            object-position: center center;
+            display: block;
+        }
+
+        .resource-visual-caption {
+            padding: 14px 18px 16px;
+            color: var(--ols-muted);
+            background: rgba(255, 255, 255, 0.98);
+            font-size: 13px;
+            font-weight: 800;
+            line-height: 1.5;
+        }
+
+        .resource-introduction,
+        .learning-environment,
+        .canon-section,
+        .library-section {
+            background: rgba(239, 245, 250, 0.82);
+        }
+
         @media (max-width: 980px) {
             .nav-inner {
                 align-items: flex-start;
@@ -707,7 +743,8 @@
 
         @media (max-width: 640px) {
             .container,
-            .nav-inner {
+            .nav-inner,
+            .resource-visual-window {
                 width: min(100% - 30px, var(--max-width));
             }
 
@@ -773,204 +810,161 @@
         }
     </style>
 </head>
-
-<body
-    oncopy="return false;"
-    oncut="return false;"
-    onpaste="return false;"
-    oncontextmenu="return false;"
-    ondragstart="return false;"
-    onselectstart="return false;"
->
+<body oncontextmenu="return false;" oncopy="return false;" oncut="return false;" ondragstart="return false;" onpaste="return false;" onselectstart="return false;">
 <header>
- <div class="nav-inner">
-       <a href="index.html" class="logo" aria-label="OLS Group Home">
-<img src="assets/OLS-WEB-V2-LOGO-A001.png"alt="OLS Group Logo">
+<div class="nav-inner">
+<a aria-label="OLS Group Home" class="logo" href="index.html">
+<img alt="OLS Group Logo" src="assets/OLS-WEB-V2-LOGO-A001.png"/>
 </a>
-
-        <nav aria-label="Primary navigation">
-            <a href="what-we-believe.html">What We Believe</a>
-            <a href="framework.html">How We Think</a>
-            <a href="assessment.html">Identify the Problem</a>
-            <a href="services.html">How We Help</a>
-            <a href="about.html">Why OLS</a>
-            <a href="discovery.html">Start the Conversation</a>
-            <a href="resources.html">Resource Center</a>
-        </nav>
-
-    </div>
+<nav aria-label="Primary navigation">
+<a href="what-we-believe.html">What We Believe</a>
+<a href="framework.html">How We Think</a>
+<a href="assessment.html">Identify the Problem</a>
+<a href="services.html">How We Help</a>
+<a href="about.html">Why OLS</a>
+<a href="discovery.html">Start the Conversation</a>
+<a href="resources.html">Resource Center</a>
+</nav>
+</div>
 </header>
-     
 <main>
-    <section class="hero">
-        <div class="container reading">
-            <span class="eyebrow">OLS Knowledge System</span>
-            <h1>Resource Center</h1>
-            <p>The public access point to the OLS Knowledge System.</p>
-            <div class="hero-title-mark"></div>
-        </div>
-    </section>
-
-    <section class="book-section resource-introduction">
-        <div class="container book-grid">
-            <aside class="book-side">
-                <span>Resource Center</span>
-            </aside>
-
-            <article class="book-copy opening-panel">
-                <p>Some leaders are ready to talk as soon as the pattern becomes visible. Others need to keep reading. They need to test the language against their own organization and sit with the possibility that the issue is not one failed meeting, one weak manager, one late report, or one broken process, but a condition inside the operating system.</p>
-
-                <p>The Resource Center exists for that work. It is not a blog archive. It is not a content warehouse. It is not a collection of disconnected posts. It is the governed learning environment for the OLS body of work.</p>
-
-                <p>The Resource Center collects doctrine, observations, field reports, stories, case studies, commentary, talks, discussions, interviews, webinars, podcasts, and future public resources designed to help leaders recognize what visibility, trust, accountability, ownership, execution, adaptability, and results look like when they are connected, and what they look like when they begin to separate.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="quote-band">
-        <div class="container">
-            <div class="quote-text">The foundational articles are a good place to begin.</div>
-        </div>
-    </section>
-
-    <section class="canon-section">
-        <div class="container">
-            <div class="section-intro">
-                <span class="eyebrow">Selected From The OLS Library</span>
-                <h2>Featured Resources</h2>
-                <p>These resources are currently highlighted because they provide useful entry points into the OLS body of work. Featured resources may include doctrine, insights, stories, case studies, commentary, talks, interviews, webinars, roundtables, or podcast episodes.</p>
-            </div>
-
-            <div id="featured-resources" class="canon-grid">
-                <div class="resource-empty">Loading featured resources...</div>
-            </div>
-        </div>
-    </section>
-
-    <section class="book-section alt">
-        <div class="container book-grid">
-            <aside class="book-side">
-                <span>How Leaders Arrive</span>
-            </aside>
-
-            <article class="book-copy">
-                <p>Some leaders will arrive through doctrine. Some will arrive through experience. Some will arrive because a single article gives language to something they have been carrying for months.</p>
-
-                <p>However they arrive, the goal remains the same.</p>
-
-                <p>Make the organization visible enough to understand before deciding what to change.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="library-section">
-        <div class="container">
-            <div class="section-intro">
-                <span class="eyebrow">Knowledge Library</span>
-                <h2>Published Resources</h2>
-                <p>Only published resources appear in the library. As OLS publishes new articles, field observations, case studies, commentary, talks, discussions, interviews, webinars, podcasts, and future public resources, they will be added here as governed resources.</p>
-            </div>
-
-            <div class="library-panel">
-                <div class="library-controls" aria-label="Resource filters">
-                    <input id="resource-search" class="library-search" type="search" placeholder="Search resources" aria-label="Search resources">
-
-                    <select id="resource-type-filter" class="library-filter" aria-label="Filter by resource type">
-                        <option value="All">All Resource Types</option>
-                    </select>
-
-                    <select id="resource-topic-filter" class="library-filter" aria-label="Filter by topic">
-                        <option value="All">All Topics</option>
-                    </select>
-                </div>
-
-                <div id="knowledge-library" class="library-list">
-                    <div class="resource-empty">Loading published resources...</div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <section class="quote-band">
-        <div class="container">
-            <div class="quote-text">Keep reading until the pattern has a name. When it does, begin the conversation.</div>
-        </div>
-    </section>
-
-    <section class="book-section learning-environment">
-        <div class="container book-grid">
-            <aside class="book-side">
-                <span>Learning Environment</span>
-            </aside>
-
-            <article class="book-copy">
-                <p>The Resource Center will continue to evolve as OLS publishes new articles, field observations, stories, case studies, commentary, talks, discussions, interviews, webinars, podcasts, and future public resources.</p>
-
-                <p>That evolution is intentional.</p>
-
-                <p>Organizations do not stop changing, so the learning environment should not remain static.</p>
-
-                <p>Read until the pattern becomes clearer. Then decide whether to keep learning, start the conversation tool, or schedule a Discovery Conversation.</p>
-            </article>
-        </div>
-    </section>
-
-    <section class="cta-section">
-        <div class="container">
-            <div class="cta-intro">
-                <span class="eyebrow">Next Step</span>
-                <h2>Keep learning or begin the conversation.</h2>
-            </div>
-
-            <div class="cta-grid">
-                <a href="resources.html" class="cta-card" aria-label="Continue Learning in the Resource Center">
-                    <div>
-                        <span class="cta-label">Continue Learning</span>
-                        <h3>Knowledge Library →</h3>
-                        <p>Return to the Resource Center and continue reading until the operating pattern becomes clearer.</p>
-                    </div>
-
-                    <span class="cta-action">Continue Learning</span>
-                </a>
-
-                <a href="discovery.html" class="cta-card" aria-label="Start the Discovery Discussion">
-                    <div>
-                        <span class="cta-label">Begin the Conversation</span>
-                        <h3>Discovery Discussion →</h3>
-                        <p>When the pattern has a name, begin the conversation and explore what the condition may be telling you.</p>
-                    </div>
-
-                    <span class="cta-action">Start the Conversation</span>
-                </a>
-            </div>
-        </div>
-    </section>
+<section class="hero">
+<div class="container reading">
+<span class="eyebrow">OLS Knowledge System</span>
+<h1>Resource Center</h1>
+<p>The public access point to the OLS Knowledge System.</p>
+<div class="hero-title-mark"></div>
+</div>
+</section>
+<section class="book-section resource-introduction"><figure class="resource-visual-window"><img alt="OLS organizational learning team reviewing connected doctrine, operational frameworks, and resource pathways." decoding="async" loading="lazy" src="assets/OLS-WEB-V2-RSC-B001.jpg"/><figcaption class="resource-visual-caption">A governed learning environment connects doctrine, observation, operational frameworks, and practical understanding.</figcaption></figure>
+<div class="container book-grid">
+<aside class="book-side">
+<span>Resource Center</span>
+</aside>
+<article class="book-copy opening-panel">
+<p>Some leaders are ready to talk as soon as the pattern becomes visible. Others need to keep reading. They need to test the language against their own organization and sit with the possibility that the issue is not one failed meeting, one weak manager, one late report, or one broken process, but a condition inside the operating system.</p>
+<p>The Resource Center exists for that work. It is not a blog archive. It is not a content warehouse. It is not a collection of disconnected posts. It is the governed learning environment for the OLS body of work.</p>
+<p>The Resource Center collects doctrine, observations, field reports, stories, case studies, commentary, talks, discussions, interviews, webinars, podcasts, and future public resources designed to help leaders recognize what visibility, trust, accountability, ownership, execution, adaptability, and results look like when they are connected, and what they look like when they begin to separate.</p>
+</article>
+</div>
+</section>
+<section class="quote-band">
+<div class="container">
+<div class="quote-text">The foundational articles are a good place to begin.</div>
+</div>
+</section>
+<section class="canon-section"><figure class="resource-visual-window"><img alt="OLS operational leadership resources, reports, frameworks, and digital knowledge tools arranged for active use." decoding="async" loading="lazy" src="assets/OLS-WEB-V2-RSC-C001.jpg"/><figcaption class="resource-visual-caption">Featured resources provide deliberate entry points into the connected OLS body of work.</figcaption></figure>
+<div class="container">
+<div class="section-intro">
+<span class="eyebrow">Selected From The OLS Library</span>
+<h2>Featured Resources</h2>
+<p>These resources are currently highlighted because they provide useful entry points into the OLS body of work. Featured resources may include doctrine, insights, stories, case studies, commentary, talks, interviews, webinars, roundtables, or podcast episodes.</p>
+</div>
+<div class="canon-grid" id="featured-resources">
+<div class="resource-empty">Loading featured resources...</div>
+</div>
+</div>
+</section>
+<section class="book-section alt">
+<div class="container book-grid">
+<aside class="book-side">
+<span>How Leaders Arrive</span>
+</aside>
+<article class="book-copy">
+<p>Some leaders will arrive through doctrine. Some will arrive through experience. Some will arrive because a single article gives language to something they have been carrying for months.</p>
+<p>However they arrive, the goal remains the same.</p>
+<p>Make the organization visible enough to understand before deciding what to change.</p>
+</article>
+</div>
+</section>
+<section class="library-section"><figure class="resource-visual-window"><img alt="OLS digital knowledge environment organizing articles, field observations, governance documents, and learning pathways." decoding="async" loading="lazy" src="assets/OLS-WEB-V2-RSC-D001.jpg"/><figcaption class="resource-visual-caption">The Knowledge Library organizes published resources so ideas can be found, tested, and connected to operating reality.</figcaption></figure>
+<div class="container">
+<div class="section-intro">
+<span class="eyebrow">Knowledge Library</span>
+<h2>Published Resources</h2>
+<p>Only published resources appear in the library. As OLS publishes new articles, field observations, case studies, commentary, talks, discussions, interviews, webinars, podcasts, and future public resources, they will be added here as governed resources.</p>
+</div>
+<div class="library-panel">
+<div aria-label="Resource filters" class="library-controls">
+<input aria-label="Search resources" class="library-search" id="resource-search" placeholder="Search resources" type="search"/>
+<select aria-label="Filter by resource type" class="library-filter" id="resource-type-filter">
+<option value="All">All Resource Types</option>
+</select>
+<select aria-label="Filter by topic" class="library-filter" id="resource-topic-filter">
+<option value="All">All Topics</option>
+</select>
+</div>
+<div class="library-list" id="knowledge-library">
+<div class="resource-empty">Loading published resources...</div>
+</div>
+</div>
+</div>
+</section>
+<section class="quote-band">
+<div class="container">
+<div class="quote-text">Keep reading until the pattern has a name. When it does, begin the conversation.</div>
+</div>
+</section>
+<section class="book-section learning-environment"><figure class="resource-visual-window"><img alt="OLS leadership team connecting field observation, practical experience, doctrine, and conversation." decoding="async" loading="lazy" src="assets/OLS-WEB-V2-RSC-E001.jpg"/><figcaption class="resource-visual-caption">Learning continues as leaders connect observation, practical experience, doctrine, and conversation.</figcaption></figure>
+<div class="container book-grid">
+<aside class="book-side">
+<span>Learning Environment</span>
+</aside>
+<article class="book-copy">
+<p>The Resource Center will continue to evolve as OLS publishes new articles, field observations, stories, case studies, commentary, talks, discussions, interviews, webinars, podcasts, and future public resources.</p>
+<p>That evolution is intentional.</p>
+<p>Organizations do not stop changing, so the learning environment should not remain static.</p>
+<p>Read until the pattern becomes clearer. Then decide whether to keep learning, start the conversation tool, or schedule a Discovery Conversation.</p>
+</article>
+</div>
+</section>
+<section class="cta-section">
+<div class="container">
+<div class="cta-intro">
+<span class="eyebrow">Next Step</span>
+<h2>Keep learning or begin the conversation.</h2>
+</div>
+<div class="cta-grid">
+<a aria-label="Continue Learning in the Resource Center" class="cta-card" href="resources.html">
+<div>
+<span class="cta-label">Continue Learning</span>
+<h3>Knowledge Library →</h3>
+<p>Return to the Resource Center and continue reading until the operating pattern becomes clearer.</p>
+</div>
+<span class="cta-action">Continue Learning</span>
+</a>
+<a aria-label="Start the Discovery Discussion" class="cta-card" href="discovery.html">
+<div>
+<span class="cta-label">Begin the Conversation</span>
+<h3>Discovery Discussion →</h3>
+<p>When the pattern has a name, begin the conversation and explore what the condition may be telling you.</p>
+</div>
+<span class="cta-action">Start the Conversation</span>
+</a>
+</div>
+</div>
+</section>
 </main>
-
 <footer>
-    <div class="container">
-        <h2>Operational Leadership Systems</h2>
-
-        <p>Helping leaders understand what changed inside the operating system of their organization before deciding what should happen next.</p>
-
-        <div class="footer-links">
-            <a href="what-we-believe.html">What We Believe</a>
-            <a href="framework.html">How We Think</a>
-            <a href="assessment.html">Identify the Problem</a>
-            <a href="services.html">How We Help</a>
-            <a href="about.html">Why OLS</a>
-            <a href="discovery.html">Start the Conversation</a>
-            <a href="resources.html">Resource Center</a>
-        </div>
-
-        <div class="footer-bottom">
-            <p>© 2026 Operational Leadership Systems (OLS Group). All Rights Reserved.</p>
-            <p>This website and its published resources may not be reproduced, distributed, modified, or republished without written permission from OLS Group, except for brief quotations with proper attribution.</p>
-            <p>Visibility · Trust · Ownership · Accountability · Execution</p>
-        </div>
-    </div>
+<div class="container">
+<h2>Operational Leadership Systems</h2>
+<p>Helping leaders understand what changed inside the operating system of their organization before deciding what should happen next.</p>
+<div class="footer-links">
+<a href="what-we-believe.html">What We Believe</a>
+<a href="framework.html">How We Think</a>
+<a href="assessment.html">Identify the Problem</a>
+<a href="services.html">How We Help</a>
+<a href="about.html">Why OLS</a>
+<a href="discovery.html">Start the Conversation</a>
+<a href="resources.html">Resource Center</a>
+</div>
+<div class="footer-bottom">
+<p>© 2026 Operational Leadership Systems (OLS Group). All Rights Reserved.</p>
+<p>This website and its published resources may not be reproduced, distributed, modified, or republished without written permission from OLS Group, except for brief quotations with proper attribution.</p>
+<p>Visibility · Trust · Ownership · Accountability · Execution</p>
+</div>
+</div>
 </footer>
-
 <script>
     (function () {
         "use strict";
@@ -1170,6 +1164,5 @@
         loadResources();
     }());
 </script>
-
 </body>
 </html>
